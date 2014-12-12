@@ -1,4 +1,7 @@
 <?php
+session_start()
+?>
+<?php
   $DB= new PDO ('mysql:host=localhost; dbname=home_switch_home', 'root','');
 function userMessage ($id)
 {
