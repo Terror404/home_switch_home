@@ -5,7 +5,7 @@
                     }
                     ;
            
-                if(isset($_SESSION['login']))
+                if(isset($_SESSION['userLogin']))
                     {
                         $blocConnexion=3;
                     }
@@ -35,8 +35,7 @@
                         break;
                     
                         case 3:
-                        include "../view/co_bloc/co_bloc_3.php";
-                        echo $_SESSION['userLogin'];
+                        include "../view/co_bloc/co_bloc_3.php";                      
 			break;			
                     }
                    

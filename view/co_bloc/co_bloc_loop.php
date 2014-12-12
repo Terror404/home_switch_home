@@ -17,11 +17,15 @@ if(isset($_POST) AND $_POST['login']!="" AND $_POST['password']!="")
                             }
                         else 
                             {
-                                $_SESSION['userlogin'] =$login;
-                                /*while($resId=$askId->fetch())
+                                $_SESSION['userLogin']=$_POST['login'];
+                                while($resId=$askId->fetch())
                                 {
-                                $_SESSION['userId']=$resId;
-                                }*/
+                                    $_SESSION['userId']=$resId['id'];
+                                }
+                                while($resPic=$askPic->fetch())
+                                {
+                                    $_SESSION['userPic']=$resPic['picture'];
+                                }
                             }
                     
             }

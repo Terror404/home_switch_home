@@ -1,6 +1,7 @@
 <?php
 
 echo'<link rel="stylesheet" href="../view/css/hsh_style.css">';
+echo'<link rel="stylesheet" href="../view/css/bloc_co.css" >';
 
 $page=$_GET['page'];
 
