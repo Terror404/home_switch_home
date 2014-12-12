@@ -22,7 +22,6 @@
                                         <option value="auvergne">Auvergne
                                         <option value="basse_normandie">Basse-Normandie
                                         <option value="bretagne">Bretagne
-                                        <option value="bretagne">Bretagne
                                         <option value="champagne_ardenne">Champagne-Ardenne
                                         <option value="corse">Corse
                                         <option value="franche_comté">Franche-Comté

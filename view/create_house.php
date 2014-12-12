@@ -8,7 +8,7 @@
     
     <body>
                 <section class="RightCol">
-                    <form action="create_hc_modele.php" method="post" id="create_house" enctype="multipart/form-data" onSubmit="">
+                    <form action="../modele/add_house.php" method="post" id="create_house" enctype="multipart/form-data" onSubmit="">
                         <article class='title'> <!--Insert the title-->
                             <input type="text" name="title" placeholder="titre de la maison" onblur="verifform(this)"/>
                         </article>
@@ -32,32 +32,29 @@
                                 <!--Region-->
                                 <label for="region">Région :</label>
                                 <select name="region" id="region"> <!--champ de régions du bon coin muhahaha -->
-                                        <option value="01" >Alsace</option>
-                                        <option value="02" >Aquitaine</option>
-                                        <option value="03" >Auvergne</option>
-                                        <option value="04" >Basse-Normandie</option>
-                                        <option value="05" >Bourgogne</option>
-                                        <option value="06" >Bretagne</option>
-                                        <option value="07" >Centre</option>
-                                        <option value="08" >Champagne-Ardenne</option>
-                                        <option value="09" >Corse</option>
-                                        <option value="10" >Franche-Comté</option>
-                                        <option value="11" >Haute-Normandie</option>
-                                        <option value="12" >Ile-de-France</option>
-                                        <option value="13" >Languedoc-Roussillon</option>
-                                        <option value="14" >Limousin</option>
-                                        <option value="15" >Lorraine</option>
-                                        <option value="16" >Midi-Pyrénées</option>
-                                        <option value="17" >Nord-Pas-de-Calais</option>
-                                        <option value="18" >Pays de la Loire</option>
-                                        <option value="19" >Picardie</option>
-                                        <option value="20" >Poitou-Charentes</option>
-                                        <option value="21" >Provence-Alpes-Côte d'Azur</option>
-                                        <option value="22" >Rhône-Alpes</option>
-                                        <option value="23" >Guadeloupe</option>
-                                        <option value="24" >Martinique</option>
-                                        <option value="25" >Guyane</option>
-                                        <option value="26" >Réunion</option>
+                                        <option value="alsace">Alsace
+                                        <option value="aquitaine">Aquitaine
+                                        <option value="auvergne">Auvergne
+                                        <option value="basse_normandie">Basse-Normandie
+                                        <option value="bretagne">Bretagne
+                                        <option value="champagne_ardenne">Champagne-Ardenne
+                                        <option value="corse">Corse
+                                        <option value="franche_comté">Franche-Comté
+                                        <option value="guadeloupe">Guadeloupe
+                                        <option value="guyane">Guyane
+                                        <option value="haute_normandie">Haute-Normandie
+                                        <option value="idf">Île-de-France
+                                        <option value="la_reunion">La Réunion
+                                        <option value="languedoc_roussillon">Languedoc-Roussillon
+                                        <option value="lorraine">Lorraine
+                                        <option value="martinique">Martinique
+                                        <option value="mayotte">Mayotte
+                                        <option value="midi_pyrenees">Midi-Pyrénées
+                                        <option value="NPdC">Nord-Pas-de-Calais
+                                        <option value="PdlL">Pays de la Loire
+                                        <option value="picardie">Picardie
+                                        <option value="poitou_charentes">Poitou Charentes
+                                        <option value="PACA">Provence Alpes Côte d'Azur
                                  </select><br/>
                                 
                                 <!--Town-->
@@ -115,7 +112,7 @@
 		
                     <section class="LeftCol">
 			<article class="RapProf"> <!--Rappel du profil du membre-->
-			<?php   include '../ProfileReminder/profile_reminder_controleur.php'; ?>
+			<?php   include '../view/profile_reminder.php'; ?>
 			</article>
 			
                     </section>

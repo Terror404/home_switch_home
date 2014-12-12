@@ -82,12 +82,8 @@ footer
 
 nav
 {
-	width: 100%;
+	width: 98%;
         height: 28px;   
-        float:left;
-        z-index:3;
-        background-color :white;
-
         
         z-index:1000;
         margin-left:auto;
@@ -97,7 +93,6 @@ nav
         border-bottom:solid 1px;
         border-radius:0 0 17px 17px;
         overflow: visible;
-
         
         
 }
@@ -141,6 +136,7 @@ nav
 .footerLink
 {
     text-decoration: none;
+    
 }
 
 /* Petit guide pour pas se paumer dans tous les niveaux :

@@ -17,7 +17,7 @@ if(isset($_POST) AND $_POST['login']!="" AND $_POST['password']!="")
                             }
                         else 
                             {
-                                $_SESSION['userLogin']=$_POST['login'];
+                                    $_SESSION['userLogin']=$_POST['login'];
                                 while($resId=$askId->fetch())
                                 {
                                     $_SESSION['userId']=$resId['id'];

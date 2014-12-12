@@ -16,7 +16,7 @@
 
                 include("../view/nav.php");
                 
-                    include("../view/co_bloc.php");
+                    include("../controler/co_bloc.php");
 
                 
             if($_GET['page']=='home' AND isset($_GET['page']))
@@ -101,6 +101,13 @@
                         
                         require("../modele/add_message.php"); //modele
                         include("../view/confirm_add_message.php");//vue
+                    }
+                    elseif($_GET['page']=='createHouse')
+                    {
+                        //require("../modele/add_house.php"); //modele
+                        include("../view/create_house.php"); //view
+                        include("../view/profile_reminder.php");
+                        include("../modele/search_profile_reminder.php");
                     }
                     
                 }
