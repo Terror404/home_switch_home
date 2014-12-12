@@ -89,7 +89,7 @@ $reqBase='SELECT DISTINCT ad.title, ad.date_begin, ad.length, house.pictures, ho
  
     }
     
-    echo $_POST['garden'];
+    
     fctLayout('garden');
     echo $ask.'<br/><br/>';
     
@@ -155,6 +155,22 @@ $reqBase='SELECT DISTINCT ad.title, ad.date_begin, ad.length, house.pictures, ho
     } catch (PDOException $e){
         $e->getMessage();
     }
+    
+    //test d'algorythme de recherche
+    $viewPriority=$DB->prepare('CREATE VIEW viewPriority AS SELECT criteria_house.id');
+    
+    while($resData=$askResearch->fetch())
+{
+        $askPriority=$DB->prepare('SELECT COUNT ad_id.id FROM criteria_house WHERE ad_id.id='.$resData['id']);
+        $askPriority->execute();
+        
+}
+    
+    
+    
+    
+    
+    
     
     
 

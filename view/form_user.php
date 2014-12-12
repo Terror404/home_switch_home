@@ -1,9 +1,26 @@
-
+<script language="JavaScript">
+    function validation(f) {
+  if (f.pass.value == '' || f.repass.value == ''|| f.mail.value == ''|| f.pseudo.value == '') {
+    alert('Tous les champs obligatoires ne sont pas remplis');
+    f.pass.focus();
+    return false;
+    }
+  else if (f.pass.value != f.repass.value) {
+    alert('Ce ne sont pas les mêmes mots de passe!');
+    f.pass.focus();
+    return false;
+    }
+  else if (f.pass.value == f.repass.value) {
+    return true;
+    }
+  else {
+    f.pass.focus();
+    return false;
+    }
+  }
+</script>
 		
-		
-	
-
-		<form method="post" action="content.php?page=confirmAddUser">
+		<form method="post" action="content.php?page=confirmAddUser" onsubmit="return validation(this)">
 			<p>
 				<label>Nom</label> : <input type="text" name="nom" id="Nom" placeholder="Ex:Hasselhof" />
 			</p>
@@ -15,13 +32,13 @@
 		
 		
 			<p>
-				<label>Date de naissance</label> : <input type="date" name="date" id="Date de Naissance" placeholder="JJ/MM/AAAA" />
+				<label>Date de naissance</label> : <input type="date" name="date" id="DatedeNaissance" placeholder="JJ/MM/AAAA" />
 			</p>
 		
 
 		
 			<p>
-				<label>Adresse e-mail*</label> : <input type="email" name="mail" id="Adresse e-mail" placeholder="Ex:dhasselhof@malibu.com" />
+				<label>Adresse e-mail*</label> : <input type="email" name="mail" id="Adressemail" placeholder="Ex:dhasselhof@malibu.com" />
 			</p>
 		
 
@@ -37,11 +54,7 @@
 				<label for="pseudo">Pseudo*</label>
 				<input type="text" name="pseudo" id="pseudo" placeholder="Ex:Chabadou" maxlenght="12" />
 			</p>
-		
-
-	<script src="formulaireinscription.js"></script>
-
-       
+                        
 			<p>
 				<label for="pass">Mot de passe*</label>
 				<input type="password" name="pass" id="pass" />
@@ -79,3 +92,4 @@
 		
 			<input type="reset" name="annuler" value="Annuler" />
 		</form>
+ 
