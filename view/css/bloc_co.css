@@ -4,7 +4,7 @@ border:solid 2px;
 background-color:#d8d9d7;
 height:60px;
 width: 10%;
-margin-top: 5%;
+
 border-radius:5px;
 float:right;
 }
@@ -15,7 +15,7 @@ border:solid 2px;
 border-radius:5px;
 height:120px;
 width:10%;
-margin-top:5%;
+
 background-color:#d8d9d7;
 float:right;
 }
@@ -35,7 +35,7 @@ text-align:center;
 border:solid 2px;
 height:150px;
 width:25%;
-margin-top:5%;
+
 background-color:#d8d9d7; 
 float:right;
 border-radius:5px;
@@ -59,4 +59,20 @@ display:inline-block;
 vertical-align: central;
 font-size:20px;
 font-weight:bold;
+}
+
+
+.Cobuttons , .champCo , .CoBloc3
+{
+    top:0;
+}
+
+aside
+{
+    height:50px;
+}
+
+.center
+{
+   margin:auto;
 }

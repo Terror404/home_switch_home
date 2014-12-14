@@ -9,7 +9,6 @@ include ('mailbox_toolbar.php');
 					<li><input type ="button" value="Enregister comme brouillon"/></li>
 					<li><input type ="submit" value="Annuler"/></li>
 					<li><input type ="reset" value="Supprimer"/></li>
-					<li><input type ="button" value="Joindre"/></li>
 				</ul>
 			</div>
 		
@@ -17,7 +16,7 @@ include ('mailbox_toolbar.php');
                             <form method=post action="../modele/add_message.php" class="form-horizontal">
 					<p>
 						<label> à:</label>
-						<input class= "champ" type="text" name="id_receiver"/>
+						<input class= "champ" type="text" name="login_receiver"/>
 							
 					
 					</p>

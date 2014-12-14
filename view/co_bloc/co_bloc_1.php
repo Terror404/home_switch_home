@@ -1,9 +1,9 @@
 <aside class="Cobuttons"> 
-    <div>
+    <div >
             <?php $idPage=$_GET['page'] ?>
             <form method='post' action='../controler/content.php?page=<?php echo $idPage ?>' class="co"> <!--Bouton connexion-->
-                <input type="hidden" name="blocConnexion" value="2" />
-                <input type="submit" value="Connexion" style="width:130px" />
+                <input type="hidden" name="blocConnexion" value="2" class="center" />
+                <input type="submit" value="Connexion" style="width:130px" class="center"/>
             </form>
 
             <form class="insc"> <!--Bouton inscription-->
