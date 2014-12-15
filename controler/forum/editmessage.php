@@ -1,7 +1,7 @@
 <?php
-require_once("isLoggedIn stub.php");
-require_once("../modele/pdoDatabaseRef.php");
-require_once("editmessage_model.php");
+require_once("../../modele/isLoggedIn stub.php");
+require_once("../../modele/pdoDatabaseRef.php");
+require_once("../../modele/forum/editmessage_model.php");
 
 if (isLoggedIn()) {
 	if (POST_IS_SET) {
@@ -9,27 +9,27 @@ if (isLoggedIn()) {
 			$postData = $postQuery->fetch();
 			$postQuery->closeCursor();
 			if ($postData.authorId == $_SESSION['userId']) {
-				include("editmessage_view.php");
+				include("../../view/forum/editmessage_view.php");
 			}
 			else {
 				$error = "Vous n'avez pas l'autorisation de modifier ce
 						message.";
-				include("error.php");
+				include("../../view/forum/error.php");
 			}
 		}
 		else {
 			$error = "Le message sélectionné n'existe pas.";
-			include("error.php");
+			include("../../view/forum/error.php");
 		}
 	}
 	else {
 		$error = "Pas de message précisé.";
-		include("error.php");
+		include("../../view/forum/error.php");
 	}
 }
 else {
 	$error = "Vous devez être connecté pour modifier un message.";
-	include("error.php");
+	include("../../view/forum/error.php");
 }
 
 ?>
