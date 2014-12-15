@@ -74,4 +74,17 @@
         }
     ?>
 </div>
+<div class="dest">
+    <h2>Les destinations où je souhaiterais me rendre :</h2>
+    <?php
+        while($resProfWant=$askProfWant->fetch())
+        {
+            echo $resProfWant['wanted_dest'];
+        }
+    ?>
+</div>
+<div class="Rate">
+    
+</div>
+     
     
