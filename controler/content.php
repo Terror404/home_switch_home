@@ -203,6 +203,36 @@
                         require("../modele/read_my_msg.php"); //modele
                         include("../view/mailbox_read_message.php"); //view
                     }
+                    
+                    elseif ($_GET['page'] == 'forumIndex')
+                    {
+                            include("./forum/index.php");
+                    }
+                    elseif ($_GET['page'] == 'editPost')
+                    {
+                            include("./forum/editmessage.php");
+                    }
+                    elseif ($_GET['page'] == 'addPost')
+                    {
+                            include("./forum/newmessage.php");
+                    }
+                    elseif ($_GET['page'] == 'addTopic')
+                    {
+                            include("./forum/newtopic.php");
+                    }
+                    elseif ($_GET['page'] == 'showForum')
+                    {
+                            include("./forum/showcategory.php");
+                    }
+                    elseif ($_GET['page'] == 'showTopic')
+                    {
+                            include("./forum/showtopic.php");
+                    }
+                    
+                    
+                    
+                    
+                    
                 }
                 
                    
