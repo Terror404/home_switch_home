@@ -37,7 +37,7 @@ if (isset($page) AND $page!='')
                     }
                     elseif( $_GET['page']=='my_mp')
                     {
-                        
+                        echo'<link rel="stylesheet" type="text/css" href="../view/css/mailbox_style.css">';
                     }
                     elseif( $_GET['page']== 'forum_index')
                     {
@@ -54,6 +54,18 @@ if (isset($page) AND $page!='')
                     elseif( $_GET['page']=='confirmAddMsg')
                     {
                        echo'<link rel="stylesheet" type="text/css" href="../view/css/mailbox_style.css">';
+                    }
+                    elseif( $_GET['page']=='readSentMsg')
+                    {
+                        echo'<link rel="stylesheet" type="text/css" href="../view/css/mailbox_style.css">';
+                    }
+                    elseif( $_GET['page']=='readMsg')
+                    {
+                        echo'<link rel="stylesheet" type="text/css" href="../view/css/mailbox_style.css">';
+                    }
+                    elseif( $_GET['page']=='SentMsg')
+                    {
+                        echo'<link rel="stylesheet" type="text/css" href="../view/css/mailbox_style.css">';
                     }
                     
     }
