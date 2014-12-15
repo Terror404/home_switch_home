@@ -31,6 +31,8 @@ body
     background-size:100%;
     //background-image: url("pictures/logo.png");
     top:250px;
+    min-height: 100%;
+    padding-bottom: 30px;
     
     
 }
