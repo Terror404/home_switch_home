@@ -15,3 +15,7 @@ $askProfDate->execute(array('id'=>$_GET['userId']));
 $askProfDesc = $DB->prepare('SELECT description FROM user WHERE id=:id');
 $askProfDesc->execute(array('id'=>$_GET['userId']));
 ?>
+<?php
+$askProfWant = $DB->prepare('SELECT wanted_dest FROM user WHERE id=:id');
+$askProfWant->execute(array('id'=>$_GET['userId']));
+?>
