@@ -15,7 +15,7 @@ include ('mailbox_toolbar.php');
                             <form method=post action="../modele/add_message.php" class="form-horizontal">
 					<p>
 						<label> à:</label>
-						<input class= "champ" type="text" name="login_receiver"/>
+						<input class= "champ" type="text" name="id_receiver"/>
 							
 					
 					</p>
