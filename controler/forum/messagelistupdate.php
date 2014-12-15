@@ -49,7 +49,6 @@ if (
 				WHERE	user.id = post.id_user
 						AND post.id = {$_GET['p']}
 			");
-                                                
 			if ($postQuery->rowCount() != 0) {
 				$postData = $postQuery->fetch();
 				if ($postData['authorId'] == $_SESSION['userId']) {
@@ -70,7 +69,7 @@ if (
 			$successfullyPostedMessage = false;
 			$reasonForPostFailure = "Pas de message précisé.";
 		}
-                }
+	}
 	else {
 		$successfullyPostedMessage = false;
 		$reasonForPostFailure = "Vous n'êtes pas identifié.";

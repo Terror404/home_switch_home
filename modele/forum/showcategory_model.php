@@ -27,4 +27,12 @@ if (CATEGORY_IS_SET) {
 	$categoryInfoQuery->closeCursor();
 }
 
+define("ADDING_NEW_TOPIC", (isset($_POST['openingPost']))
+    AND ($_POST['openingPost'] != "")
+    AND ($_POST['openingPost'] != null)
+    AND (isset($_POST['topicTitle']))
+    AND ($_POST['topicTitle'] != "")
+    AND ($_POST['topicTitle'] != null)
+)
+
 ?>

@@ -6,7 +6,7 @@ try
 }
 catch (exception $e)
 {
-	die($e->getMessage());
+	die('Erreur'.$e->getMessage());
 }
 
 ?>
