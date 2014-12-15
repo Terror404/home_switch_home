@@ -3,7 +3,7 @@
 
 <ul class="linkBlockList">
 	<li class="linkBlockElement"><a class="linkBlock" href="../controler/content.php?page=home" >Accueil</a></li>
-	<li class="linkBlockElement"><a class="linkBlock" href="../controler/content.php?page=news" >Forum</a></li>
+	<li class="linkBlockElement"><a class="linkBlock" href="../controler/content.php?page=forumIndex" >Forum</a></li>
 	<li class="linkBlockElement"><a class="linkBlock" href="../controler/content.php?page=research" >Recherche</a></li>
 	<li class="subMenuDisplayer">
 		<a class="linkBlock" href="#myaccount">Mon Compte</a>
