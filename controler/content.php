@@ -186,12 +186,13 @@
                     
                     }
                     
-                    //Messages which have been sent
+                    // list of Messages which have been sent
                      elseif($_GET['page']=='sentMsg')
                     {
                         require("../modele/search_sent_msg.php"); //modele
                         include("../view/mailbox_sent_messages.php"); //view
                     }
+                    // read a message from received messages
                     elseif($_GET['page']=='readMsg')
                     {
                         require("../modele/read_my_msg.php"); //modele
@@ -223,7 +224,12 @@
                             include("./forum/showtopic.php");
                     }
                     
-                    
+                    // read a message from received messages
+                    elseif($_GET['page']=='readSentMsg')
+                    {
+                        require("../modele/read_sent_msg.php"); //modele
+                        include("../view/mailbox_read_sent_message.php"); //view
+                    }
                     
                     
                     
