@@ -54,26 +54,26 @@
                                 ?>
                             </p>
                             <div class='otherI'>
-                            <h3>Localisation : </h3>
+                            <br/><h3>Localisation : </h3>
                             Region : 
                                 <?php 
                                     while ($resHregion=$askHregion->fetch())
                                         {
-                                            echo $resHregion['name'];
+                                            echo $resHregion['real_name'];
                                         }
                                 ?><br/>
                             Ville : 
                                 <?php
                                     while ($resHtown=$askHtown->fetch())
                                         {
-                                            echo $resHtown['location_detail'];
+                                            echo $resHtown['ville_nom_reel'];
                                         }
                                 ?><br/>
                             Code postal: 
                                 <?php
                                     while ($resHzip=$askHzip->fetch())
                                         {
-                                            echo $resHzip['zip'];
+                                            echo $resHzip['ville_code_postal'];
                                         }
                                 ?><br/>
                             Adresse :
@@ -84,26 +84,27 @@
                                         }
                                 ?>
                             
-                            <h3>Informations sur le logement</h3>
+                            <br/><br/><h3>Informations sur le logement</h3>
                             Type : 
                                 <?php 
                                     while ($resHtype=$askHtype->fetch())
                                         {
-                                            echo $resHtype['type'];
+                                            echo $resHtype['house_type'];
                                         }
                                 ?><br/>
                             Capacité :
                                 <?php 
-                                    while($resHcap=$askHcap->fetch())
+                                    while($resHcapacity=$askHcapacity->fetch())
                                         {
-                                            echo $resHcap['capacity'];
+                                        
+                                            echo $resHcapacity['nbr_people'];?> personne(s)<?php
                                         }
                                 ?><br/>
                             Nombre de chambre : 
                                 <?php
-                                    while($resHnb=$askHnb->fetch())
+                                    while($resHbrnb=$askHbrnb->fetch())
                                         {
-                                            echo $resHnb[''];
+                                            echo $resHbrnb['nbr_room'];?> chambre(s)<?php
                                         }
                                 ?><br/>
                             Aménagements : 

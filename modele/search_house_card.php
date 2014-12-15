@@ -54,14 +54,45 @@
     
     <!--Get the region-->
     <?php 
-        $askHregion=$bdd->prepare('SELECT name FROM area WHERE id=(SELECT id_area FROM house WHERE id=:idhouse)');
+        $askHregion=$bdd->prepare('SELECT real_name FROM area WHERE id=(SELECT id_area FROM house WHERE id=:idhouse)');
             $askHregion->execute(array('idhouse'=>$_GET['id']));
     ?>
     
     <!--Get the town-->
     <?php
-        $askHtown=$bdd->prepare('SELECT location_detail FROM house WHERE id=:idhouse');
+        $askHtown=$bdd->prepare('SELECT ville_nom_reel FROM villes_france_free WHERE ville_id=(SELECT id_town FROM house WHERE id=:idhouse)');
             $askHtown->execute(array('idhouse'=>$_GET['id']));
+       
+    ?>
+
+    <!--Get the zipcode-->
+    <?php
+        $askHzip=$bdd->prepare('SELECT ville_code_postal FROM villes_france_free WHERE ville_id=(SELECT id_town FROM house WHERE id=:idhouse)');
+            $askHzip->execute(array('idhouse'=>$_GET['id']));
+    ?>
+
+    <!--Get the adress-->
+    <?php
+        $askHaddress=$bdd->prepare('SELECT address FROM house WHERE id=:idhouse');
+            $askHaddress->execute(array('idhouse'=>$_GET['id']));
+    ?>
+
+    <!--Get the type-->
+    <?php 
+        $askHtype=$bdd->prepare('SELECT house_type FROM house WHERE id=:idhouse');
+            $askHtype->execute(array('idhouse'=>$_GET['id']));
+    ?>
+    
+    <!--Get the capacity-->
+    <?php
+        $askHcapacity=$bdd->prepare('SELECT nbr_people FROM house WHERE id=:idhouse');
+            $askHcapacity->execute(array('idhouse'=>$_GET['id']));
+    ?>
+
+    <!--Get the number of bedrooms-->
+    <?php
+        $askHbrnb=$bdd->prepare('SELECT nbr_room FROM house WHERE id=:idhouse');
+            $askHbrnb->execute(array('idhouse'=>$_GET['id']));
     ?>
         
         

@@ -2,7 +2,7 @@
 // POSITIONNING OF THE BLOCKS 
 
 
-div#resultSearch ,div#titleAd ,div#descriptionHouse ,div#datesAd ,div#picturesAd
+div#resultSearch ,div#adTitle ,div#descriptionHouse ,div#datesAd ,div#picturesAd
 {
    display: block;
    text-align: center;

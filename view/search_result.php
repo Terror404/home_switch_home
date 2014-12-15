@@ -3,7 +3,7 @@ while($resSearch=$askPrioritySearch->fetch())
 {
  ?>  
 <div id="resultSearch">
-    <div class="titleAd"> 
+    <div id="adTitle"> 
         <?php echo $resSearch['title']; ?>
     </div>
     <div id="datesAd">

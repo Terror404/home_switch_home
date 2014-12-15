@@ -10,21 +10,28 @@
 	<body>
             
         
-    
+            <header>
+            <?php
+            include("../view/header.php");
+            
+            include("../controler/co_bloc.php");
+            
+            ?>
+                
+            </header>
             <?php 
-             include("../view/header.php"); 
 
                 include("../view/nav.php");
                 
-                    include("../controler/co_bloc.php");
-
                 
-            if($_GET['page']=='home' AND isset($_GET['page']))
+
+                if($_GET['page']=='home' AND isset($_GET['page']))
                 
                     {
                         include("../view/home.php");
                         
                     } 
+            
             ?>
             <div class="content">
                 
@@ -49,7 +56,7 @@
                     elseif( $_GET['page']=='myProfile')
                     {
                         require("../modele/search_my_profile.php"); //modele
-                        include("../view/my_profile.php");//vue
+                        include("../view/my_profil.php");//vue
                         
                     }
                     elseif( $_GET['page']== 'my_research')
@@ -59,8 +66,8 @@
                     }
                     elseif( $_GET['page']== 'my_houses')
                     {
-                        include("../view/my_houses.php");//vue
-                        include("../modele/search_my_houses.php"); //modele
+                        require("../modele/search_my_houses.php"); //modele
+                        include("../view/my_houses.php");//vue                       
                     }
                     elseif( $_GET['page']== 'my_ads')
                     {
@@ -124,6 +131,7 @@
                     elseif( $_GET['page']=='newMsg')
                     {
                         include("../view/new_message_form.php");//vue
+                        require("../modele/add_message.php"); // modele
                     }
                     
                     //confirm the sending of the new message
@@ -132,11 +140,12 @@
                     {
                         
                         require("../modele/add_message.php"); //modele
-                        include("../view/confirm_add_message.php");//vue
+                        include("../view/confirm_sent_message.php");//vue
                     }
+                   
                     
                                     
-                   
+                    //Add a new house
                     elseif($_GET['page']=='createHouse')
                     {   
                         if(!isset($_SESSION['userId']))
@@ -150,18 +159,16 @@
                         include("../view/profile_reminder.php");
                         }
                     }
+                    
+                    //House card
                     elseif($_GET['page']=='houseCard')
                     {
                         include("../modele/search_house_card.php");
-                        if(!isset($_SESSION['userId']) AND $_SESSION['userId']!==$askIdOwner)   // FAUX A REFAIRE !!!!
-                        {
-                            include("../view/house_card.php");
-                        }
-                        else
-                        {
-                            include "../view/modify_hc.php";
-                        }    
+                        include("../view/house_card.php");
                     }
+                    
+                    
+                    //Add an ad
                     elseif($_GET['page']=='createAd')
                     {
                         if(!isset($_SESSION['userId']))
@@ -176,7 +183,56 @@
                             include("../view/profile_reminder.php");
                             
                         }
+                    
                     }
+                    
+                    // list of Messages which have been sent
+                     elseif($_GET['page']=='sentMsg')
+                    {
+                        require("../modele/search_sent_msg.php"); //modele
+                        include("../view/mailbox_sent_messages.php"); //view
+                    }
+                    // read a message from received messages
+                    elseif($_GET['page']=='readMsg')
+                    {
+                        require("../modele/read_my_msg.php"); //modele
+                        include("../view/mailbox_read_message.php"); //view
+                    }
+                    
+                    elseif ($_GET['page'] == 'forumIndex')
+                    {
+                            include("./forum/index.php");
+                    }
+                    elseif ($_GET['page'] == 'editPost')
+                    {
+                            include("./forum/editmessage.php");
+                    }
+                    elseif ($_GET['page'] == 'addPost')
+                    {
+                            include("./forum/newmessage.php");
+                    }
+                    elseif ($_GET['page'] == 'addTopic')
+                    {
+                            include("./forum/newtopic.php");
+                    }
+                    elseif ($_GET['page'] == 'showForum')
+                    {
+                            include("./forum/showcategory.php");
+                    }
+                    elseif ($_GET['page'] == 'showTopic')
+                    {
+                            include("./forum/showtopic.php");
+                    }
+                    
+                    // read a message from received messages
+                    elseif($_GET['page']=='readSentMsg')
+                    {
+                        require("../modele/read_sent_msg.php"); //modele
+                        include("../view/mailbox_read_sent_message.php"); //view
+                    }
+                    
+                    
+                    
                 }
                 
                    

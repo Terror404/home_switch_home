@@ -1,5 +1,3 @@
-
-
 <?php   /*Accès à la bdd*/
             try 
                 {
@@ -11,8 +9,8 @@
                 }
 ?>
 
-<?php   /* récupère les messages reçus*/
-    $askReceivedmsg=$DB->prepare("SELECT id, id_author, title, date,text FROM messages WHERE id_receiver=:userId");
-        $askReceivedmsg->execute(array('userId'=>$_SESSION['userId']));
+<?php   /* récupère le message reçu sélectionné*/
+    $askReceivedmsg=$DB->prepare("SELECT id, id_author, title, date,text FROM messages WHERE id_receiver=:userId AND id=:id_msg");
+        $askReceivedmsg->execute(array('userId'=>$_SESSION['userId'],
+                                        'id_msg'=> $_GET['id']));
 ?>
-

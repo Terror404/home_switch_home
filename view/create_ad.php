@@ -52,34 +52,71 @@
             <?php
                             }
             ?>
-        </p>
+        </p><br/>
         <div class='otherI'>
         <h3>Localisation : </h3>
         Region : 
             <?php 
                 while ($resHregion=$askHregion->fetch())
                     {
-                        echo $resHregion['name'];
+                        echo $resHregion['real_name'];
                     }
             ?><br/>
         Ville : 
             <?php
                 while ($resHtown=$askHtown->fetch())
                     {
-                        echo $resHtown['location_detail'];
+                        echo $resHtown['ville_nom_reel'];
                     }
             ?><br/>
+        Code postal: 
+            <?php
+                while ($resHzip=$askHzip->fetch())
+                    {
+                        echo $resHzip['ville_code_postal'];
+                    }
+            ?><br/>
+        Adresse :
+            <?php
+                while ($resHaddress=$askHaddress->fetch())
+                    {
+                        echo $resHaddress['address'];
+                    }
+            ?>
+
+        <br/><br/><h3>Informations sur le logement</h3>
+        Type : 
+            <?php 
+                while ($resHtype=$askHtype->fetch())
+                    {
+                        echo $resHtype['house_type'];
+                    }
+            ?><br/>
+        Capacité :
+            <?php 
+                while($resHcapacity=$askHcapacity->fetch())
+                    {
+
+                        echo $resHcapacity['nbr_people'];?> personne(s)<?php
+                    }
+            ?><br/>
+        Nombre de chambre : 
+            <?php
+                while($resHbrnb=$askHbrnb->fetch())
+                    {
+                        echo $resHbrnb['nbr_room'];?> chambre(s)<?php
+                    }
+            ?><br/><br/><br/>
         
     </div>
     </article>
     <article class="createAd">
-        <label for="create_ad">Créer son annonce</label>
+        <h3>Créer son annonce</h3>
         <form method="POST" action="../modele/add_ad.php" id="create_ad" >
             Titre de l'annonce :<input type="text" name="title_ad"/><br/>
             Date de début :<input type="date" name="date_begin" /><br/>
             Date de fin :<input type="date" name="date_end" /><br/>
             <!--Send the house id--> <input type="hidden" name ="id_house" value="$_GET['id']"/>
-            Critères ??
             <input type="submit" value="Créer l'annonce"/>
             
         </form>

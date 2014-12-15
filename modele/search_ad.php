@@ -161,6 +161,7 @@ $reqBase='SELECT DISTINCT ad.title, ad.date_begin, ad.length, house.description 
     
     //test d'algorythme de recherche
 
+
     
     while($resData=$askResearch->fetch())
 {
