@@ -27,7 +27,7 @@ body
     margin-left:auto;
     margin-right:auto;
     margin-bottom: 400px;
-    height:1000px;
+    
     background-size:100%;
     //background-image: url("pictures/logo.png");
     top:250px;
@@ -39,15 +39,17 @@ body
 
 .headerP
 {
-        width:50%;
+        width:100%;
         height: 100%;
-        background-size: cover;
+        
         
         font-size:550%;
         
         color:#0b2d92;
         background-color:white;
-        margin-right:0;
+        position:relative;
+        margin-left:3%;
+        
         
         
         
@@ -59,9 +61,6 @@ header
 	width: 100%;
         height: 5%;
 	background-color:white;
-        
-        min-width:1280px;
-        display:block;
         font-family:"GeosansLight";
 
 }
@@ -85,17 +84,16 @@ footer
 
 nav
 {
-	width: 98%;
+	width: 100%;
         height: 28px;   
         
-        z-index:1000;
-        margin-left:auto;
-        margin-right:auto;       
+        z-index:1000;       
         margin-bottom: 1px; 
         min-width:1280px;
         border-bottom:solid 1px;
-        border-radius:0 0 17px 17px;
         overflow: visible;
+        
+        
         
         
 }

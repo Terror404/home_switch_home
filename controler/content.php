@@ -66,8 +66,8 @@
                     }
                     elseif( $_GET['page']== 'my_houses')
                     {
-                        include("../view/my_houses.php");//vue
-                        include("../modele/search_my_houses.php"); //modele
+                        require("../modele/search_my_houses.php"); //modele
+                        include("../view/my_houses.php");//vue                       
                     }
                     elseif( $_GET['page']== 'my_ads')
                     {
