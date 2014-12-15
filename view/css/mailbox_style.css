@@ -1,8 +1,13 @@
+.mailboxtoolbar, .mailboxtable 
+{
+display:inline-block;
+vertical-align :top;
+}
 .mailboxtoolbar
 {
     padding : 2%;
     margin : 1%;
-    background-color:#00BCE0;
+    background-color:#19CE25;
     width : 10%;
     
     font-family:"GeosansLight";
@@ -13,10 +18,41 @@
     border-radius: 10px;
 }
 
+table 
+{ 
+    font-family:"GeosansLight";
+    width: 380%;
+    border-collapse: collapse;
+    font-size : 120%;
+}
 table, th, td {
    border: 1px solid black;
-   border-collapse: collapse;
+   
 } 
+
+th
+{
+   background-color:#19CE25;
+   height: 40px; 
+}
+td 
+{
+    padding: 3px;
+    background-color : #66E16E;
+}
+
+caption
+{
+    padding: 10px;
+    background-color:#19CE25;
+    border-radius: 10px;
+    margin: 1%;
+    height : 30px;
+    
+    font-size : 150%;
+    text-align : left;
+}
+
 
 .newmsg{
     width: 100%;
