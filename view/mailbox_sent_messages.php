@@ -21,7 +21,7 @@ require("../modele/search_my_mp.php");
                         <tr>
                                  <td> <?php echo $res_sent_msg['id_receiver'] ?> </td>
                                 <td> <!-- liens vers la page de lecture de message , et envoi son id pour pouvoir lire son contenu -->
-                                    <a href="content.php?page=readMsg&id=<?php echo $res_sent_msg['id'] ?>">
+                                    <a href="content.php?page=readSentMsg&id=<?php echo $res_sent_msg['id'] ?>">
                                          <?php echo $res_sent_msg['title'] ?>
                                     </a> 
                                 </td>
