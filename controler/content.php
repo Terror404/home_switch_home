@@ -124,6 +124,7 @@
                     elseif( $_GET['page']=='newMsg')
                     {
                         include("../view/new_message_form.php");//vue
+                        require("../modele/add_message.php"); // modele
                     }
                     
                     //confirm the sending of the new message
@@ -183,6 +184,12 @@
                             include("../view/profile_reminder.php");
                             
                         }
+                    
+                    }
+                     elseif($_GET['page']=='sentMsg')
+                    {
+                        require("../modele/search_sent_msg.php"); //modele
+                        include("../view/mailbox_sent_messages.php"); //view
                     }
                 }
                 
