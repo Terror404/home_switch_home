@@ -3,7 +3,7 @@
 border:solid 2px;
 background-color:#d8d9d7;
 height:60px;
-width: 10%;
+width: 15%;
 
 border-radius:5px;
 float:right;
@@ -13,8 +13,8 @@ float:right;
 {
 border:solid 2px;
 border-radius:5px;
-height:120px;
-width:10%;
+height:9%;
+width:15%;
 
 background-color:#d8d9d7;
 float:right;
@@ -28,6 +28,10 @@ text-align:center;
 .Cosub
 {
 text-align:center;
+position:absolute;
+bottom:0;
+left:0;
+
 }
 
 .CoBloc3
@@ -57,8 +61,10 @@ left:5%;
 
 .CoBlocLog
 {
-
-font-size:20px;
+display:block;
+margin-left:20%;
+margin-top: 3%;
+font-size:180%;
 font-weight:bold;
 }
 
@@ -80,10 +86,6 @@ aside
     height:50px;
 }
 
-/*.center
-{
-   margin:auto;
-}*/
 
 .quickMp
 {
@@ -103,4 +105,24 @@ aside
 .CoBloc3
 {
     width:30%;
+}
+.mdpo
+{
+    position:absolute;
+    bottom:0;
+    right:0;
+    font-size:80%;
+}
+
+#loginBlocCo, #passBlocCo
+{
+    margin-left:20%;
+    width:60%;
+   text-align:center;
+}
+.centerBlocCo
+{
+    width:50%;
+    margin-left:25%;
+    margin-top:3%;
 }

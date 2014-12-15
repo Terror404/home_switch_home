@@ -32,7 +32,7 @@
 	if ($topicList->rowCount() != 0) {
 		while ($topic = $topicList->fetch()) {
 			?>
-			<p><strong><a href='http://localhost/forum/showtopic.php?t=<?php echo $topic['id'] ?>'>
+                        <p><strong><a href="./../controler/content.php?page=showTopic&t=<?php echo $topic['id'] ?>">
 			<!--Topic gets stored in $_GET['t']-->
 			<?php echo $topic['title'] ?>
 			</a></strong><br/>Créé par <?php echo $topic['authorName'] ?> 
@@ -50,4 +50,4 @@
 ?>
 
 <br/><br/>
-<a href="newtopic.php?c=<?php echo CURRENT_CATEGORY ?>">Créer un nouveau sujet.</a>
+<a href="./../controler/content.php?page=addTopic&amp;c=<?php echo CURRENT_CATEGORY ?>">Créer un nouveau sujet.</a>
