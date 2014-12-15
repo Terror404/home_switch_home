@@ -6,12 +6,13 @@ include('mailbox_toolbar.php');
 require("../modele/search_my_mp.php");
 ?>
 
+<div class="mailboxtable">
 <table>
-                <caption> messages reçus </caption>
+                <caption> Messages Reçus </caption>
                         <tr>
-                                <th> auteur</th>
-                                <th> titre</th>
-                                <th> date d'envoi</th>
+                                <th> Auteur</th>
+                                <th> Titre</th>
+                                <th> Date d'envoi</th>
 
                         </tr>
     <?php       /* récupération et affichage des données*/
@@ -30,3 +31,4 @@ require("../modele/search_my_mp.php");
         }
 ?>
 </table>
+</div>

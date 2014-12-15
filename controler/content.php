@@ -84,11 +84,7 @@
                         include("../view/forum_index.php");//vue
                         include("../modele/search_forum_index.php"); //modele
                     }
-                    elseif( $_GET['page']=='topic')
-                    {
-                        include("../view/topic.php");//vue
-                        include("../modele/search_topic.php"); //modele
-                    }
+                    
                     elseif( $_GET['page']=='formUser')
                     {
                         include("../view/form_user.php");//vue
@@ -99,22 +95,22 @@
                         require("../modele/add_user.php"); //modele
                         include("../view/confirm_add_user.php");//vue
                     }
-                    elseif( $_GET['page']=='formUser')
+                    elseif( $_GET['page']=='formAd')
                     {
-                        include("../view/form_user.php");//vue
+                        include("../view/create_ad.php");//vue
                     }
-                    elseif( $_GET['page']=='confirmAddUser')
+                    elseif( $_GET['page']=='confirmAddAd')
                     {
                         
-                        require("../modele/add_user.php"); //modele
-                        include("../view/confirm_add_user.php");//vue
+                        require("../modele/add_ad.php"); //modele
+                        include("../view/confirm_add_ad.php");//vue
                     }
                     
                     // Add a house
                     
                     elseif( $_GET['page']=='formHouse')
                     {
-                        include("../view/form_house.php");//vue
+                        include("../view/create_house.php");//vue
                     }
                     
                     // Confirm the add of the house
