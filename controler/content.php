@@ -10,21 +10,28 @@
 	<body>
             
         
-    
-            <?php 
-             include("../view/header.php"); 
-
-                include("../view/nav.php");
-                
-                    include("../controler/co_bloc.php");
-
-                
+            <header>
+            <?php
+            include("../view/header.php");
+            
             if($_GET['page']=='home' AND isset($_GET['page']))
                 
                     {
                         include("../view/home.php");
                         
                     } 
+            
+            ?>
+                
+            </header>
+            <?php 
+
+                include("../view/nav.php");
+                
+                include("../controler/co_bloc.php");
+
+                
+            
             ?>
             <div class="content">
                 
