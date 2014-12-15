@@ -124,6 +124,7 @@
                     elseif( $_GET['page']=='newMsg')
                     {
                         include("../view/new_message_form.php");//vue
+                        require("../modele/add_message.php"); // modele
                     }
                     
                     //confirm the sending of the new message
@@ -133,6 +134,13 @@
                         
                         require("../modele/add_message.php"); //modele
                         include("../view/confirm_add_message.php");//vue
+                    }
+                    elseif($_GET['page']=='createHouse')
+                    {
+                        //require("../modele/add_house.php"); //modele
+                        include("../view/create_house.php"); //view
+                        include("../view/profile_reminder.php");
+                        include("../modele/search_profile_reminder.php");
                     }
                     
                                     
@@ -176,6 +184,12 @@
                             include("../view/profile_reminder.php");
                             
                         }
+                    
+                    }
+                     elseif($_GET['page']=='sentMsg')
+                    {
+                        require("../modele/search_sent_msg.php"); //modele
+                        include("../view/mailbox_sent_messages.php"); //view
                     }
                 }
                 
