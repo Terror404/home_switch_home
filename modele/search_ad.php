@@ -10,7 +10,9 @@ $reqBase='SELECT DISTINCT ad.title, ad.date_begin, ad.length, house.pictures, ho
                                      AND house.id=house_area.id_house 
                                      AND area.id=house_area.id_area 
                                      AND ad.id=ad_criteria.id_ad 
-                                     AND criteria.id=ad_criteria.id_criteria ';
+                                     AND criteria.id=ad_criteria.id_criteria
+                                     AND criteria_house.id=house_criteria_house.id_criteria_house
+                                     AND house.id=house_criteria_house.id_house';
    
 //creation of the query based on the existence of the criterias    
     
@@ -70,7 +72,7 @@ $reqBase='SELECT DISTINCT ad.title, ad.date_begin, ad.length, house.pictures, ho
     
     //layouts
    
-    $ask=$reqBase.$req; 
+    $ask='';
     
     
     
@@ -108,7 +110,7 @@ $reqBase='SELECT DISTINCT ad.title, ad.date_begin, ad.length, house.pictures, ho
     fctLayout('disabledAccess');
     
     
-    echo '<br/>'.$ask;
+    
     
     //on prend en compte les critères animaux.
     
@@ -118,21 +120,21 @@ $reqBase='SELECT DISTINCT ad.title, ad.date_begin, ad.length, house.pictures, ho
             
             if (isset($_POST['dog']) AND $_POST['dog']==='on')
             {
-                $req=$req.' AND criteria.name=\'allowed_dog\{';    
+                $ask=$ask.' AND criteria.name=\'allowed_dog\{';    
             }
             if (isset($_POST['cat']) AND $_POST['cat']==='on')
             {
-                $req=$req.' AND criteria.name=\'allowed_cat\'';    
+                $ask=$ask.' AND criteria.name=\'allowed_cat\'';    
             }
             if (isset($_POST['rats']) AND $_POST['rats']==='on')
             {
-                $req=$req.' AND criteria.name=\'allowed_rats\'';    
+                $ask=$ask.' AND criteria.name=\'allowed_rats\'';    
             }
             if (isset($_POST['other']) AND $_POST['other']==='on')
             {
-                $req=$req.' AND criteria.name=\'allowed_other\'';    
+                $ask=$ask.' AND criteria.name=\'allowed_other\'';    
             }
-            $ask= $ask.$req;
+            
         
         }
     elseif(isset($_POST['allowedAnimals']) AND $_POST['allowedAnimals']==='')
@@ -140,8 +142,9 @@ $reqBase='SELECT DISTINCT ad.title, ad.date_begin, ad.length, house.pictures, ho
         $ask=$ask.' AND criteria.name!=\'allowed_animals\'';
     }
     
+    $askFinal=$reqBase.$req.$ask;
+    echo $askFinal;
     
-    //echo $ask.'<br/>';
     //writing the query adding the result of the previous tests
     
    
@@ -149,7 +152,7 @@ $reqBase='SELECT DISTINCT ad.title, ad.date_begin, ad.length, house.pictures, ho
     
     
     try{
-        $askResearch = $DB->prepare($reqBase.$req);
+        $askResearch = $DB->prepare($askFinal);
         
         $askResearch->execute();
     } catch (PDOException $e){
@@ -157,6 +160,7 @@ $reqBase='SELECT DISTINCT ad.title, ad.date_begin, ad.length, house.pictures, ho
     }
     
     //test d'algorythme de recherche
+
     $viewPriority=$DB->prepare('CREATE VIEW viewPriority AS SELECT criteria_house.id');
     
     while($resData=$askResearch->fetch())
@@ -165,7 +169,38 @@ $reqBase='SELECT DISTINCT ad.title, ad.date_begin, ad.length, house.pictures, ho
         $askPriority->execute();
         
 }
+
+$viewSearch=$DB->prepare('CREATE VIEW viewSqlResearch AS SELECT DISTINCT ad.title, ad.date_begin, ad.length, house.pictures, house.rating, user.id 
+                                     FROM ad, house, house_area, area, ad_criteria, criteria, user , criteria_house , house_criteria_house 
+                                     WHERE ad.id_house= house.id 
+                                     AND house.id_user=user.id 
+                                     AND house.id=house_area.id_house 
+                                     AND area.id=house_area.id_area 
+                                     AND ad.id=ad_criteria.id_ad 
+                                     AND criteria.id=ad_criteria.id_criteria
+                                     AND criteria_house.id=house_criteria_house.id_criteria_house
+                                     AND house.id=house_criteria_house.id_house'.$req.$ask);
+    $viewSearch->execute;
     
+    while($resData=$askResearch->fetch())
+{
+        $askPriority=$DB->prepare('SELECT COUNT(house_criteria_house.id_criteria_house) AS priority
+                                     FROM house, criteria_house , house_criteria_house 
+                                     WHERE criteria_house.id=house_criteria_house.id_criteria_house
+                                     AND house.id=house_criteria_house.id_house
+                                     AND house.id='.$resData['id']);
+        $askPriority->execute();
+        $resPriority=$askPriority->fetch();
+        $priority=$resPriority['priority'];
+        $setPriority=$DB->prepare('UPDATE ad SET priority='.$priority.' WHERE ad.id='.$resData['id']);
+        
+        $setViewSearch=$DB->prepare('INSERT INTO viewSqlSearch');
+}
+        
+        
+        
+        
+        
     
     
     
