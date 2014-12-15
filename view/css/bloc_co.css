@@ -89,10 +89,18 @@ aside
 
 .quickMp
 {
-    width:10%;
-    bottom:0;
-    position:absolute;
+    width:15%;
+    
     right:0;
+    position:absolute;
+    top:0;
+    font-size: 100%;
+   
+ .blocCoAdd
+ {
+    top:0;
+    right:25%;
+ }
     
 }
 .sessionDestruct
