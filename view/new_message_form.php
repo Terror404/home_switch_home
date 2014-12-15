@@ -28,7 +28,7 @@ include ('mailbox_toolbar.php');
 						<textarea name="text"></textarea>
 					</p>
 					
-                                        <p><input class="button" type ="submit" value="Envoyer"/></p>
+                                        <p><input class="button" type ="submit" value="Envoyer"/></p>                                      
 				</form>
 			</div>
 		</section>
