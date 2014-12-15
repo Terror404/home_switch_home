@@ -63,6 +63,7 @@ if (
 			else {
 				$successfullyPostedMessage = false;
 				$reasonForPostFailure = "Le message précisé n'existe pas.";
+                        }
 		}
 		else {
 			$successfullyPostedMessage = false;
