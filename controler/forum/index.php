@@ -1,18 +1,19 @@
 <?php
 
-require_once("../../modele/pdoDatabaseRef.php");
-require_once("../../modele/forum/index_model.php");
+define("__ROOT__", dirname(dirname(dirname(__FILE__))));
+require_once(__ROOT__."/modele/pdoDatabaseRef.php");
+require_once(__ROOT__."/modele/forum/index_model.php");
 
 $categoryList = getFullCategoryList($DB);
 
 if ($categoryList != null)
 {
-	include("../../view/forum/index_view.php");
+	include(__ROOT__."/view/forum/index_view.php");
 }
 else
 {
 	$error = "Aucune catégorie trouvée.";
-	include("../../view/forum/error.php");
+	include(__ROOT__."/view/forum/error.php");
 }
 
 ?>
