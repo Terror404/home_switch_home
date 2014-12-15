@@ -6,7 +6,6 @@ include ('mailbox_toolbar.php');
 		<section class="newmsg"> 
 			<div class="navnewmgs">
 				<ul class="listehz">
-					<li><input type ="button" value="Enregister comme brouillon"/></li>
 					<li><input type ="submit" value="Annuler"/></li>
 					<li><input type ="reset" value="Supprimer"/></li>
 				</ul>

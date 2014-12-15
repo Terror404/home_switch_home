@@ -54,14 +54,15 @@
     
     <!--Get the region-->
     <?php 
-        $askHregion=$bdd->prepare('SELECT name FROM area WHERE id=(SELECT id_area FROM house WHERE id=:idhouse)');
+        $askHregion=$bdd->prepare('SELECT real_name FROM area WHERE id=(SELECT id_area FROM house WHERE id=:idhouse)');
             $askHregion->execute(array('idhouse'=>$_GET['id']));
     ?>
     
     <!--Get the town-->
     <?php
-        $askHtown=$bdd->prepare('SELECT location_detail FROM house WHERE id=:idhouse');
+        $askHtown=$bdd->prepare('SELECT ville_nom_reel FROM villes_france_free WHERE ville_id=(SELECT id_town FROM house WHERE id=:idhouse)');
             $askHtown->execute(array('idhouse'=>$_GET['id']));
+       
     ?>
         
         

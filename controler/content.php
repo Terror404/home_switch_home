@@ -133,7 +133,7 @@
                     {
                         
                         require("../modele/add_message.php"); //modele
-                        include("../view/confirm_add_message.php");//vue
+                        include("../view/confirm_sent_message.php");//vue
                     }
                     elseif($_GET['page']=='createHouse')
                     {
@@ -144,7 +144,7 @@
                     }
                     
                                     
-                   
+                    //Add a new house
                     elseif($_GET['page']=='createHouse')
                     {   
                         if(!isset($_SESSION['userId']))
@@ -158,18 +158,16 @@
                         include("../view/profile_reminder.php");
                         }
                     }
+                    
+                    //House card
                     elseif($_GET['page']=='houseCard')
                     {
                         include("../modele/search_house_card.php");
-                        if(!isset($_SESSION['userId']) AND $_SESSION['userId']!==$askIdOwner)   // FAUX A REFAIRE !!!!
-                        {
-                            include("../view/house_card.php");
-                        }
-                        else
-                        {
-                            include "../view/modify_hc.php";
-                        }    
+                        include("../view/house_card.php");
                     }
+                    
+                    
+                    //Add an ad
                     elseif($_GET['page']=='createAd')
                     {
                         if(!isset($_SESSION['userId']))
@@ -186,10 +184,17 @@
                         }
                     
                     }
+                    
+                    //Messages which have been sent
                      elseif($_GET['page']=='sentMsg')
                     {
                         require("../modele/search_sent_msg.php"); //modele
                         include("../view/mailbox_sent_messages.php"); //view
+                    }
+                    elseif($_GET['page']=='readMsg')
+                    {
+                        require("../modele/read_my_msg.php"); //modele
+                        include("../view/mailbox_read_message.php"); //view
                     }
                 }
                 
