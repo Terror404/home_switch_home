@@ -196,6 +196,11 @@
                         require("../modele/read_my_msg.php"); //modele
                         include("../view/mailbox_read_message.php"); //view
                     }
+                    elseif($_GET['page']=='readsentMsg')
+                    {
+                        require("../modele/read_sent_msg.php"); //modele
+                        include("../view/mailbox_read_sent_message.php"); //view
+                    }
                 }
                 
                    
