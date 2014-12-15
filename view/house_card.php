@@ -59,14 +59,14 @@
                                 <?php 
                                     while ($resHregion=$askHregion->fetch())
                                         {
-                                            echo $resHregion['name'];
+                                            echo $resHregion['real_name'];
                                         }
                                 ?><br/>
                             Ville : 
                                 <?php
                                     while ($resHtown=$askHtown->fetch())
                                         {
-                                            echo $resHtown['location_detail'];
+                                            echo $resHtown['ville_nom_reel'];
                                         }
                                 ?><br/>
                             Code postal: 

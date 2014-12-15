@@ -10,21 +10,28 @@
 	<body>
             
         
-    
+            <header>
+            <?php
+            include("../view/header.php");
+            
+            include("../controler/co_bloc.php");
+            
+            ?>
+                
+            </header>
             <?php 
-             include("../view/header.php"); 
 
                 include("../view/nav.php");
                 
-                    include("../controler/co_bloc.php");
-
                 
-            if($_GET['page']=='home' AND isset($_GET['page']))
+
+                if($_GET['page']=='home' AND isset($_GET['page']))
                 
                     {
                         include("../view/home.php");
                         
                     } 
+            
             ?>
             <div class="content">
                 
@@ -144,7 +151,7 @@
                     }
                     
                                     
-                   
+                    //Add a new house
                     elseif($_GET['page']=='createHouse')
                     {   
                         if(!isset($_SESSION['userId']))
@@ -158,18 +165,16 @@
                         include("../view/profile_reminder.php");
                         }
                     }
+                    
+                    //House card
                     elseif($_GET['page']=='houseCard')
                     {
                         include("../modele/search_house_card.php");
-                        if(!isset($_SESSION['userId']) AND $_SESSION['userId']!==$askIdOwner)   // FAUX A REFAIRE !!!!
-                        {
-                            include("../view/house_card.php");
-                        }
-                        else
-                        {
-                            include "../view/modify_hc.php";
-                        }    
+                        include("../view/house_card.php");
                     }
+                    
+                    
+                    //Add an ad
                     elseif($_GET['page']=='createAd')
                     {
                         if(!isset($_SESSION['userId']))
@@ -186,6 +191,8 @@
                         }
                     
                     }
+                    
+                    //Messages which have been sent
                      elseif($_GET['page']=='sentMsg')
                     {
                         require("../modele/search_sent_msg.php"); //modele
@@ -196,11 +203,36 @@
                         require("../modele/read_my_msg.php"); //modele
                         include("../view/mailbox_read_message.php"); //view
                     }
-                    elseif($_GET['page']=='readsentMsg')
+                    
+                    elseif ($_GET['page'] == 'forumIndex')
                     {
-                        require("../modele/read_sent_msg.php"); //modele
-                        include("../view/mailbox_read_sent_message.php"); //view
+                            include("./forum/index.php");
                     }
+                    elseif ($_GET['page'] == 'editPost')
+                    {
+                            include("./forum/editmessage.php");
+                    }
+                    elseif ($_GET['page'] == 'addPost')
+                    {
+                            include("./forum/newmessage.php");
+                    }
+                    elseif ($_GET['page'] == 'addTopic')
+                    {
+                            include("./forum/newtopic.php");
+                    }
+                    elseif ($_GET['page'] == 'showForum')
+                    {
+                            include("./forum/showcategory.php");
+                    }
+                    elseif ($_GET['page'] == 'showTopic')
+                    {
+                            include("./forum/showtopic.php");
+                    }
+                    
+                    
+                    
+                    
+                    
                 }
                 
                    
