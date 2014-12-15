@@ -142,13 +142,7 @@
                         require("../modele/add_message.php"); //modele
                         include("../view/confirm_sent_message.php");//vue
                     }
-                    elseif($_GET['page']=='createHouse')
-                    {
-                        //require("../modele/add_house.php"); //modele
-                        include("../view/create_house.php"); //view
-                        include("../view/profile_reminder.php");
-                        include("../modele/search_profile_reminder.php");
-                    }
+                   
                     
                                     
                     //Add a new house

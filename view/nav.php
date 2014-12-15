@@ -9,7 +9,8 @@
 		<a class="linkBlock" href="#myaccount">Mon Compte</a>
 		<ul class="subMenuBlockList">
 			<li><a class="subMenuLinkBlock" href="../controler/content.php?page=my_profil" >Mon profil</a></li>
-			<li><a class="subMenuLinkBlock" href="../controler/content.php?page=my_ads" >Mes annonces</a></li>                        
+			<li><a class="subMenuLinkBlock" href="../controler/content.php?page=my_ads" >Mes annonces</a></li>
+                        <li><a class="subMenuLinkBlock" href="../controler/content.php?page=my_houses" >Mes maisons</a></li>
 			<li><a class="subMenuLinkBlock" href="../controler/content.php?page=my_research" >Favoris</a></li>
 			<li><a class="subMenuLinkBlock" href="../controler/content.php?page=my_mp" >Messages privés</a></li>
 			<li><a class="subMenuLinkBlock" href="../controler/content.php?page=parameters" >Paramètres</a></li>

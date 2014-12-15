@@ -50,6 +50,7 @@ overflow:hidden;
 display:inline-block;
 padding-top:auto;
 padding-bottom:auto;
+float:left;
 }
 
 .CoBlocLog
@@ -89,4 +90,5 @@ aside
 .sessionDestruct
 {
     float:right;
+    top:0;
 }
