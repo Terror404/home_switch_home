@@ -1,7 +1,7 @@
 <script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
 <script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
 
-<form method="post" action="showcategory.php?c=<?php echo CURRENT_CATEGORY ?>">
+<form method="post" action="./../controler/content.php?page=showForum&amp;c=<?php echo CURRENT_CATEGORY ?>">
 	Entrez le nom de votre sujet :<br/>
 	<input type="text" name="topicTitle"><br/>
 	Entrez le texte de votre message :<br/>

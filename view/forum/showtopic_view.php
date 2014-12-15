@@ -47,7 +47,7 @@ $messageList->closeCursor();
 <br/><br/>
 <!-- (Quick) Answer part -->
 Entrez le texte de votre réponse :
-<form method="post" action="showtopic.php?t=<?php echo CURRENT_TOPIC ?>">
+<form method="post" action="./../controler/content.php?page=showTopic&amp;t=<?php echo CURRENT_TOPIC ?>">
 
 <textarea name="newMessage" rows="8" cols="50"></textarea><br/>
 <input type="submit" value="Envoyer">

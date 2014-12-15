@@ -9,4 +9,4 @@ Une erreur s'est produite :<br/>
 	}
 ?>
 <br/><br/>
-<a href="index.php">Retour à l'index</a>
+<a href="./../controler/content.php?page=forumIndex">Retour à l'index</a>
