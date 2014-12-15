@@ -133,7 +133,7 @@
                     {
                         
                         require("../modele/add_message.php"); //modele
-                        include("../view/confirm_add_message.php");//vue
+                        include("../view/confirm_sent_message.php");//vue
                     }
                     elseif($_GET['page']=='createHouse')
                     {
@@ -190,6 +190,11 @@
                     {
                         require("../modele/search_sent_msg.php"); //modele
                         include("../view/mailbox_sent_messages.php"); //view
+                    }
+                    elseif($_GET['page']=='readMsg')
+                    {
+                        require("../modele/read_my_msg.php"); //modele
+                        include("../view/mailbox_read_message.php"); //view
                     }
                 }
                 
