@@ -1,3 +1,3 @@
 
     
-    <p class="headerP">Home Switch Home</p>
+    <div class="headerP">Home Switch Home</div>
