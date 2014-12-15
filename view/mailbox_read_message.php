@@ -13,14 +13,10 @@ require("../modele/read_my_msg.php");
 </ul>
 
 <?php       /* récupération et affichage des données*/
-    while ($resReceivedmsg=$askReceivedmsg -> fetch ());
-    {?>
+    $resReceivedmsg=$askReceivedmsg -> fetch ()
+    ?>
 
             <p>de : <?php echo $resReceivedmsg ['id_author'] ?></p>
             <p>envoyé le :<?php echo $resReceivedmsg ['date'] ?></p>
             <p>titre: <?php echo $resReceivedmsg ['title'] ?></p>
             <p>message :<?php echo $resReceivedmsg ['text'] ?></p>
-
-<?php
-    }
-?>
