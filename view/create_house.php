@@ -1,13 +1,3 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Nouvelle maison</title>
-        <meta charset="utf-8" />
-        <link rel="stylesheet" href="../HouseCard/css_create_hc.css" />
-    </head>
-    
-    <body>
-                <?php echo $_SESSION['userId'] ?>
                 <section class="RightCol">
                     <form action="../modele/add_house.php" method="post" id="create_house" enctype="multipart/form-data" onSubmit="">
                         <article class='title'> <!--Insert the title-->
@@ -65,7 +55,7 @@
                                 
                                 <!--Town-->
                                 <label for="town"> Ville : </label>
-                                <input type="text" name="town" id="town"/><br/>
+                                <input type="text" name="town" id="town"/>Veuillez entrer le nom de la ville sans tirêts<br/>
                                 
                                 <!--address-->
                                 <label for='address'> Adresse :</label>
@@ -75,17 +65,16 @@
                                 <!--Type-->
                                 <label> Type de logement :</label>
                                 <select id="type" name="house_type"> <!-- champs des types de logements simplifiées: partenaires-europréens.fr-->
-                                        <option value="00">Choisissez votre type de logement</option>
-                                        <option value="01" title="Maison">Maison / Villa</option>
-                                        <option value="02" title="Appartement">Appartement</option>
-                                        <option value="03" title="Immeuble">Immeuble</option>                                                            
-                                        <option value="04" title="Chalet">Chalet</option>
-                                        <option value="05" title="Fermette">Fermette</option>
-                                        <option value="06" title="Moulin">Moulin</option>
-                                        <option value="07" title="Loft">Loft</option>
-                                        <option value="08" title="Mobil-Home">Mobil-Home</option>
-                                        <option value="09" title="Château">Château</option>
-                                        <option value="10" title="Chambres d’Hôtes">Gîtes/Chambres d’Hôtes</option>
+                                        <option value="Non précisé">Choisissez votre type de logement</option>
+                                        <option value="Maison / Villa" title="Maison">Maison / Villa</option>
+                                        <option value="Appartement" title="Appartement">Appartement</option>                                                            
+                                        <option value="Chalet" title="Chalet">Chalet</option>
+                                        <option value="Corps de ferme" title="Fermette">Corps de ferme</option>
+                                        <option value="Moulin   " title="Moulin">Moulin</option>
+                                        <option value="Loft" title="Loft">Loft</option>
+                                        <option value="Mobil-Home" title="Mobil-Home">Mobil-Home</option>
+                                        <option value="Château" title="Château">Château</option>
+                                        <option value="Gîtes / Chambre d'Hôtes" title="Chambres d’Hôtes">Gîtes/Chambres d’Hôtes</option>
                                 </select><br/>
                                 
                                 <!--Capacity-->
@@ -110,5 +99,3 @@
                         <input type="submit" value="Envoyer le formulaire" class="sub"/>
                     </form>
                 </section>
-    </body>
-</html>
