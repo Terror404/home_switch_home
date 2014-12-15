@@ -1,59 +1,77 @@
-<?php
-
-$_SESSION['login']='profil1';
-?>
-
-    <h1>Fiche profil</h1>
-<ul>
+<h2>Fiche profil</h2>
+<div class="ProfilePic">
+    <?php 
+        while($resProfPic=$askProfPic->fetch())
+        {
+    ?>
+            <img src="<?php echo$resProfPic['picture'];?>" alt="photo de profil"/>
     <?php
-while ($donnees = $req->fetch())
-{
-	echo '<li>'.$donnees['login'].$donnees['description'].'</li>';
-}
-?>
-   <img src="<?php echo $donnees['login'] ?>" alt="Profilepic">; 
-</ul>
-<?php
-$req->closeCursor();
-?>
-<?php
-if(isset($_SESSION['login'])AND $_SESSION['login']==$donnees['login'])
-{?>
-    <link rel="stylesheet" href="App_info_HSH_1/Source Files/Pierre/RatingSystem/.css" />
-    <div class="rating">
-        <legend>Votre note</legend>
-        <?php $donnees['rating'] ?> 
-    </div>;
-}
-<?php
-else{ ?>
-     
-     <link rel="stylesheet" href="App_info_HSH_1/Source Files/Pierre/RatingSystem/css_rating_system.css" />
-        <form method="get" action="App_info_HSH_1/Source Files/Pierre/RatingSystem/cible.php">
-            <div class="rating">
-                <fieldset class="rating">
-                    <legend>Votre note</legend>
-                    <input type="radio" id="RH10" name="ratingH" value="10" class="rating-input"/><label for="RH10" title="10/10" class="rating-star"></label>
-                    <input type="radio" id="RH9" name="ratingH" value="9" class="rating-input"/><label for="RH9" title="9/10" class="rating-star"></label>
-                    <input type="radio" id="RH8" name="ratingH" value="8" class="rating-input"/><label for="RH8" title="8/10" class="rating-star"></label>
-                    <input type="radio" id="RH7" name="ratingH" value="7" class="rating-input"/><label for="RH7" title="7/10" class="rating-star"></label>
-                    <input type="radio" id="RH6" name="ratingH" value="6" class="rating-input"/><label for="RH6" title="6/10" class="rating-star"></label>
-                    <input type="radio" id="RH5" name="ratingH" value="5" class="rating-input"/><label for="RH5" title="5/10" class="rating-star"></label>
-                    <input type="radio" id="RH4" name="ratingH" value="4" class="rating-input"/><label for="RH4" title="4/10" class="rating-star"></label>
-                    <input type="radio" id="RH3" name="ratingH" value="3" class="rating-input"/><label for="RH3" title="3/10" class="rating-star"></label>
-                    <input type="radio" id="RH2" name="ratingH" value="2" class="rating-input"/><label for="RH2" title="2/10" class="rating-star"></label>
-                    <input type="radio" id="RH1" name="ratingH" value="1" class="rating-input"/><label for="RH1" title="1/10" class="rating-star"></label>
-                </fieldset>
-            </div>
-            <br/><input type="submit" value="Noter" />
-        </form>
-     }
-        <div>
-			<input class="bouton" type="button" value="Me contacter" />
-		</div>
-		<div>
-			<input class="bouton" type="button" value="Voir les commentaires" />
-		</div>
- 
-
-
+        }
+    ?>
+</div>
+<div class="login">
+    <?php 
+        while($resProfLog=$askProfLog->fetch())
+        {
+           ?> <p> Bonjour je suis <?php echo $resProfLog['login'];?></p><?php
+        }
+    ?>
+</div>
+<div class="mbrsince">
+     <?php 
+        while($resProfDate=$askProfDate->fetch())
+        {
+           ?> <p> Membre depuis <?php       $originalDateC = $resProfDate['date_creation'];
+                                                $arrC = explode('-', $originalDateC);
+                                                switch ($arrC['1'])
+                                                {
+                                                    case 01:
+                                                        echo "janvier";echo"&nbsp"; echo $arrC['0'];
+                                                        break;
+                                                    case 0:
+                                                        echo "février";echo"&nbsp"; echo $arrC['0'];
+                                                        break;
+                                                    case 03:
+                                                        echo "mars";echo"&nbsp"; echo $arrC['0'];
+                                                        break;
+                                                    case 04:
+                                                        echo "avril";echo"&nbsp"; echo $arrC['0'];
+                                                        break;
+                                                    case 05:
+                                                        echo "mai";echo"&nbsp"; echo $arrC['0'];
+                                                        break;
+                                                    case 06:
+                                                        echo "juin";echo"&nbsp"; echo $arrC['0'];
+                                                        break;
+                                                    case 07:
+                                                        echo "juillet";echo"&nbsp"; echo $arrC['0'];
+                                                        break;
+                                                    case 08:
+                                                        echo "août";echo"&nbsp"; echo $arrC['0'];
+                                                        break;
+                                                    case 09:
+                                                        echo "septembre";echo"&nbsp"; echo $arrC['0'];
+                                                        break;
+                                                    case 10:
+                                                        echo "octobre";echo"&nbsp"; echo $arrC['0'];
+                                                        break;
+                                                    case 11:
+                                                        echo "novembre";echo"&nbsp"; echo $arrC['0'];
+                                                        break;
+                                                    case 12:
+                                                        echo "decembre";echo"&nbsp"; echo $arrC['0'];
+                                                        break;
+                                                }
+        }
+    ?>
+</div>
+<div class="desc">
+    <h2>A propos de moi :</h2>
+    <?php 
+        while($resProfDesc=$askProfDesc->fetch())
+        {
+            echo $resProfDesc['description'];
+        }
+    ?>
+</div>
+    

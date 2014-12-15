@@ -7,6 +7,7 @@ include('mailbox_toolbar.php');
 require("../modele/search_my_mp.php");
 ?>
 
+<div class="mailboxtable">
 <table>
                 <caption> messages envoyés </caption>
                         <tr>
@@ -31,3 +32,4 @@ require("../modele/search_my_mp.php");
         }
 ?>
 </table>
+</div>

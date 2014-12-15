@@ -63,7 +63,7 @@ if (isset($page) AND $page!='')
                     {
                         echo'<link rel="stylesheet" type="text/css" href="../view/css/mailbox_style.css">';
                     }
-                    elseif( $_GET['page']=='SentMsg')
+                    elseif( $_GET['page']=='sentMsg')
                     {
                         echo'<link rel="stylesheet" type="text/css" href="../view/css/mailbox_style.css">';
                     }
