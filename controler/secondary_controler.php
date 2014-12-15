@@ -1,7 +1,7 @@
 <?php
 
-echo'<link rel="stylesheet" href="../view/css/hsh_style.css">';
-echo'<link rel="stylesheet" href="../view/css/bloc_co.css" >';
+echo'<link rel="stylesheet" type="text/css" href="../view/css/hsh_style.css">';
+echo'<link rel="stylesheet" type="text/css" href="../view/css/bloc_co.css" >';
 
 $page=$_GET['page'];
 
@@ -9,15 +9,15 @@ if (isset($page) AND $page!='')
 {
                     if( $_GET['page']=='research')
                     {
-                        echo'<link rel="stylesheet" href="../view/css/search_box.css">';
+                        echo'<link rel="stylesheet" type="text/css" href="../view/css/search_box.css">';
                     }
                     elseif( $_GET['page']=='search_result')
                     {
-                        
+                        echo'<link rel="stylesheet" type="text/css" href="../view/css/search_result.css">';
                     }
                     elseif( $_GET['page']=='home')
                     {
-                        echo'<link rel="stylesheet" href="../view/css/style_caroussel.css">';
+                        echo'<link rel="stylesheet" type="text/css" href="../view/css/style_caroussel.css">';
                     }
                     elseif( $_GET['page']=='my_profile')
                     {
@@ -49,11 +49,11 @@ if (isset($page) AND $page!='')
                     }
                     elseif( $_GET['page']=='newMsg')
                     {
-                       echo'<link rel="stylesheet" href="../view/css/mailbox_style.css">';
+                       echo'<link rel="stylesheet" type="text/css" href="../view/css/mailbox_style.css">';
                     }
                     elseif( $_GET['page']=='confirmAddMsg')
                     {
-                       echo'<link rel="stylesheet" href="../view/css/mailbox_style.css">';
+                       echo'<link rel="stylesheet" type="text/css" href="../view/css/mailbox_style.css">';
                     }
                     
     }

@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<head><title>House Card</title></head>
-<body>
+
     <?php
         try 
             {
@@ -10,6 +8,12 @@
             {
                 die ('Erreur:'.$ex ->getMessage());
             }
+    ?>
+    
+    <!--Get the id of the owner-->
+    <?php
+        $askIdOwner=$bdd->prepare('SELECT id_user FROM house WHERE id=:idhouse');
+            $askIdOwner->execute(array('idhouse'=>$_GET['id']));
     ?>
     
     <!--Get the house title-->
@@ -47,4 +51,17 @@
         $askHpic=$bdd->prepare('SELECT H.pictures FROM house H WHERE H.id=:idhouse');
             $askHpic->execute(array('idhouse'=>$_GET['id']));
     ?>
-</body>
+    
+    <!--Get the region-->
+    <?php 
+        $askHregion=$bdd->prepare('SELECT name FROM area WHERE id=(SELECT id_area FROM house WHERE id=:idhouse)');
+            $askHregion->execute(array('idhouse'=>$_GET['id']));
+    ?>
+    
+    <!--Get the town-->
+    <?php
+        $askHtown=$bdd->prepare('SELECT location_detail FROM house WHERE id=:idhouse');
+            $askHtown->execute(array('idhouse'=>$_GET['id']));
+    ?>
+        
+        

@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-	<html>
-		<head>
-                    <link rel="stylesheet" href="css_ad_card.css" />
-                    <meta charset="utf-8">
-                    <title> Fiche maison </title> 
-		</head>
-                
-		<body>
                     <section class='MiddlePage'>
                         <section class="RightCol">
                             <article class='title'>
@@ -35,8 +26,8 @@
                                                     while($resDateB=$askDateB ->fetch()AND $resDateE=$askDateE ->fetch())
                                                         {
                                                 ?>
-                                                            <form action='modify_ac_vue.php.php' method="post" id='datead'>
-                                                                <label for='ModTitle'>Date :</label>
+                                                            <form action='../modele/update_ad_card.php' method="post" id='datead'>
+                                                                <label for='modif_dateB'>Date :</label>
                                                                 du <input type='date' name='modif_dateB' value="<?php echo $resDateB['date_begin'];?>" class='typedate' /> au <input type="date" name="modif_dateE" value="<?php echo $resDateE['date_end'];?>" class='typedate' />
                                                                 <input type='submit' value="Modifier" />
                                                             </form> <br/>
@@ -136,5 +127,5 @@
                             </div>
                         </section>      
                     </section>
-                </body>
+
 			

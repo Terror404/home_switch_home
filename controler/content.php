@@ -48,8 +48,8 @@
                     }
                     elseif( $_GET['page']=='myProfile')
                     {
-                        include("../modele/search_my_profile.php"); //modele
-                        require("../view/my_profile.php");//vue
+                        require("../modele/search_my_profile.php"); //modele
+                        include("../view/my_profil.php");//vue
                         
                     }
                     elseif( $_GET['page']== 'my_research')
@@ -92,10 +92,42 @@
                         require("../modele/add_user.php"); //modele
                         include("../view/confirm_add_user.php");//vue
                     }
+                    elseif( $_GET['page']=='formUser')
+                    {
+                        include("../view/form_user.php");//vue
+                    }
+                    elseif( $_GET['page']=='confirmAddUser')
+                    {
+                        
+                        require("../modele/add_user.php"); //modele
+                        include("../view/confirm_add_user.php");//vue
+                    }
+                    
+                    // Add a house
+                    
+                    elseif( $_GET['page']=='formHouse')
+                    {
+                        include("../view/form_house.php");//vue
+                    }
+                    
+                    // Confirm the add of the house
+                    
+                    elseif( $_GET['page']=='confirmAddHouse')
+                    {
+                        
+                        require("../modele/add_house.php"); //modele
+                        include("../view/confirm_add_house.php");//vue
+                    }
+                    
+                    // Write a new msg
+                    
                     elseif( $_GET['page']=='newMsg')
                     {
                         include("../view/new_message_form.php");//vue
                     }
+                    
+                    //confirm the sending of the new message
+                    
                     elseif( $_GET['page']=='confirmAddMsg')
                     {
                         
@@ -110,6 +142,48 @@
                         include("../modele/search_profile_reminder.php");
                     }
                     
+                                    
+                   
+                    elseif($_GET['page']=='createHouse')
+                    {   
+                        if(!isset($_SESSION['userId']))
+                        {
+                        echo"Vous ne pouvez pas accéder à cette page. Veuilez vous connecter.";
+                        }
+                        else
+                        {
+                        include("../view/create_house.php"); //view
+                        require("../modele/search_profile_reminder.php");
+                        include("../view/profile_reminder.php");
+                        }
+                    }
+                    elseif($_GET['page']=='houseCard')
+                    {
+                        include("../modele/search_house_card.php");
+                        if(!isset($_SESSION['userId']) AND $_SESSION['userId']!==$askIdOwner)   // FAUX A REFAIRE !!!!
+                        {
+                            include("../view/house_card.php");
+                        }
+                        else
+                        {
+                            include "../view/modify_hc.php";
+                        }    
+                    }
+                    elseif($_GET['page']=='createAd')
+                    {
+                        if(!isset($_SESSION['userId']))
+                        {
+                            echo"Vous ne pouvez pas accéder à cette page. Veuillez vous connecter";
+                        }
+                        else
+                        {
+                            require("../modele/search_house_card.php");
+                            include("../view/create_ad.php");
+                            require("../modele/search_profile_reminder.php");                            
+                            include("../view/profile_reminder.php");
+                            
+                        }
+                    }
                 }
                 
                    

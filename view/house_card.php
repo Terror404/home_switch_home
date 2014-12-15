@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-	<html>
-		<head>
-                    <link rel="stylesheet" href="css_house_card.css" />
-                    <meta charset="utf-8">
-                    <title> Fiche maison </title> 
-		</head>
-                
-		<body>
                     <section class='MiddlePage'>
                     <section class="RightCol">
                         <article class='title'>
@@ -68,14 +59,14 @@
                                 <?php 
                                     while ($resHregion=$askHregion->fetch())
                                         {
-                                            echo $resHregion['region'];
+                                            echo $resHregion['name'];
                                         }
                                 ?><br/>
                             Ville : 
                                 <?php
-                                    while ($resHtown=$askHtown>fetch())
+                                    while ($resHtown=$askHtown->fetch())
                                         {
-                                            echo $resHtown['town'];
+                                            echo $resHtown['location_detail'];
                                         }
                                 ?><br/>
                             Code postal: 
@@ -137,9 +128,7 @@
                     
 		
                     <section class="LeftCol">
-			<article class="RapProf"> <!--Rappel du profil du membre-->
-			<?php   include '../ProfileReminder/profile_reminder_controleur.php'; ?>
-			</article>
+			
 			
 			<article class="DateMM"> <!-- Mettre ici les dates -->
                             <?php
@@ -154,5 +143,4 @@
 			</article>
                     </section>      
                     </section>
-                </body>
 			

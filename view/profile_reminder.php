@@ -1,12 +1,3 @@
-<!Doctype html>
-    <html>
-        <head>
-            <meta charset="utf-8" />
-            <link rel="stylesheet" href="../view/ccs/profile_reminder.css" />
-            <title> Profile Reminder </title>
-        </head>
-        
-        <body>
             <div class="ProfileReminder">
                 <div class="PicCase"> <!--Put the profile photo-->
                     <?php
@@ -47,4 +38,3 @@
                     ?>
                 </p>
             </div>
-        </body>

@@ -7,6 +7,7 @@
     </head>
     
     <body>
+                <?php echo $_SESSION['userId'] ?>
                 <section class="RightCol">
                     <form action="../modele/add_house.php" method="post" id="create_house" enctype="multipart/form-data" onSubmit="">
                         <article class='title'> <!--Insert the title-->
@@ -55,15 +56,16 @@
                                         <option value="picardie">Picardie
                                         <option value="poitou_charentes">Poitou Charentes
                                         <option value="PACA">Provence Alpes Côte d'Azur
+                                        <option value="rhone_alpes">Rhône-Alpes
                                  </select><br/>
+                                 
+                                <!--ZipCode-->
+                                <label for='zipcode'>Code Postal :</label>
+                                <input type='number' name='zipcode' id='zipcode' /><br/>
                                 
                                 <!--Town-->
                                 <label for="town"> Ville : </label>
                                 <input type="text" name="town" id="town"/><br/>
-                                
-                                <!--ZipCode-->
-                                <label for='zipcode'>Code Postal :</label>
-                                <input type='number' name='zipcode' id='zipcode' /><br/>
                                 
                                 <!--address-->
                                 <label for='address'> Adresse :</label>
@@ -107,15 +109,6 @@
                         </article>
                         <input type="submit" value="Envoyer le formulaire" class="sub"/>
                     </form>
-                    </section>
-                    
-		
-                    <section class="LeftCol">
-			<article class="RapProf"> <!--Rappel du profil du membre-->
-			<?php   include '../view/profile_reminder.php'; ?>
-			</article>
-			
-                    </section>
-        <?php include"verf_H_form.php" ?>
+                </section>
     </body>
 </html>
