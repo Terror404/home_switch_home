@@ -1,31 +1,35 @@
 <?php
-session_start();
+
+$_SESSION['login']='profil1';
 ?>
 
-   
-    
-        
-	<h1>Fiche profil</h1>
+    <h1>Fiche profil</h1>
 <ul>
     <?php
 while ($donnees = $req->fetch())
 {
-	echo '<li>'.$donnees['login'].$donnees['description'].$donnees['rating'].$donnees['picture'].'</li>';
+	echo '<li>'.$donnees['login'].$donnees['description'].'</li>';
 }
 ?>
+   <img src="<?php echo $donnees['login'] ?>" alt="Profilepic">; 
 </ul>
 <?php
 $req->closeCursor();
 ?>
 <?php
-if(isset($_SESSION)AND $_SESSION['login']==$donnees['login'])
-{
-    echo $donnees['rating'];
+if(isset($_SESSION['login'])AND $_SESSION['login']==$donnees['login'])
+{?>
+    <link rel="stylesheet" href="App_info_HSH_1/Source Files/Pierre/RatingSystem/.css" />
+    <div class="rating">
+        <legend>Votre note</legend>
+        <?php $donnees['rating'] ?> 
+    </div>;
 }
-
-     ?>
-     <link rel="stylesheet" href="../RatingSystem/css_rating_system.css" />
-        <form method="get" action="../RatingSystem/cible.php">
+<?php
+else{ ?>
+     
+     <link rel="stylesheet" href="App_info_HSH_1/Source Files/Pierre/RatingSystem/css_rating_system.css" />
+        <form method="get" action="App_info_HSH_1/Source Files/Pierre/RatingSystem/cible.php">
             <div class="rating">
                 <fieldset class="rating">
                     <legend>Votre note</legend>
@@ -41,18 +45,15 @@ if(isset($_SESSION)AND $_SESSION['login']==$donnees['login'])
                     <input type="radio" id="RH1" name="ratingH" value="1" class="rating-input"/><label for="RH1" title="1/10" class="rating-star"></label>
                 </fieldset>
             </div>
-}
-
-
-        
             <br/><input type="submit" value="Noter" />
         </form>
+     }
         <div>
 			<input class="bouton" type="button" value="Me contacter" />
 		</div>
 		<div>
 			<input class="bouton" type="button" value="Voir les commentaires" />
 		</div>
-    
+ 
 
 

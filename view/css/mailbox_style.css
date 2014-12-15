@@ -1,7 +1,8 @@
 .newmsg{
     width: 100%;
     border :2px solid black;
-    background-color: white;
+    background-color: white
+    
 }
 .champ{
     width: 90%;
@@ -26,7 +27,12 @@ display: block
 margin-left: 4.5em;
 }
 
-.mailbox_toolbar
+.mailboxtoolbar
 {
-    background-color: #0cc785;
+    border :4px solid black;
+    padding : 10px;
+    margin : 10 px;
+    margin-bottom : 5px;
+    background-color:blue;
+    font-family:"GeosansLight";
 }
