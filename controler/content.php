@@ -33,7 +33,7 @@
                     } 
             
             ?>
-            <div class="content">
+            <div id="content">
                 
                 
                 
@@ -78,11 +78,6 @@
                     {
                         include("../view/my_mp.php");//vue
                         include("../modele/search_my_mp.php"); //modele
-                    }
-                    elseif( $_GET['page']== 'forum_index')
-                    {
-                        include("../view/forum_index.php");//vue
-                        include("../modele/search_forum_index.php"); //modele
                     }
                     
                     elseif( $_GET['page']=='formUser')

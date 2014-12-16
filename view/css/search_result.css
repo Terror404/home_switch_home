@@ -2,14 +2,15 @@
 // POSITIONNING OF THE BLOCKS 
 
 
-div#resultSearch ,div#adTitle ,div#descriptionHouse ,div#datesAd ,div#picturesAd
+#resultSearch
 {
-   display: block;
    text-align: center;
    margin-left:auto;
    margin-right:auto;
    border:2px solid black;
    z-index: 1040;
    margin-bottom:20px;
+   background-color: black;
+   
    
 }

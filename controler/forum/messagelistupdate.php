@@ -9,8 +9,8 @@ if (
 	if (isLoggedIn()) {
 		try {
 			$messageInsertion = $DB->prepare("
-				INSERT INTO post(date_creation, id_topic, id_user, text)
-				VALUES(:creationTime, :topicId, :authorId, :content)
+				INSERT INTO post (date_creation, id_topic, id_user, text)
+				VALUES (:creationTime, :topicId, :authorId, :content)
 			");
 			$messageInsertion->execute(array(
 				'creationTime' => (new DateTime("now"))->format('Y-m-d H:i:s'),

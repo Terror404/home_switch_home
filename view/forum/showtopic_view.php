@@ -37,7 +37,7 @@ while ($message = $messageList->fetch())
 {
 	?>
 	<p><i>Posté par <?php echo $message['authorName'] ?> le <?php echo $message['creationTime'] ?></i><br/>
-	<?php echo $message['content'] ?></p>
+	<?php echo $message['content'] ?></p><br/>
 	<?php
 }
 $messageList->closeCursor();

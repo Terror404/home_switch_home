@@ -6,21 +6,23 @@
 
 body
 {
-        position: relative;
+        position:relative;
 	color:black;
 	height:100%;
         background-size: 100%;
         min-height:900px;
         overflow:auto;
-        min-width:1280px;
+        
         background-color:white;
 }
 
 //content of the page
-.content
+
+#content
 {
-    display:block;
-    
+
+    position:absolute;
+    background-color:black;
     border-color:black;
     width:70%;
     
@@ -33,7 +35,8 @@ body
     top:250px;
     min-height: 100%;
     padding-bottom: 30px;
-    
+    max-width:1280px;
+    z-index:1000;
     
 }
 

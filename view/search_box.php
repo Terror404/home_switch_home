@@ -8,11 +8,12 @@
                         <p> <label class="LabDate"> Quelles dates ? </label> </p>
 			<p> date début :
 				 <!--Menu déroulant jour début-->
-        			        <input name="dateBegin" type="text" id="datepicker">
+        			        <input name="dateBegin" type="text" class="datepicker">
+                                        <br/>
                                                     
-				durée:
+				date de fin :
 				  <!--Menu déroulant jour fin-->
-					<input name="adLength" type="text"> jours
+					<input name="dateEnd" type="text"class="datepicker"> 
 				</p>
                         
                                 <p>
