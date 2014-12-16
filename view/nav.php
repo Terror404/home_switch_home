@@ -6,7 +6,7 @@
 	<li class="linkBlockElement"><a class="linkBlock" href="../controler/content.php?page=forumIndex" >Forum</a></li>
 	<li class="linkBlockElement"><a class="linkBlock" href="../controler/content.php?page=research" >Recherche</a></li>
 	<li class="subMenuDisplayer">
-		<a class="linkBlock" href="#myaccount">Mon Compte</a>
+		<a class="linkBlock" href="">Mon Compte</a>
 		<ul class="subMenuBlockList">
 			<li><a class="subMenuLinkBlock" href="../controler/content.php?page=my_profil" >Mon profil</a></li>
 			<li><a class="subMenuLinkBlock" href="../controler/content.php?page=my_ads" >Mes annonces</a></li>

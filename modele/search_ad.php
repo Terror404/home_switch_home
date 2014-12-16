@@ -3,7 +3,7 @@ $DB->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
    
 $req='';
-$reqBase='SELECT DISTINCT ad.title, ad.date_begin, ad.length, house.description ,house.pictures, house.rating, user.id 
+$reqBase='SELECT DISTINCT ad.title, ad.date_begin, ad.date_end, house.description ,house.pictures, house.rating, house.id 
                                      FROM ad, house, house_area, area, ad_criteria, criteria, user , criteria_house , house_criteria_house 
                                      WHERE ad.id_house= house.id 
                                      AND house.id_user=user.id 
@@ -27,10 +27,10 @@ $reqBase='SELECT DISTINCT ad.title, ad.date_begin, ad.length, house.description 
         }
     
     
-    if (isset($_POST['adLength']) && ($_POST['adLength']!='')) 
+    if (isset($_POST['dateEnd']) && ($_POST['dateEnd']!='')) 
         {
-        $adLength=$_POST['adLength'];
-        $req=$req.' AND ad.length='.$adLength;  
+        $dateEnd=$_POST['dateEnd'];
+        $req=$req.' AND date_end>='.$dateEnd;  
         }
     
     //area
@@ -185,7 +185,7 @@ $reqBase='SELECT DISTINCT ad.title, ad.date_begin, ad.length, house.description 
 }
 $askResearch->closeCursor();
 
-$askPrioritySearch=$DB->prepare('SELECT DISTINCT ad.title, ad.date_begin, house.description, ad.length, house.pictures, house.rating, user.id, ad.priority
+$askPrioritySearch=$DB->prepare('SELECT DISTINCT ad.title, ad.date_begin, house.description, ad.date_end, house.pictures, house.rating, house.id, ad.priority
                                      FROM ad, house, house_area, area, ad_criteria, criteria, user , criteria_house , house_criteria_house 
                                      WHERE ad.id_house= house.id 
                                      AND house.id_user=user.id 
