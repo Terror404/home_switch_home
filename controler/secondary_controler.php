@@ -23,9 +23,9 @@ if (isset($page) AND $page!='')
                     {
                         echo'<link rel="stylesheet" type="text/css" href="../view/css/my_profile.css">';
                     }
-                    elseif( $_GET['page']== 'my_research')
+                    elseif( $_GET['page']== 'formHouse')
                     {
-                        
+                        echo'<link rel="stylesheet" type="text/css" href="../view/css/createhouse_style.css">'; 
                     }
                     elseif( $_GET['page']== 'my_houses')
                     {

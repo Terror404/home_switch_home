@@ -1,6 +1,7 @@
 <section class="RightCol">
-    <form action="../modele/add_house.php" method="post" id="create_house" enctype="multipart/form-data" onSubmit="">
+    <form action="../modele/add_house.php" method="post" id="create_house" enctype="multipart/form-data" class="formHouseBox">
         <article class='title'> <!--Insert the title-->
+            Titre pour votre maison <br/>
             <input type="text" name="title" placeholder="titre de la maison" onblur="verifform(this)"/>
         </article>
         <article class="PhotosButtons"> <!--Insert the photos-->

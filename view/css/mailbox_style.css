@@ -6,12 +6,12 @@ vertical-align :top;
 .mailboxtoolbar
 {
     padding : 2%;
-    margin : 1%;
+    margin : 0.2%;
     background-color:#B6E1DB;
     width : 10%;
     position:absolute;
     top:15%;
-    left:0.2%;
+    left:0.15%;
     
     font-family:"GeosansLight";
     color: white;
@@ -86,14 +86,12 @@ margin-right: 0.5em;
 display: block
 }
 
-.submit input
-{
-margin-left: 4.5em;
-}
+
 
 .mailboxtable
 {
     position:absolute;
     left:30%;
+    top:15%;
 }
 
