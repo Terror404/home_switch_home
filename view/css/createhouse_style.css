@@ -1,0 +1,28 @@
+.RightCol
+{
+    position : absolute;
+    margin : 1%;
+    margin-left : 30%;
+    font-family:"GeosansLight";
+}
+
+
+
+.label 
+{
+width: 10em;
+float: left;
+text-align: right;
+margin-right: 0.5em;
+display: block
+}
+
+.textarea
+{
+    width : 50%;
+}
+
+.sub
+{
+    
+}

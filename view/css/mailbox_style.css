@@ -2,6 +2,7 @@
 {
 display:inline-block;
 vertical-align :top;
+position : absolute;
 }
 .mailboxtoolbar
 {
