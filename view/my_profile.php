@@ -1,9 +1,10 @@
+<div class="Profile">
 <h2>Fiche profil</h2>
-<div class="ProfilePic">
+<div class="ProfilePic2">
     <?php
     while ($resProfPic = $askProfPic->fetch()) {
         ?>
-        <img src="<?php echo$resProfPic['picture']; ?>" alt="photo de profil" class="profpic"/>
+        <img src="<?php echo$resProfPic['picture']; ?>" alt="photo de profil"/>
         <?php
     }
     ?>
@@ -86,6 +87,13 @@ while ($resProfDate = $askProfDate->fetch()) {
     }
     ?>
 </div>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
 <div class="desc">
     <h2>A propos de moi :</h2>
         <?php
@@ -155,4 +163,5 @@ while ($resProfDate = $askProfDate->fetch()) {
 }
         ?>
     </div>
+</div
 </div>

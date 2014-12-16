@@ -1,8 +1,8 @@
 <?php
-    $askAreaHouse=$DB->prepare('SELECT real_name FROM area WHERE id=(SELECT id_area FROM house WHERE id_user=:iduser');
+    $askAreaHouse=$DB->prepare('SELECT A.real_name FROM area A,house H WHERE A.id=H.id_town AND H.id_user=:iduser');
         $askAreaHouse->execute(array('iduser'=>$_SESSION['userId']));
     
-    $askTownHouse=$DB->prepare('SELECT ville_nom_reel FROM house WHERE ville_id=(SELECT id_town FROM house WHERE id_user=:iduser');
+    $askTownHouse=$DB->prepare('SELECT V.ville_nom_reel FROM villes_france_free V,house H WHERE  H.id_town=V.ville_id AND H.id_user=:iduser');
         $askTownHouse->execute(array('iduser'=>$_SESSION['userId']));
     
     $askHouse=$DB->prepare('SELECT * FROM house WHERE id_user=:iduser');

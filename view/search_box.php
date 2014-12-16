@@ -1,6 +1,8 @@
+<div class="map">
+            <img src="../view/pictures/France.png" alt="Carte"/>
+        </div>
 <article class="FormSearch">
-	<p>
-		
+	<p>	
         <form class="Date" action="content.php?page=search_result" method="post"> <!--Formuaire de choix de la date-->
 			<?php $research= "";?>
                         <p> <label class="LabDate"> Quelles dates ? </label> </p>
