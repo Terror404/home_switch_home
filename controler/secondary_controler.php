@@ -71,6 +71,10 @@ if (isset($page) AND $page!='')
                     {
                         echo'<link rel="stylesheet" type="text/css" href="../view/css/houseCard_style.css">';
                     }
+                    elseif( $_GET['page']=='createHouse')
+                    {
+                        echo'<link rel="stylesheet" type="text/css" href="../view/css/createhouse_style.css">';
+                    }
     }
 
 
