@@ -7,7 +7,7 @@ vertical-align :top;
 {
     padding : 2%;
     margin : 1%;
-    background-color:#10DD3D;
+    background-color:#B6E1DB;
     width : 10%;
     
     font-family:"GeosansLight";
@@ -33,19 +33,19 @@ table, th, td {
 
 th
 {
-   background-color:#009D23;
+   background-color:#85C2BA;
    height: 40px; 
 }
 td 
 {
     padding: 3px;
-    background-color : #10DD3D;
+    background-color : #B6E1DB;
 }
 
 caption
 {
     padding: 10px;
-    background-color:#009D23;
+    background-color:#85C2BA;
     border-radius: 10px;
     margin: 1%;
     height : 30px;
@@ -58,7 +58,7 @@ caption
 .newmsg{
     width: 80%;
     
-    background-color: #10DD3D;
+    background-color: #B6E1DB;
     display : inline-block;
     vertical-align :top;
     border-radius: 10px;
@@ -88,3 +88,5 @@ display: block
 margin-left: 4.5em;
 }
 
+li
+{list-style-type : none}
