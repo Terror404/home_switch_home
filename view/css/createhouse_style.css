@@ -2,6 +2,7 @@
 {
     position : absolute;
     margin : 1%;
+    margin-top : 5%;
     margin-left : 30%;
     font-family:"GeosansLight";
 }
@@ -10,7 +11,7 @@
 
 .label 
 {
-width: 10em;
+width: 15em;
 float: left;
 text-align: right;
 margin-right: 0.5em;
@@ -25,4 +26,20 @@ display: block
 .sub
 {
     
+     background: #3498db;
+     width:40%;
+    background-color: #00BCE0;
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 0px;
+  font-family: "GeosansLight";
+  color: white;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.sub:hover {
+  background: #83EBC6;
+  text-decoration: none;
 }

@@ -1,11 +1,14 @@
 <section class="RightCol">
     <form action="../modele/add_house.php" method="post" id="create_house" enctype="multipart/form-data" onSubmit="">
-        <article class='title'> <!--Insert the title-->
+        
+        <article class='title'> 
+            <label for="description" class="label">donnez un titre votre habitation:</label><!--Insert the title-->
             <input type="text" name="title" placeholder="titre de la maison" onblur="verifform(this)"/>
         </article>
         <article class="PhotosButtons"> <!--Insert the photos-->
                 <aside class="PhotosMM"> 
-                        <p>     
+                        <p> 
+                            <label for="photo1" class="label">image:</label>
                             <input type='file' id="photo1" />                                    
                         </p>
                 </aside>

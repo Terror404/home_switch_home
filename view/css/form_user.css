@@ -35,6 +35,7 @@ background-color: #00BCE0;
   font-size: 20px;
   padding: 10px 20px 10px 20px;
   text-decoration: none;
+ 
   
   
   
@@ -42,4 +43,6 @@ background-color: #00BCE0;
 .bouton:hover {
   background: #83EBC6;
   text-decoration: none;
+
+      
 }
