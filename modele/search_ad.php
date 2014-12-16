@@ -72,7 +72,7 @@ $reqBase='SELECT DISTINCT ad.title, ad.date_begin, ad.length, house.description 
     
     //layouts
    
-    $ask='';
+    $ask=' AND (criteria_house.name=\'garden\'';
     
     
     
@@ -109,6 +109,7 @@ $reqBase='SELECT DISTINCT ad.title, ad.date_begin, ad.length, house.description 
     
     fctLayout('disabledAccess');
     
+    $ask=$ask.')';
     
     
     
@@ -143,6 +144,8 @@ $reqBase='SELECT DISTINCT ad.title, ad.date_begin, ad.length, house.description 
     }
     
     $askFinal=$reqBase.$req.$ask;
+    
+ 
     
     
     //writing the query adding the result of the previous tests
@@ -182,7 +185,7 @@ $reqBase='SELECT DISTINCT ad.title, ad.date_begin, ad.length, house.description 
 }
 $askResearch->closeCursor();
 
-$askPrioritySearch=$DB->prepare('SELECT DISTINCT ad.title, ad.date_begin, house.description, ad.length, house.pictures, house.rating, user.id 
+$askPrioritySearch=$DB->prepare('SELECT DISTINCT ad.title, ad.date_begin, house.description, ad.length, house.pictures, house.rating, user.id, ad.priority
                                      FROM ad, house, house_area, area, ad_criteria, criteria, user , criteria_house , house_criteria_house 
                                      WHERE ad.id_house= house.id 
                                      AND house.id_user=user.id 
@@ -191,7 +194,8 @@ $askPrioritySearch=$DB->prepare('SELECT DISTINCT ad.title, ad.date_begin, house.
                                      AND ad.id=ad_criteria.id_ad 
                                      AND criteria.id=ad_criteria.id_criteria
                                      AND criteria_house.id=house_criteria_house.id_criteria_house
-                                     AND house.id=house_criteria_house.id_house'.$req.$ask);
+                                     AND house.id=house_criteria_house.id_house'.$req.$ask.
+        ' ORDER BY ad.priority DESC');
 $askPrioritySearch->execute();
 
 
