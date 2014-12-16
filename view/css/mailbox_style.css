@@ -9,6 +9,9 @@ vertical-align :top;
     margin : 1%;
     background-color:#B6E1DB;
     width : 10%;
+    position:absolute;
+    top:15%;
+    left:0.2%;
     
     font-family:"GeosansLight";
     color: white;
@@ -88,5 +91,9 @@ display: block
 margin-left: 4.5em;
 }
 
-li
-{list-style-type : none}
+.mailboxtable
+{
+    position:absolute;
+    left:30%;
+}
+
