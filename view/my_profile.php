@@ -137,20 +137,20 @@ while ($resProfDate = $askProfDate->fetch()) {
                     break;
                 case 7:
                     ?><img src="../view/Rate_Star/rate_7_10.jpg" alt="07/10"/><br/><?php
-            echo"07/10";
-            break;
-        case 8:
-            ?><img src="../view/Rate_Star/rate_8_10.jpg" alt="08/10"/><br/><?php
-            echo"08/10";
-            break;
-        case 9:
-            ?><img src="../view/Rate_Star/rate_9_10.jpg" alt="09/10"/><br/><?php
-            echo"09/10";
-            break;
-        case 10:
-            ?><img src="../view/Rate_Star/rate_10_10.jpg" alt="0/10"/><br/><?php
-            echo"10/10";
-            break;
+                    echo"07/10";
+                    break;
+                case 8:
+                    ?><img src="../view/Rate_Star/rate_8_10.jpg" alt="08/10"/><br/><?php
+                    echo"08/10";
+                    break;
+                case 9:
+                    ?><img src="../view/Rate_Star/rate_9_10.jpg" alt="09/10"/><br/><?php
+                    echo"09/10";
+                    break;
+                case 10:
+                    ?><img src="../view/Rate_Star/rate_10_10.jpg" alt="0/10"/><br/><?php
+                    echo"10/10";
+                    break;
     }
 }
         ?>
