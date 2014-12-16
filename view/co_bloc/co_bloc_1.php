@@ -7,7 +7,7 @@
             </form>
 
             <form class="insc"> <!--Bouton inscription-->
-                    <input type="button" name="inscription" value="Inscription" onclick="self.location.href='page2.html'" class="centerBlocCo" />
+                    <input type="button" name="inscription" value="Inscription" onclick="self.location.href='../controler/content.php?page=formUser'" class="centerBlocCo" />
             </form>
         
     </div>

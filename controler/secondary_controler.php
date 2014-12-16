@@ -19,9 +19,9 @@ if (isset($page) AND $page!='')
                     {
                         echo'<link rel="stylesheet" type="text/css" href="../view/css/style_caroussel.css">';
                     }
-                    elseif( $_GET['page']=='my_profile')
+                    elseif( $_GET['page']=='myProfile')
                     {
-                        
+                        echo'<link rel="stylesheet" type="text/css" href="../view/css/my_profile.css">';
                     }
                     elseif( $_GET['page']== 'my_research')
                     {

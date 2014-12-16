@@ -19,3 +19,7 @@ $askProfDesc->execute(array('id'=>$_GET['userId']));
 $askProfWant = $DB->prepare('SELECT wanted_dest FROM user WHERE id=:id');
 $askProfWant->execute(array('id'=>$_GET['userId']));
 ?>
+<?php
+$askProfRate = $DB->prepare('SELECT rating FROM user WHERE id=:id');
+$askProfRate->execute(array('id'=>$_GET['userId']));
+?>
