@@ -39,16 +39,15 @@ body
 
 .headerP
 {
-        width:100%;
+        width:97%;
         height: 100%;
-        
-        
         font-size:550%;
-        
         color:#0b2d92;
         background-color:white;
         position:relative;
         margin-left:3%;
+        overflow:hidden;
+       
         
         
         
