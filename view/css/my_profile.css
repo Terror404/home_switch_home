@@ -1,17 +1,28 @@
-.profpic
-{
-margin:0;
-height:100%;
-width:100%;
-}
 
-.ProfPic
+
+.ProfilePic2
 {
-border:solid 1px;
+border:solid 1px ;
+border-color: black;
 height:100px;
 width:100px;
-margin-left:25%;
+
 margin-top:20px;
 border-radius:50px;
 overflow:hidden;
+float:left;
+}
+
+.login
+{
+    
+}
+.mbrsince
+{
+    
+}
+
+.Profile{
+    margin-left: 10%;
+    margin-right: 10%;
 }

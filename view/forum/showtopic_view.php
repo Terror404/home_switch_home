@@ -14,42 +14,43 @@ posting a message has been made but failed.
 */
 ?>
 
+<link rel="stylesheet" type="text/css" href="./../view/css/forumstyle.css">
 <script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
 <script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
 
-<?php
+<div class="forumFrame">
+    <?php
+        if (isset($successfullyPostedMessage)) {
+            if ($successfullyPostedMessage) {
+                ?>
+                <p>Votre message a été ajouté.</p><br/>
+                <?php
+        }
+            else {
+                ?>
+                <p>Une erreur s'est produite lors de l'ajout de votre message :<br/>
+                <?php echo $reasonForPostFailure; ?></p>
+                <?php
+            }
+        }
 
-if (isset($successfullyPostedMessage)) {
-	if ($successfullyPostedMessage) {
-		?>
-		<p>Votre message a été ajouté.</p>
-		<?php
-	}
-	else {
-		?>
-		<p>Une erreur s'est produite lors de l'ajout de votre message :<br/>
-		<?php echo $reasonForPostFailure; ?></p>
-		<?php
-	}
-}
+        while ($message = $messageList->fetch())
+        {
+            ?>
+            <p><i>Posté par <?php echo $message['authorName'] ?> le <?php echo $message['creationTime'] ?></i><br/>
+            <?php echo $message['content'] ?></p><br/>
+            <?php
+        }
+        $messageList->closeCursor();
+    ?>
 
-while ($message = $messageList->fetch())
-{
-	?>
-	<p><i>Posté par <?php echo $message['authorName'] ?> le <?php echo $message['creationTime'] ?></i><br/>
-	<?php echo $message['content'] ?></p><br/>
-	<?php
-}
-$messageList->closeCursor();
+    <br/><br/>
+    <!-- (Quick) Answer part -->
+    Entrez le texte de votre réponse :
+    <form method="post" action="./../controler/content.php?page=showTopic&amp;t=<?php echo CURRENT_TOPIC ?>">
 
-?>
+    <textarea name="newMessage" rows="8" cols="50"></textarea><br/>
+    <input type="submit" value="Envoyer">
 
-<br/><br/>
-<!-- (Quick) Answer part -->
-Entrez le texte de votre réponse :
-<form method="post" action="./../controler/content.php?page=showTopic&amp;t=<?php echo CURRENT_TOPIC ?>">
-
-<textarea name="newMessage" rows="8" cols="50"></textarea><br/>
-<input type="submit" value="Envoyer">
-
-</form>
+    </form>
+</div>
