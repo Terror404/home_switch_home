@@ -1,7 +1,9 @@
 <?php
 
-define("CURRENT_TOPIC", (int)$_GET['t']);
 define("TOPIC_IS_SET", (isset($_GET['t']) AND ((int)$_GET['t'] != 0)));
+if (TOPIC_IS_SET) {
+    define("CURRENT_TOPIC", (int)$_GET['t']);
+}
 
 function getMessageList($database, $fromTopic)
 {
