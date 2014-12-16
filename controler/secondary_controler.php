@@ -67,7 +67,10 @@ if (isset($page) AND $page!='')
                     {
                         echo'<link rel="stylesheet" type="text/css" href="../view/css/mailbox_style.css">';
                     }
-                    
+                    elseif( $_GET['page']=='formUser')
+                    {
+                        echo'<link rel="stylesheet" type="text/css" href="../view/css/form_user.css">';
+                    }
     }
 
 

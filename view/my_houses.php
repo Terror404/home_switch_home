@@ -11,8 +11,6 @@ while($resHouse=$askHouse->fetch())
             <?php echo$resHouse['title']?>
         </div>
     </div>
-<?php
-}?>
     <div class="BlocLocHouse">
         Région : <?php while($resAreaHouse=$askAreaHouse->fetch())
                             {
@@ -24,4 +22,7 @@ while($resHouse=$askHouse->fetch())
                                 echo$resTownHouse['ville_nom_reel'];
                             }
                 ?>
+
     </div>
+<?php
+}?>
