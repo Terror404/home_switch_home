@@ -1,8 +1,9 @@
+
+
 <?php
 
 while($resHouse=$askHouse->fetch())
 {
-    ?>
-        titre n°<?php echo$resHouse['id']?>:<?php echo $resHouse['title'];
+       echo 'titre n°'.$resHouse['id'].':'.$resHouse['title'].'<br/><br/>';
 }
 ?>
