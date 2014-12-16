@@ -71,13 +71,6 @@ if (isset($page) AND $page!='')
     }
 
 
-
-
-
-     $DB = new PDO('mysql:host=localhost;dbname=home_switch_home', 'root', '');
-        if (!$DB) {
-            printf("Ã‰chec de la connexion : %s\n", mysqli_connect_error());
-            exit();
-        }
-     ?>
+    require_once(dirname(dirname(__FILE__))."/modele/pdoDatabaseRef.php");
+    ?>
         
