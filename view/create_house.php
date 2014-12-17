@@ -1,5 +1,5 @@
 <section class="RightCol">
-    <form action="../modele/add_house.php" method="post" id="create_house" enctype="multipart/form-data" class="formHouseBox">
+    <form action="../modele/upload_photo.php"  method="post" id="create_house" enctype="multipart/form-data" class="formHouseBox">
         <article class='title'> <!--Insert the title-->
             Titre pour votre maison <br/>
             <input type="text" name="title" placeholder="titre de la maison" onblur="verifform(this)"/>
@@ -8,7 +8,7 @@
                 <aside class="PhotosMM"> 
                         <p> 
                             <label for="photo1" class="label">image:</label>
-                            <input type='file' id="photo1" />                                    
+                            <input name="fichier" type='file' id="photo1" />                                    
                         </p>
                 </aside>
         </article>
