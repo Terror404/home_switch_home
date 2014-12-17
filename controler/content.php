@@ -101,6 +101,7 @@
                     //Ad Creation page
                     elseif( $_GET['page']=='formAd')
                     {
+                        require("../modele/search_house_card.php");
                         include("../view/create_ad.php");//vue
                     }
                     //Redirect Page after ad creation

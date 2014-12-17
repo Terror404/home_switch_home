@@ -1,4 +1,4 @@
-
+<?php $userId=$_SESSION["userId"];?>
 <nav>
 
 <ul class="linkBlockList">
@@ -8,7 +8,7 @@
 	<li class="subMenuDisplayer">
 		<a class="linkBlock" href="">Mon Compte</a>
 		<ul class="subMenuBlockList">
-			<li><a class="subMenuLinkBlock" href="../controler/content.php?page=my_profil" >Mon profil</a></li>
+			<li><a class="subMenuLinkBlock" href="../controler/content.php?page=myProfile&userId=<?phpecho$userId?>" >Mon profil</a></li>
 			<li><a class="subMenuLinkBlock" href="../controler/content.php?page=my_ads" >Mes annonces</a></li>
                         <li><a class="subMenuLinkBlock" href="../controler/content.php?page=formAd" >Ajouter une annonce</a></li>
                         <li><a class="subMenuLinkBlock" href="../controler/content.php?page=my_houses" >Mes maisons</a></li>

@@ -15,7 +15,7 @@ if(!is_dir($dossier_user))
 }
 
 /**********Variables Definition**********/
-define('TARGET',$dossier_user);               //Targeted repository
+define('TARGET',$dossier_user);                 //Targeted repository
 define('MAX_SIZE',100000);                      //Maximal size of the pic (byte)
 define('WIDTH_MAX',5000);                       //Maximum width of the pic (pixels)
 define('HEIGHT_MAX',5000);                      //Maximum height of the pic (pixels)
