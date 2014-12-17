@@ -7,8 +7,11 @@
         <article class="PhotosButtons"> <!--Insert the photos-->
                 <aside class="PhotosMM"> 
                         <p> 
+                            <label for="photo0" class="label">image:</label>
+                            <input name="photo0" type='file' id="photo0" /><br/>
+                            
                             <label for="photo1" class="label">image:</label>
-                            <input name="fichier" type='file' id="photo1" />                                    
+                            <input name="photo1" type='file' id="photo1" /><br/>                                               
                         </p>
                 </aside>
         </article>
