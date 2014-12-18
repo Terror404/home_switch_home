@@ -25,14 +25,16 @@
    
     margin-top : 5%;
     margin-left : 30%;
+    margin-bottom : 10%;
     font-family: "GeosansLight";
     font-size : 120%;
+    
  
 }
 
 .label
 {
-width: 16em;
+width: 50%;
 float: left;
 text-align:left;
 margin-right: 0.5em;
@@ -56,3 +58,9 @@ body{
  background-image: url("../pictures/sunburst-scenery1920x1200.jpg");  
 }
 
+.textarea
+{
+    height : 100px;
+    width : 48%;
+    margin-top : 2%;
+}
