@@ -1,11 +1,10 @@
-<html>
-    <head>     <meta charset="utf-8"> </head>
-    <body>
+
+        <div class="confirmAddUserButton">
 <?php
 
 echo 'Votre profil a bien été créé.'
 ?>
-    
-    <input type="button" onclick="self.location.href='../controler/content.php?page=research'" name="continuer" value="Continuer" class="bouton" />
-    </body>
-</html>    
+    <br/>
+    <input type="button" onclick="self.location.href='../controler/content.php?page=research'" name="continuer" value="Continuer" />
+        </div>
+       

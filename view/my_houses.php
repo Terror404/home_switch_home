@@ -1,9 +1,10 @@
 
 
 <?php
-
+$i=1;
 while($resHouse=$askHouse->fetch())
 {
-       echo 'titre n°'.$resHouse['id'].':'.$resHouse['title'].'<br/><br/>';
+       echo '<div class="myhouseHome">titre n°'.$i.':'.$resHouse['title'].'</div><br/>'.$resHouse['description'].' <br/>';
+       $i+=1;
 }
 ?>

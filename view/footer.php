@@ -41,7 +41,7 @@
                 <br/>
                 <br/>
                     
-                    <a href=# class="footerLink">Facebook</a><br/>
+                    <a href=https://www.facebook.com/hshapp class="footerLink">Facebook</a><br/>
                     <a href=# class="footerLink">Twitter</a><br/>
                     <a href=# class="footerLink">Instagram</a><br/>
                    
