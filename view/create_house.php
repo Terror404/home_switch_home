@@ -9,10 +9,12 @@
                 <aside class="PhotosMM"> 
                         <p> 
                             <label for="photo0" class="label">image:</label>
-                            <input name="photo0" type='file' id="photo0" class="button"/><br/>
+                            <input name="photo0" type='file' id="photo0" /><br/>
+                            <input type="hidden" name="tagPhoto" value="0"/>
                             
                             <label for="photo1" class="label">image:</label>
-                            <input name="photo1" type='file' id="photo1" /><br/>                                               
+                            <input name="photo1" type='file' id="photo1" /><br/>  
+                            <input type="hidden" name="tagPhoto" value="1"/>
                         </p>
                 </aside>
         </article>
