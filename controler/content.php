@@ -132,13 +132,13 @@
                     elseif( $_GET['page']=='newMsg')
                     {
                         include("../view/new_message_form.php");//vue
-                        require("../modele/add_message.php"); // modele
+                       
                     }
                     
                     //confirm the sending of the new message
                     elseif( $_GET['page']=='confirmAddMsg')
                     {  
-                        require("../modele/add_message.php"); //modele
+                        include("../modele/add_message.php"); //modele
                         include("../view/confirm_sent_message.php");//vue
                     }
                
