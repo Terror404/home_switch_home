@@ -43,7 +43,7 @@ if(isset($_POST))
             //Verify the type of the image
             if($infoPic[2]>=1 && $infoPic[2]<=14)
             {
-                //Verify the dimension and size ofthe image
+                //Verify the dimension and size of the image
                 if(($infoPic[0] <= WIDTH_MAX) && ($infoPic[1] <= HEIGHT_MAX) && (filesize($_FILES['photo0']['tmp_name']) <= MAX_SIZE))
                 {
                     //Scan the errors array
