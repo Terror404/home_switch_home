@@ -94,5 +94,7 @@
         $askHbrnb=$bdd->prepare('SELECT nbr_room FROM house WHERE id=:idhouse');
             $askHbrnb->execute(array('idhouse'=>$_GET['id']));
     ?>
+
+    <!--Get the facilities-->
         
         

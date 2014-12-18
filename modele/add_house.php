@@ -27,9 +27,10 @@ session_start();
         {
             $idArea=$resIdArea['id'];
         }
-        
+        $town1=str_replace('-', '&nbsp', $_POST['town']);
+        $town2=strtolower($town1);
         $askzip=$DB->prepare('SELECT ville_code_postal FROM villes_france_free WHERE ville_nom_simple =:nomVille');
-            $askzip->execute(array('nomVille'=>$_POST['town']));
+            $askzip->execute(array('nomVille'=>$town2));
             
         while($reszip=$askzip->fetch())
         {
@@ -39,7 +40,7 @@ session_start();
         if($zip==$_POST['zipcode'])
         {
             $askIdTown=$DB->prepare("SELECT ville_id FROM villes_france_free WHERE ville_nom_simple=:nomVille");
-                $askIdTown->execute(array('nomVille'=>$_POST['town']));
+                $askIdTown->execute(array('nomVille'=>$town2));
             while($resIdTown=$askIdTown->fetch())
             {
                 $idTown=$resIdTown['ville_id'];
@@ -52,7 +53,8 @@ session_start();
         }
         else
         {
-            echo"Le code postal ne correspond pas à la ville qui a été entrée.";
+            echo"Le code postal ne correspond pas à la ville qui a été entrée.";echo"<br/>";
+            echo$town2;
         }
     }
     else
