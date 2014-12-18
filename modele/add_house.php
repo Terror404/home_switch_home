@@ -44,9 +44,9 @@ session_start();
             {
                 $idTown=$resIdTown['ville_id'];
             }
-            
-            $addH=$DB->prepare("INSERT INTO house(id_user,title,description,id_town,id_area,address,house_type,nbr_people,nbr_room) VALUES(:idUser,:title,:desc,:idTown,:idArea,:address,:houseType,:cap,:brnb)");
-                $addH->execute(array('idUser'=>$_SESSION['userId'],'title'=>$_POST['title'],'desc'=>$_POST['description'],'idTown'=>$idTown,'idArea'=>$idArea,'address'=>$_POST['address'],'houseType'=>$_POST['house_type'],'cap'=>$_POST['capacity'],'brnb'=>$_POST['brnb']));
+            include"../modele/upload_photo.php";
+            $addH=$DB->prepare("INSERT INTO house(id_user,title,description,id_town,id_area,address,house_type,nbr_people,nbr_room,pictures,picture_1) VALUES(:idUser,:title,:desc,:idTown,:idArea,:address,:houseType,:cap,:brnb,:pictures,:photo1)");
+                $addH->execute(array('idUser'=>$_SESSION['userId'],'title'=>$_POST['title'],'desc'=>$_POST['description'],'idTown'=>$idTown,'idArea'=>$idArea,'address'=>$_POST['address'],'houseType'=>$_POST['house_type'],'cap'=>$_POST['capacity'],'brnb'=>$_POST['brnb'],'pictures'=>$p['0'],'photo1'=>$p['1']));
             echo"La maison a bien été enregistrée";
             ?> <input type='button' value='continuer' onclick="self.location.href='../controler/content.php?page=my_houses'"/><?php
         }

@@ -1,6 +1,4 @@
 <?php
-/*A enlever si mis dans content.php*/
-session_start();
 /*******************************************************************************
  * For uploading pic
  ******************************************************************************/
@@ -18,7 +16,7 @@ define('HEIGHT_MAX',5000);
 
 for($i=0;$i<2;$i++)
 {
-
+                global $i;
                 switch($i)
                 {
                     case 0:
@@ -27,22 +25,22 @@ for($i=0;$i<2;$i++)
                     case 1:
                         $dossier_user="../view/pictures/".$id_user."/photo1/";
                         break;
-                    case"2":
+                    case 2:
                         $dossier_user="../view/pictures/$id_user/photo2/";
                         break;
-                    case"3":
+                    case 3:
                         $dossier_user="../view/pictures/$id_user/photo3/";
                         break;
-                    case"4":
+                    case 4:
                         $dossier_user="../view/pictures/$id_user/photo4/";
                         break;
-                    case"5":
+                    case 5:
                         $dossier_user="../view/pictures/$id_user/photo5/";
                         break;
-                    case"6":
+                    case 6:
                         $dossier_user="../view/pictures/$id_user/photo6/";
                         break;
-                    case"profile":
+                    case 7:
                         $dossier_user="../view/pictures/$id_user/profile/";
                         break;
                 }
@@ -90,6 +88,7 @@ for($i=0;$i<2;$i++)
                                         if(move_uploaded_file($_FILES['photo'.$i]['tmp_name'], $dossier_user.$namePic))
                                         {
                                             $message="Télechargement de l'image réussi";
+                                            $p=$dossier_user.$namePic;
                                         }
                                         else
                                         {
@@ -128,8 +127,9 @@ for($i=0;$i<2;$i++)
 
 
                 echo$message;echo"<br/>";
-                echo $dossier_user."/".$namePic;echo"<br/>";
+                echo$dossier_user."/".$namePic;echo"<br/>";
                 echo$_FILES['photo'.$i]['name'];echo"<br/>";
-                echo$_FILES['photo'.$i]['tmp_name'];
+                echo$_FILES['photo'.$i]['tmp_name'];echo"<br/>";
+                echo$p;echo"<br/>";echo"<br/>";
 }
                 ?>
