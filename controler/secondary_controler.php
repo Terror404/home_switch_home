@@ -23,9 +23,9 @@ if (isset($page) AND $page!='')
                     {
                         echo'<link rel="stylesheet" type="text/css" href="../view/css/my_profile.css">';
                     }
-                    elseif( $_GET['page']== 'my_research')
+                    elseif( $_GET['page']== 'formHouse')
                     {
-                        
+                        echo'<link rel="stylesheet" type="text/css" href="../view/css/createhouse_style.css">'; 
                     }
                     elseif( $_GET['page']== 'my_houses')
                     {
@@ -67,17 +67,24 @@ if (isset($page) AND $page!='')
                     {
                         echo'<link rel="stylesheet" type="text/css" href="../view/css/mailbox_style.css">';
                     }
-                    
+
+                    elseif( $_GET['page']=='formUser')
+                    {
+                        echo'<link rel="stylesheet" type="text/css" href="../view/css/form_user.css">';
+                    }
+
+                    elseif( $_GET['page']=='houseCard')
+                    {
+                        echo'<link rel="stylesheet" type="text/css" href="../view/css/houseCard_style.css">';
+                    }
+                    elseif( $_GET['page']=='createHouse')
+                    {
+                        echo'<link rel="stylesheet" type="text/css" href="../view/css/createhouse_style.css">';
+
+                    }
     }
 
 
-
-
-
-     $DB = new PDO('mysql:host=localhost;dbname=home_switch_home', 'root', '');
-        if (!$DB) {
-            printf("Ã‰chec de la connexion : %s\n", mysqli_connect_error());
-            exit();
-        }
-     ?>
+    require_once(dirname(dirname(__FILE__))."/modele/pdoDatabaseRef.php");
+    ?>
         

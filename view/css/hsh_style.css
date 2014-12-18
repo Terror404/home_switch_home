@@ -6,21 +6,23 @@
 
 body
 {
-        position: relative;
+        position:relative;
 	color:black;
 	height:100%;
         background-size: 100%;
         min-height:900px;
         overflow:auto;
-        min-width:1280px;
+        
         background-color:white;
 }
 
 //content of the page
-.content
+
+#content
 {
-    display:block;
-    
+
+    position:absolute;
+    background-color:black;
     border-color:black;
     width:70%;
     
@@ -33,7 +35,8 @@ body
     top:250px;
     min-height: 100%;
     padding-bottom: 30px;
-    
+    max-width:1280px;
+    z-index:1000;
     
 }
 
@@ -85,7 +88,7 @@ nav
 {
 	width: 100%;
         height: 28px;   
-        
+        position:absolute;
         z-index:1000;       
         margin-bottom: 1px; 
         min-width:1280px;
@@ -268,4 +271,28 @@ and open the template in the editor.
     Created on : 12 déc. 2014, 16:23:18
     Author     : melanie
 */
-
+.myhouseHome
+{
+    top:15%;
+    position:absolute;
+}
+.createAdHome
+{
+    top:15%;
+    position:absolute;
+    left:15%;
+    
+}
+.ButtonMM
+{
+    left:120%;
+    position:absolute;
+}
+.confirmAddUserButton
+{
+    position:absolute;
+    display:block;
+    top:30%;
+    left:40%;
+    width:20%;
+}

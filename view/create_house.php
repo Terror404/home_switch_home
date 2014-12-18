@@ -1,27 +1,33 @@
 <section class="RightCol">
-    <form action="../modele/add_house.php" method="post" id="create_house" enctype="multipart/form-data" onSubmit="">
+    <form action="../modele/upload_photo.php"  method="post" id="create_house" enctype="multipart/form-data" class="formHouseBox">
         <article class='title'> <!--Insert the title-->
+            Titre pour votre maison <br/>
             <input type="text" name="title" placeholder="titre de la maison" onblur="verifform(this)"/>
         </article>
         <article class="PhotosButtons"> <!--Insert the photos-->
                 <aside class="PhotosMM"> 
-                        <p>     
-                            <input type='file' id="photo1" />                                    
+                        <p> 
+                            <label for="photo0" class="label">image:</label>
+                            <input name="photo0" type='file' id="photo0" /><br/>
+                            
+                            <label for="photo1" class="label">image:</label>
+                            <input name="photo1" type='file' id="photo1" /><br/>                                               
                         </p>
                 </aside>
         </article>
 
 
-        <article class="DescriptionMM"> <!--Mettre ici la description de la maison-->
+        <article class="DescriptionMM" > <!--Mettre ici la description de la maison-->
             <p class="txt">
-                <textarea name="description" placeholder="Description de votre bien"></textarea>
+                <label for="description" class="label">décrivez votre habitation:</label>
+                <textarea class="textarea" name="description" placeholder="Description "></textarea>
             </p>
         </article>
         <article class='Hinformation'>
         <div class='txt'>
             <h3>Localisation :</h3>
                 <!--Region-->
-                <label for="region">Région :</label>
+                <label for="region" class="label">Région :</label>
                 <select name="region" id="region"> <!--champ de régions du bon coin muhahaha -->
                         <option value="alsace">Alsace
                         <option value="aquitaine">Aquitaine
@@ -50,20 +56,20 @@
                  </select><br/>
 
                 <!--ZipCode-->
-                <label for='zipcode'>Code Postal :</label>
+                <label for='zipcode' class="label">Code Postal :</label>
                 <input type='number' name='zipcode' id='zipcode' /><br/>
 
                 <!--Town-->
-                <label for="town"> Ville : </label>
-                <input type="text" name="town" id="town"/>Veuillez entrer le nom de la ville sans tirêts<br/>
+                <label for="town" class="label"> Ville : </label>
+                <input type="text" name="town" id="town"/><br>Veuillez entrer le nom de la ville sans tirêts<br/>
 
                 <!--address-->
-                <label for='address'> Adresse :</label>
+                <label for='address' class="label"> Adresse :</label>
                 <input type='text' name='address' id='address'/>
 
             <h3>Informations sur le logement</h3>
                 <!--Type-->
-                <label> Type de logement :</label>
+                <label class="label" > Type de logement :</label>
                 <select id="type" name="house_type"> <!-- champs des types de logements simplifiées: partenaires-europréens.fr-->
                         <option value="Non précisé">Choisissez votre type de logement</option>
                         <option value="Maison / Villa" title="Maison">Maison / Villa</option>
@@ -78,17 +84,17 @@
                 </select><br/>
 
                 <!--Capacity-->
-                <label>Capacité :</label>
+                <label class="label">Capacité :</label>
                 <input type="number" name="capacity" id="capacity" />
                 <br/>
 
                 <!--BRnb-->
-                <label>Nombre de chambre :</label>
+                <label class="label">Nombre de chambre :</label>
                 <input type="number" name="brnb" id="brnb" />
                 <br/>
 
                 <!--Facilities-->
-                <label>Aménagements :</label>
+                <label class="label">Aménagements :</label>
                     <input type="checkbox"/> <label> cour </label>
                         <input type="checkbox" value="garden"/> <label> jardin</label>
                         <input type="checkbox" value="parking"/> <label> garage/ parking</label>

@@ -29,7 +29,7 @@
 center
 {
     height:25px;
-    top: 275px;
+    top: 20%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -38,30 +38,33 @@ center
 	font-family: helvetica;
 	z-index: 10;
 	position: absolute;
-	
+        top:200%;
+        left:37%;
+	color:black;
 	        
 }
 #searchbar{
 	border-radius: 0 6px 6px 0; 
 	text-align: center;
-	position:relative; 
+	position:absolute; 
 	top:250px;
-	width:1020px; 
+	width:30%; 
 	height:50px;
         margin-left:auto;
         margin-right:auto;
+        left:35%;
 }
 .formulaire{
 	display:inline-block;
 }
-.formulaire .champ{
-	background-color:#87DAF4 ;
+.formHome, .placeholderHome{
+	
 	font-style: italic;
 	font-family: helvetica;
 	width:600px; 
 	height:50px;
 }
-.formulaire .bouton{
+.formHome .bouton{
 	background-repeat: no-repeat;
 	font-style: bold ;
 	text-shadow: 0px 1px 0px rgba( 255, 255, 255, 0.2);
@@ -77,5 +80,4 @@ center
     margin-right:auto;
     margin-left:auto;
 }
-
 

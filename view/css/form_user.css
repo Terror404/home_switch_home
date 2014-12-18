@@ -1,0 +1,48 @@
+label
+{
+    width:10em;
+    text-align: right;
+    margin-right:0.5em;
+ 
+    display:block;
+    
+}
+
+input
+{
+    width:80%;
+}
+
+.position
+{
+    margin-top: 40px;
+    position:absolute;
+    margin-left: 25%;
+    margin-right:10%;
+    text-align: center;
+}
+
+.bouton
+{
+     background: #3498db;
+     width:70%;
+background-color: #00BCE0;
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 0px;
+  font-family: "GeosansLight";
+  color: white;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+ 
+  
+  
+  
+}   
+.bouton:hover {
+  background: #83EBC6;
+  text-decoration: none;
+
+      
+}
