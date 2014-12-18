@@ -1,7 +1,8 @@
 <section class="RightCol">
-    <form action="../modele/add_house.php"  method="post" id="create_house" enctype="multipart/form-data" class="formHouseBox">
+    <div class="form"> 
+    <form action="../modele/upload_photo.php"  method="post" id="create_house" enctype="multipart/form-data" class="formHouseBox">
         <article class='title'> <!--Insert the title-->
-            Titre pour votre maison <br/>
+            <p class="label">Titre pour votre maison </p>
             <input type="text" name="title" placeholder="titre de la maison" onblur="verifform(this)"/>
         </article>
         <article class="PhotosButtons"> <!--Insert the photos-->
@@ -63,7 +64,7 @@
 
                 <!--Town-->
                 <label for="town" class="label"> Ville : </label>
-                <input type="text" name="town" id="town"/><br>Veuillez entrer le nom de la ville sans tirêts<br/>
+                <input type="text" name="town" id="town"/><p class="ville">Veuillez entrer le nom de la ville sans tirêts</p>
 
                 <!--address-->
                 <label for='address' class="label"> Adresse :</label>
@@ -99,11 +100,14 @@
                 <label class="label">Aménagements :</label>
                     <input type="checkbox"/> <label> cour </label>
                         <input type="checkbox" value="garden"/> <label> jardin</label>
-                        <input type="checkbox" value="parking"/> <label> garage/ parking</label>
+                        <input type="checkbox" value="parking"/> <label> garage/ parking</label> </br>
+                        <div class="aménagement">
                         <input type="checkbox" value="pool"/> <label> piscine </label>
                         <input type="checkbox" value="disabled"/> <label> accès handicapé</label>
+                        </div> 
         </div>
         </article>
+    </div>
         <input type="submit" value="Envoyer le formulaire" class="sub"/>
     </form>
 </section>

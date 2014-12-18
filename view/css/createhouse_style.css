@@ -1,25 +1,66 @@
-.formHouseBox
-{
-    top:17%;
-    position:absolute;
-    left:30%;
-    border:2px solid;
-    padding:2%;
-    height:60%;
-}
-.title .PhotosButtons .DescriptionMM .Hinformation
-{
-display:block;
 
+ .sub
+{
+    margin-left : 25%;
+    margin-top : 5%;
+     background: #3498db;
+     width:17%;
+    background-color: #00BCE0;
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 0px;
+  font-family: "GeosansLight";
+  color: white;
+  font-size: 18px;
+  padding: 10px 10px 10px 10px;
+  text-decoration: none;
+}   
+ .sub :hover {
+  background: #83EBC6;
+  text-decoration: none;
+
+      
+}
+.RightCol{
+   
+    margin-top : 5%;
+    margin-left : 30%;
+    margin-bottom : 10%;
+    font-family: "GeosansLight";
+    font-size : 120%;
+    
+ 
 }
 
-.MsgErrorInsc
+.label
 {
-position:absolute;
-top:17%;
-left:30%    
+width: 50%;
+float: left;
+text-align:left;
+margin-right: 0.5em;
+display: block
 }
-.homeButton
+
+.form{
+    border : 2px solid white;
+    width : 60%; 
+    padding : 3%;
+    background-color: white;
+    border-radius : 10px;
+    opacity : 0.9;
+}
+
+.aménagement, .ville{
+ margin-left: 51.4%;   
+}
+
+body{
+ background-image: url("../pictures/sunburst-scenery1920x1200.jpg");  
+}
+
+.textarea
 {
-width:5%
+    height : 100px;
+    width : 48%;
+    margin-top : 2%;
 }
