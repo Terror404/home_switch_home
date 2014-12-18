@@ -26,12 +26,13 @@
     margin-top : 5%;
     margin-left : 35%;
     font-family: "GeosansLight";
-    
+    font-size : 120%;
+ 
 }
 
 .label
 {
-width: 15em;
+width: 16em;
 float: left;
 text-align:left;
 margin-right: 0.5em;
@@ -39,17 +40,19 @@ display: block
 }
 
 .form{
-    border : 2px solid black;
-    width : 50%; 
-    padding : 1%;
-       background: url("../view/pictures/sunburst-scenery1920x1200.jpg") no-repeat;
-    
+    border : 2px solid white;
+    width : 60%; 
+    padding : 3%;
+    background-color: white;
+    border-radius : 10px;
+    opacity : 0.9;
 }
 
-.aménagement{
- margin-left: 48.2%;   
+.aménagement, .ville{
+ margin-left: 51.4%;   
 }
 
 body{
-   
+ background-image: url("../pictures/sunburst-scenery1920x1200.jpg");  
 }
+

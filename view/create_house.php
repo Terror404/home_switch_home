@@ -64,7 +64,7 @@
 
                 <!--Town-->
                 <label for="town" class="label"> Ville : </label>
-                <input type="text" name="town" id="town"/><br>Veuillez entrer le nom de la ville sans tirêts<br/>
+                <input type="text" name="town" id="town"/><p class="ville">Veuillez entrer le nom de la ville sans tirêts</p>
 
                 <!--address-->
                 <label for='address' class="label"> Adresse :</label>
