@@ -18,7 +18,7 @@
     
     <!--Get the house title-->
     <?php
-        $askHtitle=$bdd->prepare('SELECT H.title FROM house H WHERE H.id=:idhouse');
+        $askHtitle=$bdd->prepare('SELECT house.title FROM house WHERE house.id=:idhouse');
             $askHtitle->execute(array('idhouse'=>$_GET['id']));
     ?>
     

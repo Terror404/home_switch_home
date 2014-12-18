@@ -92,6 +92,7 @@
                     }
                     elseif( $_GET['page']=='formAd')
                     {
+                        require("../modele/search_house_card.php");
                         include("../view/create_ad.php");//vue
                     }
                     elseif( $_GET['page']=='confirmAddAd')

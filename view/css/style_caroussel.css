@@ -29,7 +29,7 @@
 center
 {
     height:25px;
-    top: 275px;
+    top: 20%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -38,18 +38,21 @@ center
 	font-family: helvetica;
 	z-index: 10;
 	position: absolute;
-	
+        top:200%;
+        left:37%;
+	color:black;
 	        
 }
 #searchbar{
 	border-radius: 0 6px 6px 0; 
 	text-align: center;
-	position:relative; 
+	position:absolute; 
 	top:250px;
-	width:1020px; 
+	width:30%; 
 	height:50px;
         margin-left:auto;
         margin-right:auto;
+        left:35%;
 }
 .formulaire{
 	display:inline-block;

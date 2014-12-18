@@ -1,5 +1,5 @@
 <section class='MiddlePage'>
-<section class="RightCol">
+<section class="createAdHome">
     <article class='title'>
         <?php
             while($resHtitle=$askHtitle->fetch())

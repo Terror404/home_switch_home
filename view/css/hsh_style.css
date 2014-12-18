@@ -271,4 +271,28 @@ and open the template in the editor.
     Created on : 12 déc. 2014, 16:23:18
     Author     : melanie
 */
-
+.myhouseHome
+{
+    top:15%;
+    position:absolute;
+}
+.createAdHome
+{
+    top:15%;
+    position:absolute;
+    left:15%;
+    
+}
+.ButtonMM
+{
+    left:120%;
+    position:absolute;
+}
+.confirmAddUserButton
+{
+    position:absolute;
+    display:block;
+    top:30%;
+    left:40%;
+    width:20%;
+}
