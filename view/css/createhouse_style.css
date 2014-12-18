@@ -6,5 +6,20 @@
     border:2px solid;
     padding:2%;
     height:60%;
-    
+}
+.title .PhotosButtons .DescriptionMM .Hinformation
+{
+display:block;
+
+}
+
+.MsgErrorInsc
+{
+position:absolute;
+top:17%;
+left:30%    
+}
+.homeButton
+{
+width:5%
 }

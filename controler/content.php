@@ -43,58 +43,68 @@
                 // choice of the page depending on the value in the url
                 if(isset($_GET['page']) and ($_GET['page']!=''))
                 {
-                      
+                    //Research page 
                     if( $_GET['page']=='research')
                     {
                         include("../view/search_box.php");//vue
+                        include("../view/interactive_map.php");
                     }
+                    //Search Result page
                     elseif( $_GET['page']=='search_result')
                     {
                         require("../modele/search_ad.php"); //modele
                         include("../view/search_result.php"); //vue
                     }
+                    //Profile page
                     elseif( $_GET['page']=='myProfile')
                     {
                         require("../modele/search_my_profile.php"); //modele
                         include("../view/my_profile.php");//vue
                         
                     }
+                    //Saved search page
                     elseif( $_GET['page']== 'my_research')
                     {
                         include("../view/my_research.php");//vue
                         include("../modele/search_my_research.php"); //modele
                     }
-                    elseif( $_GET['page']== 'my_houses')
+                    //Own Houses
+                    elseif( isset($_SESSION['userId']) AND $_GET['page']== 'my_houses')
                     {
                         require("../modele/search_my_houses.php"); //modele
                         include("../view/my_houses.php");//vue                       
                     }
-                    elseif( $_GET['page']== 'my_ads')
+                    //Own Ad
+                    elseif( isset($_SESSION['userId']) AND $_GET['page']== 'my_ads')
                     {
                         include("../view/my_ads.php");
                         include("../modele/search_my_ads.php"); //modele
                     }
-                    elseif( $_GET['page']=='my_mp')
+                    //My Messages
+                    elseif(isset($_SESSION['userId']) AND $_GET['page']=='my_mp')
                     {
                         include("../view/my_mp.php");//vue
                         include("../modele/search_my_mp.php"); //modele
                     }
-                    
-                    elseif( $_GET['page']=='formUser')
+                    //Inscription Form
+                    elseif($_GET['page']=='formUser')
                     {
                         include("../view/form_user.php");//vue
                     }
+                    //Redirect page after inscription
                     elseif( $_GET['page']=='confirmAddUser')
                     {
                         
                         require("../modele/add_user.php"); //modele
                         include("../view/confirm_add_user.php");//vue
                     }
+                    //Ad Creation page
                     elseif( $_GET['page']=='formAd')
                     {
                         require("../modele/search_house_card.php");
                         include("../view/create_ad.php");//vue
                     }
+                    //Redirect Page after ad creation
                     elseif( $_GET['page']=='confirmAddAd')
                     {
                         
@@ -103,7 +113,6 @@
                     }
                     
                     // Add a house
-                    
                     elseif( $_GET['page']=='formHouse')
                     {
                         include("../view/create_house.php");//vue
@@ -127,16 +136,12 @@
                     }
                     
                     //confirm the sending of the new message
-                    
                     elseif( $_GET['page']=='confirmAddMsg')
-                    {
-                        
+                    {  
                         require("../modele/add_message.php"); //modele
                         include("../view/confirm_sent_message.php");//vue
                     }
-                   
-                    
-                                    
+               
                     //Add a new house
                     elseif($_GET['page']=='createHouse')
                     {   

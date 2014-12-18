@@ -1,6 +1,3 @@
-<div class="map">
-            <img src="../view/pictures/France.png" alt="Carte"/>
-        </div>
 <article class="FormSearch">
 	<p>	
         <form class="Date" action="content.php?page=search_result" method="post"> <!--Formuaire de choix de la date-->
@@ -43,7 +40,7 @@
                                         <option value="picardie">Picardie
                                         <option value="poitou_charentes">Poitou Charentes
                                         <option value="PACA">Provence Alpes Côte d'Azur
-                                        
+                                        <option value="rhone_alpes">Rhônes-Alpes
                                         
                                         
                                         

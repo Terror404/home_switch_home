@@ -1,3 +1,7 @@
+<?php 
+    if(!isset($_SESSION['userId']))
+    {
+?>}
 <script language="JavaScript">
     function validation(f) {
   if (f.pass.value == '' || f.repass.value == ''|| f.mail.value == ''|| f.pseudo.value == '') {
@@ -71,3 +75,15 @@
                 
 		</form>
  </div>
+<?php
+    }
+    else
+    {
+?>
+        <div class="MsgErrorInsc">
+        <br/><br/>Vous ne pouvez pas accéder à cette page<br/>
+        <input type="button" value="Retour" onclick="self.location.href='content.php?page=home'" class="homeButton"/>
+        </div>
+
+<?php
+    }

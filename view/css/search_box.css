@@ -1,4 +1,9 @@
 /*css recherche*/
+
+.titleIntMap
+{
+text-align:center;
+}
 .map
 {
  display:inline-block;
