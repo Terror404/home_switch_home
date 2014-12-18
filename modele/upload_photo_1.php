@@ -6,35 +6,6 @@ session_start();
  ******************************************************************************/
 
 $id_user=$_SESSION['userId'];
-switch($_POST)
-{
-    case"photo0":
-        $dossier_user="../view/pictures/$id_user/pictures/";
-        break;
-    case"photo1":
-        $dossier_user="../view/pictures/$id_user/photo1/";
-        break;
-    case"photo2":
-        $dossier_user="../view/pictures/$id_user/photo2/";
-        break;
-    case"photo3":
-        $dossier_user="../view/pictures/$id_user/photo3/";
-        break;
-    case"photo4":
-        $dossier_user="../view/pictures/$id_user/photo4/";
-        break;
-    case"photo5":
-        $dossier_user="../view/pictures/$id_user/photo5/";
-        break;
-    case"photo6":
-        $dossier_user="../view/pictures/$id_user/photo6/";
-        break;
-    case"profile":
-        $dossier_user="../view/pictures/$id_user/profile/";
-        break;
-}
-
-
 $dossier_user="../view/pictures/$id_user/";
 
 //Creation of a folder for each user
