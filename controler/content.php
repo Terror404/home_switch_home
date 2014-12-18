@@ -49,12 +49,24 @@
                         include("../view/search_box.php");//vue
                         include("../view/interactive_map.php");
                     }
+                    
                     //Search Result page
+                    
                     elseif( $_GET['page']=='search_result')
                     {
                         require("../modele/search_ad.php"); //modele
                         include("../view/search_result.php"); //vue
                     }
+                    
+                    //Search by keywords
+                    
+                    elseif( $_GET['page']=='searchKeyWords')
+                    {
+                        require("../modele/search_keywords.php"); //modele
+                       //include("../view/search_keywords_result.php"); //vue
+                    }
+                    
+                    
                     //Profile page
                     elseif( $_GET['page']=='myProfile')
                     {
