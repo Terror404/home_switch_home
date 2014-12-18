@@ -1,14 +1,15 @@
 <section class="RightCol">
+    <div class="form"> 
     <form action="../modele/upload_photo.php"  method="post" id="create_house" enctype="multipart/form-data" class="formHouseBox">
         <article class='title'> <!--Insert the title-->
-            Titre pour votre maison <br/>
+            <p class="label">Titre pour votre maison </p>
             <input type="text" name="title" placeholder="titre de la maison" onblur="verifform(this)"/>
         </article>
         <article class="PhotosButtons"> <!--Insert the photos-->
                 <aside class="PhotosMM"> 
                         <p> 
                             <label for="photo0" class="label">image:</label>
-                            <input name="photo0" type='file' id="photo0" /><br/>
+                            <input name="photo0" type='file' id="photo0" class="button"/><br/>
                             
                             <label for="photo1" class="label">image:</label>
                             <input name="photo1" type='file' id="photo1" /><br/>                                               
@@ -97,11 +98,14 @@
                 <label class="label">Aménagements :</label>
                     <input type="checkbox"/> <label> cour </label>
                         <input type="checkbox" value="garden"/> <label> jardin</label>
-                        <input type="checkbox" value="parking"/> <label> garage/ parking</label>
+                        <input type="checkbox" value="parking"/> <label> garage/ parking</label> </br>
+                        <div class="aménagement">
                         <input type="checkbox" value="pool"/> <label> piscine </label>
                         <input type="checkbox" value="disabled"/> <label> accès handicapé</label>
+                        </div> 
         </div>
         </article>
+    </div>
         <input type="submit" value="Envoyer le formulaire" class="sub"/>
     </form>
 </section>

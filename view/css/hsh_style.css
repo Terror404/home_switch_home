@@ -79,6 +79,7 @@ footer
         background-color:#ffffff;
         bottom:0px;
         position:absolute;
+        margin-top : 5%;
         
         
         
@@ -94,6 +95,7 @@ nav
         min-width:1280px;
         border-bottom:solid 1px;
         overflow: visible;
+        margin-bottom : 5%;
         
         
         
