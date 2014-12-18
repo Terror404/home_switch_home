@@ -29,7 +29,7 @@ if (isset($page) AND $page!='')
                     }
                     elseif( $_GET['page']== 'my_houses')
                     {
-                       
+                       echo'<link rel="stylesheet" type="text/css" href="../view/css/myhouses_style.css">'; 
                     }
                     elseif( $_GET['page']== 'my_ads')
                     {

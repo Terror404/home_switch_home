@@ -12,10 +12,10 @@ include ('mailbox_toolbar.php');
 			</div>
 		
 			<div class="newmsgform" >
-                            <form method=post action="../modele/add_message.php" class="form-horizontal">
+                            <form method=post action="../controler/content.php?page=confirmAddMsg" class="form-horizontal">
 					<p>
 						<label> à:</label>
-						<input class= "champ" type="text" name="id_receiver"/>
+						<input class= "champ" type="text" name="login_receiver"/>
 							
 					
 					</p>
@@ -35,3 +35,4 @@ include ('mailbox_toolbar.php');
 
 
 
+<?php> //"../modele/add_message.php" <?>

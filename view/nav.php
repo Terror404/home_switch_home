@@ -1,4 +1,7 @@
-<?php $userId=$_SESSION["userId"];?>
+<?php if(isset($_SESSION['userId']))
+{
+    $userId=$_SESSION["userId"];
+?>
 <nav>
 
 <ul class="linkBlockList">
@@ -22,3 +25,22 @@
 </ul>
     
 </nav>
+<?php
+}
+
+else
+{
+?>
+<nav>
+
+<ul class="linkBlockList">
+	<li class="linkBlockElement"><a class="linkBlock" href="../controler/content.php?page=home" >Accueil</a></li>
+	<li class="linkBlockElement"><a class="linkBlock" href="../controler/content.php?page=forumIndex" >Forum</a></li>
+	<li class="linkBlockElement"><a class="linkBlock" href="../controler/content.php?page=research" >Recherche</a></li>
+	<li class="linkBlockElement"><a class="linkBlock" href="#help">Aide</a></li>
+</ul>
+    
+</nav>
+<?php
+}
+?>
