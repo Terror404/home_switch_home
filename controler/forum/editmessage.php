@@ -1,7 +1,7 @@
 <?php
 
 define("__ROOT__", dirname(dirname(dirname(__FILE__))));
-require_once(__ROOT__."/modele/isLoggedIn stub.php");
+require_once(__ROOT__."/modele/forum/core.php");
 require_once(__ROOT__."/modele/pdoDatabaseRef.php");
 require_once(__ROOT__."/modele/forum/editmessage_model.php");
 
@@ -10,7 +10,7 @@ if (isLoggedIn()) {
         if (POST_EXISTS) {
             $postData = $postQuery->fetch();
             $postQuery->closeCursor();
-            if ($postData.authorId == $_SESSION['userId']) {
+            if ($postData['authorId'] == $_SESSION['userId']) {
                 include(__ROOT__."/view/forum/editmessage_view.php");
             }
             else {

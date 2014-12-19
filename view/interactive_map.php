@@ -1,5 +1,5 @@
 <div class="map">
-    <h2 class="titleIntMap">Carte interactive. Recherche instantanée</h2>
+    <h2 class="titleIntMap"></h2>
 <img src="../view/pictures/France_interactive_map.gif" width="650" height="625" border="0" usemap="#map" alt="carte interactive"/>
 
 <map name="map">

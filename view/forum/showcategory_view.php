@@ -35,7 +35,7 @@
         if ($topicList->rowCount() != 0) {
             while ($topic = $topicList->fetch()) {
                 ?>
-                <p><strong><a href="./../controler/content.php?page=showTopic&t=<?php echo $topic['id'] ?>">
+                <p><strong><a href="./../controler/content.php?page=showTopic&amp;t=<?php echo $topic['id'] ?>">
                 <!--Topic gets stored in $_GET['t']-->
                 <?php echo $topic['title'] ?>
                 </a></strong><br/>Créé par <?php echo $topic['authorName'] ?> 
