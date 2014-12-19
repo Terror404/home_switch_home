@@ -29,8 +29,9 @@ session_start();
         }
         $town1=str_replace('-', '&nbsp', $_POST['town']);
         $town2=strtolower($town1);
+        
         $askzip=$DB->prepare('SELECT ville_code_postal FROM villes_france_free WHERE ville_nom_simple =:nomVille');
-            $askzip->execute(array('nomVille'=>$town2));
+            $askzip->execute(array(':nomVille'=>$town2));
             
         while($reszip=$askzip->fetch())
         {
