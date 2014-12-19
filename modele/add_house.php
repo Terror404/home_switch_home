@@ -27,9 +27,10 @@ session_start();
         {
             $idArea=$resIdArea['id'];
         }
-        
+        $town1=str_replace('-', '&nbsp', $_POST['town']);
+        $town2=strtolower($town1);
         $askzip=$DB->prepare('SELECT ville_code_postal FROM villes_france_free WHERE ville_nom_simple =:nomVille');
-            $askzip->execute(array('nomVille'=>$_POST['town']));
+            $askzip->execute(array('nomVille'=>$town2));
             
         while($reszip=$askzip->fetch())
         {
@@ -39,20 +40,21 @@ session_start();
         if($zip==$_POST['zipcode'])
         {
             $askIdTown=$DB->prepare("SELECT ville_id FROM villes_france_free WHERE ville_nom_simple=:nomVille");
-                $askIdTown->execute(array('nomVille'=>$_POST['town']));
+                $askIdTown->execute(array('nomVille'=>$town2));
             while($resIdTown=$askIdTown->fetch())
             {
                 $idTown=$resIdTown['ville_id'];
             }
-            
-            $addH=$DB->prepare("INSERT INTO house(id_user,title,description,id_town,id_area,address,house_type,nbr_people,nbr_room) VALUES(:idUser,:title,:desc,:idTown,:idArea,:address,:houseType,:cap,:brnb)");
-                $addH->execute(array('idUser'=>$_SESSION['userId'],'title'=>$_POST['title'],'desc'=>$_POST['description'],'idTown'=>$idTown,'idArea'=>$idArea,'address'=>$_POST['address'],'houseType'=>$_POST['house_type'],'cap'=>$_POST['capacity'],'brnb'=>$_POST['brnb']));
+            include"../modele/upload_photo.php";
+            $addH=$DB->prepare("INSERT INTO house(id_user,title,description,id_town,id_area,address,house_type,nbr_people,nbr_room,pictures,picture_1) VALUES(:idUser,:title,:desc,:idTown,:idArea,:address,:houseType,:cap,:brnb,:pictures,:photo1)");
+                $addH->execute(array('idUser'=>$_SESSION['userId'],'title'=>$_POST['title'],'desc'=>$_POST['description'],'idTown'=>$idTown,'idArea'=>$idArea,'address'=>$_POST['address'],'houseType'=>$_POST['house_type'],'cap'=>$_POST['capacity'],'brnb'=>$_POST['brnb'],'pictures'=>$p['0'],'photo1'=>$p['1']));
             echo"La maison a bien été enregistrée";
             ?> <input type='button' value='continuer' onclick="self.location.href='../controler/content.php?page=my_houses'"/><?php
         }
         else
         {
-            echo"Le code postal ne correspond pas à la ville qui a été entrée.";
+            echo"Le code postal ne correspond pas à la ville qui a été entrée.";echo"<br/>";
+            echo$town2;
         }
     }
     else

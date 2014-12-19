@@ -23,10 +23,11 @@
     }
   }
 </script>
-		 <div class="position">
-		<form method="post" action="content.php?page=confirmAddUser" onsubmit="return validation(this)">
+
+            <div class="position"><h1 class="Title"> Créer votre compte </h1> </br>
+		<form method="post" action="content.php?page=confirmAddUser" onsubmit="return validation(this)" class="form">
 			<p>
-                            <label for="pseudo">Pseudo*</label>
+                            <label for="pseudo" >Pseudo*</label>
 				<input type="text" name="pseudo" id="pseudo" placeholder="Ex:Doge92" maxlenght="12" />
 			</p>
                         
@@ -65,14 +66,14 @@
 
 			
 		
-		
+                        </br>
 		<p>*Champs obligatoires</p>
 
-               
-			<input type="submit" name="valider" value="Valider" class="bouton" />
+               <div class="twosubs">
+			<input type="submit" name="valider" value="Valider" class="sub" />
 		
-			<input type="reset" name="annuler" value="Annuler" class="bouton"/>
-                
+			<input type="reset" name="annuler" value="Annuler" class="sub"/>
+                </di>
 		</form>
  </div>
 <?php

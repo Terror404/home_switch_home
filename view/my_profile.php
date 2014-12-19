@@ -79,7 +79,7 @@ while ($resProfDate = $askProfDate->fetch()) {
                 echo $arrC['0'];
                 break;
             case 12:
-                echo "decembre";
+                echo "décembre";
                 echo"&nbsp";
                 echo $arrC['0'];
                 break;

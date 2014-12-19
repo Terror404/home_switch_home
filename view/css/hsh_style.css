@@ -10,7 +10,7 @@ body
 	color:black;
 	height:100%;
         background-size: 100%;
-        min-height:900px;
+        min-height:2000px;
         overflow:auto;
         
         background-color:white;
@@ -96,9 +96,6 @@ nav
         border-bottom:solid 1px;
         overflow: visible;
         margin-bottom : 5%;
-        
-        
-        
         
 }
 
