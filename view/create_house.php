@@ -1,4 +1,5 @@
 <section class="RightCol">
+    <h1 class="Title"> Ajouter une résidence</h1> </br>
     <div class="form"> 
     <form action="../modele/upload_photo.php"  method="post" id="create_house" enctype="multipart/form-data" class="formHouseBox">
         <article class='title'> <!--Insert the title-->
