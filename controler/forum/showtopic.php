@@ -20,7 +20,7 @@ if (TOPIC_IS_SET) {
             define("CURRENT_PAGE", 1);
         }
         else {
-            define("CURRENT_PAGE", getPage($firstMessage), MESSAGES_PER_PAGE);
+            define("CURRENT_PAGE", getPage($firstMessage, MESSAGES_PER_PAGE));
         }
         
         if (isLoggedIn()) {

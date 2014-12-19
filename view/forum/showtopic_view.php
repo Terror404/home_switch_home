@@ -40,18 +40,18 @@
         <?php
         for ($i = 1; $i <= NUMBER_OF_PAGES; $i++) {
             if ($i == CURRENT_PAGE) {
-                echo "<strong>".(string)$i."</strong>,";
+                echo "<strong>".(string)$i."</strong> ";
             }
             else {
                 ?>
-                <a href="./../controler/content.php?page=showTopic
-                   &amp;t=<?php echo $topic['id'] ?>
-                   &amp;p=<?php echo (($i-1) * MESSAGES_PER_PAGE) ?>">
-                <?php echo $i ?>
-                 </a><br/></br>
+                <a href="./../controler/content.php?page=showTopic&amp;t=<?php echo CURRENT_TOPIC ?>&amp;p=<?php echo (($i-1) * MESSAGES_PER_PAGE) ?>">
+                <?php echo $i ?></a> <!-- espace -->
                 <?php
             }
         }
+        ?>
+        <br/></br>
+        <?php
         
         //Displaying messages
         for ($i = 0; ($i < MESSAGES_PER_PAGE) and (array_key_exists($firstMessage + $i, $messageTable)); $i++)

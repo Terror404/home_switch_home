@@ -1,7 +1,7 @@
 <?php
 
 function isLoggedIn() {
-    return (isset($_SESSION['userId']) and (int)$_SESSION['userId'] == 0);
+    return (isset($_SESSION['userId']) and (int)$_SESSION['userId'] != 0);
 }
 
 //The first item is item n°0
