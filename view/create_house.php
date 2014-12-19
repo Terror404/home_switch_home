@@ -1,33 +1,33 @@
 <section class="RightCol">
     <h1 class="Title"> Ajouter une résidence</h1> </br>
     <div class="form"> 
-    <form action="../modele/upload_photo.php"  method="post" id="create_house" enctype="multipart/form-data" class="formHouseBox">
-        <article class='title'> <!--Insert the title-->
+        <form action="../modele/add_house.php"  method="post" id="create_house" enctype="multipart/form-data" class="formHouseBox">
+        <div class='title'> <!--Insert the title-->
             <p class="label">Titre pour votre maison </p>
             <input type="text" name="title" placeholder="titre de la maison" onblur="verifform(this)"/>
-        </article>
-        <article class="PhotosButtons"> <!--Insert the photos-->
-                <aside class="PhotosMM"> 
+        </div>
+        <div class="PhotosButtons"> <!--Insert the photos-->
+                <div class="PhotosMM"> 
                         <p> 
-                            <label for="photo0" class="label">image:</label>
+                            <label for="photo0" class="label">photo principale:</label>
                             <input name="photo0" type='file' id="photo0" /><br/>
                             <input type="hidden" name="tagPhoto" value="0"/>
                             
-                            <label for="photo1" class="label">image:</label>
+                            <label for="photo1" class="label">photo n°2:</label>
                             <input name="photo1" type='file' id="photo1" /><br/>  
                             <input type="hidden" name="tagPhoto" value="1"/>
                         </p>
-                </aside>
-        </article>
+                </div>
+        </div>
 
 
-        <article class="DescriptionMM" > <!--Mettre ici la description de la maison-->
+        <div class="DescriptionMM" > <!--Mettre ici la description de la maison-->
             <p class="txt">
                 <label for="description" class="label">décrivez votre habitation:</label>
                 <textarea class="textarea" name="description" placeholder="Description "></textarea>
             </p>
-        </article>
-        <article class='Hinformation'>
+        </div>
+        <div class='Hinformation'>
         <div class='txt'>
             <h3>Localisation :</h3>
                 <!--Region-->
@@ -99,7 +99,7 @@
 
                 <!--Facilities-->
                 <label class="label">Aménagements :</label>
-                    <input type="checkbox"/> <label> cour </label>
+                        <input type="checkbox"/> <label> cour </label>
                         <input type="checkbox" value="garden"/> <label> jardin</label>
                         <input type="checkbox" value="parking"/> <label> garage/ parking</label> </br>
                         <div class="aménagement">
@@ -107,8 +107,10 @@
                         <input type="checkbox" value="disabled"/> <label> accès handicapé</label>
                         </div> 
         </div>
-        </article>
-    </div>
-        <input type="submit" value="Envoyer le formulaire" class="sub"/>
+        </div>
+    <input type="submit" value="Envoyer le formulaire" class="sub"/>
     </form>
+    </div>
+        
 </section>
+    
