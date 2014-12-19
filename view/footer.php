@@ -43,7 +43,7 @@
                     
                     <a href=https://www.facebook.com/hshapp class="footerLink">Facebook</a><br/>
                     <a href=https://twitter.com/Hm_Swtch_Hm class="footerLink">Twitter</a><br/>
-                    <a href=# class="footerLink">Instagram</a><br/>
+                    <a href=http://instagram.com/homeswitchhomeweb/ class="footerLink">Instagram</a><br/>
                    
                 
                 
