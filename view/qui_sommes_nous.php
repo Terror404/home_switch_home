@@ -11,7 +11,7 @@
         
         <p>HomeSwitchHome est la plateforme idéale pour l'échange de maisons. Il vous suffit de vous créer un compte pour pouvoir poster sans attendre votre annonce de logement. Ensuite il ne vous reste plus qu'à contacter les membres dont les offres vous intéressent afin de leur faire une proposition d'échange. De même les membres conquis par votre logement pourront alors vous contacter.
             <?php
-            $fp = fopen($filename, "r");
+            $fp = fopen("Fichier Texte Back Office.odt", "r");
             $contenu_du_fichier = fgets($fp,255);
             fclose($fp);
             echo $contenu_du_fichier;
