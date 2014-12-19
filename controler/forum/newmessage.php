@@ -1,7 +1,7 @@
 <?php
 
 define("__ROOT__", dirname(dirname(dirname(__FILE__))));
-require_once(__ROOT__."/modele/isLoggedIn stub.php");
+require_once(__ROOT__."/modele/forum/core.php");
 require_once(__ROOT__."/modele/pdoDatabaseRef.php");
 require_once(__ROOT__."/modele/forum/newmessage_model.php");
 

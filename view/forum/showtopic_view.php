@@ -1,25 +1,11 @@
-<?php
-/*
-messageList is a table including info about the topic's messages, including
-authorName (string)
-creationTime (date)
-content (string)
-
-successfullyPostedMessage (boolean) denotes whether a message has been
-successfully added by the user. If the user has not attempted to post a
-message, it is not set.
-
-$reasonForPostFailure (string) explains the error to the user if an attempt at
-posting a message has been made but failed.
-*/
-?>
-
 <link rel="stylesheet" type="text/css" href="./../view/css/forumstyle.css">
 <script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
 <script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
 
 <div class="forumFrame">
     <?php
+    
+        //confirmation/error message for adding a new post
         if (isset($successfullyPostedMessage)) {
             if ($successfullyPostedMessage) {
                 ?>
@@ -29,19 +15,65 @@ posting a message has been made but failed.
             else {
                 ?>
                 <p>Une erreur s'est produite lors de l'ajout de votre message :<br/>
-                <?php echo $reasonForPostFailure; ?></p>
+                <?php echo $reasonForPostFailure; ?></p><br/>
                 <?php
             }
         }
-
-        while ($message = $messageList->fetch())
+        //confirmation/error message for editing a post
+        if (isset($successfullyModifiedMessage)) {
+            if ($successfullyModifiedMessage) {
+                ?>
+                <p>Votre message a été modifié.</p><br/>
+                <?php
+            }
+            else {
+                ?>
+                <p>Une erreur s'est produite lors de la modification de votre message :<br/>
+                <?php echo $reasonForModificationFailure; ?></p><br/>
+                <?php
+            }
+        }
+        
+        //Page navigation
+        ?>
+        Page 
+        <?php
+        for ($i = 1; $i <= NUMBER_OF_PAGES; $i++) {
+            if ($i == CURRENT_PAGE) {
+                echo "<strong>".(string)$i."</strong>,";
+            }
+            else {
+                ?>
+                <a href="./../controler/content.php?page=showTopic
+                   &amp;t=<?php echo $topic['id'] ?>
+                   &amp;p=<?php echo (($i-1) * MESSAGES_PER_PAGE) ?>">
+                <?php echo $i ?>
+                 </a><br/></br>
+                <?php
+            }
+        }
+        
+        //Displaying messages
+        for ($i = 0; ($i < MESSAGES_PER_PAGE) and (array_key_exists($firstMessage + $i, $messageTable)); $i++)
         {
             ?>
-            <p><i>Posté par <?php echo $message['authorName'] ?> le <?php echo $message['creationTime'] ?></i><br/>
-            <?php echo $message['content'] ?></p><br/>
+            <p><i>Posté par 
+            <?php echo $messageTable[$firstMessage + $i]['authorName'] ?> 
+            le <?php echo $messageTable[$firstMessage + $i]['creationTime'] ?></i> - 
+            #<?php echo($firstMessage + $i) /*Message number*/ ?>
+                <?php
+                    if (isLoggedIn()) { //Displaying the "Edit" option
+                        if ($messageTable[$firstMessage + $i]['authorId'] == $_SESSION['userId']) {
+                            ?>
+                             - <a href="./../controler/content.php?page=editPost&amp;t=<?php echo CURRENT_TOPIC ?>&amp;p=<?php echo $messageTable[$firstMessage + $i]['id'] ?>">Modifier</a>
+                            <?php
+                        }
+                    }
+                ?>
+                <br/>
+            <?php echo $messageTable[$firstMessage + $i]['content'] ?></p><br/>
             <?php
         }
-        $messageList->closeCursor();
     ?>
 
     <br/><br/>
