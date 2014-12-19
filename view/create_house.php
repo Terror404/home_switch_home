@@ -1,4 +1,5 @@
 <section class="RightCol">
+    <h1 class="Title"> Ajouter une résidence</h1> </br>
     <div class="form"> 
         <form action="../modele/add_house.php"  method="post" id="create_house" enctype="multipart/form-data" class="formHouseBox">
         <div class='title'> <!--Insert the title-->
