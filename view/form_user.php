@@ -24,7 +24,8 @@
   }
 </script>
 
-            <div class="position"><h1 class="Title"> Créer votre compte </h1> </br>
+            <div class="position">
+                <h1 class="Title"> Créer votre compte </h1> </br>
 		<form method="post" action="content.php?page=confirmAddUser" onsubmit="return validation(this)" class="form">
 			<p>
                             <label for="pseudo" >Pseudo*</label>
@@ -73,7 +74,7 @@
 			<input type="submit" name="valider" value="Valider" class="sub" />
 		
 			<input type="reset" name="annuler" value="Annuler" class="sub"/>
-                </di>
+                </div>
 		</form>
  </div>
 <?php

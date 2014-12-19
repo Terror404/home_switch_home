@@ -1,5 +1,6 @@
 <article class="FormSearch">
 	<p>	
+        <div class="search">
         <form class="Date" action="content.php?page=search_result" method="post"> <!--Formuaire de choix de la date-->
 			<?php $research= "";?>
                         <p> <label class="LabDate"> Quelles dates ? </label> </p>
@@ -12,11 +13,11 @@
 				  <!--Menu déroulant jour fin-->
 					<input name="dateEnd" type="text"class="datepicker"> 
 				</p>
-                        
+                                </br>
                                 <p>
                                     
                                     Dans quel région partez vous?
-                                    <select name="area" size="1">
+                                    <select name="area" size="1" class="input">
                                         <option value="alsace">Alsace
                                         <option value="aquitaine">Aquitaine
                                         <option value="auvergne">Auvergne
@@ -50,8 +51,9 @@
                                     
                                     
                                 </p>
-                  
-                            <p>Type de logement: <br/>
+                                                  </br>
+
+                            <p>Type de logement: 
                             
                             <select name="houseType" size="1">
                                 <option value="villa">Villa
@@ -67,7 +69,7 @@
                             </select><br/>
                           
                             <p>
-                            Nombre de personnes:<br/>
+                            Nombre de personnes:
 				  <!--Menu déroulant jour fin-->
 				<input type="range" min="1" max="10" name="nbrPeople" value="1" oninput="document.getElementById('AfficheRangePeople').textContent=value" set="1"/>
                                 <span id="AfficheRangePeople">1</span>
@@ -80,13 +82,13 @@
 		  <!--Formulaire de choix des critères avancés-->
 			
                         <p>
-                            Nombre de chambres:<br/>
+                            Nombre de chambres:
                         
                                 <input type="range" name="nbrRooms" min="1" max="10" value="1" oninput="document.getElementById('AfficheRangeRoom').textContent=value" />
                                 <span id="AfficheRangeRoom">1</span>
                         </p>
-                        
-                        <p>
+                        </br>
+                        <p class="column1">
                             Aménagement:<br/>
                             <input type="checkbox" name="garden"><label >Jardin</label><br/>
                             <input type="checkbox" name="cour" ><label >Cour</label><br/>
@@ -97,7 +99,7 @@
                             <input type="checkbox" name="allowedSmoker"><label >Fumeurs autorisés</label><br/>
                         </p>
                         
-                        <p>
+                        <p class="column2">
                             <input type="checkbox" name="allowedAnimals"><label >Animaux autorisés:</label><br/>
                             <input type="checkbox" name="dog"><label >Chien</label><br/>
                             <input type="checkbox" name="cat" ><label >Chat</label><br/>
@@ -106,11 +108,13 @@
                             <input type="checkbox" name="other" ><label >Autre</label><br/>
                         </p>
 		
-                            
+                    
                             
                             
 		 <!--Bouton envoi formulaire recherche-->
-                    <input type="submit" value="Rechercher" />
+                 <input type="submit" value="Rechercher" class="sub"/>
 		</form>	
-	</p>	
+        </div>
+	</p>
+        
 </article>

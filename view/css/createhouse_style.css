@@ -1,27 +1,23 @@
 
  .sub
 {
-    margin-left : 25%;
+ 
+    margin-left : 35%;
     margin-top : 5%;
-     
-     width:17%;
-    background-color: #00BCE0;
+     width:30%;
+background-color: #00BCE0;
   -webkit-border-radius: 28;
   -moz-border-radius: 28;
   border-radius: 0px;
   font-family: "GeosansLight";
   color: white;
-  font-size: 18px;
-  padding: 10px 10px 10px 10px;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
   text-decoration: none;
-  
 }   
- .sub :hover {
+.sub:hover {
   background: #83EBC6;
-  text-decoration: none;
-  
-
-      
+  text-decoration: none;      
 }
 .RightCol{
    
