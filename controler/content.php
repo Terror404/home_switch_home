@@ -33,7 +33,7 @@
                     } 
             
             ?>
-            <div id="content">
+            <div class="content">
                 
                 
                 
