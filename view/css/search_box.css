@@ -14,16 +14,16 @@ text-align:center;
 }
 .search
 {
-    margin-top : 5%;
-    margin-left : 60%;
+    margin-top : 2%;
+    margin-left : 59%;
     margin-bottom : 10%;
     font-family: "GeosansLight";
     font-size : 120%;
 position:absolute;
-background-color:rgba(0,255,0,0.2);
 vertical-align: top;
 
-
+background-color:white;
+opacity : 0.9;
 padding : 2%;
 border-radius : 5%;
 
@@ -76,7 +76,7 @@ background-color: #00BCE0;
 }
   
 .column2{
-    margin-left : 10%;
+    margin-left : 20%;
 }
 
 
@@ -84,5 +84,31 @@ input{
     cursor : pointer;}
 
 .titleIntMap{
-    margin-top : 10%;
+    margin-top : 5%;
+}
+
+.Tilte {
+    margin-top : 5%;
+    font-family: "GeosansLight";
+    background-color:white;
+    opacity : 0.9;
+    padding : 1% 2% 1% 2%;
+border-radius : 20px;
+text-align : center;
+font-size : 200%;
+width : 90%;
+margin-left: 3%;
+
+    
+}
+
+body{
+ background-image: url("../pictures/search-background.jpg"); 
+ background-repeat : no-repeat;
+  background-size: cover;
+    background-attachment: fixed;
+}
+.LabDate,.subtitle
+{
+    font-weight: bold ;
 }

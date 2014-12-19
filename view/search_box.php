@@ -1,5 +1,6 @@
 <article class="FormSearch">
 	<p>	
+        <h1 class="Tilte"> Choisissez votre maison</h1>
         <div class="search">
         <form class="Date" action="content.php?page=search_result" method="post"> <!--Formuaire de choix de la date-->
 			<?php $research= "";?>
@@ -16,7 +17,7 @@
                                 </br>
                                 <p>
                                     
-                                    Dans quel région partez vous?
+                                <div class="subtitle"> Dans quel région partez vous? </div>
                                     <select name="area" size="1" class="input">
                                         <option value="alsace">Alsace
                                         <option value="aquitaine">Aquitaine
@@ -53,7 +54,8 @@
                                 </p>
                                                   </br>
 
-                            <p>Type de logement: 
+                            <p>
+                            <div class="subtitle"> Type de logement: </div>
                             
                             <select name="houseType" size="1">
                                 <option value="villa">Villa
@@ -88,8 +90,10 @@
                                 <span id="AfficheRangeRoom">1</span>
                         </p>
                         </br>
+                        <div class="subtitle"> Aménagement: </div>
+                    
                         <p class="column1">
-                            Aménagement:<br/>
+                        
                             <input type="checkbox" name="garden"><label >Jardin</label><br/>
                             <input type="checkbox" name="cour" ><label >Cour</label><br/>
                             <input type="checkbox" name="coveredPool" ><label >Piscine couverte</label><br/>
