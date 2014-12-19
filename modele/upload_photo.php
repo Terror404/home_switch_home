@@ -130,6 +130,6 @@ for($i=0;$i<2;$i++)
                 echo$dossier_user."/".$namePic;echo"<br/>";
                 echo$_FILES['photo'.$i]['name'];echo"<br/>";
                 echo$_FILES['photo'.$i]['tmp_name'];echo"<br/>";
-                echo$p[$i];echo"<br/>";echo"<br/>";
+                
 }
                 ?>
