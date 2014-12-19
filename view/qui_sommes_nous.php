@@ -9,7 +9,12 @@
         
         <h2></h2>
         
-        <p></p>
+        <p><?php
+            $fp = fopen($filename, "r"[, $use_include_path=false[, $context]]);
+            $contenu_du_fichier = fgets(fp,255);
+            
+            echo
+        ?></p>
     </body>
 </html>
 
