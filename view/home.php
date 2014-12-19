@@ -9,9 +9,9 @@
     <li><img class="img" src="http://eurowin-stats.com/media/maison%20bonheur.jpg" style='width:1800px ;height:1000px' /></li>
     </ul>
     		<div id="searchbar">
-                	<form action="controler/content.php?page=search_result_word" class="formHome">
-               		<input type="text" name="pseudo" placeholder="PARTIR A LA DECOUVERTE" class="placeholderHome" />
-                    <a href="hihihi.html" target="_blank"> <input class="bouton" type="button" value="GO" href="hihihi.html"/> </a>
+                	<form class="formHome" action="content.php?page=searchKeyWords" method="post">
+               		<input type="text" name="keyWords" placeholder="PARTIR A LA DECOUVERTE" class="placeholderHome" />
+                     <input type="submit" value="GO" /> 
                     </form>
             </div>
 </div>
