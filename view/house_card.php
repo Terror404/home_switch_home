@@ -108,12 +108,7 @@
                     }
             ?><br/>
         Aménagements : 
-            <?php
-                while($resHfac=$askHfac->fetch())
-                    {
-                        echo $resHfac['facilities'];
-                    }
-            ?>
+            
         </div>
     </div>
     </article>
@@ -122,7 +117,7 @@
     <article class="ComMM"> <!-- Mettre ici les commentaires -->
             <p class="TxtCom"> Liste de 3-4 commentaires (les mieux notés ??)
                 <?php
-                    include"../CommentaryBloc/commentary_bloc_controleur.php";
+                    include"../view/commentary_bloc.php";
                 ?>				
     </article>
 </section>
@@ -132,13 +127,20 @@
 
 
     <article class="DateMM"> <!-- Mettre ici les dates -->
+        <input type="button" value="Ajouter une annonce" class="addAdButton" onclick="self.location.href='../controler/content.php?page=createAd&id=<?php echo$_GET['id']?>'"/>
         <?php
             while($resDateB=$askDateB ->fetch()AND $resDateE=$askDateE ->fetch())
                 {
+                if ($resDateB!=NULL AND $resDateB!="" AND $resDateE!=NULL AND $resDateE!="")
+                {
         ?>
                     du <?php echo $resDateB['date_begin'] ?> au <?php echo $resDateE['date_end']?> <br/>
-
         <?php
+                }
+                else
+                {
+                    echo"Aucune annonce de disponible";
+                }
                 }
         ?>
     </article>
