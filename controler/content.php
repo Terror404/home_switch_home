@@ -52,7 +52,6 @@
                     }
                     
                     //Search Result page
-                    
                     elseif( $_GET['page']=='search_result')
                     {
                         require("../modele/search_ad.php"); //modele
@@ -60,7 +59,6 @@
                     }
                     
                     //Search by keywords
-                    
                     elseif( $_GET['page']=='searchKeyWords')
                     {
                         require("../modele/search_keywords.php"); //modele
@@ -181,8 +179,10 @@
                     //House card
                     elseif($_GET['page']=='houseCard')
                     {
-                        include("../modele/search_house_card.php");
+                        require("../modele/search_house_card.php");
+                        require("../modele/search_commentary_bloc.php");
                         include("../view/house_card.php");
+                        
                     }
                     
                     
@@ -210,6 +210,7 @@
                         require("../modele/search_sent_msg.php"); //modele
                         include("../view/mailbox_sent_messages.php"); //view
                     }
+                    
                     // read a message from received messages
                     elseif($_GET['page']=='readMsg')
                     {
@@ -221,22 +222,27 @@
                     {
                             include("./forum/index.php");
                     }
+                    
                     elseif ($_GET['page'] == 'editPost')
                     {
                             include("./forum/editmessage.php");
                     }
+                    
                     elseif ($_GET['page'] == 'addPost')
                     {
                             include("./forum/newmessage.php");
                     }
+                    
                     elseif ($_GET['page'] == 'addTopic')
                     {
                             include("./forum/newtopic.php");
                     }
+                    
                     elseif ($_GET['page'] == 'showForum')
                     {
                             include("./forum/showcategory.php");
                     }
+                    
                     elseif ($_GET['page'] == 'showTopic')
                     {
                             include("./forum/showtopic.php");
