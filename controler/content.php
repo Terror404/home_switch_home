@@ -46,7 +46,8 @@
                     //Research page 
                     if( $_GET['page']=='research')
                     {
-                        include("../view/search_box.php");//vue
+                        require("../modele/search_box_adaptative.php");
+                        include("../view/search_box_adaptative.php");//vue
                         include("../view/interactive_map.php");
                     }
                     
@@ -63,7 +64,15 @@
                     elseif( $_GET['page']=='searchKeyWords')
                     {
                         require("../modele/search_keywords.php"); //modele
-                       //include("../view/search_keywords_result.php"); //vue
+                        include("../view/search_result.php"); //vue
+                    }
+                    
+                    //search result by map
+                    
+                    elseif( $_GET['page']=='searchResultMap')
+                    {
+                        require("../modele/search_map.php"); //modele
+                        include("../view/search_result.php"); //vue
                     }
                     
                     
