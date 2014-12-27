@@ -46,7 +46,7 @@ for($i=0;$i<2;$i++)
                 }
 
 
-                //Creation of a directory for each user
+                //Creation of a directory for each type of pic
                 if(!is_dir($dossier_user))
                 {
                     mkdir($dossier_user,755);
