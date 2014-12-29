@@ -23,7 +23,7 @@
             <div class="ButtonMM">
                     <input type="button" name="DatePick" value="Choisir une date" onclick="self.location.href='test n3bis.html'" style="width:130px" /> <!--Menu déroulant avec les dates possibles ???-->
                             <br />
-                    <input type="button" name="SaveHouse" value="Sauvegarder" onclick="self.location.href='test n3bis.html'" style="width:130px" /> <!-- Javascript ou PHP ici ?? -->
+                    <input type="button" name="SaveHouse" value="Ajouter aux favoris" onclick="self.location.href='../controler/content.php?page=houseCard&id=<?php $_GET['page']?>'" style="width:130px" /> <!-- Javascript ou PHP ici ?? -->
             </div>
             </aside>
     </article>
