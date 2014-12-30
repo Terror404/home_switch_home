@@ -255,6 +255,20 @@
                         include("../view/mailbox_read_sent_message.php"); //view
                     }
                     
+                    // Exchange Form
+                    elseif($_GET['page']=='exchange')
+                    {
+                        require("../modele/search_exchange_form.php"); //modele
+                        include("../view/exchange_form.php"); //view
+                    }
+                    
+                    //Confirm Exchange
+                    elseif($_GET['page']=='confirm_exchange')
+                    {
+                        require('../modele/add_exchange_form.php');
+                        include('../view/confirm_exchange.php');
+                    }
+                    
                     
                     
                 }
