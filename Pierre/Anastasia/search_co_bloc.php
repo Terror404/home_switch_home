@@ -1,7 +1,7 @@
 <?php
     try 
         {
-            $bdd = new PDO ("mysql:host=localhost;dbname=home_switch_home","root","",array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+            $DB = new PDO ("mysql:host=localhost;dbname=home_switch_home","root","",array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
         } 
     catch (Exception $ex) 
         {
@@ -9,9 +9,9 @@
         }
 ?>
 <?php
-    $askPass=$bdd->prepare('SELECT password FROM user WHERE login=:login');
+    $askPass=$DB->prepare('SELECT password FROM user WHERE login=:login');
         $askPass->execute(array('login'=>$_POST['login']));
         
-    $askLogin=$bdd->prepare('SELECT login FROM user WHERE login=:login');
+    $askLogin=$DB->prepare('SELECT login FROM user WHERE login=:login');
         $askPass->execute(array('login'=>$_POST['login']));
 ?>

@@ -1,7 +1,7 @@
 <?php
     try 
         {
-            $bdd = new PDO ("mysql:host=localhost;dbname=home_switch_home","root","",array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+            $DB = new PDO ("mysql:host=localhost;dbname=home_switch_home","root","",array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
         } 
     catch (Exception $ex) 
         {
@@ -9,7 +9,7 @@
         }
 ?>
 <?php
-    $askLogin=$bdd->prepare('SELECT COUNT(*) FROM `user` WHERE login=:login');
+    $askLogin=$DB->prepare('SELECT COUNT(*) FROM `user` WHERE login=:login');
         $askLogin->execute(array('login'=>$_GET['login']));
 ?>
 <?php

@@ -1,8 +1,16 @@
 <?php
-
 //Get the favorites of the user
 function list_favorites()
 {
+    try 
+            {
+                $DB = new PDO ("mysql:host=localhost;dbname=home_switch_home","root","",array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+            } 
+        catch (Exception $ex) 
+            {
+                die ('Erreur:'.$ex ->getMessage());
+            }
+    
     $askFavs=$DB->prepare('SELECT * FROM favorites WHERE id_user=:iduser');
         $askFavs->execute(array('iduser'=>$_SESSION['userId']));
 
@@ -20,8 +28,32 @@ function list_favorites()
 }
 
 //Update the favs with a new one
-function add_favorites($stringFavs)
+function add_favorites()
 {
+    try 
+            {
+                $DB = new PDO ("mysql:host=localhost;dbname=home_switch_home","root","",array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+            } 
+        catch (Exception $ex) 
+            {
+                die ('Erreur:'.$ex ->getMessage());
+            }
+            
+    $askFavs=$DB->prepare('SELECT * FROM favorites WHERE id_user=:iduser');
+        $askFavs->execute(array('iduser'=>$_SESSION['userId']));
+
+    while($resFavs=$askFavs->fetch())
+    {
+    if($resFavs['id_house']="" OR $resFavs['id_house']=NULL)
+        {
+            $stringFavs="";
+        }
+        else
+        {
+            $stringFavs=explode('/',$resFavs['id_house']);
+        }
+    }
+            
     $arrayFavs=explode('/',$stringFavs);
     if(in_array($_GET['id'],$arrayFavs))
     {
@@ -41,6 +73,15 @@ function add_favorites($stringFavs)
 //Delete the chosen fav and reorder the array before updating the database
 function delete_favorites($stringFavs)
 {
+    try 
+            {
+                $DB = new PDO ("mysql:host=localhost;dbname=home_switch_home","root","",array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+            } 
+        catch (Exception $ex) 
+            {
+                die ('Erreur:'.$ex ->getMessage());
+            }
+            
     $arrayFavs=explode('/',$stringFavs);
     if(in_array($GET['id'],$arrayFavs))
     {

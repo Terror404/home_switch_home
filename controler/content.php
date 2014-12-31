@@ -173,7 +173,6 @@
                         require("../modele/search_house_card.php");
                         require("../modele/search_commentary_bloc.php");
                         include("../view/house_card.php");
-                        
                     }
                     
                     
