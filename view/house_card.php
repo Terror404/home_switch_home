@@ -25,16 +25,11 @@
                     <input type="button"  value="Choisir une date" onclick="self.location.href='test n3bis.html'" style="width:130px" /> <!--Menu déroulant avec les dates possibles ???-->
                             <br />
                     <!--Add as a favorite-->
-                    <form method="post" action="">
-                        <input type="hidden"  name="addFavs" value="1"/>
+                    <form method="post" action="../controler/content.php?page=confirm_favs">
+                        <input type="hidden"  name="favs" value="1"/>
+                        <input type="hidden" name="houseId" value="<?php echo $_GET['id'] ?>"/>
                         <input type="submit" value="Ajouter aux favoris"/>
                     </form>
-                    <?php
-                    if(isset($_POST['addFavs']) AND $_POST['addFavs']==1)
-                    {
-                        add_favorites();
-                    }
-                    ?>
             </div>
             </aside>
     </article>

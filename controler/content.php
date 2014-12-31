@@ -268,6 +268,12 @@
                         include('../view/confirm_exchange.php');
                     }
                     
+                    //Confirm the favs' add or delete
+                    elseif($_GET['page']=='confirm_favs')
+                    {
+                        require"../modele/add_favs.php";
+                    }
+                    
                     
                     
                 }
