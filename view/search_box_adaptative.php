@@ -93,14 +93,12 @@
                         <div class="subtitle"> Aménagement: </div>
                     
                         <p class="column1">
-                        
-                            <input type="checkbox" name="garden"><label >Jardin</label><br/>
-                            <input type="checkbox" name="cour" ><label >Cour</label><br/>
-                            <input type="checkbox" name="coveredPool" ><label >Piscine couverte</label><br/>
-                            <input type="checkbox" name="uncoveredPool" ><label >Piscine plein air</label><br/>
-                            <input type="checkbox" name="garage"><label >Garage/parking</label><br/>
-                            <input type="checkbox" name="disabledAccess" ><label >Accès handicapés</label><br/>
-                            <input type="checkbox" name="allowedSmoker"><label >Fumeurs autorisés</label><br/>
+                        <?php
+                            while($resSearchBoxCriteriaHouse=$askSearchBoxCriteriaHouse->fetch())
+                            {
+                                echo '<input type="checkbox" name="'.$resSearchBoxCriteriaHouse['name'].'"><label >'.$resSearchBoxCriteriaHouse['name'].'</label><br/>';
+                            }
+                            ?>
                         </p>
                         
                         <p class="column2">

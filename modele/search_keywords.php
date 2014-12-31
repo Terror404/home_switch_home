@@ -2,14 +2,14 @@
 
 $keywords = $_POST['keyWords'];
 
-$explodedKeywords=  explode(' ', $keywords);                    //converts the keywords into an array
+$explodedKeywords=  explode(' ', $keywords);                         //converts the keywords into an array
 $nbrRows=count($explodedKeywords);
 $likeDude='LIKE (';                                                  //initialize the keywords var to insert into the query
 
 for($i=0;$i<$nbrRows;$i+=1)
 {
     $keyword=$explodedKeywords[$i];
-    $likeDude=$likeDude.'\''.$keyword.'\'';
+    $likeDude=$likeDude.'\''.$keyword.'%\'';
     if($i!=$nbrRows-1)
     {
         $likeDude=$likeDude.' OR ';
@@ -30,4 +30,7 @@ $ask='SELECT DISTINCT ad.title, ad.date_begin, house.description, ad.date_end, h
                                      AND villes_france_free.ville_departement=departement.departement_code
                                      AND (ad.title '.$likeDude.' OR house.description '.$likeDude.' OR area.name '.$likeDude.' OR villes_france_free.ville_nom '.$likeDude.' OR departement.departement_nom '.$likeDude.')';
 
-echo $ask;
+$askPrioritySearch=$DB->prepare($ask);
+$askPrioritySearch->execute();
+
+

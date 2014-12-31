@@ -40,6 +40,10 @@ $reqBase='SELECT DISTINCT ad.title, ad.date_begin, ad.date_end, house.descriptio
             $req=$req.' AND area.name= \''.$_POST['area'].'\'';
            
         }
+        elseif (isset($_GET['area'])AND $_GET['area']!='')
+        {
+            $req=$req.' AND area.name= \''.$_GET['area'].'\'';
+        }
      
     
     //type of house

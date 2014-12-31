@@ -1,6 +1,13 @@
 <?php
 while($resSearch=$askPrioritySearch->fetch())
 {
+    if(count($resSearch)===0 )
+    {
+        echo 'La recherche n\'a rendu aucun résultat';
+    }
+ else {
+        
+    
  ?>  
 <div id="resultSearch" onclick="self.location.href='../controler/content.php?page=my_houses&id=<?php echo $resSearch['id'];?>'">
     <div id="adTitle"> 
@@ -26,3 +33,4 @@ while($resSearch=$askPrioritySearch->fetch())
 
 }
 $askPrioritySearch->closeCursor();
+}
