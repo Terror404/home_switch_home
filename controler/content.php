@@ -274,6 +274,13 @@
                         require"../modele/add_favs.php";
                     }
                     
+                    //Confirmthe deleting of a house
+                    elseif($_GET['page']=='confirm_delete_house')
+                    {
+                        require('../modele/update_delete_house.php');
+                        include('../view/delete_house.php');
+                    }
+                    
                     
                     
                 }
