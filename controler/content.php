@@ -84,8 +84,8 @@
                     //Saved search page
                     elseif( $_GET['page']== 'my_research')
                     {
+                        require("../modele/search_my_research.php"); //modele
                         include("../view/my_research.php");//vue
-                        include("../modele/search_my_research.php"); //modele
                     }
                     //Own Houses
                     elseif( isset($_SESSION['userId']) AND $_GET['page']== 'my_houses')

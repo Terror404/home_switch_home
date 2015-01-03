@@ -47,7 +47,6 @@
     elseif(isset($_POST['favs']) AND $_POST['favs']==2)
     {
         //Delete the chosen fav and reorder the array before updating the database
-        echo $_POST['houseId'];
         $idHouse=$_POST['houseId'];
         if(in_array($idHouse,$arrayFavs))
         {
@@ -60,14 +59,19 @@
             echo"<br/>";
             echo"<br/>";
             echo"<br/>";
+            echo $_POST['houseId'];
+            echo"apres";
+            echo$key_id;
             echo"La maison a bien été retiré de vos favoris";
-            ?> <br/> <input type="button" onclick="self.location.href='<?php echo $_SERVER["HTTP_REFERER"]; ?>'" value="Retour à la page précédente" /><?php
+            ?> <br/> <input type="button" onclick="self.location.href=' ../controler/content.php?page=home'" value="Retour" /><?php
         }
         else
         {
             echo"<br/>";
             echo"<br/>";
             echo"<br/>";
+            echo $_POST['houseId'];
+            echo"apres";
             echo"op";echo $idHouse;echo"apres";echo$_POST['favs'];
             echo"Cette maison ne fait pas partie de vos favoris";
         }
