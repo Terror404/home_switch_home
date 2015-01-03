@@ -81,11 +81,11 @@
                         include("../view/my_profile.php");//vue
                         
                     }
-                    //Saved search page
-                    elseif( $_GET['page']== 'my_research')
+                    //Favorites
+                    elseif( $_GET['page']== 'favorites')
                     {
-                        require("../modele/search_my_research.php"); //modele
-                        include("../view/my_research.php");//vue
+                        require("../modele/search_my_favorites.php"); //modele
+                        include("../view/my_favorites.php");//vue
                     }
                     //Own Houses
                     elseif( isset($_SESSION['userId']) AND $_GET['page']== 'my_houses')
