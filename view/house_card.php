@@ -21,9 +21,36 @@
                         ?>
                     </p>
             <div class="ButtonMM">
-                    <input type="button" name="DatePick" value="Choisir une date" onclick="self.location.href='test n3bis.html'" style="width:130px" /> <!--Menu déroulant avec les dates possibles ???-->
+                    <!--Send to the exchange form-->
+                    <?php
+                        while($resIdOwner=$askIdOwner->fetch())
+                        {
+                            $idOwner=$resIdOwner['id_user'];
+                        }
+                        
+                        if($_SESSION['userId']==$idOwner)
+                        {
+                    ?>
+                            <form method="post" action="../controler/content.php?page=confirm_delete_house">
+                                <input type="hidden" name="idHouse" value="<?phpecho echo $_GET['id']?>"/>
+                                <input type=submit value="Supprimer cette maison"/>
+                            </form>
+                    <?php
+                        }
+                        else
+                        {
+                    ?>
+                            <input type="button" value="Proposer un échange pour cette maison" onclick="self.location.href='../controler/content.php?page=exchange'"/>
+                    <?php
+                        }
+                    ?>
                             <br />
-                    <input type="button" name="SaveHouse" value="Sauvegarder" onclick="self.location.href='test n3bis.html'" style="width:130px" /> <!-- Javascript ou PHP ici ?? -->
+                    <!--Add as a favorite-->
+                    <form method="post" action="../controler/content.php?page=confirm_favs">
+                        <input type="hidden"  name="favs" value="1"/>
+                        <input type="hidden" name="houseId" value="<?php echo $_GET['id'] ?>"/>
+                        <input type="submit" value="Ajouter aux favoris"/>
+                    </form>
             </div>
             </aside>
     </article>
