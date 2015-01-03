@@ -15,9 +15,8 @@
             echo"<br/>";
             echo"<br/>";
             echo"<br/>";
-            echo $idHouse; echo"avant";
             ?> 
-            Cette maison se trouve déjà dans vos favoris.<br/>
+            Cette maison se trouve déjà dans vos favoris. <br/>
             Pour la retirer de la liste des favoris cliquer ici : 
             <form method='post' action=''>
                 <input type='hidden' name='favs' value='2'/>
@@ -51,7 +50,7 @@
         if(in_array($idHouse,$arrayFavs))
         {
             $key_id=array_search($idHouse,$arrayFavs);
-            unset($arrayFavs['$key_id']);
+            unset($arrayFavs[$key_id]);
             $arrayFavs=array_values(array_filter($arrayFavs));
             $stringFavs=implode('/',$arrayFavs);
             $addFavs=$DB->prepare('UPDATE favorites SET id_house=:stringFavs WHERE id_user=:iduser');
@@ -59,9 +58,6 @@
             echo"<br/>";
             echo"<br/>";
             echo"<br/>";
-            echo $_POST['houseId'];
-            echo"apres";
-            echo$key_id;
             echo"La maison a bien été retiré de vos favoris";
             ?> <br/> <input type="button" onclick="self.location.href=' ../controler/content.php?page=home'" value="Retour" /><?php
         }
@@ -70,9 +66,6 @@
             echo"<br/>";
             echo"<br/>";
             echo"<br/>";
-            echo $_POST['houseId'];
-            echo"apres";
-            echo"op";echo $idHouse;echo"apres";echo$_POST['favs'];
             echo"Cette maison ne fait pas partie de vos favoris";
         }
     }
