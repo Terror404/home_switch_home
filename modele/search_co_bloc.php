@@ -20,3 +20,7 @@
     $askPic=$bdd->prepare('SELECT picture FROM user WHERE login=:login');
         $askPic->execute(array('login'=>$_POST['login']))
 ?>
+<?php
+    $askAccess=$bdd->prepare('SELECT access FROM user WHERE login=:login');
+        $askAccess->execute(array('login'=>$_POST['login']))
+?>
