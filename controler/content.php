@@ -254,10 +254,17 @@
                         include("../view/mailbox_read_sent_message.php"); //view
                     }
                     
-                    // Exchange Form
+                    // Exchange Form from nothing
                     elseif($_GET['page']=='exchange')
                     {
                         require("../modele/search_exchange_form.php"); //modele
+                        include("../view/exchange_form.php"); //view
+                    }
+                    
+                    // Exchange Form from a House Card
+                    elseif($_GET['page']=='exchange_2')
+                    {
+                        require("../modele/search_exchange_form_2.php"); //modele
                         include("../view/exchange_form.php"); //view
                     }
                     
@@ -274,7 +281,7 @@
                         require"../modele/add_favs.php";
                     }
                     
-                    //Confirmthe deleting of a house
+                    //Confirm the deleting of a house
                     elseif($_GET['page']=='confirm_delete_house')
                     {
                         require('../modele/update_delete_house.php');

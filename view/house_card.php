@@ -41,7 +41,7 @@
                         else
                         {
                     ?>
-                            <input type="button" value="Proposer un échange pour cette maison" onclick="self.location.href='../controler/content.php?page=exchange'"/>
+                            <input type="button" value="Proposer un échange pour cette maison" onclick="self.location.href='../controler/content.php?page=exchange_2'"/>
                     <?php
                         }
                     ?>
