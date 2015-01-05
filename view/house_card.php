@@ -30,9 +30,10 @@
                         
                         if($_SESSION['userId']==$idOwner)
                         {
+                            $idHouse=$_GET['id'];
                     ?>
                             <form method="post" action="../controler/content.php?page=confirm_delete_house">
-                                <input type="hidden" name="idHouse" value="<?phpecho echo $_GET['id']?>"/>
+                                <input type="hidden" name="idHouse" value="<?phpecho echo $idHouse?>"/>
                                 <input type=submit value="Supprimer cette maison"/>
                             </form>
                     <?php
@@ -40,7 +41,7 @@
                         else
                         {
                     ?>
-                            <input type="button" value="Proposer un échange pour cette maison" onclick="self.location.href='../controler/content.php?page=exchange'"/>
+                            <input type="button" value="Proposer un échange pour cette maison" onclick="self.location.href='../controler/content.php?page=exchange_2'"/>
                     <?php
                         }
                     ?>
