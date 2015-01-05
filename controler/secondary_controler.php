@@ -15,6 +15,10 @@ if (isset($page) AND $page!='')
                     {
                         echo'<link rel="stylesheet" type="text/css" href="../view/css/search_result.css">';
                     }
+                    elseif( $_GET['page']=='searchKeyWords')
+                    {
+                        echo'<link rel="stylesheet" type="text/css" href="../view/css/search_result.css">';
+                    }
                     elseif( $_GET['page']=='home')
                     {
                         echo'<link rel="stylesheet" type="text/css" href="../view/css/style_caroussel.css">';

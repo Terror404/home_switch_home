@@ -2,7 +2,7 @@
 // POSITIONNING OF THE BLOCKS 
 
 
-#resultSearch
+.resultSearch
 {
    text-align: center;
    margin-left:auto;
@@ -11,6 +11,8 @@
    z-index: 1040;
    margin-bottom:20px;
    background-color: black;
+   position:relative;
+   margin-top:20px;
    
    
 }
