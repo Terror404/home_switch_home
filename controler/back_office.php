@@ -1,3 +1,4 @@
+<?php session_start() ?>
 <!Doctype html>
 
 <html>
@@ -11,7 +12,7 @@
         
             <header>
             <?php
-            include("../view/header.php");
+            
             
             include("../controler/co_bloc.php");
             
@@ -20,7 +21,7 @@
             </header>
             <?php 
 
-                include("../view/nav.php");
+                
                 
                 
 
@@ -45,10 +46,25 @@
                     
                     
                     //Confirm Exchange
-                    if($_GET['page']=='confirm_exchange')
+                    if($_GET['page']=='home')
                     {
                         require('../modele/add_exchange_form.php');
                         include('../view/confirm_exchange.php');
+                    }
+                     elseif($_GET['page']=='searchCriteria')
+                    {
+                        require('../modele/backOffice/search_criteria.php');
+                        include('../view/backOffice/search_criteria.php');
+                    }
+                    elseif($_GET['page']=='adCriteria')
+                    {
+                        require('../modele/backOffice/ad_criteria.php');
+                        include('../view/backOffice/ad_criteria.php');
+                    }
+                    elseif($_GET['page']=='houseCriteria')
+                    {
+                        require('../modele/backOffice/house_criteria.php');
+                        include('../view/backOffice/house_criteria.php');
                     }
                     
                     

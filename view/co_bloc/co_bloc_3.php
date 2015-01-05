@@ -13,13 +13,10 @@
 <?php
 if($_SESSION['userAccess']==='3')
 {
-    echo '<a class="CoBlocBO" href=\'../controler/back_office.php\' style="position:absolute;
+    echo '<a class="CoBlocBO" href=\'../controler/back_office.php?page=index\' style="position:absolute;
     bottom:5%;
     right:22%;">Back Office </a>';
 }
-else
-{
-    echo $_SESSION['userAccess'];
-}
+
 ?>
  </div>
