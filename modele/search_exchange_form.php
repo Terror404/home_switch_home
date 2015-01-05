@@ -28,31 +28,31 @@ if(isset($_POST['adChoice']))
 }
 ?>
 <?php
-if(isset($_POST['User2']))
+if(isset($_POST['idUser2']))
 {
     //Get the information on the user to exchange with
-    $askUser2=$DB->prepare('SELECT * FROM user WHERE login=:loguser2');
-        $askUser2->execute(array('loguser2'=>$_POST['User2']));
+    $askUser2=$DB->prepare('SELECT * FROM user WHERE id=:iduser2');
+        $askUser2->execute(array('iduser2'=>$_POST['idUser2']));
 }
 ?>
 <?php
-if(isset($_POST ['User2']))
+if(isset($_POST ['idUser2']))
 {
     //Get the house(s) of user 2
-    $askHouseU2=$DB->prepare('SELECT * FROM house WHERE id_user=(SELECT id FROM user WHERE login=:loguser)');
-        $askHouseU2->execute(array('loguser'=>$_POST['User2']));
+    $askHouseU2=$DB->prepare('SELECT * FROM house WHERE id_user=:iduser2');
+        $askHouseU2->execute(array('iduser2'=>$_POST['idUser2']));
 }
 ?>
 <?php
-if(isset($_POST['houseChoiceU2']))
+if(isset($_POST['idHouseU2']))
 {
     //Get the information on the chosen house 
     $askHChosenU2=$DB->prepare('SELECT * FROM house WHERE id=:idhouse');
-        $askHChosenU2->execute(array('idhouse'=>$_POST['houseChoiceU2']));
+        $askHChosenU2->execute(array('idhouse'=>$_POST['idHouse2']));
 }
 ?>
 <?php
-if (isset($_POST['houseChoiceU2']))
+if (isset($_POST['idHouseU2']))
 {
     //Get the ad linked to the user2's house
     $askAdU2=$DB->prepare('SELECT * FROM ad WHERE id_house=:idhouse');
