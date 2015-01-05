@@ -1,4 +1,8 @@
 <?php
+echo"<br/>";
+echo"<br/>";
+echo"avant";
+echo$_SESSION['userId'];
     $askFavs=$DB->prepare('SELECT * FROM favorites WHERE id_user=:iduser');
         $askFavs->execute(array('iduser'=>$_SESSION['userId']));
     while($resFavs=$askFavs->fetch())

@@ -274,7 +274,7 @@
                         require"../modele/add_favs.php";
                     }
                     
-                    //Confirmthe deleting of a house
+                    //Confirm the deleting of a house
                     elseif($_GET['page']=='confirm_delete_house')
                     {
                         require('../modele/update_delete_house.php');
