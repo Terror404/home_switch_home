@@ -3,7 +3,7 @@
 session_start();
     try
         {
-            $DB=new PDO ("mysql:host=localhost;dbname=mabdd","root","root",array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
+            $DB=new PDO ("mysql:host=localhost;dbname=home_switch_home","root","",array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
         } 
     catch (Exception $ex) 
         {
@@ -22,4 +22,4 @@ $input=$DB->prepare("INSERT INTO traduction (french,english) VALUES (:french,:en
     $input->execute(array('french'=>$_POST['fr'],'english'=>$_POST['eng']));
     
 echo"mot fr rentré :"; echo $_POST['fr'];echo"<br/>";
-echo"mot fr rentré :"; echo $_POST['fr'];
+echo"mot en rentré :"; echo $_POST['eng'];
