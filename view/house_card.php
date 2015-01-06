@@ -208,8 +208,13 @@ var slider = function(elem,content,ratio){
                         }
                         else
                         {
+                            $idHouse=$_GET['id'];
                     ?>
-                            <input type="button" value="Proposer un échange pour cette maison" onclick="self.location.href='../controler/content.php?page=exchange_2'"/>
+                            <form method="post" action="../controler/content.php?page=exchange">
+                                <input type="hidden" name="idUser2" value="<?php echo $idOwner ?>"/>
+                                <input type="hidden" name="idHouseU2" value="<?php echo $idHouse ?>"/>
+                                <input type="submit" value="Proposer un échange pour cette maison" />
+                            </form>
                     <?php
                         }
                     ?>
@@ -323,7 +328,7 @@ var slider = function(elem,content,ratio){
 
 
     <article class="DateMM"> <!-- Mettre ici les dates -->
-        <input type="button" value="Ajouter une annonce" class="addAdButton" onclick="self.location.href='../controler/content.php?page=createAd&id=<?php echo$_GET['id']?>'"/>
+        <br/>
         <?php
             while($resDateB=$askDateB ->fetch()AND $resDateE=$askDateE ->fetch())
                 {
@@ -339,6 +344,7 @@ var slider = function(elem,content,ratio){
                 }
                 }
         ?>
+                    <input type="button" value="Ajouter une annonce" class="addAdButton" onclick="self.location.href='../controler/content.php?page=createAd&id=<?php echo$_GET['id']?>'"/><br/>
     </article>
 </section>      
 </section>

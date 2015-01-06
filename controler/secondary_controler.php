@@ -1,5 +1,6 @@
 <?php
 
+
 echo'<link rel="stylesheet" type="text/css" href="../view/css/hsh_style.css">';
 echo'<link rel="stylesheet" type="text/css" href="../view/css/bloc_co.css" >';
 

@@ -3,7 +3,7 @@
         $askIdOwner=$DB->prepare('SELECT id_user FROM house WHERE id=:idhouse');
             $askIdOwner->execute(array('idhouse'=>$_GET['id']));
     ?>
-    
+       
     <!--Get the house title-->
     <?php
         $askHtitle=$DB->prepare('SELECT house.title FROM house WHERE house.id=:idhouse');
