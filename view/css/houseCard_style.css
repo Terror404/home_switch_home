@@ -1,10 +1,23 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : 16 déc. 2014, 12:33:29
-    Author     : melanie
-*/
+.MiddlePage
+{
+    font-family: "GeosansLight";
+}
 
+.sub
+{
+ 
+     width:30%;
+background-color: #00BCE0;
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 0px;
+  font-family: "GeosansLight";
+  color: white;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}   
+.sub:hover {
+  background: #83EBC6;
+  text-decoration: none;      
+}

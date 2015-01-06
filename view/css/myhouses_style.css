@@ -11,22 +11,47 @@ width:80%
 {
 border:solid 1px;
 border-radius:5px;
-height:300px;
+height:10%;
 margin-top:5%;
 background-color:gainsboro;
 }
 
 .picMyHouses
 {
-height:150px;
-width:150px;
+width:50%;
+height:90%;
 overflow:hidden;
 padding-left:2%;
 margin-top:2%;
 }
 
+
+/* button*/
 .newHouseButton
 {
-position:absolute;
-top:15%;
+margin: auto;
+}
+
+.sub{   
+    margin-top : 5%;
+    margin-left : 40%;
+     width:30%;
+background-color: #00BCE0;
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 0px;
+  font-family: "GeosansLight";
+  color: white;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}   
+
+.sub:hover {
+  background: #83EBC6;
+  text-decoration: none;      
+}
+.titleMyHouses
+{
+display : inline-block;
 }
