@@ -66,7 +66,11 @@
                         require('../modele/backOffice/house_criteria.php');
                         include('../view/backOffice/house_criteria.php');
                     }
-                    
+                    elseif($_GET['page']=='rights')
+                    {
+                        require('../modele/backOffice/give_rights.php');
+                        include('../view/backOffice/give_rights.php');
+                    }
                     
                     
                 }
