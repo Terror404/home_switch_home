@@ -160,7 +160,7 @@
 
 
     <article class="DateMM"> <!-- Mettre ici les dates -->
-        <input type="button" value="Ajouter une annonce" class="addAdButton" onclick="self.location.href='../controler/content.php?page=createAd&id=<?php echo$_GET['id']?>'"/>
+        <br/>
         <?php
             while($resDateB=$askDateB ->fetch()AND $resDateE=$askDateE ->fetch())
                 {
@@ -176,6 +176,7 @@
                 }
                 }
         ?>
+                    <input type="button" value="Ajouter une annonce" class="addAdButton" onclick="self.location.href='../controler/content.php?page=createAd&id=<?php echo$_GET['id']?>'"/><br/>
     </article>
 </section>      
 </section>
