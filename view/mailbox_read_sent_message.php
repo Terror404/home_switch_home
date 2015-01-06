@@ -13,7 +13,7 @@ include('mailbox_toolbar.php');
     $resSentMsg=$askSentMsg -> fetch ()
     ?>
 
-            <p>envoyé à : <?php echo $resSentMsg['id_receiver'] ?></p>
+            <p>envoyé à : <?php echo $resSentMsg['login'] ?></p>
             <p>envoyé le :<?php echo $resSentMsg['date'] ?></p>
             <p>titre: <?php echo $resSentMsg['title'] ?></p>
             <p>message :<?php echo $resSentMsg['text'] ?></p>

@@ -19,7 +19,7 @@ require("../modele/search_my_mp.php");
     while ($resReceivedmsg=$askReceivedmsg -> fetch ())
         {?>
                         <tr>
-                                 <td> <?php echo $resReceivedmsg['id_author'] ?> </td>
+                                 <td> <?php  echo $resReceivedmsg['login']; ?> </td>
                                 <td> <!-- liens vers la page de lecture de message , et envoi son id pour pouvoir lire son contenu -->
                                     <a href="content.php?page=readMsg&id=<?php echo $resReceivedmsg['id'] ?>">
                                          <?php echo $resReceivedmsg['title'] ?>
