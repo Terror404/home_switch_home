@@ -40,10 +40,11 @@
                         }
                         else
                         {
+                            $idHouse=$_GET['id'];
                     ?>
                             <form method="post" action="../controler/content.php?page=exchange">
-                                <input type="hidden" name="idUser2" value="<?php $idOwner ?>"/>
-                                <input type="hidden" name="idHouse2" value="<?php $idHouse ?>"/>
+                                <input type="hidden" name="idUser2" value="<?php echo $idOwner ?>"/>
+                                <input type="hidden" name="idHouseU2" value="<?php echo $idHouse ?>"/>
                                 <input type="submit" value="Proposer un échange pour cette maison" />
                             </form>
                     <?php
