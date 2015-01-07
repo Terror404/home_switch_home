@@ -18,8 +18,24 @@ if(isset($_POST['date_begin']) AND $_POST['date_begin']!=="" AND $_POST['date_be
 {
     if(verif_date($_POST['date_begin']) AND verif_date($_POST['date_end']))
     {
+        //Create the entry in the database in the "ad" table
         $addA=$DB->prepare("INSERT INTO ad (id_house,title,date_begin,date_end) VALUES(:idHouse,:title,:dateBegin,:dateEnd)");
-                $addA->execute(array('idHouse'=>$_POST['id_house'],'title'=>$_POST['title_ad'],'dateBegin'=>$newDateB,'dateEnd'=>$newDateE));
+            $addA->execute(array('idHouse'=>$_POST['id_house'],'title'=>$_POST['title_ad'],'dateBegin'=>$newDateB,'dateEnd'=>$newDateE));
+        
+        //Get the id of the created ad
+        $askA=$DB->prepare('SELECT id FROM ad WHERE id_house=:idhouse, title=:title, date_beguin=:dateBegin,date_end=:dateEnd');
+            $askA->execute(array('idHouse'=>$_POST['id_house'],'title'=>$_POST['title_ad'],'dateBegin'=>$newDateB,'dateEnd'=>$newDateE));
+                    
+        for($i=1;$i<6;$i++)
+        {
+            while($resA=$askA->fetch())
+            {
+                    $addC=$DB->prepare('INSERT INTO ad_criteria(id_ad,id_ad_criteria,id_criteria) VALUES(:iad,:idadcriteria,:idcriteria)');
+                $addC->execute(array('idad'=>$resA['id'],'idadcriteria'=>$i,'idcriteria'=>$_POST['idCrit'.$i]));
+            }
+        }
+        
+                    
         echo"L'annonce a bien été enregistrée";
         ?> <input type="button" value="Retour" onclick="self.location.href='../controler/content.php?page=houseCard&id=<?phpecho$_POST['id_house'?>'"/><?php
     }

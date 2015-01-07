@@ -1,5 +1,6 @@
 <?php
 
+
 echo'<link rel="stylesheet" type="text/css" href="../view/css/hsh_style.css">';
 echo'<link rel="stylesheet" type="text/css" href="../view/css/bloc_co.css" >';
 
@@ -84,6 +85,7 @@ if (isset($page) AND $page!='')
                     elseif( $_GET['page']=='createHouse')
                     {
                         echo'<link rel="stylesheet" type="text/css" href="../view/css/createhouse_style.css">';
+                         echo'<link rel="stylesheet" type="text/css" href="../view/css/petit_caroussel_style.css">';
 
                     }
     }

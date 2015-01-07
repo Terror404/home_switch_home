@@ -96,18 +96,16 @@
                         <?php
                             while($resSearchBoxCriteriaHouse=$askSearchBoxCriteriaHouse->fetch())
                             {
-                                echo '<input type="checkbox" name="'.$resSearchBoxCriteriaHouse['name'].'"><label >'.$resSearchBoxCriteriaHouse['name'].'</label><br/>';
+                                echo '<input type="checkbox" name="'.$resSearchBoxCriteriaHouse['name'].'"><label >'.$resSearchBoxCriteriaHouse['real_name'].'</label><br/>';
                             }
                             ?>
                         </p>
                         
                         <p class="column2">
-                            <input type="checkbox" name="allowedAnimals"><label >Animaux autorisés:</label><br/>
-                            <input type="checkbox" name="dog"><label >Chien</label><br/>
-                            <input type="checkbox" name="cat" ><label >Chat</label><br/>
-                            <input type="checkbox" name="rats" ><label >Rongeur</label><br/>
-                            <input type="checkbox" name="doge" ><label >Doge</label><br/>
-                            <input type="checkbox" name="other" ><label >Autre</label><br/>
+                           <?php while($resSearchBoxCriteria=$askSearchBoxCriteria->fetch())
+                            {
+                                echo '<input type="checkbox" name="'.$resSearchBoxCriteria['name'].'"><label >'.$resSearchBoxCriteria['real_name'].'</label><br/>';
+                            } ?>
                         </p>
 		
                     

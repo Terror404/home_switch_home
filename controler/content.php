@@ -203,6 +203,12 @@
                     
                     }
                     
+                    //Confirm creation of the ad
+                    elseif($_GET['page']=='confAd')
+                    {
+                        require("../modele/add_ad.php");
+                    }
+                    
                     // list of Messages which have been sent
                      elseif($_GET['page']=='sentMsg')
                     {
@@ -274,7 +280,7 @@
                         require"../modele/add_favs.php";
                     }
                     
-                    //Confirmthe deleting of a house
+                    //Confirm the deleting of a house
                     elseif($_GET['page']=='confirm_delete_house')
                     {
                         require('../modele/update_delete_house.php');

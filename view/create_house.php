@@ -16,6 +16,12 @@
                             <label for="photo1" class="label">photo n°2:</label>
                             <input name="photo1" type='file' id="photo1" /><br/>  
                             <input type="hidden" name="tagPhoto" value="1"/>
+                            
+                           
+                            
+                           
+                            
+                           
                         </p>
                 </div>
         </div>
