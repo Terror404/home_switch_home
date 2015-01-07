@@ -27,8 +27,10 @@ if (TOPIC_IS_SET) {
             $hasModRights = userHasModeratorRights($_SESSION['userId']);
         }
         
+        $topicInfo = getTopicInfo($DB, CURRENT_TOPIC);
+        include("showtopic_messagelistupdate.php");
+        include("showtopic_topicmodactions.php");
         $messageTable = $messageList->fetchAll();
-        include("messagelistupdate.php");
         include(__ROOT__."/view/forum/showtopic_view.php");
     }
 }

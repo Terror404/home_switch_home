@@ -13,7 +13,6 @@ require("../modele/search_my_mp.php");
                                 <th> Auteur</th>
                                 <th> Titre</th>
                                 <th> Date d'envoi</th>
-
                         </tr>
     <?php       /* récupération et affichage des données*/
     while ($resReceivedmsg=$askReceivedmsg -> fetch ())
