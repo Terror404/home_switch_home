@@ -20,11 +20,6 @@
                             }
                         ?>
                     </p>
-            <div class="ButtonMM">
-                    <input type="button" name="DatePick" value="Choisir une date" onclick="self.location.href='test n3bis.html'" style="width:130px" /> <!--Menu déroulant avec les dates possibles ???-->
-                            <br />
-                    <input type="button" name="SaveHouse" value="Sauvegarder" onclick="self.location.href='test n3bis.html'" style="width:130px" /> <!-- Javascript ou PHP ici ?? -->
-            </div>
             </aside>
     </article>
 
@@ -112,11 +107,84 @@
     </article>
     <article class="createAd">
         <h3>Créer son annonce</h3>
-        <form method="POST" action="../modele/add_ad.php" id="create_ad" >
-            Titre de l'annonce :<input type="text" name="title_ad"/><br/>
-            Date de début :<input type="date" name="date_begin" /><br/>
-            Date de fin :<input type="date" name="date_end" /><br/>
-            <!--Send the house id--> <input type="hidden" name ="id_house" value="$_GET['id']"/>
+        <form method="POST" action="../controler/content.php?page=confAd" id="create_ad" >
+            Titre de l'annonce :<input type="text" name="title_ad"/><br/><br/>
+            
+            Date de début :<input type="text" name="date_begin" placeholder='jj/mm/aaaa' /><br/><br/>
+            
+            Date de fin :<input type="text" name="date_end" placeholder='jj/mm/aaaa' /><br/><br/>
+            
+            <!--Send the house id--> <input type="hidden" name ="id_house" value="$_GET['id']"/><br/>
+            
+            Description de l'annonce : 
+            <textarea name="adDescription"></textarea><br/><br/>
+            
+            Critères spécifiques à l'annonce : <br/>
+                Critère n°1 :
+                <select name='idCrit1' size='1' class='input'>
+                    <?php 
+                    while($resCrit1=$askCrit1->fetch())
+                    {
+                    ?>
+                        <option value='<?php echo $resCrit1['id'] ?>'> <?php echo $resCrit1['name'] ?>
+                    <?php
+                    }
+                    ?>
+                </select>
+                <input type='text' name='critDesc1' placeholder='description de ce que vous attendez'/><br/>
+                
+                Critère n°2 :
+                <select name='idCrit2' size='1' class='input'>
+                    <?php 
+                    while($resCrit2=$askCrit2->fetch())
+                    {
+                    ?>
+                        <option value='<?php echo $resCrit2['id'] ?>'> <?php echo $resCrit2['name'] ?>
+                    <?php
+                    }
+                    ?>
+                </select>
+                <input type='text' name='critDesc1' placeholder='description de ce que vous attendez'/><br/>
+                
+                Critère n°3 :
+                <select name='idCrit3' size='1' class='input'>
+                    <?php 
+                    while($resCrit3=$askCrit3->fetch())
+                    {
+                    ?>
+                        <option value='<?php echo $resCrit3['id'] ?>'> <?php echo $resCrit3['name'] ?>
+                    <?php
+                    }
+                    ?>
+                </select>
+                <input type='text' name='critDesc1' placeholder='description de ce que vous attendez'/><br/>
+                
+                Critère n°4 :
+                <select name='idCrit4' size='1' class='input'>
+                    <?php 
+                    while($resCrit4=$askCrit4->fetch())
+                    {
+                    ?>
+                        <option value='<?php echo $resCrit4['id'] ?>'> <?php echo $resCrit4['name'] ?>
+                    <?php
+                    }
+                    ?>
+                </select> 
+                <input type='text' name='critDesc1' placeholder='description de ce que vous attendez'/><br/>
+                
+                Critère n°5 :
+                <select name='idCrit5' size='1' class='input'>
+                    <?php 
+                    while($resCrit5=$askCrit5->fetch())
+                    {
+                    ?>
+                        <option value='<?php echo $resCrit5['id'] ?>'> <?php echo $resCrit5['name'] ?>
+                    <?php
+                    }
+                    ?>
+                </select>
+                <input type='text' name='critDesc1' placeholder='description de ce que vous attendez'/><br/><br/>
+                
             <input type="submit" value="Créer l'annonce"/>
             
         </form>
