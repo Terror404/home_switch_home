@@ -16,12 +16,13 @@ if (isset($_POST['lockingTopic']) and $_POST['lockingTopic'] == "true") {
     else {
         try {
             $DB->query("
-                SELECT topic
+                UPDATE topic
                 SET locked = true
                 WHERE id = " . CURRENT_TOPIC
             );
             $topicInfo['lockStatus'] = true;
             $successfullyLockedTopic = true;
+            $reasonForLockFailure = null;
         }
         catch (Exception $e) {
             $successfullyLockedTopic = false;
@@ -35,7 +36,7 @@ if (isset($_POST['unlockingTopic']) and $_POST['unlockingTopic'] == "true") {
         $successfullyUnlockedTopic = false;
         $reasonForUnlockFailure = "Vous n'êtes pas identifié.";
     }
-    elseif ($topicInfo['lockStatus']) {
+    elseif (!$topicInfo['lockStatus']) {
         $successfullyUnlockedTopic = false;
         $reasonForUnlockFailure = "Le sujet n'est pas verrouillé.";
     }
@@ -46,16 +47,17 @@ if (isset($_POST['unlockingTopic']) and $_POST['unlockingTopic'] == "true") {
     else {
         try {
             $DB->query("
-                SELECT topic
+                UPDATE topic
                 SET locked = false
                 WHERE id = " . CURRENT_TOPIC
             );
             $topicInfo['lockStatus'] = false;
             $successfullyUnlockedTopic = true;
+            $reasonForUnlockFailure = null;
         }
         catch (Exception $e) {
             $successfullyUnlockedTopic = false;
-            $reasonForUnlockFailure = "Echec de la modification de la base de données.";
+            $reasonForUnlockFailure = "Echec de la modification de la base de données. " . $e->getMessage();
         }
     }
 }

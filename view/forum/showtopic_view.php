@@ -41,12 +41,21 @@
                 $reasonForUnlockFailure
             );
         }
+        //confirmation message for deleting a message
+        if (isset($successfullyDeletedMessage)) {
+            displayConfirmation(
+                $successfullyDeletedMessage,
+                "Votre message a été supprimé.",
+                "la suppression du message",
+                $reasonForDeletionFailure
+            );
+        }
         
         //Title display
         echo(
             "<span class='pageTitle'>"
             . $topicInfo['title']
-            . "</span>"
+            . "</span><br/>"
         );
         
         //Locking topic, mod only
@@ -110,7 +119,6 @@
                     <div class="messageInfo">
                         posté le <?php echo $messageTable[$currentMsg]['creationTime'] ?></i> - <!-- espace -->
                         #<?php echo($currentMsg) /*Message number*/ ?>
-                    </div>
                     <?php //Displaying the "Edit" option
                         if (
                             isLoggedIn() and ($hasModRights
@@ -124,6 +132,7 @@
                                 . "'>Modifier</a>"
                             );
                         }
+                    echo "</div>"
                     ?>
                     <?php echo $messageTable[$currentMsg]['content'] ?></p>
                 </td>
@@ -137,11 +146,11 @@
     
     <!-- (Quick) Answer part -->
     <?php
-    if (isLoggedIn()) {
-        echo "Vous devez vous identifier pour pouvoir répondre.";
-    }
-    elseif ($topic['lockStatus']) {
+    if ($topicInfo['lockStatus'] and !$hasModRights) {
         echo "Vous ne pouvez pas ajouter de message à ce sujet car il est verrouillé.";
+    }
+    elseif (!isLoggedIn() and !$hasModRights) {
+        echo "Vous devez vous identifier pour pouvoir répondre.";
     }
     else {
         ?>

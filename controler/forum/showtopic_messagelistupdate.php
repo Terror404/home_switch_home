@@ -26,6 +26,7 @@ if (
                 'content' => $_POST['newMessage']
             ));
             $successfullyPostedMessage = true;
+            $reasonForPostFailure = null;
             //updating message list with the added answer
             $messageList = getMessageList($DB, CURRENT_TOPIC);
         }
@@ -36,10 +37,16 @@ if (
     }
 }
 
-//modifying an existing message
+//modifying or deleting an existing message
 if (
     isset($_POST['updatedMessage'])
-    and (strlen(trim($_POST['updatedMessage'])) != 0)
+    and (
+        (strlen(trim($_POST['updatedMessage'])) != 0)
+        or (
+            isset($_POST['deleteInstruction'])
+            and $_POST['deleteInstruction'] == true
+        )
+    )
 ) {
     if (!isLoggedIn()) {
         $successfullyPostedMessage = false;
@@ -62,30 +69,61 @@ if (
         
         if ($postQuery->rowCount() == 0) {
             $successfullyModifiedMessage = false;
-            $reasonForModificationFailure = "Le message précisé n'existe
-                    pas.";
+            $reasonForModificationFailure = "Le message précisé n'existe pas.";
         }
         else {
+            //One last check to see if the user has the necessary authority
             $postData = $postQuery->fetch();
             if ($postData['authorId'] == $_SESSION['userId'] or $hasModRights) {
-                try {
-                    $editQuery = $DB->prepare("
-                        UPDATE post
-                        SET text = :newText
-                        WHERE id = :postId
-                    ");
-                    $editQuery->execute(array(
-                        'postId' => $_GET['p'],
-                        'newText' => $_POST['updatedMessage']
-                    ));
-                    $successfullyModifiedMessage = true;
-                    //updating message list with the added answer
-                    $messageList = getMessageList($DB, CURRENT_TOPIC);
+                if (isset($_POST['deleteInstruction']) and $_POST['deleteInstruction'] == true) {
+                    $lastPost = getLastMessageFromTopic(CURRENT_TOPIC, $DB);
+                    if ($lastPost['id'] == $_GET['p']) {
+                        try {
+                            $deleteQuery = $DB->prepare("
+                                DELETE FROM post
+                                WHERE id = :postId
+                            ");
+                            $deleteQuery->execute(array(
+                                'postId' => $_GET['p']
+                            ));
+                            $successfullyDeletedMessage = true;
+                            $messageList = getMessageList($DB, CURRENT_TOPIC);
+                            $reasonForDeletionFailure = null;
+                        }
+                        catch (exception $e) {
+                            $successfullyDeletedMessage = false;
+                            $reasonForDeletionFailure = "La modification de la
+                                base de données a échoué.";
+                        }
+                    }
+                    else {
+                        $successfullyDeletedMessage = false;
+                        $reasonForDeletionFailure = "Vous ne pouvez supprimer
+                            que le dernier message.";
+                    }
                 }
-                catch (exception $e) {
-                    $successfullyModifiedMessage = false;
-                    $reasonForModificationFailure = "L'ajout dans la base de
-                        de données a échoué.";
+                else {
+                    //Updating the message
+                    try {
+                        $editQuery = $DB->prepare("
+                            UPDATE post
+                            SET text = :newText
+                            WHERE id = :postId
+                        ");
+                        $editQuery->execute(array(
+                            'postId' => $_GET['p'],
+                            'newText' => $_POST['updatedMessage']
+                        ));
+                        $successfullyModifiedMessage = true;
+                        //updating message list with the added answer
+                        $messageList = getMessageList($DB, CURRENT_TOPIC);
+                        $reasonForModificationFailure = null;
+                    }
+                    catch (exception $e) {
+                        $successfullyModifiedMessage = false;
+                        $reasonForModificationFailure = "L'ajout dans la base
+                            de données a échoué.";
+                    }
                 }
             }
             else {

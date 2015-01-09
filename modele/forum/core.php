@@ -46,3 +46,14 @@ function displayConfirmation($success, $successMessage, $operation, $reasonForFa
         echo "</p><br/>";
     }
 }
+
+function getLastMessageFromTopic($whichTopic, $database) {
+    $tempQuery = $database->query("
+        SELECT *
+        FROM post
+        WHERE id_topic =" . $whichTopic . "
+        ORDER BY date_creation DESC, id DESC
+        LIMIT 1
+    ");
+    return $tempQuery->fetch();
+}
