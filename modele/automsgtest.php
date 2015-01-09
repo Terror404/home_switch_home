@@ -12,7 +12,7 @@ $DB= new PDO ('mysql:host=localhost; dbname=home_switch_home', 'root','');
 /*id of the message*/
     $idAutoMsg = $_POST ["id_autoMsg"];
     
-/*search the tilte and text of the message in the database*/
+/*search the title and text of the message in the database*/
     $askMsg = $DB -> prepare ('SELECT title , text FROM auto_msg WHERE id = :idMsg');
     $askMsg-> execute (array('idMsg' => $idAutoMsg));
     $autoMsg = $askMsg ->fetch();
