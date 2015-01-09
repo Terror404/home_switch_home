@@ -4,11 +4,10 @@ $DB->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
    
 $req='';
 $reqBase='SELECT DISTINCT ad.title, ad.date_begin, ad.date_end, house.description ,house.pictures, house.rating, house.id 
-                                     FROM ad, house, house_area, area, ad_criteria, criteria, user , criteria_house , house_criteria_house 
+                                     FROM ad, house,area, ad_criteria, criteria, user , criteria_house , house_criteria_house 
                                      WHERE ad.id_house= house.id 
                                      AND house.id_user=user.id 
-                                     AND house.id=house_area.id_house 
-                                     AND area.id=house_area.id_area 
+                                     AND house.id_area=area.id
                                      AND ad.id=ad_criteria.id_ad 
                                      AND criteria.id=ad_criteria.id_criteria
                                      AND criteria_house.id=house_criteria_house.id_criteria_house
@@ -23,14 +22,18 @@ $reqBase='SELECT DISTINCT ad.title, ad.date_begin, ad.date_end, house.descriptio
     if (isset($_POST['dateBegin']) AND ($_POST['dateBegin']!='')) 
         {
         $dateBegin=$_POST['dateBegin'];
-        $req=$req.' AND ad.date_begin>='.$dateBegin;
+        $oldDate=explode('/',$dateBegin);
+        $newDate=$oldDate[2].'-'.$oldDate[1].'-'.$oldDate[0];
+        $req=$req.' AND ad.date_begin>='.$newDate;
         }
     
     
     if (isset($_POST['dateEnd']) && ($_POST['dateEnd']!='')) 
         {
         $dateEnd=$_POST['dateEnd'];
-        $req=$req.' AND date_end>='.$dateEnd;  
+        $oldDate=explode('/',$dateEnd);
+        $newDate=$oldDate[2].'-'.$oldDate[1].'-'.$oldDate[0];
+        $req=$req.' AND date_end>='.$newDate;  
         }
     
     //area
@@ -190,11 +193,10 @@ $reqBase='SELECT DISTINCT ad.title, ad.date_begin, ad.date_end, house.descriptio
 $askResearch->closeCursor();
 
 $askPrioritySearch=$DB->prepare('SELECT DISTINCT ad.title, ad.date_begin, house.description, ad.date_end, house.pictures, house.rating, house.id, ad.priority
-                                     FROM ad, house, house_area, area, ad_criteria, criteria, user , criteria_house , house_criteria_house 
+                                     FROM ad, house, area, ad_criteria, criteria, user , criteria_house , house_criteria_house 
                                      WHERE ad.id_house= house.id 
                                      AND house.id_user=user.id 
-                                     AND house.id=house_area.id_house 
-                                     AND area.id=house_area.id_area 
+                                     AND house.id_area=area.id 
                                      AND ad.id=ad_criteria.id_ad 
                                      AND criteria.id=ad_criteria.id_criteria
                                      AND criteria_house.id=house_criteria_house.id_criteria_house
