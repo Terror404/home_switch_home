@@ -17,7 +17,7 @@ require("../modele/read_my_msg.php");
     ?>
 
 
-            <p>de : <?php echo $resReceivedmsg ['id_author'] ?></p>
+            <p>de : <?php echo $resReceivedmsg ['login'] ?></p>
             <p>envoyé le :<?php echo $resReceivedmsg ['date'] ?></p>
             <p>titre: <?php echo $resReceivedmsg ['title'] ?></p>
             <p>message :<?php echo $resReceivedmsg ['text'] ?></p>

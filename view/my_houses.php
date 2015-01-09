@@ -1,6 +1,4 @@
-<div class="newHouseButton">
-    <input type="button" value="Créer une nouvelle maison" onclick="self.location.href='../controler/content.php?page=formHouse'"/>
-</div>
+
 <div class="allMyHouses">
 <?php
     while($resHouse=$askHouse->fetch())
@@ -75,4 +73,6 @@
 ?>
 </div>
 
-
+<div class="newHouseButton">
+    <input class="sub" type="button" value="Créer une nouvelle maison" onclick="self.location.href='../controler/content.php?page=formHouse'"/>
+</div>
