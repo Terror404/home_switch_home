@@ -19,7 +19,7 @@ while($resSearch=$askPrioritySearch->fetch())
         <?php echo '<br/>'.$resSearch['rating'] ?>
     </div>
     <div id="descriptionHouse"> 
-        <?php echo $resSearch['description'].$resSearch['priority']; ?>
+        <?php echo $resSearch['description']; ?>
     </div>
     <div id="pictureAd"> 
         <?php echo $resSearch['pictures'] ?>
