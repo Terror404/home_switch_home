@@ -87,6 +87,19 @@
                         require("../modele/search_my_favorites.php"); //modele
                         include("../view/my_favorites.php");//vue
                     }
+                    //Parameters
+                    elseif($_GET['page']=='parameters')
+                    {
+                        require("../modele/fct_verif_date.php");
+                        require("../modele/search_parameters.php");
+                        include("../view/parameters.php");
+                    }
+                    //Redirection after chgt of the login
+                    elseif($_GET['page']=='redirect_chgt_log')
+                    {
+                        require("../modele/search_parameters.php");
+                        include("../view/redirect_chgt_login.php");
+                    }
                     //Own Houses
                     elseif( isset($_SESSION['userId']) AND $_GET['page']== 'my_houses')
                     {
