@@ -23,15 +23,15 @@ if(isset($_POST['date_begin']) AND $_POST['date_begin']!=="" AND $_POST['date_be
             $addA->execute(array('idHouse'=>$_POST['id_house'],'title'=>$_POST['title_ad'],'dateBegin'=>$newDateB,'dateEnd'=>$newDateE));
         
         //Get the id of the created ad
-        $askA=$DB->prepare('SELECT id FROM ad WHERE id_house=:idhouse, title=:title, date_beguin=:dateBegin,date_end=:dateEnd');
+        $askA=$DB->prepare('SELECT id FROM ad WHERE id_house=:idHouse AND title=:title AND date_begin=:dateBegin AND date_end=:dateEnd');
             $askA->execute(array('idHouse'=>$_POST['id_house'],'title'=>$_POST['title_ad'],'dateBegin'=>$newDateB,'dateEnd'=>$newDateE));
                     
-        for($i=1;$i<6;$i++)
+        while($resA=$askA->fetch())
         {
-            while($resA=$askA->fetch())
+            for($i=1;$i<6;$i++)
             {
-                    $addC=$DB->prepare('INSERT INTO ad_criteria(id_ad,id_ad_criteria,id_criteria) VALUES(:iad,:idadcriteria,:idcriteria)');
-                $addC->execute(array('idad'=>$resA['id'],'idadcriteria'=>$i,'idcriteria'=>$_POST['idCrit'.$i]));
+                $addC=$DB->prepare('INSERT INTO ad_criteria(id_ad,idAdCriteria,id_criteria) VALUES(:idad,:idadcriteria,:idcriteria)');
+                    $addC->execute(array('idad'=>$resA['id'],'idadcriteria'=>$i,'idcriteria'=>$_POST['idCrit'.$i]));
             }
         }
         
