@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 	<head>
-		<title> Bloc Commentaire </title>
+		<title> <?php echo $_SESSION['$blocComm']; ?> </title>
 		<meta charset="utf-8" />
                 <link rel="stylesheet" href="../CommentaryBloc/css_commentary_bloc.css" />
 	</head>

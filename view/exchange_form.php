@@ -1,5 +1,5 @@
 <br/><br/><br/>
-<h1>Formulaire d'échange</h1>
+<h1><?php echo $_SESSION['$retMessageri']; ?></h1>
 <?php
 //Choice of the User to exchange with
 if(!isset($_POST['idUser2']) AND !isset($_POST['logUser2']))

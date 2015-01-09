@@ -3,7 +3,7 @@
 session_start();
     try
         {
-            $DB=new PDO ("mysql:host=localhost;dbname=mabdd","root","root",array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
+            $DB=new PDO ("mysql:host=localhost;dbname=mabdd","root","",array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
         } 
     catch (Exception $ex) 
         {
