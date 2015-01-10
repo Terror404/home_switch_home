@@ -1,14 +1,57 @@
+<br/>
+<br/>
 <div class="Profile">
 <h2>Fiche profil</h2>
+<br/>
 <div class="ProfilePic2">
     <?php
     while ($resProfPic = $askProfPic->fetch()) {
         ?>
-        <img src="<?php echo$resProfPic['picture']; ?>" alt="photo de profil"/>
+            <img src="<?php echo$resProfPic['picture']; ?>" alt="photo de profil"/>
         <?php
     }
     ?>
 </div>
+    Mofifier la photo de profil :
+    <br/>
+    <form method='post' action='' enctype="multipart/form-data">
+        Aperçu de la photo que vous souhaitez ajouter : <br/>
+        <img id="uploadPreview" class="previewImg"/>
+        <input type='file' name='photo7' id="photo7" onChange='previewImg()'/>
+        <input type='hidden' name='modifyProf' value='1'/>
+        <input type="hidden" name="form" value="3"/>
+        <input type='submit' value='modifier la photo de profil' onclick='javascript:window.close()'/>
+        <input type='reset' value='annuler'/>
+    </form>
+    <script type='text/javascript'>
+        function previewImg()
+        {
+            var ofReader=new FileReader();
+            ofReader.readAsDataURL(document.getElementById("photo7").files[0]);
+            
+            ofReader.onload=function (oFREvent)
+            {
+                document.getElementById("uploadPreview").src=oFREvent.target.result;
+            };
+        };
+    </script>
+    <?php
+    if(isset($_POST['form']) AND $_POST['form']==3)
+    {
+        if($end==0)
+        {
+            echo$message;
+            echo"La modification a été effectuée avec succès.";
+        }
+        elseif($end==1)
+        {
+            echo$message;
+            echo"Veuillez remplir le champ correctement";
+        }
+    }
+    ?>
+    
+
 <div class="login">
     <?php
     while ($resProfLog = $askProfLog->fetch()) {
@@ -97,16 +140,58 @@ while ($resProfDate = $askProfDate->fetch()) {
 <div class="desc">
     <h2>A propos de moi :</h2>
         <?php
-        while ($resProfDesc = $askProfDesc->fetch()) {
-            echo $resProfDesc['description'];
+        while ($resProfDesc = $askProfDesc->fetch()) 
+        {
+        ?>
+            <form method='post' action=''>
+                    <textarea name='modDescription'><?php echo $resProfDesc['description']?></textarea>
+                    <input type='hidden' name='modifyProf' value='1'/>
+                    <input type="hidden" name="form" value="1"/>
+                    <input type='submit' value='Modifier la description'/>
+                    <input type='reset' value='Annuler'/>
+            </form>
+        <?php
+        }
+        if(isset($_POST['form']) AND $_POST['form']==1)
+        {
+            if($end==0)
+            {
+                echo"La modification a été effectuée avec succès.";
+            }
+            elseif($end==1)
+            {
+                echo"Veuillez remplir le champ correctement";
+            }
         }
         ?>
+    
 </div>
 <div class="dest">
     <h2>Les destinations où je souhaiterais me rendre :</h2>
         <?php
-        while ($resProfWant = $askProfWant->fetch()) {
-            echo $resProfWant['wanted_dest'];
+        while ($resProfWant = $askProfWant->fetch())
+        {
+            $dest=$resProfWant['wanted_dest'];
+        ?>
+            <form method='post' action=''>
+                <input type='text' name='modDestination' value='<?php echo $dest ?>'/>
+                <input type='hidden' name='modifyProf' value='2'/>
+                <input type="hidden" name="form" value="2"/>
+                <input type='submit' value='Modifier les destinations souhaitées'/>
+                <input type='reset' value='Annuler'/>
+            </form>
+        <?php
+        }
+        if(isset($_POST['form']) AND $_POST['form']==2)
+        {
+            if($end==0)
+            {
+                echo"La modification a été effectuée avec succès.";
+            }
+            elseif($end==1)
+            {
+                echo"Veuillez remplir le champ correctement";
+            }
         }
         ?>
 </div>
@@ -163,10 +248,3 @@ while ($resProfDate = $askProfDate->fetch()) {
 }
         ?>
     </div>
-</div>
-<?php $userId=$_SESSION['userId'];?>
-<form method="post" action="../controler/content.php?page=myProfile&id=<?php echo $userId ?>">
-<input type='hidden' name='modifyProf' value='1'/>
-<input type='submit' value ='Modifier votre profil'/>
-</form>
-</div>

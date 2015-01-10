@@ -77,9 +77,17 @@
                     //Profile page
                     elseif( $_GET['page']=='myProfile')
                     {
-                        require("../modele/search_my_profile.php"); //modele
-                        include("../view/my_profile.php");//vue
-                        
+                        if(isset($_POST['modifyProf']))
+                        {
+                            require("../modele/update_my_profile.php");//modele
+                            require("../modele/search_my_profile.php"); //modele
+                            include("../view/modify_my_profile.php");//vue
+                        }
+                        else
+                        {
+                            require("../modele/search_my_profile.php"); //modele
+                            include("../view/my_profile.php");//vue
+                        }                        
                     }
                     //Favorites
                     elseif( $_GET['page']== 'favorites')
