@@ -76,15 +76,38 @@
                     }
                     elseif($_GET['page']=='moderateSite')
                     {
-                        require('../modele/backOffice/moderate_site.php');
+                        
                         include('../view/backOffice/moderate_site.php');
+                        
                         if($_GET['state']==1)
                         {
+                            require('../modele/backOffice/moderate_site.php');
                             include('../view/backOffice/moderate_site_user.php');
                         }
                         elseif($_GET['state']==2)
                         {
+                            require('../modele/backOffice/moderate_site.php');
                             include('../view/backOffice/moderate_site_house.php');
+                        }
+                        elseif($_GET['state']==3)
+                        {
+                            require('../modele/backOffice/moderate_site.php');
+                            include('../view/backOffice/moderate_site_warned_user.php');
+                        }
+                        elseif($_GET['state']==4)
+                        {
+                            require('../modele/backOffice/moderate_site.php');
+                            include('../view/backOffice/moderate_site_deleted_user.php');
+                        }
+                        elseif($_GET['state']==5)
+                        {
+                            require('../modele/backOffice/moderate_site.php');
+                            include('../view/backOffice/moderate_site_deleted_house.php');
+                        }
+                        elseif($_GET['state']==6)
+                        {
+                            require('../modele/backOffice/moderate_site.php');
+                            include('../view/backOffice/moderate_site_deleted_house.php');
                         }
                     }
                     
