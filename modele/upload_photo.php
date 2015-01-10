@@ -14,7 +14,7 @@ define('MAX_SIZE',100000);                      //Maximal size of the pic (byte)
 define('WIDTH_MAX',5000);                       //Maximum width of the pic (pixels)
 define('HEIGHT_MAX',5000);
 
-for($i=0;$i<2;$i++)
+for($i=0;$i<8;$i++)
 {
                 global $i;
                 switch($i)
@@ -87,7 +87,7 @@ for($i=0;$i<2;$i++)
                                         //Upload test
                                         if(move_uploaded_file($_FILES['photo'.$i]['tmp_name'], $dossier_user.$namePic))
                                         {
-                                            $message="Télechargement de l'image réussi";
+                                            $message="Télechargement de l'image réussi.";
                                             $p[$i]=$dossier_user.$namePic;
                                         }
                                         else
@@ -125,11 +125,10 @@ for($i=0;$i<2;$i++)
                     $message="Erreur Serveur";
                 }
 
-
+                if(!isset($_POST['form']))
+                {
                 echo$message;echo"<br/>";
-                echo$dossier_user."/".$namePic;echo"<br/>";
-                echo$_FILES['photo'.$i]['name'];echo"<br/>";
-                echo$_FILES['photo'.$i]['tmp_name'];echo"<br/>";
+                }
                 
 }
                 ?>
