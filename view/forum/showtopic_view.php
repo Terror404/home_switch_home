@@ -121,9 +121,15 @@
                         #<?php echo($currentMsg) /*Message number*/ ?>
                     <?php //Displaying the "Edit" option
                         if (
-                            isLoggedIn() and ($hasModRights
-                            or ($messageTable[$currentMsg]['authorId'] == $_SESSION['userId'])))
-                        {
+                            isLoggedIn()
+                            and (
+                                $hasModRights
+                                or (
+                                    $messageTable[$currentMsg]['authorId'] == $_SESSION['userId']
+                                    and !$topicInfo['lockStatus']
+                                )
+                            )
+                        ) {
                             echo(
                                 " - <a href='./../controler/content.php?page=editPost&amp;t="
                                 . CURRENT_TOPIC
