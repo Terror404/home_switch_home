@@ -6,7 +6,7 @@
 .sub
 {
  
-     width:30%;
+     width:60%;
 background-color: #00BCE0;
   -webkit-border-radius: 28;
   -moz-border-radius: 28;
@@ -20,4 +20,152 @@ background-color: #00BCE0;
 .sub:hover {
   background: #83EBC6;
   text-decoration: none;      
+}
+
+
+
+.title
+{
+    margin-top : 5%;
+text-align : center;
+font-size : 200%;
+}
+
+.img
+{
+padding : 10 px;
+margin : 10 px;
+margin-bottom : 5px;
+display : inline-block;
+width : 50%;
+vertical-align : top;
+}
+.image1
+{
+width: 98%;
+}
+
+.caroussel
+{
+margin : 1%;
+width : 98%;
+height :200px;
+vertical-align : middle;
+text-align : center;
+}
+
+.piccar
+{
+width : 20%;  
+}
+
+.info
+{
+margin-top : 1%;
+padding : 10 px;
+margin : 10 px;
+margin-bottom : 5px;
+background-color:blue;
+padding : 1%;
+display :inline-block;
+width : 45%;
+margin-left:1%;
+vertical-align : top;
+padding-bottom : 19.5%;
+}
+
+.ownerimg
+{
+width : 40%;
+display: inline-block;
+vertical-align : middle;
+}
+
+.ownerdata
+{
+margin-left : 1%;
+width : 50%;
+display: inline-block;
+vertical-align : middle;
+}
+.onglet
+{
+margin-left : 2%;
+}
+.o
+{
+list-style-type : none;
+display : inline;
+width : 10%;
+background-color: #00BCE0;
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  color: white;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}   
+.o:hover {
+  background: #83EBC6;
+  text-decoration: none;      
+}
+.desc
+{
+display : inline-block;
+vertical-align : middle;
+text-align : justify;
+width : 90%;
+padding:3%;
+background-color: #00BCE0;
+margin-top : 1%;
+margin-left : 2%;
+
+}
+
+.map
+{
+width : 30%;
+vertical-align : middle;
+display: inline-block;
+}
+.annonce
+{
+border :1px solid black;
+background-color: #45a9d5;
+text-align : center;
+width : 25%;
+padding : 1%;
+margin : 1%;
+display : inline-block;
+margin-left : 4%;
+}
+.commentbox
+{
+background-color :#ffc7ab;
+margin : 1%;
+}
+.commentauthor
+{ 
+margin : 1%;
+width : 25%;
+text-align : center;
+display : inline-block;
+}
+.userimg
+{
+width : 90%;
+margin : 1%;
+}
+
+.comment
+{
+width : 65%;
+margin : 1%;
+padding: 1%;
+display : inline-block;
+
+}
+.comment, .commentauthor
+{
+vertical-align : middle;
 }

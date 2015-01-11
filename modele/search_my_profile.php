@@ -1,4 +1,3 @@
-
 <?php
 $askProfPic = $DB->prepare('SELECT picture FROM user WHERE id=:id');
 $askProfPic->execute(array('id'=>$_SESSION['userId']));
