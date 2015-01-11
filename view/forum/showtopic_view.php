@@ -5,84 +5,168 @@
 <div class="forumFrame">
     <?php
     
-        //confirmation/error message for adding a new post
+        //confirmation message for adding a new post
         if (isset($successfullyPostedMessage)) {
-            if ($successfullyPostedMessage) {
-                ?>
-                <p>Votre message a été ajouté.</p><br/>
-                <?php
+            displayConfirmation(
+                $successfullyPostedMessage,
+                "Votre message a été ajouté.",
+                "l'ajout du message",
+                $reasonForPostFailure
+            );
         }
-            else {
-                ?>
-                <p>Une erreur s'est produite lors de l'ajout de votre message :<br/>
-                <?php echo $reasonForPostFailure; ?></p><br/>
-                <?php
-            }
-        }
-        //confirmation/error message for editing a post
+        //confirmation message for editing a post
         if (isset($successfullyModifiedMessage)) {
-            if ($successfullyModifiedMessage) {
-                ?>
-                <p>Votre message a été modifié.</p><br/>
-                <?php
-            }
-            else {
-                ?>
-                <p>Une erreur s'est produite lors de la modification de votre message :<br/>
-                <?php echo $reasonForModificationFailure; ?></p><br/>
-                <?php
-            }
+            displayConfirmation(
+                $successfullyModifiedMessage,
+                "Votre message a été modifié.",
+                "la modification du message",
+                $reasonForModificationFailure
+            );
+        }
+        //confirmation message for locking the topic
+        if (isset($successfullyLockedTopic)) {
+            displayConfirmation(
+                $successfullyLockedTopic,
+                "Le sujet a été verrouillé avec succès.",
+                "l'opération de verrouillage",
+                $reasonForLockFailure
+            );
+        }
+        //confirmation message for unlocking the topic
+        if (isset($successfullyUnlockedTopic)) {
+            displayConfirmation(
+                $successfullyUnlockedTopic,
+                "Le sujet a été déverrouillé avec succès.",
+                "l'opération de déverrouillage",
+                $reasonForUnlockFailure
+            );
+        }
+        //confirmation message for deleting a message
+        if (isset($successfullyDeletedMessage)) {
+            displayConfirmation(
+                $successfullyDeletedMessage,
+                "Votre message a été supprimé.",
+                "la suppression du message",
+                $reasonForDeletionFailure
+            );
+        }
+        
+        //Title display
+        echo(
+            "<span class='pageTitle'>"
+            . $topicInfo['title']
+            . "</span><br/>"
+        );
+        
+        //Locking topic, mod only
+        if ($hasModRights and !$topicInfo['lockStatus']) {
+            ?>
+                <form method="post"
+                    action="./../controler/content.php?page=showTopic&amp;t=<?php echo CURRENT_TOPIC ?>">
+                    <input type="hidden" name="lockingTopic" value="true">
+                    <input type="submit" value="Verrouiller ce sujet">
+                </form>
+            <?php
+        }
+        
+        //Unlocking topic, mod only
+        if ($hasModRights and $topicInfo['lockStatus']) {
+            ?>
+                <form method="post" action="./../controler/content.php?page=showTopic&amp;t=<?php echo CURRENT_TOPIC ?>">
+                    <input type="hidden" name="unlockingTopic" value="true">
+                    <input type="submit" value="Déverrouiller ce sujet">
+                </form>
+            <?php
         }
         
         //Page navigation
-        ?>
-        Page 
-        <?php
+        echo "Page ";
         for ($i = 1; $i <= NUMBER_OF_PAGES; $i++) {
             if ($i == CURRENT_PAGE) {
                 echo "<strong>".(string)$i."</strong> ";
             }
             else {
-                ?>
-                <a href="./../controler/content.php?page=showTopic&amp;t=<?php echo CURRENT_TOPIC ?>&amp;p=<?php echo (($i-1) * MESSAGES_PER_PAGE) ?>">
-                <?php echo $i ?></a> <!-- espace -->
-                <?php
+                echo(
+                    "<a href='./../controler/content.php?page=showTopic&amp;t="
+                    . CURRENT_TOPIC
+                    . "&amp;p="
+                    . (($i-1) * MESSAGES_PER_PAGE)
+                    . "'>"
+                    . $i
+                    . "</a> "
+                );
             }
         }
+        
         ?>
         <br/></br>
+        
+        <!-- Message display -->
+        <table class="messageTable">
         <?php
         
-        //Displaying messages
+        //Displaying messages; up to MESSAGES_PER_PAGE or until there are no more messages
         for ($i = 0; ($i < MESSAGES_PER_PAGE) and (array_key_exists($firstMessage + $i, $messageTable)); $i++)
         {
+            $currentMsg = $firstMessage + $i;
             ?>
-            <p><i>Posté par 
-            <?php echo $messageTable[$firstMessage + $i]['authorName'] ?> 
-            le <?php echo $messageTable[$firstMessage + $i]['creationTime'] ?></i> - 
-            #<?php echo($firstMessage + $i) /*Message number*/ ?>
-                <?php
-                    if (isLoggedIn()) { //Displaying the "Edit" option
-                        if ($messageTable[$firstMessage + $i]['authorId'] == $_SESSION['userId']) {
-                            ?>
-                             - <a href="./../controler/content.php?page=editPost&amp;t=<?php echo CURRENT_TOPIC ?>&amp;p=<?php echo $messageTable[$firstMessage + $i]['id'] ?>">Modifier</a>
-                            <?php
+            <tr>
+                <td class="posterFullInfo">
+                    <?php echo $messageTable[$currentMsg]['authorName'] ?></br>
+                    Inscrit le <?php echo $messageTable[$currentMsg]['joinTime'] ?>
+                </td>
+                <td class="message">
+                    <div class="messageInfo">
+                        posté le <?php echo $messageTable[$currentMsg]['creationTime'] ?></i> - <!-- espace -->
+                        #<?php echo($currentMsg) /*Message number*/ ?>
+                    <?php //Displaying the "Edit" option
+                        if (
+                            isLoggedIn()
+                            and (
+                                $hasModRights
+                                or (
+                                    $messageTable[$currentMsg]['authorId'] == $_SESSION['userId']
+                                    and !$topicInfo['lockStatus']
+                                )
+                            )
+                        ) {
+                            echo(
+                                " - <a href='./../controler/content.php?page=editPost&amp;t="
+                                . CURRENT_TOPIC
+                                . "&amp;p="
+                                . $messageTable[$currentMsg]['id']
+                                . "'>Modifier</a>"
+                            );
                         }
-                    }
-                ?>
-                <br/>
-            <?php echo $messageTable[$firstMessage + $i]['content'] ?></p><br/>
+                    echo "</div>"
+                    ?>
+                    <?php echo $messageTable[$currentMsg]['content'] ?></p>
+                </td>
+            </tr>
             <?php
         }
-    ?>
+        ?>
+        </table>
 
     <br/><br/>
+    
     <!-- (Quick) Answer part -->
-    Entrez le texte de votre réponse :
-    <form method="post" action="./../controler/content.php?page=showTopic&amp;t=<?php echo CURRENT_TOPIC ?>">
-
-    <textarea name="newMessage" rows="8" cols="50"></textarea><br/>
-    <input type="submit" value="Envoyer">
-
-    </form>
+    <?php
+    if ($topicInfo['lockStatus'] and !$hasModRights) {
+        echo "Vous ne pouvez pas ajouter de message à ce sujet car il est verrouillé.";
+    }
+    elseif (!isLoggedIn() and !$hasModRights) {
+        echo "Vous devez vous identifier pour pouvoir répondre.";
+    }
+    else {
+        ?>
+        Entrez le texte de votre réponse :
+        <form method="post"
+            action="./../controler/content.php?page=showTopic&amp;t=<?php echo CURRENT_TOPIC ?>">
+            <textarea name="newMessage" rows="8" cols="50"></textarea><br/>
+            <input type="submit" value="Envoyer">
+        </form>
+        <?php
+    }
+    ?>
 </div>
