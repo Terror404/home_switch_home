@@ -155,6 +155,7 @@
                     // Add a house
                     elseif( $_GET['page']=='formHouse')
                     {
+                        require("../modele/create_house.php");
                         include("../view/create_house.php");//vue
                     }
                     

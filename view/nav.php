@@ -21,7 +21,13 @@
 			<li><a class="subMenuLinkBlock" href="../controler/content.php?page=parameters" >Paramètres</a></li>
 		</ul>
 	</li>
-	<li class="linkBlockElement"><a class="linkBlock" href="#help">Aide</a></li>
+	<li class="subMenuDisplayer"><a class="linkBlock" href="#help">Aide</a>
+        <ul class="subMenuBlockList">
+			<li><a class="subMenuLinkBlock" href="../controler/content.php?page=myProfile&userId=<?php echo $userId?>" >FAQ</a></li>
+			<li><a class="subMenuLinkBlock" href="../controler/content.php?page=my_ads&userId=<?php echo $userId?>" >Forum</a></li>
+        </ul>
+        
+        </li>
 </ul>
     
 </nav>
