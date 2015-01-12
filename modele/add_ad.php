@@ -21,7 +21,7 @@ if(isset($_POST['date_begin']) AND $_POST['date_begin']!=="" AND $_POST['date_be
         //Create the entry in the database in the "ad" table
         $addA=$DB->prepare("INSERT INTO ad (id_house,title,date_begin,date_end) VALUES(:idHouse,:title,:dateBegin,:dateEnd");
             $addA->execute(array('idHouse'=>$_POST['id_house'],'title'=>$_POST['title_ad'],'dateBegin'=>$newDateB,'dateEnd'=>$newDateE));        
-        $addCriteria=$DB->prepare('INSERT INTO ad_criteria(id_ad,id_criteria,description) VALUES('.$_POST[''])
+        $addCriteria=$DB->prepare('INSERT INTO ad_criteria(id_ad,id_criteria,description) VALUES('.$_POST['']);
         /*$askIdAd=$DB->prepare('SELECT id FROM ad WHERE id_house=:idhouse AND date_begin=:datebegin AND date_end=:dateend');
             $askIdAd->execute(array('idhouse'=>$_POST['id_house'], 'datebegin'=>$newDateB,'dateend'=>$newDateE));
         
