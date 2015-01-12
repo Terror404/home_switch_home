@@ -18,7 +18,7 @@ if (isset($page) AND $page!='')
                     }
                     elseif( $_GET['page']=='searchKeyWords')
                     {
-                        echo'<link rel="stylesheet" type="text/css" href="../view/css/search_result.css">';
+                        echo'<link rel="stylesheet" type="text/css" href="../view/css/myhouses_style.css">';
                     }
                     elseif( $_GET['page']=='home')
                     {
