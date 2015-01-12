@@ -21,7 +21,26 @@ if(isset($_POST['date_begin']) AND $_POST['date_begin']!=="" AND $_POST['date_be
         //Create the entry in the database in the "ad" table
         $addA=$DB->prepare("INSERT INTO ad (id_house,title,date_begin,date_end) VALUES(:idHouse,:title,:dateBegin,:dateEnd");
             $addA->execute(array('idHouse'=>$_POST['id_house'],'title'=>$_POST['title_ad'],'dateBegin'=>$newDateB,'dateEnd'=>$newDateE));        
-        $addCriteria=$DB->prepare('INSERT INTO ad_criteria(id_ad,id_criteria,description) VALUES('.$_POST['']);
+        
+            
+        $askAdd=$DB->prepare('SELECT ad.id FROM ad,house,user WHERE user.id=house.id_user AND user.id=\''.$_SESSION['userId'].'\' AND house.id=ad.id_house AND ad.title=\''.$_POST['title'].'\'');
+            $askAdd->execute();
+            
+            $askCriteria=$DB->prepare('SELECT * FROM criteria');
+            $askCriteria->execute();
+            
+            while($resAdd=$askAdd->fetch())
+            {
+            while($resCriteria=$askCriteria->fetch())
+            {
+            
+                if(isset($_POST[$resCriteria['name']]) && $_POST[$resCriteria['name']]=='on')
+                {
+                $addCriteria=$DB->prepare('INSERT INTO ad_criteria(id_ad,id_criteria,description) VALUES(\''.$resAdd['id'].'\',\''.$resCriteria['id'].'\',\''.$_POST['critDesc'.$resSearchBoxCriteria['name']].'\')');
+                $addCriteria->execute();
+                }
+            }
+            }
         /*$askIdAd=$DB->prepare('SELECT id FROM ad WHERE id_house=:idhouse AND date_begin=:datebegin AND date_end=:dateend');
             $askIdAd->execute(array('idhouse'=>$_POST['id_house'], 'datebegin'=>$newDateB,'dateend'=>$newDateE));
         
