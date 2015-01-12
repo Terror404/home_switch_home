@@ -184,7 +184,7 @@
                     ?>
                 </select>
                 <input type='text' name='critDesc5' placeholder='description de ce que vous attendez'/><br/><br/>
-                
+                <input type="hidden" name="id_house" value="<?php echo$_GET['id']?>"/>
             <input type="submit" value="Créer l'annonce"/>
             
         </form>

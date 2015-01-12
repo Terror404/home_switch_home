@@ -197,7 +197,7 @@
                         }
                     }
                     
-                    //House card
+                    //House Card
                     elseif($_GET['page']=='houseCard')
                     {
                         require("../modele/search_house_card.php");
@@ -205,6 +205,12 @@
                         include("../view/house_card.php");
                     }
                     
+                    //Modify House Card
+                    elseif($_GET['page']=='modify_House_Card')
+                    {
+                        require("../modele/search_house_card.php");
+                        include("../view/modify_hc.php");
+                    }
                     
                     //Add an ad
                     elseif($_GET['page']=='createAd')
