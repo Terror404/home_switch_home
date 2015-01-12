@@ -62,7 +62,7 @@
                     elseif( $_GET['page']=='searchKeyWords')
                     {
                         require("../modele/search_keywords.php"); //modele
-                        include("../view/search_result.php"); //vue
+                        include("../view/search_result_key.php"); //vue
                     }
                     
                     //search result by map
@@ -155,6 +155,7 @@
                     // Add a house
                     elseif( $_GET['page']=='formHouse')
                     {
+                        require("../modele/create_house.php");
                         include("../view/create_house.php");//vue
                     }
                     
@@ -197,7 +198,7 @@
                         }
                     }
                     
-                    //House card
+                    //House Card
                     elseif($_GET['page']=='houseCard')
                     {
                         require("../modele/search_house_card.php");
@@ -205,6 +206,12 @@
                         include("../view/house_card.php");
                     }
                     
+                    //Modify House Card
+                    elseif($_GET['page']=='modify_House_Card')
+                    {
+                        require("../modele/search_house_card.php");
+                        include("../view/modify_hc.php");
+                    }
                     
                     //Add an ad
                     elseif($_GET['page']=='createAd')
