@@ -1,5 +1,5 @@
 <div class="Profile">
-<h2> <?php echo $_SESSION['$fichProf']; ?> </h2>
+<h2> <?php echo $_SESSION['fichProf']; ?> </h2>
 <div class="ProfilePic2">
     <?php
     while ($resProfPic = $askProfPic->fetch()) {

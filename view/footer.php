@@ -4,15 +4,15 @@
             <div class="colonne1" style="float:left";>
             <li>
                 <br/>
-                <a href=# class="titre_colonne_1"> <?php echo $_SESSION['$aPropoNou']; ?> </a>
+                <a href=# class="titre_colonne_1"> <?php echo $_SESSION['aPropoNou']; ?> </a>
                 
                 <br/>
                 <br/>
                 
-                    <a href=# class="footerLink"> <?php echo $_SESSION['$quiSomNou']; ?> </a><br/>
-                    <a href=# class="footerLink"> <?php echo $_SESSION['$contactNou']; ?> </a><br>
-                    <a href=# class="footerLink"> <?php echo $_SESSION['$infoLeg']; ?> </a><br/>
-                    <a href=# class="footerLink"> <?php echo $_SESSION['$partenair']; ?> </a>
+                    <a href=# class="footerLink"> <?php echo $_SESSION['quiSomNou']; ?> </a><br/>
+                    <a href=# class="footerLink"> <?php echo $_SESSION['contactNou']; ?> </a><br>
+                    <a href=# class="footerLink"> <?php echo $_SESSION['infoLeg']; ?> </a><br/>
+                    <a href=# class="footerLink"> <?php echo $_SESSION['partenair']; ?> </a>
                 
             
             </li>
@@ -21,13 +21,13 @@
             <div class="colonne2" >
                 
                 <br/>
-                <li><a href=# class="titre_colonne_2"> <?php echo $_SESSION['$decouvrHSH']; ?> </a>
+                <li><a href=# class="titre_colonne_2"> <?php echo $_SESSION['decouvrHSH']; ?> </a>
             
                 <br/>
                 <br/>
-                    <a href=# class="footerLink"> <?php echo $_SESSION['$meilleurAnnonc']; ?> </a><br/>
-                    <a href=# class="footerLink"> <?php echo $_SESSION['$anoncRecent']; ?> </a><br/>
-                    <a href=# class="footerLink"> <?php echo $_SESSION['$notrForum']; ?> </a>
+                    <a href=# class="footerLink"> <?php echo $_SESSION['meilleurAnonc']; ?> </a><br/>
+                    <a href=# class="footerLink"> <?php echo $_SESSION['anoncRecent']; ?> </a><br/>
+                    <a href=# class="footerLink"> <?php echo $_SESSION['notrForum']; ?> </a>
                 
             
             </li>
@@ -36,7 +36,7 @@
             <div class="colonne3" style="float:right">
             <li>
                 <br/>
-                <a href=# class="titre_colonne_3" ><?php echo $_SESSION['$suivezNouResSoc']; ?></a>
+                <a href=# class="titre_colonne_3" ><?php echo $_SESSION['suivezNouResSoc']; ?></a>
                 
                 <br/>
                 <br/>
