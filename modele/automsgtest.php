@@ -8,6 +8,8 @@ $DB= new PDO ('mysql:host=localhost; dbname=home_switch_home', 'root','');
         
 /* id of author of the the msg*/
     $idAuthor = $_SESSION['userId'];
+    $askAuthor= $DB-> prepare('SELECT login,mail FROM user WHERE id=:idAut');
+    $askAuthor= $DB-> execute(array('idAut'=>$idAuthor));
     
 /*id of the message*/
     $idAutoMsg = $_POST ["id_autoMsg"];
@@ -17,19 +19,7 @@ $DB= new PDO ('mysql:host=localhost; dbname=home_switch_home', 'root','');
     $askMsg-> execute (array('idMsg' => $idAutoMsg));
     $autoMsg = $askMsg ->fetch();
     
+/* send the message*/
+    mail($id_recipient, $askMsg['title'], $askMsg['text']);
     
-    
-/* add the message in the database*/
-    $req = $DB -> prepare (
-            'INSERT INTO messages(date, id_author, id_receiver, title, text)'
-            . 'VALUES ( :date, :id_author, :id_receiver, :title, :text) '
-        );
-    $req->execute(array(
-        'date' => date('d.m.y h:i:s'),
-        'id_author' => $idAuthor,
-        'id_receiver' => $id_recipient['id'],
-        'title' => $autoMsg['title'],
-        'text' => $autoMsg['text'],
-       ));
-?>    
-    
+?>
