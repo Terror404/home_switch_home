@@ -93,9 +93,10 @@
                         if($_SESSION['userId']==$idOwner)
                         {
                             $idHouse=$_GET['id'];
+                            echo $idHouse;
                     ?>
                             <form method="post" action="../controler/content.php?page=confirm_delete_house">
-                                <input type="hidden" name="idHouse" value="<?phpecho echo $idHouse?>"/>
+                                <input type="hidden" name="idHouse" value="<?php echo $idHouse?>"/>
                                 <input type=submit value="Supprimer cette maison" class="sub"/>
                             </form>
                             <br />
