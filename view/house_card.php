@@ -98,6 +98,13 @@
                                 <input type="hidden" name="idHouse" value="<?phpecho echo $idHouse?>"/>
                                 <input type=submit value="Supprimer cette maison" class="sub"/>
                             </form>
+                            <br />
+                            <!--Modify the house card-->
+                            <form method="post" action="../controler/content.php?page=modify_House_Card">
+                                <input type="hidden"  name="confirmModif" value="1"/>
+                                <input type="hidden" name="houseId" value="<?php echo $_GET['id'] ?>"/>
+                                <input type="submit" value="Modifier la fiche de cette maison" class="sub"/>
+                            </form>
                     <?php
                         }
                         else
@@ -109,16 +116,17 @@
                                 <input type="hidden" name="idHouseU2" value="<?php echo $idHouse ?>"/>
                                 <input type="submit" value="Proposer un échange pour cette maison" class="sub"/>
                             </form>
+                            <br />
+                            <!--Add as a favorite-->
+                            <form method="post" action="../controler/content.php?page=confirm_favs">
+                                <input type="hidden"  name="favs" value="1"/>
+                                <input type="hidden" name="houseId" value="<?php echo $_GET['id'] ?>"/>
+                                <input type="submit" value="Ajouter aux favoris" class="sub"/>
+                            </form>
                     <?php
                         }
                     ?>
-                            <br />
-                    <!--Add as a favorite-->
-                    <form method="post" action="../controler/content.php?page=confirm_favs">
-                        <input type="hidden"  name="favs" value="1"/>
-                        <input type="hidden" name="houseId" value="<?php echo $_GET['id'] ?>"/>
-                        <input type="submit" value="Ajouter aux favoris" class="sub"/>
-                    </form>
+                            
             </div>
             
     </article>

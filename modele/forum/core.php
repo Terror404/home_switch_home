@@ -9,7 +9,7 @@ function getPage($itemNumber, $itemsPerPage) {
     $page = ($itemNumber / $itemsPerPage);
     $page++;
     $page = floor($page);
-    return $page;
+    return (int)$page; //Incredibly enough, floor returns a non-integer
 }
 
 function userHasModeratorRights($userId, $database) {

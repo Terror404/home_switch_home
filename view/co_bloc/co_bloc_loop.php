@@ -2,41 +2,30 @@
 include "../modele/search_co_bloc.php"
 ?>
 <?php
-if(isset($_POST) AND $_POST['login']!="" AND $_POST['password']!="")
-    {
-        extract($_POST);
-        while($resPass=$askPass->fetch())
-            {
-                        if($_POST['password']!=$resPass['password']) 
-                            {
-                            ?>
-                                <div class="WrongPass">Echec de connexion : login ou mot de passe incorrect.</div>
-                            <?php
-                                global $blocConnexion;
-                                $blocConnexion=2;
-                            }
-                        else 
-                            {
-                                    $_SESSION['userLogin']=$_POST['login'];
-                                while($resId=$askId->fetch())
-                                {
-                                    $_SESSION['userId']=$resId['id'];
-                                }
-                                while($resPic=$askPic->fetch())
-                                {
-                                    $_SESSION['userPic']=$resPic['picture'];
-                                }
-                                while($resAccess=$askAccess->fetch())
-                                {
-                                    $_SESSION['userAccess']=$resAccess['access'];
-                                }
-                            }
-                    
-            }
-    }          
- else 
-    {
-        ?> <div class="NoLogPass">Veuillez remplir les champs correctment</div> <?php
+if (
+    isset($_POST['login']) AND $_POST['login']!=""
+    AND isset($_POST['password']) AND $_POST['password']!=""
+) {
+    if (
+        !($userInfo = $userInfoQuery->fetch()) //Will return true if there is actually a user by that name
+        or ($_POST['password']!=$userInfo['password'])
+    ) {
+        ?>
+            <div class="WrongPass">Echec de connexion : login ou mot de passe incorrect.</div>
+        <?php
         global $blocConnexion;
         $blocConnexion=2;
     }
+    else 
+    {
+        $_SESSION['userLogin'] = $_POST['login'];
+        $_SESSION['userId'] = $userInfo['id'];
+        $_SESSION['userPic'] = $userInfo['picture'];
+        $_SESSION['userAccess'] = $userInfo['access'];
+    }
+}
+else {
+    ?> <div class="NoLogPass">Veuillez remplir tous les champs.</div> <?php
+    global $blocConnexion;
+    $blocConnexion=2;
+}
