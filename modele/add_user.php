@@ -1,6 +1,7 @@
 
         
 <?php
+if(isset($end) AND isset($end)==0)
 
 $DB = new PDO('mysql:host=localhost;dbname=home_switch_home', 'root', '');
 
