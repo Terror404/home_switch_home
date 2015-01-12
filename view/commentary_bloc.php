@@ -1,17 +1,10 @@
-<!DOCTYPE html>
-	<head>
-		<title> <?php echo $_SESSION['$blocComm']; ?> </title>
-		<meta charset="utf-8" />
-                <link rel="stylesheet" href="../CommentaryBloc/css_commentary_bloc.css" />
-	</head>
-	
-	<body>
-            <section class="BlocCom">
+
+            <section class="commentbox">
                     <?php
                         while($resComPic=$askComPic->fetch() AND $resComLog=$askComLog->fetch())
                                 {
                     ?>
-                                    <div class="LogPic">
+                                    <div class="userimg">
                                         <p class="Pic">
                                                 <!--Insert here profile pic and login + link to the profile page-->
                                                 <!--<a href=""> Penser à insérer le lien du profil--><img src='<?php echo $resComPic['picture'] ?>' alt='photo de profil' class="ProfPic"><!--</a>-->
@@ -57,4 +50,3 @@
                     ?>
                   
 		</section>
-	</body>

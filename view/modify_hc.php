@@ -1,192 +1,273 @@
-<!DOCTYPE html>
-	<html>
-		<head>
-                    <link rel="stylesheet" href="css_house_card.css" />
-                    <meta charset="utf-8">
-                    <title> Fiche maison </title> 
-		</head>
-                
-		<body>
-                    <section class='MiddlePage'>
-                    <section class="RightCol">
-                        <article class='title'>
-                            <?php
-                                while($resHtitle=$askHtitle->fetch())
-                                    {
-                            ?>
-                            <form action='modify_house_card.php' method="post" id='ModTitle'>
-                                <label for='ModTitle'>Titre :</label>
-                                <input type='text' name='ModTitle' value="<?php echo $resHtitle['title'];?>" />  
-                                <input type='submit' value="Modifier" />
-                            </form>
-                            <?php
-                                    } 
-                            ?>
-                        </article>
-			<article class="PhotosButtons"> <!-- Mettre ici les photos et les 2 boutons -->
-				<aside class="PhotosMM"> 
-					<p>
-                                            <?php 
-                                                while ($resHpic=$askHpic->fetch())
-                                                    {
-                                            ?>
-                                                        <img src="<?php echo $resHpic['pictures'] ?>" alt="photo maison 1" class="Hpic">
-                                            <?php
-                                                }
-                                            ?>
-					</p>
-				</aside>
-			</article>
-                        
-		
-			<article class="DescriptionMM"> <!--Mettre ici la description de la maison-->
-                            <div class="txt">
-                                <?php
-                                            while($resHdesc=$askHdesc->fetch())
-                                                {
-                                ?>
-                                                <label for='modif_desc'>Description :</label>
-                                                <form action='modify_house_card.php' method="post" id='modif_desc'>
-                                                <textarea name='ModDesc' id='ModDesc'><?php echo $resHdesc['description'];?></textarea> 
-                                                <input type='submit' value="Modifier" />
-                            </form>   
-                                <?php
-                                            }
-                                ?>   
-                            </div>
-			</article>
-                        <article class='Hinformation'>
-                        <div class='txt'>
-                            <p class='rating'>
-                                <?php
-                                            while ( $resHrate=$askHrate->fetch())
-                                                { 
-                                ?>
-                                                    <br/> Note : <?php echo $resHrate['rating'] ?> /10
-                                <?php
-                                                }
-                                ?>
-                            </p>
-                            <div class='otherI'>
-                            <h3><?php echo $_SESSION['$local']; ?></h3>
-                                
-                                <form action='modify_house_card.php' method="post" id='modif_localisation'>
-                                    <label for='modif_region'>Region :</label>
-                                    <select name="modif_region" id="modif_region">
-                                                                <option value="00">Mettre le $ correspondant à la region</option>
-								<option value="01" >Alsace</option>
-								<option value="02" >Aquitaine</option>
-								<option value="03" >Auvergne</option>
-								<option value="04" >Basse-Normandie</option>
-								<option value="05" >Bourgogne</option>
-								<option value="06" >Bretagne</option>
-								<option value="07" >Centre</option>
-								<option value="08" >Champagne-Ardenne</option>
-								<option value="09" >Corse</option>
-				 				<option value="10" >Franche-Comté</option>
-								<option value="11" >Haute-Normandie</option>
-								<option value="12" >Ile-de-France</option>
-								<option value="13" >Languedoc-Roussillon</option>
-								<option value="14" >Limousin</option>
-								<option value="15" >Lorraine</option>
-								<option value="16" >Midi-Pyrénées</option>
-								<option value="17" >Nord-Pas-de-Calais</option>
-								<option value="18" >Pays de la Loire</option>
-								<option value="19" >Picardie</option>
-								<option value="20" >Poitou-Charentes</option>
-								<option value="21" >Provence-Alpes-Côte d'Azur</option>
-								<option value="22" >Rhône-Alpes</option>
-								<option value="23" >Guadeloupe</option>
-								<option value="24" >Martinique</option>
-								<option value="25" >Guyane</option>
-								<option value="26" >Réunion</option>
-                                    </select> <br/>
-                                
-                                <!--Modify the town-->
-                                    <label for='modif_town'> <?php echo $_SESSION['$vill']; ?> </label>
-                                    <input type='text' name='modif_town' value="$ correspondant" />  
-                                    <br/>
-                                
-                                <!--Modify the zipcode-->
-                                    <label for='modif_zip'> <?php echo $_SESSION['$vill']; ?> </label>
-                                    <input type='number' name='modif_zip' value="0" />  
-                                    <br/>
-                                    
-                                    <input type='submit' value="Modifier" />
-                                </form>
-                            
-                            <h3>Informations sur le logement</h3>
-                            <!--Modify the type-->
-                            <form action='modify_house_card.php' method="post" id='modif_info'>
-                                <label for='modif_type'>Type :</label>
-                                <select id="modif_type" name="modif_type"> <!-- champs des types de logements simplifiées: partenaires-europréens.fr-->
-                                                            <option value="00">Mettre le $ correspondant</option>
-                                                            <option value="01" title="Maison / Villa">Maison / Villa</option>
-                                                            <option value="02" title="Appartement">Appartement</option>
-                                                            <option value="03" title="Immeuble">Immeuble</option>                                                            
-                                                            <option value="04" title="Chalet">Chalet</option>
-                                                            <option value="05" title="Fermette">Fermette</option>
-                                                            <option value="06" title="Moulin">Moulin</option>
-                                                            <option value="07" title="Loft">Loft</option>
-                                                            <option value="08" title="Mobil-Home">Mobil-Home</option>
-                                                            <option value="09" title="Château">Château</option>
-                                                            <option value="10" title="Gîtes/Chambres d’Hôtes">Gîtes/Chambres d’Hôtes</option>
-                                </select>
-                                <br/>
-                            
-                            <!--Modify capacity-->
-                                <label for='modif_cap'> <?php echo $_SESSION['$capacit']; ?> </label>
-                                <input type='number' name='modif_cap' value="0" />  
-                                <br/>
-                            
-                            <!--Modify number of chambers-->
-                                <label for='modif_bed'> <?php echo $_SESSION['$nombrChambr']; ?> </label>
-                                <input type='number' name='modif_bed' value="0" />  
-                                <br/>
-                                    
-                            <!--Modify facilities-->
-                                <label for='modif_fac'> <?php echo $_SESSION['$amenag']; ?> </label>
-                                    <input type="checkbox"  value='00'/> <label> cour </label>
-                                    <input type="checkbox"  value='01'/> <label> jardin</label>
-                                    <input type="checkbox"  value='02'/><label> garage/ parking</label>
-                                    <input type="checkbox"  value='03'/> <label> piscine </label>
-                                    <input type="checkbox"  value='04'/> <label> accès handicapé</label>
-                                    <input type="checkbox"  value='05'/> <label> fumeurs </label>
-                                    <br/>
+ 
 
-                                <input type='submit' value="Modifier" />
-                            </form>
-                            </div>
-                        </div>
-                        </article>
-                        
 
-			<article class="ComMM"> <!-- Mettre ici les commentaires -->
-				<p class="TxtCom"> Liste de 3-4 commentaires (les mieux notés ??)
-                                    <?php
-                                        include"../CommentaryBloc/commentary_bloc_controleur.php";
-                                    ?>				
-			</article>
-                    </section>
-                    
-		
-                    <section class="LeftCol">
-			<article class="RapProf"> <!--Rappel du profil du membre-->
-			<?php   include '../ProfileReminder/profile_reminder_controleur.php'; ?>
-			</article>
+<script type = "text/javascript">
+			function hideshowhousetxt()
+			{
+			document.getElementById("housetxt").style.display="block";
+			document.getElementById("ownerinfo").style.display="none";
+			document.getElementById("mapblock").style.display="none";
+			}
+			function hideshowownerinfo()
+			{
+			document.getElementById("housetxt").style.display="none";
+			document.getElementById("ownerinfo").style.display="block";
+			document.getElementById("mapblock").style.display="none";
+			}
+			function hideshowmapblock()
+			{
+			document.getElementById("housetxt").style.display="none";
+			document.getElementById("ownerinfo").style.display="none";
+			document.getElementById("mapblock").style.display="block";
+			}
 			
-			<article class="DateMM"> <!-- Mettre ici les dates -->
-                            <?php
-                                while($resDateB=$askDateB ->fetch()AND $resDateE=$askDateE ->fetch())
-                                    {
-                            ?>
-                                        du <?php echo $resDateB['date_begin'] ?> au <?php echo $resDateE['date_end']?> <br/>
-                                        
-                            <?php
+		</script>
+<br/>
+<br/>
+<section class='MiddlePage'>
+    
+    <article class='title'> <!-- title of the house-->
+        <form method="post" action="">
+        <?php
+            while($resModHouse=$askModHouse->fetch())
+                {
+            ?>
+                    <input type="text" name="title" value="<?php echo $resModHouse['title']?>"/>
+            <?php
+                } 
+        ?>
+            <input type="submit" name="Modifier"/>
+            <input type="reset" name="Annuler"/>
+        </form>
+    </article>
+     <article class="img"> <!-- Mettre ici les photos et les 2 boutons -->
+                    <p> <!-- main image-->
+                        <?php 
+                            while ($resModHouse=$askModHouse->fetch())
+                                {
+                        ?>
+                                    <img src="<?php echo $resModHouse['pictures'] ?>" alt="photo maison" class="image1">
+                        <?php
+                            }
+                        ?>
+                    </p>
+                    
+                    
+                    <div class="caroussel">
+                        <div id="galerie">
+                                <div class="fleche_droite"></div>
+                                <div class="fleche_gauche"></div>
+
+                                <div class="slider">
+
+                                        <div id="images">
+                                        <a href="#">
+                                        <img src=".jpg" alt="photo" class="piccar"/>
+                                        </a>
+                                        </div>
+                                    <!--<div id="images">
+                                        <a href="#">
+                                        <img src="..//view/pictures/search-background.jpg" class="piccar"/>
+                                        </a>
+                                        </div>
+                                    <div id="images">
+                                        <a href="#">
+                                        <img src="..//view/pictures/search-background.jpg" class="piccar"/>
+                                        </a>
+                                        </div>
+                                    <div id="images">
+                                        <a href="#">
+                                        <img src="..//view/pictures/search-background.jpg" class="piccar"/>
+                                        </a>
+                                        </div>
+                                    <div id="images">
+                                        <a href="#">
+                                        <img src="..//view/pictures/search-background.jpg" class="piccar"/>
+                                        </a>
+                                        </div> -->
+                                </div>
+                        </div>
+                    </div>
+
+            
+    </article>
+
+<section class="info">			
+        <ul class="onglet"> 
+                <li class="o" onclick="hideshowhousetxt()">description de la maison</li>
+                <li class="o" onclick="hideshowmapblock()">localisation</li>
+                <li class="o" onclick="hideshowownerinfo()">propriétaire</li>
+        </ul>
+    
+    
+        <div class="desc" id="housetxt" style="display: block">
+                                    Description du bien : 
+                                    </br>
+                                    </br>
+                                    <form method="post" action="">
+                                    <?php
+                                        while($resModHouse=$askModHouse->fetch())
+                                            {
+                                        ?>
+                                        <textarea name="description"><?php echo $resModHouse['title']?></textarea>
+                                        <?php
+                                            } 
+                                    ?>
+                                        <input type="submit" name="Modifier"/>
+                                        <input type="reset" name="Annuler"/>
+                                    </form>
+            </br>
+            </br>
+
+            Informations sur le logement:
+            </br>
+            </br>
+            Type : 
+                <?php 
+                    while ($resHtype=$askHtype->fetch())
+                        {
+                            echo $resHtype['house_type'];
+                        }
+                ?>
+            </br>
+            Capacité :
+                <?php 
+                    while($resHcapacity=$askHcapacity->fetch())
+                        {
+
+                            echo $resHcapacity['nbr_people'];?> personne(s)<?php
+                        }
+                ?>
+            </br>
+            Nombre de chambre : 
+                <?php
+                    while($resHbrnb=$askHbrnb->fetch())
+                        {
+                            echo $resHbrnb['nbr_room'];?> chambre(s)<?php
+                        }
+                ?>
+            </br>
+            Aménagements : 
+            </br>
+                <p class='rating'>
+                    <?php
+                                while ( $resHrate=$askHrate->fetch())
+                                    { 
+                    ?>
+                                        <br/> Note : <?php echo $resHrate['rating'] ?> /10
+                    <?php
                                     }
-                            ?>
-			</article>
-                    </section>      
-                    </section>
-                </body>	
-        </html>
+                    ?>
+                </p>
+        </div>
+        
+        
+        <div class="mapblock" id="mapblock" style="display: none"> 
+            <p><img class="map" src="..//view/pictures/search-background.jpg" alt= "map"/> </p>
+            <p class="desc">
+                Region : 
+                    <?php 
+                        while ($resHregion=$askHregion->fetch())
+                            {
+                                echo $resHregion['real_name'];
+                            }
+                    ?><br/>
+                Ville : 
+                    <?php
+                        while ($resHtown=$askHtown->fetch())
+                            {
+                                echo $resHtown['ville_nom_reel'];
+                            }
+                    ?><br/>
+                Code postal: 
+                    <?php
+                        while ($resHzip=$askHzip->fetch())
+                            {
+                                echo $resHzip['ville_code_postal'];
+                            }
+                    ?><br/>
+                Adresse :
+                    <?php
+                        while ($resHaddress=$askHaddress->fetch())
+                            {
+                                echo $resHaddress['address'];
+                            }
+                    ?>
+            </p>  
+        </div>
+
+        <div class="ownerinfo" id="ownerinfo" style="display: none">	
+            <p> huge problem when profil reminder is included</p>
+                
+	</div>
+    
+    
+    
+</section> <!-- end of info section-->
+
+
+
+    <article class="annonces">annonces <!-- Mettre ici les dates -->
+        <br/>
+        <?php
+            while($resDateB=$askDateB ->fetch()AND $resDateE=$askDateE ->fetch())
+                {
+                if ($resDateB!=NULL AND $resDateB!="" AND $resDateE!=NULL AND $resDateE!="")
+                {
+        ?>
+                    du <?php echo $resDateB['date_begin'] ?> au <?php echo $resDateE['date_end']?> <br/>
+        <?php
+                }
+                else
+                {
+                    echo"Aucune annonce de disponible";
+                }
+                }
+        ?>
+                    <input type="button" value="Ajouter une annonce" class="addAdButton" 
+                           onclick="self.location.href='../controler/content.php?page=createAd&id=<?php echo$_GET['id']?>'"/><br/>
+    </article>
+<section class="comments">
+    <?php
+                    include"../view/commentary_bloc.php";
+                ?>
+			commentaires
+			<div class="commentbox">
+				<div class="commentauthor">
+					<p>mei</p>
+					<p> <img class="userimg" src="500full.jpg" alt= "map"/> </p>
+				</div>
+				
+				<div class="comment">
+					<p>incroyable</p>
+					<p>
+						"Set in a period that is both modern and nostalgic, the film creates a fantastic, yet strangely 
+						believable universe of supernatural creatures coexisting with modernity. A great part of this sense comes from Oga's evocative 
+						backgrounds, which give each tree, 
+						hedge and twist in the road an indefinable feeling of warmth that seems ready to spring into sentient life."
+					</p>
+					<p>posté le :10/06/2012</p>
+				</div>
+			</div>
+			
+			<div class="commentbox">
+				<div class="commentauthor">
+					
+					<p> <img class="userimg" src="satsuki.jpg" alt= "map"/> </p>
+					<p>satsuki</p>
+				</div>
+				
+				<div class="comment">
+					<p>magique</p>
+					<p>"Set in a period that is both modern and nostalgic, the film creates a fantastic, yet strangely 
+						believable universe of supernatural creatures coexisting with modernity. A great part of this sense comes from Oga's evocative 
+						backgrounds, which give each tree, 
+						hedge and twist in the road an indefinable feeling of warmth that seems ready to spring into sentient life."</p>
+					<p>posté le :28/04/2010</p>
+				</div>
+			</div>
+		</section>    
+</section>
+			
+
+	

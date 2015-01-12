@@ -1,7 +1,6 @@
 <aside class="Cobuttons"> 
     <div >
-            <?php $idPage=$_GET['page'] ?>
-            <form method='post' action='../controler/content.php?page=<?php echo $idPage ?>' class="co"> <!--Bouton connexion-->
+            <form method='post' action='../controler/content.php?<?php echo $_SERVER['QUERY_STRING'] ?>' class="co"> <!--Bouton connexion-->
                 <input type="hidden" name="blocConnexion" value="2" class="centerBlocCo" />
                 <input type="submit" value="Connexion"  class="centerBlocCo"/>
             </form>

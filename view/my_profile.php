@@ -163,5 +163,10 @@ while ($resProfDate = $askProfDate->fetch()) {
 }
         ?>
     </div>
-</div
+</div>
+<?php $userId=$_SESSION['userId'];?>
+<form method="post" action="../controler/content.php?page=myProfile&id=<?php echo $userId ?>">
+<input type='hidden' name='modifyProf' value='1'/>
+<input type='submit' value ='Modifier votre profil'/>
+</form>
 </div>

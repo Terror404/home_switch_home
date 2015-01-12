@@ -3,7 +3,7 @@
  <div class="CoBlocLog"><?php echo 'Bienvenue '.$_SESSION['userLogin']?></div><br/>
  <a class="sessionDestruct" href='../view/session_destruct.php'>Se déconnecter</a> <br/>
 <input class="quickMp" type="button" onclick="self.location.href='../controler/content.php?page=my_mp'" value="✉" />
-<input class="blocCoAdd" type="button" onclick="self.location.href='../controler/content.php?page=formAd'" value="+" style="
+<input class="blocCoAdd" type="button" onclick="self.location.href='../controler/content.php?page=formHouse'" value="+" style="
     position: absolute;
     top: 0;
     right: 15%;

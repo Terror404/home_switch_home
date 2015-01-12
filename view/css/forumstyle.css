@@ -4,8 +4,30 @@
 */
 
 .forumFrame {
-    margin-top:3%;
-    margin-left:5%;
-    margin-right:5%;
-    margin-bottom:3%;
+    margin-top: 3%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 3%;
+}
+
+table.messageTable {
+    background-color: #FFFFFF;
+    padding: 3px;
+    width: 95%;
+    border: 1px solid black;
+}
+
+td.posterFullInfo {
+    width: 15%;
+    border: 1px solid black;
+}
+
+div.messageInfo {
+    font-style: italic;
+    font-size: small;
+}
+
+td.message {
+    width: 80%;
+    border: 1px solid black;
 }
