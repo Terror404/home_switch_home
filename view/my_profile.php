@@ -4,7 +4,7 @@
     <?php
     while ($resProfPic = $askProfPic->fetch()) {
         ?>
-        <img src="<?php echo$resProfPic['picture']; ?>" alt="photo de profil"/>
+        <img src="<?php echo$resProfPic['picture']; ?>" alt="photo de profil" width=100 height=100 />
         <?php
     }
     ?>

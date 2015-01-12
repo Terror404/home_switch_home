@@ -1,0 +1,16 @@
+.alert
+{
+border :1% solid black;
+font-family : GeosansLight;
+background-color : #ffc7ab;
+width : 50%;
+padding : 2%;
+text-align : center;
+margin-left : 24%;
+margin-right : 24%;
+}
+/* 
+    Created on : 11 janv. 2015, 11:42:33
+    Author     : melanie
+*/
+

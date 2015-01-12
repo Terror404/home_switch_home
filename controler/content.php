@@ -237,7 +237,7 @@
                         require("../modele/add_ad.php");
                     }
                     
-                    // list of Messages which have been sent
+                    // list of Messages that have been sent
                      elseif($_GET['page']=='sentMsg')
                     {
                         require("../modele/search_sent_msg.php"); //modele
