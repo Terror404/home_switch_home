@@ -62,7 +62,7 @@
                     elseif( $_GET['page']=='searchKeyWords')
                     {
                         require("../modele/search_keywords.php"); //modele
-                        include("../view/search_result.php"); //vue
+                        include("../view/search_result_key.php"); //vue
                     }
                     
                     //search result by map
