@@ -134,7 +134,7 @@
                     //Redirect page after inscription
                     elseif( $_GET['page']=='confirmAddUser')
                     {
-                        
+                        require("../modele/verif_form_user.php");
                         require("../modele/add_user.php"); //modele
                         include("../view/confirm_add_user.php");//vue
                     }

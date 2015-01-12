@@ -71,6 +71,7 @@
 		<p> <?php echo $_SESSION['$chamOblig']; ?> </p>
 
                <div class="twosubs">
+                        <input type="hidden" name="addUser" value="1" />
 			<input type="submit" name="valider" value="Valider" class="sub" />
 		
 			<input type="reset" name="annuler" value="Annuler" class="sub"/>
@@ -86,6 +87,19 @@
         <br/><br/> <?php echo $_SESSION['$pasAccedPag']; ?> <br/>
         <input type="button" value="Retour" onclick="self.location.href='content.php?page=home'" class="homeButton"/>
         </div>
+    <?php }
 
-<?php
+if(isset($end) AND isset($_POST['addUser']) AND isset($_POST['addUser'])==1)
+{if ($end==0) 
+    {
+        echo "Tout va bien";
     }
+    elseif ($end==1)
+    {
+        echo "Ce ne sont pas les mêmes mots de passe!";
+    }
+    elseif ($end==2)
+    {
+        echo "Tous les champs obligatoires ne sont pas remplis!";
+    }
+}  
