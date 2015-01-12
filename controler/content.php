@@ -203,6 +203,12 @@
                     
                     }
                     
+                    //Confirm creation of the ad
+                    elseif($_GET['page']=='confAd')
+                    {
+                        require("../modele/add_ad.php");
+                    }
+                    
                     // list of Messages which have been sent
                      elseif($_GET['page']=='sentMsg')
                     {

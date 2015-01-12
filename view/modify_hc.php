@@ -68,7 +68,7 @@
                                 ?>
                             </p>
                             <div class='otherI'>
-                            <h3>Localisation :</h3>
+                            <h3><?php echo $_SESSION['$local']; ?></h3>
                                 
                                 <form action='modify_house_card.php' method="post" id='modif_localisation'>
                                     <label for='modif_region'>Region :</label>
@@ -103,12 +103,12 @@
                                     </select> <br/>
                                 
                                 <!--Modify the town-->
-                                    <label for='modif_town'>Ville :</label>
+                                    <label for='modif_town'> <?php echo $_SESSION['$vill']; ?> </label>
                                     <input type='text' name='modif_town' value="$ correspondant" />  
                                     <br/>
                                 
                                 <!--Modify the zipcode-->
-                                    <label for='modif_zip'>Code postal :</label>
+                                    <label for='modif_zip'> <?php echo $_SESSION['$vill']; ?> </label>
                                     <input type='number' name='modif_zip' value="0" />  
                                     <br/>
                                     
@@ -135,17 +135,17 @@
                                 <br/>
                             
                             <!--Modify capacity-->
-                                <label for='modif_cap'>Capacité :</label>
+                                <label for='modif_cap'> <?php echo $_SESSION['$capacit']; ?> </label>
                                 <input type='number' name='modif_cap' value="0" />  
                                 <br/>
                             
                             <!--Modify number of chambers-->
-                                <label for='modif_bed'>Nombre de chambre :</label>
+                                <label for='modif_bed'> <?php echo $_SESSION['$nombrChambr']; ?> </label>
                                 <input type='number' name='modif_bed' value="0" />  
                                 <br/>
                                     
                             <!--Modify facilities-->
-                                <label for='modif_fac'>Aménagements :</label>
+                                <label for='modif_fac'> <?php echo $_SESSION['$amenag']; ?> </label>
                                     <input type="checkbox"  value='00'/> <label> cour </label>
                                     <input type="checkbox"  value='01'/> <label> jardin</label>
                                     <input type="checkbox"  value='02'/><label> garage/ parking</label>

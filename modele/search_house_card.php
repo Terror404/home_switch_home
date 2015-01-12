@@ -83,4 +83,23 @@
             $askHbrnb->execute(array('idhouse'=>$_GET['id']));
     ?>
     <?php
+    $askCrit1=$DB->prepare('SELECT * FROM criteria');
+            $askCrit1->execute();
+    ?>
+    <?php
+    $askCrit2=$DB->prepare('SELECT * FROM criteria');
+            $askCrit2->execute();
+    ?>
+    <?php
+    $askCrit3=$DB->prepare('SELECT * FROM criteria');
+            $askCrit3->execute();
+    ?>
+    <?php
+    $askCrit4=$DB->prepare('SELECT * FROM criteria');
+            $askCrit4->execute();
+    ?>
+    <?php
+    $askCrit5=$DB->prepare('SELECT * FROM criteria');
+            $askCrit5->execute();
+    ?>
         
