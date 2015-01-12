@@ -43,8 +43,8 @@ if (
     and (
         (strlen(trim($_POST['updatedMessage'])) != 0)
         or (
-            isset($_POST['deleteInstruction'])
-            and $_POST['deleteInstruction'] == true
+            isset($_POST['deletePostInstruction'])
+            and $_POST['deletePostInstruction'] == true
         )
     )
 ) {
@@ -52,7 +52,7 @@ if (
         $successfullyPostedMessage = false;
         $reasonForPostFailure = "Vous n'êtes pas identifié.";
     }
-    elseif (!(isset($_GET['p']) AND ((int)$_GET['p'] != 0))) {
+    elseif (REQUESTED_POST < 0) {
         $successfullyPostedMessage = false;
         $reasonForPostFailure = "Pas de message précisé.";
     }
@@ -65,7 +65,7 @@ if (
             WHERE	user.id = post.id_user
                     AND post.id = ?
         ");
-        $postQuery->execute(array($_GET['p']));
+        $postQuery->execute(array(REQUESTED_POST));
         
         if ($postQuery->rowCount() == 0) {
             $successfullyModifiedMessage = false;
@@ -75,16 +75,16 @@ if (
             //One last check to see if the user has the necessary authority
             $postData = $postQuery->fetch();
             if ($postData['authorId'] == $_SESSION['userId'] or $hasModRights) {
-                if (isset($_POST['deleteInstruction']) and $_POST['deleteInstruction'] == true) {
+                if (isset($_POST['deletePostInstruction']) and $_POST['deletePostInstruction'] == true) {
                     $lastPost = getLastMessageFromTopic(CURRENT_TOPIC, $DB);
-                    if ($lastPost['id'] == $_GET['p']) {
+                    if ($lastPost['id'] == REQUESTED_POST) {
                         try {
                             $deleteQuery = $DB->prepare("
                                 DELETE FROM post
                                 WHERE id = :postId
                             ");
                             $deleteQuery->execute(array(
-                                'postId' => $_GET['p']
+                                'postId' => REQUESTED_POST
                             ));
                             $successfullyDeletedMessage = true;
                             $messageList = getMessageList($DB, CURRENT_TOPIC);
@@ -111,7 +111,7 @@ if (
                             WHERE id = :postId
                         ");
                         $editQuery->execute(array(
-                            'postId' => $_GET['p'],
+                            'postId' => REQUESTED_POST,
                             'newText' => $_POST['updatedMessage']
                         ));
                         $successfullyModifiedMessage = true;

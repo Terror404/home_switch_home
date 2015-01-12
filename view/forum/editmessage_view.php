@@ -7,7 +7,12 @@
         <?php
             if (POST_CAN_BE_DELETED) {
                 ?>
-                <input type="checkbox" name="deleteInstruction"> Supprimer le message</br>
+                <input type="checkbox" name="deletePostInstruction"> Supprimer le message</br>
+                <?php
+            }
+            if (TOPIC_CAN_BE_DELETED) {
+                ?>
+                <input type="checkbox" name="deleteTopicInstruction"> Supprimer le sujet</br>
                 <?php
             }
         ?>

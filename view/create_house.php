@@ -104,14 +104,15 @@
                 <br/>
 
                 <!--Facilities-->
-                <label class="label">Aménagements :</label>
-                        <input type="checkbox"/> <label> cour </label>
-                        <input type="checkbox" value="garden"/> <label> jardin</label>
-                        <input type="checkbox" value="parking"/> <label> garage/ parking</label> </br>
-                        <div class="aménagement">
-                        <input type="checkbox" value="pool"/> <label> piscine </label>
-                        <input type="checkbox" value="disabled"/> <label> accès handicapé</label>
-                        </div> 
+                <h3> Aménagements :</h3>
+                
+                         <?php
+                            while($resSearchBoxCriteriaHouse=$askSearchBoxCriteriaHouse->fetch())
+                            {
+                                echo '<input type="checkbox" name="'.$resSearchBoxCriteriaHouse['name'].'"><label >'.$resSearchBoxCriteriaHouse['real_name'].'</label><br/>';
+                            }
+                            ?>
+                        
         </div>
         </div>
     <input type="submit" value="Envoyer le formulaire" class="sub"/>
