@@ -37,7 +37,7 @@ if(isset($_POST['date_begin']) AND $_POST['date_begin']!=="" AND $_POST['date_be
         }*/
         echo"<br/>";
         echo"L'annonce a bien été enregistrée";
-        ?> <input type="button" value="Retour" onclick="self.location.href='../controler/content.php?page=houseCard&id=<?phpecho$_POST['id_house'?>'"/><?php
+        ?> <input type="button" value="Retour" onclick="self.location.href='../controler/content.php?page=houseCard&id=<?phpecho$_POST['id_house']?>'"/><?php
     }
     else
     {

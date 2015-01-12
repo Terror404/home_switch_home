@@ -315,6 +315,13 @@
                         include('../view/delete_house.php');
                     }
                     
+                    //My Exchanges
+                    elseif($_GET['page']=='my_exchanges')
+                    {
+                        require('../modele/search_my_exchanges.php');
+                        include('../view/my_exchanges.php');
+                    }
+                    
                     
                     
                 }
