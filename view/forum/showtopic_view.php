@@ -51,6 +51,13 @@
             );
         }
         
+        //error message for unsuccessful topic deletion
+        if (isset($topicDeletionSuccessful) AND !$topicDeletionSuccessful) {
+            echo "<p>Une erreur s'est produite lors de la suppression du sujet :<br/>";
+            echo $reasonForTopicDeletionFailure;
+            echo "</p><br/>";
+        }
+        
         //Title display
         echo(
             "<span class='pageTitle'>"

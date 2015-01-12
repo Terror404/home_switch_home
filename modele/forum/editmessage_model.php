@@ -33,17 +33,25 @@ if (POST_IS_SET) {
         define("POST_AND_TOPIC_MATCH", ($matchCheckQuery->rowCount() > 0));
         
         if (POST_AND_TOPIC_MATCH) {
-            //checking whether the topic can be deleted (only if the message
-            //being edited is the only one in the topic or the user is a mod)
+            //checking whether the topic can be deleted (only if the message is
+            //the first one in the post, and, if the user is not a mod, also the
+            //last)
             if (userHasModeratorRights($_SESSION['userId'], $DB)) {
-                define("TOPIC_CAN_BE_DELETED", true);
+                $deleteCheckQuery = $DB->query("
+                    SELECT  post.id
+                    FROM    post
+                    WHERE   post.id_topic =" . CURRENT_TOPIC . "
+                    LIMIT   1
+                ");
+                $firstPost = $deleteCheckQuery->fetch();
+                define("TOPIC_CAN_BE_DELETED", ($firstPost['id'] == CURRENT_MESSAGE));
             }
             else {
                 $deleteCheckQuery = $DB->query("
-                    SELECT post.id AS id
-                    FROM post
-                    WHERE post.id_topic =" . CURRENT_TOPIC . "
-                    LIMIT 2
+                    SELECT  post.id AS id
+                    FROM    post
+                    WHERE   post.id_topic =" . CURRENT_TOPIC . "
+                    LIMIT   2
                 ");
                 define("TOPIC_CAN_BE_DELETED", ($deleteCheckQuery->rowCount()==1));
             }
