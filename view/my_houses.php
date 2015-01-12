@@ -4,18 +4,17 @@
     while($resHouse=$askHouse->fetch())
     {
 ?>
-        <div class="blockMyHouses">
-            <div class="picMyHouses">
-                <a href="../controler/content.php?page=houseCard&id=<?php echo $resHouse['id'] ?>"><img src="<?php echo $resHouse['pictures'] ?>" alt="Photo maison" /></a>
-            </div>
-            <div class="titleMyHouses">
-                <?php echo$resHouse['title']; ?>
-            </div>
-            <div class="descriptionMyHouses">
-                <?php echo $resHouse['description']; ?>
-            </div>
-            <div class="rateMyHouses">
-                <?php
+        
+    <div class="commentbox">
+        
+        
+				<div class="commentauthor">
+					
+					<p> <a class="picMyHouses" href="../controler/content.php?page=houseCard&id=<?php echo $resHouse['id'] ?>">
+                                             <img class="userimg" src="<?php echo $resHouse['pictures'] ?>" alt="Photo maison" /></a>
+                                        </p>
+                                        <p>
+                                            <?php
                     switch ($resHouse['rating']) 
                     {
                         case 0:
@@ -63,16 +62,29 @@
                             echo"10/10";
                             break;
 ?>
-            </div>
-<?php
+ <?php
                     }
-?>
+?>                                       </p>
+				</div>
+				
+				<div class="comment">
+
+                                        <p class="title"><?php echo$resHouse['title']; ?></p>
+                                        </br>
+					<p><?php echo $resHouse['description']; ?></p>
+                                        
+                                        </br>
+					
+                                </div>
+        
+ 
+               
+        
+
         </div>
 <?php
     }
 ?>
 </div>
-
-<div class="newHouseButton">
     <input class="sub" type="button" value="Créer une nouvelle maison" onclick="self.location.href='../controler/content.php?page=formHouse'"/>
-</div>
+

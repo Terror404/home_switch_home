@@ -134,7 +134,7 @@
                     //Redirect page after inscription
                     elseif( $_GET['page']=='confirmAddUser')
                     {
-                        
+
                         require("../modele/add_user.php"); //modele
                         include("../view/confirm_add_user.php");//vue
                     }
@@ -314,7 +314,10 @@
                         require('../modele/update_delete_house.php');
                         include('../view/delete_house.php');
                     }
-                    
+                    elseif($_GET['page']=='session_destruct')
+                    {
+                        include('../view/session_destruct.php');
+                    }
                     
                     
                 }

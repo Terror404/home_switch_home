@@ -57,15 +57,14 @@ text-align : center;
 .piccar
 {
 width : 20%;  
+
 }
 
 .info
 {
-margin-top : 1%;
+
 padding : 10 px;
-margin : 10 px;
 margin-bottom : 5px;
-background-color:blue;
 padding : 1%;
 display :inline-block;
 width : 45%;
@@ -119,15 +118,20 @@ padding:3%;
 background-color: #00BCE0;
 margin-top : 1%;
 margin-left : 2%;
+height : 600px;
 
 }
 
 .map
 {
+
 width : 30%;
 vertical-align : middle;
 display: inline-block;
+ background-color: #00BCE0;
+  
 }
+
 .annonce
 {
 border :1px solid black;

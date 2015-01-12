@@ -9,6 +9,9 @@ while($resSearch=$askPrioritySearch->fetch())
         
     
  ?>  
+</br>
+</br>
+</br>
 <div class="resultSearch" onclick="self.location.href='../controler/content.php?page=houseCard&amp;id=<?php echo $resSearch['id'];?>'">
     <div id="adTitle"> 
         <?php echo $resSearch['title']; ?>
