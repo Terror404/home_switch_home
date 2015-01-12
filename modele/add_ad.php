@@ -19,9 +19,9 @@ if(isset($_POST['date_begin']) AND $_POST['date_begin']!=="" AND $_POST['date_be
     if(verif_date($_POST['date_begin']) AND verif_date($_POST['date_end']))
     {
         //Create the entry in the database in the "ad" table
-        $addA=$DB->prepare("INSERT INTO ad (id_house,title,date_begin,date_end,criteria_1,criteria_2,criteria_3,criteria_4,criteria_5) VALUES(:idHouse,:title,:dateBegin,:dateEnd,:criteria1,:criteria2,:criteria3,:criteria4,:criteria5)");
-            $addA->execute(array('idHouse'=>$_POST['id_house'],'title'=>$_POST['title_ad'],'dateBegin'=>$newDateB,'dateEnd'=>$newDateE,'criteria1'=>$_POST['critDesc1'],'criteria2'=>$_POST['critDesc2'],'criteria3'=>$_POST['critDesc3'],'criteria4'=>$_POST['critDesc4'],'criteria5'=>$_POST['critDesc5']));        
-        
+        $addA=$DB->prepare("INSERT INTO ad (id_house,title,date_begin,date_end) VALUES(:idHouse,:title,:dateBegin,:dateEnd");
+            $addA->execute(array('idHouse'=>$_POST['id_house'],'title'=>$_POST['title_ad'],'dateBegin'=>$newDateB,'dateEnd'=>$newDateE));        
+        $addCriteria=$DB->prepare('INSERT INTO ad_criteria(id_ad,id_criteria,description) VALUES('.$_POST[''])
         /*$askIdAd=$DB->prepare('SELECT id FROM ad WHERE id_house=:idhouse AND date_begin=:datebegin AND date_end=:dateend');
             $askIdAd->execute(array('idhouse'=>$_POST['id_house'], 'datebegin'=>$newDateB,'dateend'=>$newDateE));
         
@@ -37,7 +37,7 @@ if(isset($_POST['date_begin']) AND $_POST['date_begin']!=="" AND $_POST['date_be
         }*/
         echo"<br/>";
         echo"L'annonce a bien été enregistrée";
-        ?> <input type="button" value="Retour" onclick="self.location.href='../controler/content.php?page=houseCard&id=<?phpecho$_POST['id_house'?>'"/><?php
+        ?> <input type="button" value="Retour" onclick="self.location.href='../controler/content.php?page=houseCard&id=<?phpecho$_POST['id_house']?>'"/><?php
     }
     else
     {

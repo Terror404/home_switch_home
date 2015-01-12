@@ -237,7 +237,7 @@
                         require("../modele/add_ad.php");
                     }
                     
-                    // list of Messages which have been sent
+                    // list of Messages that have been sent
                      elseif($_GET['page']=='sentMsg')
                     {
                         require("../modele/search_sent_msg.php"); //modele
@@ -313,6 +313,13 @@
                     {
                         require('../modele/update_delete_house.php');
                         include('../view/delete_house.php');
+                    }
+                    
+                    //My Exchanges
+                    elseif($_GET['page']=='my_exchanges')
+                    {
+                        require('../modele/search_my_exchanges.php');
+                        include('../view/my_exchanges.php');
                     }
                     
                     

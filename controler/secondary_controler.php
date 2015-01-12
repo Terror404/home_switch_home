@@ -86,7 +86,42 @@ if (isset($page) AND $page!='')
                     elseif( $_GET['page']=='createHouse')
                     {
                         echo'<link rel="stylesheet" type="text/css" href="../view/css/createhouse_style.css">';
-                         echo'<link rel="stylesheet" type="text/css" href="../view/css/petit_caroussel_style.css">';
+                        echo'<link rel="stylesheet" type="text/css" href="../view/css/petit_caroussel_style.css">';
+
+                    }
+                    elseif( $_GET['page']=='confirmAddUser')
+                    {
+                        echo'<link rel="stylesheet" type="text/css" href="../view/css/confirm_alert.css">';
+
+                    }
+                    elseif( $_GET['page']=='confirmAddAd')
+                    {
+                        echo'<link rel="stylesheet" type="text/css" href="../view/css/confirm_alert.css">';
+
+                    }
+                    elseif( $_GET['page']=='confirmAddHouse')
+                    {
+                        echo'<link rel="stylesheet" type="text/css" href="../view/css/confirm_alert.css">';
+
+                    }
+                    elseif( $_GET['page']=='confirmAddMsg')
+                    {
+                        echo'<link rel="stylesheet" type="text/css" href="../view/css/confirm_alert.css">';
+
+                    }
+                    elseif($_GET['page']=='confirm_exchange')
+                    {
+                        echo'<link rel="stylesheet" type="text/css" href="../view/css/confirm_alert.css">';
+
+                    }
+                    elseif($_GET['page']=='confirm_favs')
+                    {
+                        echo'<link rel="stylesheet" type="text/css" href="../view/css/confirm_alert.css">';
+
+                    }
+                    elseif($_GET['page']=='confirm_delete_house')
+                    {
+                        echo'<link rel="stylesheet" type="text/css" href="../view/css/confirm_alert.css">';
 
                     }
     }
