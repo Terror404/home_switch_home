@@ -1,7 +1,7 @@
 <!--Ajouter le div partout-->
 <!--Convertir la date-->
 <br/><br/><br/>
-<h1>Formulaire d'échange</h1>
+<h1>echo $_SESSION['retMessageri']</h1>
 <?php
         if(!isset($_POST['houseChoice']))
         //Choice of the house to exchange

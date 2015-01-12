@@ -124,6 +124,10 @@ if (isset($page) AND $page!='')
                         echo'<link rel="stylesheet" type="text/css" href="../view/css/confirm_alert.css">';
 
                     }
+                    elseif($_GET['page']=='my_exchanges')
+                    {
+                        echo'<link rel="stylesheet" type="text/css" href="../view/css/css_rating_system.css">';
+                    }
     }
 
 

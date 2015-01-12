@@ -50,7 +50,7 @@ if(isset($end) AND isset($_POST['whichForm']) AND $_POST['whichForm']==2)
 <br/>
 
 <form method="post" action="">
-Modifier son mot de passe : <br/>
+Modifier son adresse mail : <br/>
     Ancienne adresse mail : <input type="text" name="oldMail"/><br/>
     Nouvelle adresse mail : <input type="text" name="modMail"/><br/>
     Répéter la nouvelle adresse mail :<input type="text" name="verifModMail"/><br/>
