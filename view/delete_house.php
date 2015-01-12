@@ -10,7 +10,7 @@ if(isset($_POST['idHouse']))
        $idHouse=$_POST['idHouse'];
        
 ?>
-        Souhaitez-vous vraiment supprimer cette maison de votre profil ?? 
+        <?php echo $_SESSION['$souhaitSupprimMaisonProf']; ?> 
         <br/>
         <form method='post' action='../controler/content.php?page=confirm_delete_house'>
             <input type=hidden name='confDelHouse' value='1'/>

@@ -26,6 +26,7 @@ $ask='SELECT DISTINCT house.description,house.title, house.pictures, house.ratin
 
 $askPrioritySearch=$DB->prepare($ask);
 $askPrioritySearch->execute();
+echo $ask;
 
 
 
