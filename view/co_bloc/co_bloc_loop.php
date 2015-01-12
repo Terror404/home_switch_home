@@ -23,6 +23,38 @@ if (
         $_SESSION['userPic'] = $userInfo['picture'];
         $_SESSION['userAccess'] = $userInfo['access'];
     }
+    
+$traduct = $DB->prepare('SELECT * FROM traduction');
+$traduct->execute();
+
+$askLang = $DB->prepare('SELECT language FROM user WHERE user.id='.$userInfo['id']);
+$askLang->execute();
+
+while($resLang=$askLang->fetch())
+{
+    $lang=$resLang['language'];
+    echo $lang;
+}
+
+if ($lang ==0)
+{
+while($resTraduct = $traduct ->fetch())
+{
+$variable=$resTraduct['variable'];
+$_SESSION[$variable] = $resTraduct['french'];
+
+}
+}
+elseif ($lang ==1)
+{
+while($resTraduct = $traduct ->fetch())
+{
+$variable=$resTraduct['variable'];
+$_SESSION[$variable] = $resTraduct['english'];
+
+}
+}
+
 }
 else {
     ?> <div class="NoLogPass">Veuillez remplir tous les champs.</div> <?php
