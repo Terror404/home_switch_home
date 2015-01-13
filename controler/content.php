@@ -134,7 +134,7 @@
                     //Redirect page after inscription
                     elseif( $_GET['page']=='confirmAddUser')
                     {
-
+                        require("../modele/verif_form_user.php");
                         require("../modele/add_user.php"); //modele
                         include("../view/confirm_add_user.php");//vue
                     }
@@ -314,10 +314,14 @@
                         require('../modele/update_delete_house.php');
                         include('../view/delete_house.php');
                     }
-                    elseif($_GET['page']=='session_destruct')
+                    
+                    //My Exchanges
+                    elseif($_GET['page']=='my_exchanges')
                     {
-                        include('../view/session_destruct.php');
+                        require('../modele/search_my_exchanges.php');
+                        include('../view/my_exchanges.php');
                     }
+                    
                     
                     
                 }
