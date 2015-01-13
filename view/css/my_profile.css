@@ -1,28 +1,126 @@
+.head{
+     margin-top: 5%;
+     margin-left : 1%;
+     font-size : 200%;
+}
+.Profile
+{   
+    padding : 1%;
+    border-radius : 10px;
+     margin-top: 1%;
+    width : 100%;
+    margin-left : 5%;
+}
+.userleft
+{ 
+margin : 1%;
+width : 27%;
+text-align : center;
+display : inline-block;
 
-
-.ProfilePic2
+}
+.userimg
 {
-border:solid 1px ;
+    border:solid 1px ;
 border-color: black;
-height:100px;
-width:100px;
-
+height:90%;
+width:90%;
 margin-top:20px;
-border-radius:50px;
 overflow:hidden;
 float:left;
+margin : 1%;
+}
+
+.desc_title
+{
+width : 65%;
+margin : 1%;
+padding: 1%;
+display : inline-block;
+text-align: justify;
+
+}
+.desc_title, .userleft
+{
+vertical-align : top;
+}
+
+.sub{   
+    font-family: "GeosansLight";
+    margin-top : 5%;
+    margin-left : 40%;
+     width:30%;
+background-color: #00BCE0;
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 0px;
+  color: white;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}   
+
+.sub:hover {
+  background: #83EBC6;
+  text-decoration: none;      
+}
+
+.allMyHouses
+{
+    margin-top: 5%;
+}
+
+
+
+
+.Profile{
+    margin-left: 1%;
+    margin-right: 1%;
 }
 
 .login
 {
-    
-}
-.mbrsince
-{
-    
+   font-weight: bold;
+   font-size : 200%;
+   text-align: center;
 }
 
-.Profile{
-    margin-left: 10%;
-    margin-right: 10%;
+.image{
+    width : 18%;
+    float: right;
+    margin: 1%;
+}
+.page{
+    margin : 1%;
+}
+
+.commentbox
+{
+background-color :#ffc7ab;
+margin : 1%;
+}
+.commentauthor
+{ 
+margin : 1%;
+width : 25%;
+text-align : center;
+display : inline-block;
+}
+.userimg
+{
+width : 90%;
+margin : 1%;
+}
+
+.comment
+{
+width : 65%;
+margin : 1%;
+padding: 1%;
+display : inline-block;
+
+}
+.comment, .commentauthor
+{
+vertical-align : middle;
 }

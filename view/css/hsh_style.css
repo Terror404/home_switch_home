@@ -5,7 +5,7 @@
 }
 
 body
-{
+{         font-family: "GeosansLight";
         position:relative;
 	color:black;
 	height:100%;
@@ -20,7 +20,7 @@ body
 
 .content
 {
-    
+      font-family: "GeosansLight";
     position:absolute;
     background-color:black;
     border-color:black;
