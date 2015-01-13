@@ -322,6 +322,13 @@
                         include('../view/my_exchanges.php');
                     }
                     
+                    //Comment form
+                    elseif($_GET['page']=='comment')
+                    {
+                        //require("");
+                        include("../view/commentary_form.php");
+                    }
+                    
                     
                     
                 }
