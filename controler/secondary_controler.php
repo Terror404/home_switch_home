@@ -4,7 +4,9 @@
 echo'<link rel="stylesheet" type="text/css" href="../view/css/hsh_style.css">';
 echo'<link rel="stylesheet" type="text/css" href="../view/css/bloc_co.css" >';
 
-$page=$_GET['page'];
+if (isset($_GET['page'])) {
+    $page=$_GET['page'];
+}
 
 if (isset($page) AND $page!='')
 {
