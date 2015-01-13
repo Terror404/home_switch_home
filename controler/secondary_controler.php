@@ -129,7 +129,7 @@ if (isset($page) AND $page!='')
                     elseif($_GET['page']=='parameters')
                     {
                         echo'<link rel="stylesheet" type="text/css" href="../view/css/parameters.css">';
-}
+                    }
                     elseif($_GET['page']=='my_exchanges')
                     {
                         echo'<link rel="stylesheet" type="text/css" href="../view/css/css_rating_system.css">';

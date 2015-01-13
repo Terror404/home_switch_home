@@ -17,7 +17,7 @@ if($_GET['confirm']==='1')
 ?>
 
 
-<form method="post" action='../controler/back_office.php?page=HouseCriteria&confirm=1'>
+<form method="post" action='../controler/back_office.php?page=houseCriteria&confirm=1'>
     <p>Add an ad criterion to DB:</p> <br/>
 <input type="text" style='width:20%; min-width:300px;' name="realName" placeholder="Real name of the criterion (ex: possess a covered pool)" >
 <input type="text" style='width:20%; min-width:300px;' name="name" placeholder="value in DB (ex :covered_pool)" >
@@ -26,7 +26,7 @@ if($_GET['confirm']==='1')
 
 <br/>
 
-<form method="post" action='../controler/back_office.php?page=HouseCriteria&confirm=2'>
+<form method="post" action='../controler/back_office.php?page=houseCriteria&confirm=2'>
     <p>Delete a criterion:</p><br/>
 <input type="text" style='width:20%; min-width:300px;' name="name" placeholder="value in DB (ex :covered_pool)" >
 <input type="submit" value="+">

@@ -8,7 +8,7 @@ if (
 ) {
     if (
         !($userInfo = $userInfoQuery->fetch()) //Will return true if there is actually a user by that name
-        or ($_POST['password']!=$userInfo['password'])
+        or (hash('SHA512',$_POST['password'])!=$userInfo['password'])
     ) {
         ?>
             <div class="WrongPass">Echec de connexion : login ou mot de passe incorrect.</div>
