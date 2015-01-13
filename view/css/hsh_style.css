@@ -8,11 +8,10 @@ body
 {
         position:relative;
 	color:black;
-	
+	height:100%;
         background-size: 100%;
-        min-height:800px;
+        min-height:2000px;
         overflow:auto;
-        height:100%;
         
         background-color:white;
 }
@@ -29,12 +28,12 @@ body
     
     margin-left:auto;
     margin-right:auto;
-    margin-bottom: 0;
+    margin-bottom: 400px;
     
     background-size:100%;
     //background-image: url("pictures/logo.png");
     margin-top:300px;
-    min-height: 80%;
+    min-height: 100%;
     padding-bottom: 30px;
     max-width:1280px;
     z-index:1000;
