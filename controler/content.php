@@ -325,7 +325,8 @@
                     //Comment form
                     elseif($_GET['page']=='comment')
                     {
-                        //require("");
+                        //
+                        require("../modele/add_commentary.php");
                         include("../view/commentary_form.php");
                     }
                     
