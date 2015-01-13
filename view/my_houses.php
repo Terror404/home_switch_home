@@ -5,13 +5,13 @@
     {
 ?>
         
-    <div class="commentbox">
+    <div class="housebox">
         
         
-				<div class="commentauthor">
+				<div class="houseleft"> <!-- image of the house and rating-->
 					
-					<p> <a class="picMyHouses" href="../controler/content.php?page=houseCard&id=<?php echo $resHouse['id'] ?>">
-                                             <img class="userimg" src="<?php echo $resHouse['pictures'] ?>" alt="Photo maison" /></a>
+					<p> <a  href="../controler/content.php?page=houseCard&id=<?php echo $resHouse['id'] ?>">
+                                             <img class="houseimg" src="<?php echo $resHouse['pictures'] ?>" alt="Photo maison" /></a>
                                         </p>
                                         <p>
                                             <?php
@@ -67,7 +67,7 @@
 ?>                                       </p>
 				</div>
 				
-				<div class="comment">
+				<div class="desc_tilte">
 
                                         <p class="title"><?php echo$resHouse['title']; ?></p>
                                         </br>

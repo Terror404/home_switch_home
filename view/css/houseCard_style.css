@@ -103,12 +103,13 @@ background-color: #00BCE0;
   font-size: 20px;
   padding: 10px 20px 10px 20px;
   text-decoration: none;
+  margin-right : 1.35%;
 }   
 .o:hover {
   background: #83EBC6;
   text-decoration: none;      
 }
-.desc
+.desc, .ad
 {
 display : inline-block;
 vertical-align : middle;

@@ -1,5 +1,5 @@
 
-.commentbox
+.housebox
 {   
     background-color: orange;
     border-radius : 10px;
@@ -8,20 +8,20 @@
 width : 90%;
 margin-left : 5%;
 }
-.commentauthor
+.houseleft
 { 
 margin : 1%;
 width : 27%;
 text-align : center;
 display : inline-block;
 }
-.userimg
+.houseimg
 {
 width : 90%;
 margin : 1%;
 }
 
-.comment
+.desc_tilte
 {
 width : 65%;
 margin : 1%;
@@ -30,7 +30,7 @@ display : inline-block;
 text-align: justify;
 
 }
-.comment, .commentauthor
+.desc_tilte, .houseleft
 {
 vertical-align : middle;
 }

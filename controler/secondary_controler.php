@@ -126,6 +126,11 @@ if (isset($page) AND $page!='')
                         echo'<link rel="stylesheet" type="text/css" href="../view/css/confirm_alert.css">';
 
                     }
+                    elseif($_GET['page']=='parameters')
+                    {
+                        echo'<link rel="stylesheet" type="text/css" href="../view/css/parameters.css">';
+
+                    }
     }
 
 
