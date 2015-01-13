@@ -322,6 +322,18 @@
                         include('../view/my_exchanges.php');
                     }
                     
+                    elseif($_GET['page']=='session_destruct')
+                    {
+
+                        include('../view/session_destruct.php');
+                    }
+                    //Comment form
+                    elseif($_GET['page']=='comment')
+                    {
+                        //require("");
+                        include("../view/commentary_form.php");
+                    }
+                    
                     
                     
                 }

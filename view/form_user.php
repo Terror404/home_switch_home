@@ -63,7 +63,7 @@
 			<p>
 				<label for="telephone">Téléphone<input type="tel" name="tel" id="tel" placeholder="Ex:0000000000" maxlength="10" />
 			</p>
-		
+                        <p><input type="hidden" mame="idmsg" value="2"></p>
 		
 
 			
