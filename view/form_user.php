@@ -95,7 +95,7 @@
     {
 ?>
         <div class="MsgErrorInsc">
-        <br/><br/> <?php echo $_SESSION['$pasAccedPag']; ?> <br/>
+        <br/><br/> <?php echo $_SESSION['pasAccedPag']; ?> <br/>
         <input type="button" value="Retour" onclick="self.location.href='content.php?page=home'" class="homeButton"/>
         </div>
     <?php }
