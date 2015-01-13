@@ -12,10 +12,10 @@
 		<a class="linkBlock" href="">Mon Compte</a>
 		<ul class="subMenuBlockList">
 			<li><a class="subMenuLinkBlock" href="../controler/content.php?page=myProfile&userId=<?php echo $userId?>" > <?php echo $_SESSION['monProf']; ?> </a></li>
-			<li><a class="subMenuLinkBlock" href="../controler/content.php?page=my_exchanges" > <?php $_SESSION['mesEch']; ?> </a></li>
-                        <li><a class="subMenuLinkBlock" href="../controler/content.php?page=favorites"> <?php $_SESSION['mesFav']; ?> </a></li>
+			<li><a class="subMenuLinkBlock" href="../controler/content.php?page=my_exchanges" > <?php echo $_SESSION['mesEch']; ?> </a></li>
+                        <li><a class="subMenuLinkBlock" href="../controler/content.php?page=favorites"> <?php echo $_SESSION['mesFav']; ?> </a></li>
                         <li><a class="subMenuLinkBlock" href="../controler/content.php?page=my_houses&userId=<?php echo $userId?>" > <?php echo $_SESSION['mesMais']; ?> </a></li>
-                        <li><a class="subMenuLinkBlock" href="../controler/content.php?page=formHouse" > <?php $_SESSION['ajoutMais']; ?> </a></li>
+                        <li><a class="subMenuLinkBlock" href="../controler/content.php?page=formHouse" > <?php echo$_SESSION['ajoutMais']; ?> </a></li>
 			
 			<li><a class="subMenuLinkBlock" href="../controler/content.php?page=my_mp" > <?php echo $_SESSION['messPriv']; ?> </a></li>
 			<li><a class="subMenuLinkBlock" href="../controler/content.php?page=parameters" > <?php echo $_SESSION['param']; ?> </a></li>
