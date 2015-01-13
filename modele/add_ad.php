@@ -3,13 +3,13 @@ require("../modele/fct_verif_date.php");
 
 $originalDateB = $_POST['date_begin'];
     $arrB = explode('/', $originalDateB);
-    $newDateB = $arrB[2].'/'.$arrB[0].'/'.$arrB[1];
-    echo $newDateB;    
+    $newDateB = $arrB[2].'-'.$arrB[0].'-'.$arrB[1];
+    
     
 $originalDateE = $_POST['date_end'];
     $arrE = explode('/', $originalDateE);
-    $newDateE = $arrE[2].'/'.$arrE[0].'/'.$arrE[1];
-    echo $newDateE;
+    $newDateE = $arrE[2].'-'.$arrE[0].'-'.$arrE[1];
+    
 
 
 if(isset($_POST['date_begin']) AND $_POST['date_begin']!=="" AND $_POST['date_begin']!==NULL
@@ -19,9 +19,28 @@ if(isset($_POST['date_begin']) AND $_POST['date_begin']!=="" AND $_POST['date_be
     if(verif_date($_POST['date_begin']) AND verif_date($_POST['date_end']))
     {
         //Create the entry in the database in the "ad" table
-        $addA=$DB->prepare("INSERT INTO ad (id_house,title,date_begin,date_end) VALUES(:idHouse,:title,:dateBegin,:dateEnd");
+        $addA=$DB->prepare("INSERT INTO ad(id_house,title,date_begin,date_end) VALUES(:idHouse,:title,:dateBegin,:dateEnd)");
             $addA->execute(array('idHouse'=>$_POST['id_house'],'title'=>$_POST['title_ad'],'dateBegin'=>$newDateB,'dateEnd'=>$newDateE));        
-        $addCriteria=$DB->prepare('INSERT INTO ad_criteria(id_ad,id_criteria,description) VALUES('.$_POST['']);
+        
+            
+        $askAdd=$DB->prepare('SELECT ad.id FROM ad,house,user WHERE user.id=house.id_user AND user.id=\''.$_SESSION['userId'].'\' AND house.id=ad.id_house AND ad.title=\''.$_POST['title_ad'].'\'');
+            $askAdd->execute();
+            
+            $askCriteria=$DB->prepare('SELECT * FROM criteria');
+            $askCriteria->execute();
+            
+            while($resAdd=$askAdd->fetch())
+            {
+            while($resCriteria=$askCriteria->fetch())
+            {
+            
+                if(isset($_POST[$resCriteria['name']]) && $_POST[$resCriteria['name']]=='on')
+                {
+                $addCriteria=$DB->prepare('INSERT INTO ad_criteria(id_ad,id_criteria,description) VALUES(\''.$resAdd['id'].'\',\''.$resCriteria['id'].'\',\''.$_POST['critDesc'.$resCriteria['name']].'\')');
+                $addCriteria->execute();
+                }
+            }
+            }
         /*$askIdAd=$DB->prepare('SELECT id FROM ad WHERE id_house=:idhouse AND date_begin=:datebegin AND date_end=:dateend');
             $askIdAd->execute(array('idhouse'=>$_POST['id_house'], 'datebegin'=>$newDateB,'dateend'=>$newDateE));
         
