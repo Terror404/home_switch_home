@@ -1,6 +1,6 @@
 <article class="FormSearch">
 	<p>	
-        <h1 class="Tilte"> Choisissez votre maison</h1>
+        <h1 class="Title">  <?php $_SESSION['choisMais']; ?> </h1>
         <div class="search">
         <form class="Date" action="content.php?page=search_result" method="post"> <!--Formuaire de choix de la date-->
 			<?php $research= "";?>
