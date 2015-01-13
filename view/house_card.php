@@ -7,18 +7,28 @@
 			document.getElementById("housetxt").style.display="block";
 			document.getElementById("ownerinfo").style.display="none";
 			document.getElementById("mapblock").style.display="none";
+                        document.getElementById("ad").style.display="none";
 			}
 			function hideshowownerinfo()
 			{
 			document.getElementById("housetxt").style.display="none";
 			document.getElementById("ownerinfo").style.display="block";
 			document.getElementById("mapblock").style.display="none";
+                        document.getElementById("ad").style.display="none";
 			}
 			function hideshowmapblock()
 			{
 			document.getElementById("housetxt").style.display="none";
 			document.getElementById("ownerinfo").style.display="none";
 			document.getElementById("mapblock").style.display="block";
+                        document.getElementById("ad").style.display="none";
+			}
+                        function hideshowad()
+			{
+			document.getElementById("housetxt").style.display="none";
+			document.getElementById("ownerinfo").style.display="none";
+			document.getElementById("mapblock").style.display="none";
+                        document.getElementById("ad").style.display="block";
 			}
 			
 		</script>
@@ -48,39 +58,7 @@
                     
                     
                     <div class="caroussel">
-                        <div id="galerie">
-                                <div class="fleche_droite"></div>
-                                <div class="fleche_gauche"></div>
-
-                                <div class="slider">
-
-                                        <div id="images">
-                                        <a href="#">
-                                        <img src="..//view/pictures/search-background.jpg" class="piccar"/>
-                                        </a>
-                                        </div>
-                                    <!--<div id="images">
-                                        <a href="#">
-                                        <img src="..//view/pictures/search-background.jpg" class="piccar"/>
-                                        </a>
-                                        </div>
-                                    <div id="images">
-                                        <a href="#">
-                                        <img src="..//view/pictures/search-background.jpg" class="piccar"/>
-                                        </a>
-                                        </div>
-                                    <div id="images">
-                                        <a href="#">
-                                        <img src="..//view/pictures/search-background.jpg" class="piccar"/>
-                                        </a>
-                                        </div>
-                                    <div id="images">
-                                        <a href="#">
-                                        <img src="..//view/pictures/search-background.jpg" class="piccar"/>
-                                        </a>
-                                        </div> -->
-                                </div>
-                        </div>
+                        
                     </div>
             <div class="sub">
                     <!--Send to the exchange form-->
@@ -93,10 +71,9 @@
                         if($_SESSION['userId']==$idOwner)
                         {
                             $idHouse=$_GET['id'];
-                            echo $idHouse;
                     ?>
                             <form method="post" action="../controler/content.php?page=confirm_delete_house">
-                                <input type="hidden" name="idHouse" value="<?php echo $idHouse?>"/>
+                                <input type="hidden" name="idHouse" value="<?phpecho echo $idHouse?>"/>
                                 <input type=submit value="Supprimer cette maison" class="sub"/>
                             </form>
                             <br />
@@ -134,9 +111,10 @@
 
 <section class="info">			
         <ul class="onglet"> 
-                <li class="o" onclick="hideshowhousetxt()">description de la maison</li>
-                <li class="o" onclick="hideshowmapblock()">localisation</li>
-                <li class="o" onclick="hideshowownerinfo()">propriétaire</li>
+                <li class="o" onclick="hideshowhousetxt()">Description de la maison</li>
+                <li class="o" onclick="hideshowmapblock()">Localisation</li>
+                <li class="o" onclick="hideshowownerinfo()">Propriétaire</li>
+                <li class="o" onclick="hideshowad()">Annonces</li>
         </ul>
     
     
@@ -199,8 +177,9 @@
         
         
         <div class="mapblock" id="mapblock" style="display: none"> 
-            <p><img class="map" src="..//view/pictures/search-background.jpg" alt= "map"/> </p>
+            
             <p class="desc">
+                <img class="map" src="..//view/pictures/search-background.jpg" alt= "map"/> </br>  </br> 
                 Region : 
                     <?php 
                         while ($resHregion=$askHregion->fetch())
@@ -234,6 +213,18 @@
 
         <div class="ownerinfo" id="ownerinfo" style="display: none">	
             <p> huge problem when profil reminder is included</p>
+            
+                
+	</div>
+        <div class="ad" id="ad" style="display: none">	
+            <div class="dates">
+                <?php
+                        while ($resDates=$askDates->fetch())
+                            {
+                                echo 'De'.$resDates['A.date_begin'].'à'.$resDates['A.date_end'];
+                            }
+                    ?>
+            </div>
                 
 	</div>
     

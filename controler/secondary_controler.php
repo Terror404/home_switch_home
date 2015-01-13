@@ -14,7 +14,7 @@ if (isset($page) AND $page!='')
                     }
                     elseif( $_GET['page']=='search_result')
                     {
-                        echo'<link rel="stylesheet" type="text/css" href="../view/css/search_result.css">';
+                        echo'<link rel="stylesheet" type="text/css" href="../view/css/myhouses_style.css">';
                     }
                     elseif( $_GET['page']=='searchKeyWords')
                     {
@@ -81,6 +81,7 @@ if (isset($page) AND $page!='')
                     elseif( $_GET['page']=='houseCard')
                     {
                         echo'<link rel="stylesheet" type="text/css" href="../view/css/houseCard_style.css">';
+                      
                         
                     }
                     elseif( $_GET['page']=='createHouse')
@@ -94,11 +95,7 @@ if (isset($page) AND $page!='')
                         echo'<link rel="stylesheet" type="text/css" href="../view/css/confirm_alert.css">';
 
                     }
-                    elseif( $_GET['page']=='confirmAddAd')
-                    {
-                        echo'<link rel="stylesheet" type="text/css" href="../view/css/confirm_alert.css">';
 
-                    }
                     elseif( $_GET['page']=='confirmAddHouse')
                     {
                         echo'<link rel="stylesheet" type="text/css" href="../view/css/confirm_alert.css">';
@@ -123,6 +120,15 @@ if (isset($page) AND $page!='')
                     {
                         echo'<link rel="stylesheet" type="text/css" href="../view/css/confirm_alert.css">';
 
+                    }
+                    elseif($_GET['page']=='session_destruct')
+                    {
+                        echo'<link rel="stylesheet" type="text/css" href="../view/css/confirm_alert.css">';
+
+                    }
+                    elseif($_GET['page']=='parameters')
+                    {
+                        echo'<link rel="stylesheet" type="text/css" href="../view/css/parameters.css">';
                     }
                     elseif($_GET['page']=='my_exchanges')
                     {
