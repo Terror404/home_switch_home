@@ -1,29 +1,31 @@
+
+    <br/>
 <br/>
-<br/>
-<h1>Vos paramètres</h1>
+<div class="Title"><h1>Vos paramètres</h1></div>
 <br/>
 <br/>
 
+<div class="form">
 <h3>Modifier vos informations personnelles :</h3>
 <br/>
 
 <form method="post" action="../controler/content.php?page=redirect_chgt_log">
-    Modifier son login : <input type="text" name="modLogin"/>
-    <input type="hidden" name="whichForm" value="1"/>
-    <input type="submit" value="Modifier"/>
-    <input type="reset" value="Annuler"/>
+    <label>Modifier son login :</label> <input type="text" name="modLogin"/>
+   <p class="twosubs"> <input type="hidden" name="whichForm" value="1"/>
+    </br> <input class="sub" type="submit" value="Modifier"/>
+    <input class="sub" type="reset" value="Annuler"/></p>
 </form>
 <br/>
 <br/>
 
 <form method="post" action="">
     Modifier son mot de passe : <br/>
-        Ancien mot de passe : <input type="password" name="oldPassword"/><br/>
-        Nouveau mot de passe : <input type="password" name="modPassword"/><br/>
-        Répéter le nouveau mot de passe :<input type="password" name="verifModPassword"/><br/>
-    <input type="hidden" name="whichForm" value="2"/>
-    <input type="submit" value="Modifier"/>
-    <input type="reset" value="Annuler"/>
+       <label> Ancien mot de passe : </label><input type="password" name="oldPassword"/><br/>
+       <label> Nouveau mot de passe :</label> <input type="password" name="modPassword"/><br/>
+       <label> Répéter le nouveau mot de passe :</label><input type="password" name="verifModPassword"/><br/>
+<p class="twosubs"> <input type="hidden" name="whichForm" value="2"/>
+  </br>  <input class="sub" type="submit" value="Modifier"/>
+    <input class="sub" type="reset" value="Annuler"/></p>
 </form>
 <?php 
 if(isset($end) AND isset($_POST['whichForm']) AND $_POST['whichForm']==2)
@@ -51,12 +53,12 @@ if(isset($end) AND isset($_POST['whichForm']) AND $_POST['whichForm']==2)
 
 <form method="post" action="">
 Modifier son adresse mail : <br/>
-    Ancienne adresse mail : <input type="text" name="oldMail"/><br/>
-    Nouvelle adresse mail : <input type="text" name="modMail"/><br/>
-    Répéter la nouvelle adresse mail :<input type="text" name="verifModMail"/><br/>
-<input type="hidden" name="whichForm" value="3"/>
-<input type="submit" value="Modifier"/>
-<input type="reset" value="Annuler"/>
+    <label>Ancienne adresse mail :</label> <input type="text" name="oldMail"/><br/>
+    <label>Nouvelle adresse mail : </label><input type="text" name="modMail"/><br/>
+    <label>Répéter la nouvelle adresse mail :</label><input type="text" name="verifModMail"/><br/>
+<p class="twosubs"><input type="hidden" name="whichForm" value="3"/>
+</br><input class="sub" type="submit" value="Modifier"/>
+<input class="sub" type="reset" value="Annuler"/></p>
 </form>
 <?php 
 if(isset($end) AND isset($_POST['whichForm']) AND $_POST['whichForm']==3)
@@ -87,10 +89,10 @@ if(isset($end) AND isset($_POST['whichForm']) AND $_POST['whichForm']==3)
 <br/>
 
 <form method="post" action="">
-    Modifier son télephone : <input type="text" name="modPhoneNumber" placeholder="01.02.03.04.05"/>
-    <input type="hidden" name="whichForm" value="4"/>
-    <input type="submit" value="Modifier"/>
-    <input type="reset" value="Annuler"/>
+    <label>Modifier son télephone :</label> <input type="text" name="modPhoneNumber" placeholder="01.02.03.04.05"/>
+    <p class="twosubs"><input type="hidden" name="whichForm" value="4"/>
+    </br><input class="sub" type="submit" value="Modifier"/>
+    <input class="sub" type="reset" value="Annuler"/></p>
 </form>
 <br/>
 <?php 
@@ -109,10 +111,10 @@ if(isset($end) AND isset($_POST['whichForm']) AND $_POST['whichForm']==4)
 <br/>
 
 <form method="post" action="">
-    Modifier sa date de naissance : <input type="text" name="modBirthdate" placeholder="jj/mm/aaaa"/>
-    <input type="hidden" name="whichForm" value="5"/>
-    <input type="submit" value="Modifier"/>
-    <input type="reset" value="Annuler"/>
+    <label>Modifier sa date de naissance :</label> <input type="text" name="modBirthdate" placeholder="jj/mm/aaaa"/>
+   <p class="twosubs"> <input type="hidden" name="whichForm" value="5"/>
+    </br> <input class="sub" type="submit" value="Modifier"/>
+    <input class="sub" type="reset" value="Annuler"/></p>
 </form>
 <?php 
 if(isset($end) AND isset($_POST['whichForm']) AND $_POST['whichForm']==5)
@@ -137,11 +139,13 @@ if(isset($end) AND isset($_POST['whichForm']) AND $_POST['whichForm']==5)
 <h3>Modifier vos préférences :</h3>
 <br/>
 <form>
-    Recevoir des mails de la part de Home Switch Home :
+    <label>Recevoir des mails de la part de Home Switch Home :</label>
     <input type="checkbox" name="askAutoMail" value="0"/> Non
     <input type="checkbox" name="askAutoMail" value="1"/> Oui
-    <input type="submit" value="Modifier"/>
-    <input type="reset" value="Annuler"/>
+   <p class="twosubs"></br> <input class="sub" type="submit" value="Modifier"/>
+       <input class="sub" type="reset" value="Annuler"/></p>
 </form>
+
+</div>
 
 
