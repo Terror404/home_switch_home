@@ -107,6 +107,7 @@
                 <h3> Aménagements :</h3>
                 
                          <?php
+                         
                             while($resSearchBoxCriteriaHouse=$askSearchBoxCriteriaHouse->fetch())
                             {
                                 echo '<input type="checkbox" name="'.$resSearchBoxCriteriaHouse['name'].'"><label >'.$resSearchBoxCriteriaHouse['real_name'].'</label><br/>';

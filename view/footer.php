@@ -1,4 +1,4 @@
-<footer>
+
 	
         <ul>
             <div class="colonne1" style="float:left";>
@@ -51,4 +51,3 @@
             </div>
         
         </ul>
-</footer>

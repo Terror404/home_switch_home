@@ -1,10 +1,15 @@
 
-<div class="allMyHouses">
+<div class="newHouseButton" style="z-index:10000;">
+    <input class="sub" type="button" value="Créer une nouvelle maison" onclick="self.location.href='../controler/content.php?page=formHouse'"/>
+</div>
+
+
+<div class="allMyHouses" style="margin-top:100px;z-index:1000;">
 <?php
     while($resHouse=$askHouse->fetch())
     {
 ?>
-        <div class="blockMyHouses">
+        <div class="blockMyHouses" style="margin-top:0;">
             <div class="picMyHouses">
                 <a href="../controler/content.php?page=houseCard&id=<?php echo $resHouse['id'] ?>"><img src="<?php echo $resHouse['pictures'] ?>" alt="Photo maison" /></a>
             </div>
@@ -73,6 +78,4 @@
 ?>
 </div>
 
-<div class="newHouseButton">
-    <input class="sub" type="button" value="Créer une nouvelle maison" onclick="self.location.href='../controler/content.php?page=formHouse'"/>
-</div>
+
