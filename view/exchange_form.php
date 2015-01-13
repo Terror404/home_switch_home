@@ -1,11 +1,11 @@
 <br/><br/><br/>
-<h1><?php echo $_SESSION['retMessageri']; ?></h1>
+<h1> <?php echo $_SESSION['formEchang']; ?> </h1>
 <?php
 //Choice of the User to exchange with
 if(!isset($_POST['idUser2']) AND !isset($_POST['logUser2']))
 {
     ?>
-    Avec qui souhaitez vous effectuer cet échange ? <br/>
+     Avec qui souhaitez-vous effectuer un échange? <br/>
     <form method="post" action="../controler/content.php?page=exchange">
         <input type="text" name="logUser2" placeholder="Login de l'utilisateur"/>
         <input type='submit' name='Suivant'/>

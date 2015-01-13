@@ -33,7 +33,7 @@ $askLang->execute();
 while($resLang=$askLang->fetch())
 {
     $lang=$resLang['language'];
-    echo $lang;
+    
 }
 
 if ($lang ==0)
