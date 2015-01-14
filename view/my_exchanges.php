@@ -33,6 +33,7 @@ if(isset($idHouse1) AND !empty($idHouse1))
             </form>
             </div>
             <br/>
+            <?phpecho"idExch".$idExch?>
             </fieldset>
             <br/>
         </div> 
