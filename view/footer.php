@@ -4,15 +4,65 @@
             <div class="colonne1" style="float:left";>
             <li>
                 <br/>
-                <a href=# class="titre_colonne_1"> <?php echo $_SESSION['aPropoNou']; ?> </a>
+                <a href=# class="titre_colonne_1"> 
+                    <?php if (isset($_SESSION['userLogin']))
+                            {
+                                echo $_SESSION['aPropoNou']; 
+                            }
+                            else 
+                            {
+                                echo 'A propos de nous';
+                            }
+                            ?> 
+                </a>
                 
                 <br/>
                 <br/>
                 
-                    <a href=# class="footerLink"> <?php echo $_SESSION['quiSomNou']; ?> </a><br/>
-                    <a href=# class="footerLink"> <?php echo $_SESSION['contactNou']; ?> </a><br>
-                    <a href=# class="footerLink"> <?php echo $_SESSION['infoLeg']; ?> </a><br/>
-                    <a href=# class="footerLink"> <?php echo $_SESSION['partenair']; ?> </a>
+                    <a href=# class="footerLink"> 
+                        <?php if (isset($_SESSION['userLogin']))
+                            {
+                                echo $_SESSION['quiSomNou']; 
+                            }
+                            else 
+                            {
+                                echo 'Qui sommes-nous?';
+                            }
+                            ?> 
+                    </a><br/>
+                    <a href=# class="footerLink"> 
+                        <?php if (isset($_SESSION['userLogin']))
+                            {
+                                echo $_SESSION['contactNou']; 
+                            }
+                            else 
+                            {
+                                echo 'Contactez nous';
+                            }
+                            ?> 
+                    </a><br>
+                    <a href=# class="footerLink"> 
+                        <?php if (isset($_SESSION['userLogin']))
+                            {
+                                echo $_SESSION['infoLeg']; 
+                            }
+                            else 
+                            {
+                                echo 'Informations légales';
+                            }
+                            ?> 
+                    </a><br/>
+                    <a href=# class="footerLink"> 
+                        <?php if (isset($_SESSION['userLogin']))
+                            {
+                                echo $_SESSION['partenair']; 
+                            }
+                            else 
+                            {
+                                echo 'Nos partenaires';
+                            }
+                            ?> 
+                    </a>
                 
             
             </li>
@@ -21,13 +71,53 @@
             <div class="colonne2" >
                 
                 <br/>
-                <li><a href=# class="titre_colonne_2"> <?php echo $_SESSION['decouvrHSH']; ?> </a>
+                <li><a href=# class="titre_colonne_2"> 
+                    <?php if (isset($_SESSION['userLogin']))
+                            {
+                                echo $_SESSION['decouvrHSH']; 
+                            }
+                            else 
+                            {
+                                echo 'Découvrez l\'\aventure HSH!';
+                            }
+                            ?> 
+                    </a>
             
                 <br/>
                 <br/>
-                    <a href=# class="footerLink"> <?php echo $_SESSION['meilleurAnonc']; ?> </a><br/>
-                    <a href=# class="footerLink"> <?php echo $_SESSION['anoncRecent']; ?> </a><br/>
-                    <a href=# class="footerLink"> <?php echo $_SESSION['notrForum']; ?> </a>
+                    <a href=# class="footerLink"> 
+                        <?php if (isset($_SESSION['userLogin']))
+                            {
+                                echo $_SESSION['meilleurAnnonc']; 
+                            }
+                            else 
+                            {
+                                echo 'Nos meilleures Annonces';
+                            }
+                            ?> 
+                    </a><br/>
+                    <a href=# class="footerLink"> 
+                        <?php if (isset($_SESSION['userLogin']))
+                            {
+                                echo $_SESSION['anoncRecent']; 
+                            }
+                            else 
+                            {
+                                echo 'Nos annonces récentes';
+                            }
+                            ?> 
+                    </a><br/>
+                    <a href=# class="footerLink"> 
+                        <?php if (isset($_SESSION['userLogin']))
+                            {
+                                echo $_SESSION['notrForum']; 
+                            }
+                            else 
+                            {
+                                echo 'Notre Forum';
+                            }
+                            ?> 
+                    </a>
                 
             
             </li>
@@ -36,7 +126,17 @@
             <div class="colonne3" style="float:right">
             <li>
                 <br/>
-                <a href=# class="titre_colonne_3" ><?php echo $_SESSION['suivezNouResSoc']; ?></a>
+                <a href=# class="titre_colonne_3" >
+                    <?php if (isset($_SESSION['userLogin']))
+                            {
+                                echo $_SESSION['suivezNouResSoc']; 
+                            }
+                            else 
+                            {
+                                echo 'Suivez nous sur les réseaux sociaux';
+                            }
+                            ?>>
+                </a>
                 
                 <br/>
                 <br/>

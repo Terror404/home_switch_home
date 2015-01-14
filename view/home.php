@@ -2,7 +2,19 @@
 <div id="carrousel">
 	<link rel="stylesheet" type="text/css" href="../view/css/style_caroussel.css">
     <ul>
-    	<center><font class="texte" size=6 color=white> <?php echo $_SESSION['slogan']; ?> </font></center>
+    	<center>
+            <font class="texte" size=6 color=white> 
+            <?php if (isset($_SESSION['userLogin']))
+                            {
+                                echo $_SESSION['slogan']; 
+                            }
+                            else 
+                            {
+                                echo 'LEURS MAISONS, VOS VACANCES';
+                            }
+                            ?> 
+            </font>
+        </center>
         <li><img class="img" src="http://eurowin-stats.com/media/maison%20BCBG.jpg" style='width:1800px ;height:1000px' /></li>
     <li><img class="img" src="http://eurowin-stats.com/media/maison%20geek%201.jpg" style='width:1800px ;height:1000px' /></li>
     <li><img class="img" src="http://eurowin-stats.com/media/maison%20futuriste.jpg" style='width:1800px ;height:1000px' /></li>

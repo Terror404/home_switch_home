@@ -101,7 +101,7 @@
     
     
         <div class="desc" id="housetxt" style="display: block">
-                                    Description du bien : 
+                                     <?php echo $_SESSION['descriptBien']; ?>  
                                     </br>
                                     </br>
                                     <form method="post" action="">
@@ -122,7 +122,7 @@
             Informations sur le logement:
             </br>
             </br>
-            Type : 
+            <?php echo $_SESSION['typ']; ?>  
                 <?php 
                     while ($resHtype=$askHtype->fetch())
                         {
@@ -130,7 +130,7 @@
                         }
                 ?>
             </br>
-            Capacité :
+            <?php echo $_SESSION['capacit']; ?> 
                 <?php 
                     while($resHcapacity=$askHcapacity->fetch())
                         {
@@ -139,7 +139,7 @@
                         }
                 ?>
             </br>
-            Nombre de chambre : 
+            <?php echo $_SESSION['nombrChambr']; ?>  
                 <?php
                     while($resHbrnb=$askHbrnb->fetch())
                         {
@@ -147,7 +147,7 @@
                         }
                 ?>
             </br>
-            Aménagements : 
+            <?php echo $_SESSION['amenag']; ?>  
             </br>
                 <p class='rating'>
                     <?php
@@ -172,21 +172,21 @@
                                 echo $resHregion['real_name'];
                             }
                     ?><br/>
-                Ville : 
+                <?php echo $_SESSION['vill']; ?>  
                     <?php
                         while ($resHtown=$askHtown->fetch())
                             {
                                 echo $resHtown['ville_nom_reel'];
                             }
                     ?><br/>
-                Code postal: 
+                <?php echo $_SESSION['codPost']; ?>  
                     <?php
                         while ($resHzip=$askHzip->fetch())
                             {
                                 echo $resHzip['ville_code_postal'];
                             }
                     ?><br/>
-                Adresse :
+                <?php echo $_SESSION['adres']; ?> 
                     <?php
                         while ($resHaddress=$askHaddress->fetch())
                             {

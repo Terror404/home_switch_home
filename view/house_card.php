@@ -112,7 +112,17 @@
 <section class="info">			
         <ul class="onglet"> 
                 <li class="o" onclick="hideshowhousetxt()">Description de la maison</li>
-                <li class="o" onclick="hideshowmapblock()">Localisation</li>
+                <li class="o" onclick="hideshowmapblock()">
+                    <?php if (isset($_SESSION['userLogin']))
+                            {
+                                echo $_SESSION['local']; 
+                            }
+                            else 
+                            {
+                                echo 'Localisation';
+                            }
+                            ?>
+                </li>
                 <li class="o" onclick="hideshowownerinfo()">Propriétaire</li>
                 <li class="o" onclick="hideshowad()">Annonces</li>
         </ul>
@@ -123,7 +133,15 @@
                            while($resHdesc=$askHdesc->fetch())
                                 {
                 ?>
-                                    Description du bien : 
+                                   <?php if (isset($_SESSION['userLogin']))
+                            {
+                                echo $_SESSION['descriptBien']; 
+                            }
+                            else 
+                            {
+                                echo 'Description du bien :';
+                            }
+                            ?> 
                                     </br>
                                     </br>
                                      <?php echo $resHdesc['description'] ?>
@@ -136,7 +154,15 @@
             Informations sur le logement:
             </br>
             </br>
-            Type : 
+            <?php if (isset($_SESSION['userLogin']))
+                            {
+                                echo $_SESSION['typ']; 
+                            }
+                            else 
+                            {
+                                echo 'Type :';
+                            }
+                            ?> 
                 <?php 
                     while ($resHtype=$askHtype->fetch())
                         {
@@ -144,7 +170,15 @@
                         }
                 ?>
             </br>
-            Capacité :
+            <?php if (isset($_SESSION['userLogin']))
+                            {
+                                echo $_SESSION['capacit']; 
+                            }
+                            else 
+                            {
+                                echo 'Capacité';
+                            }
+                            ?>
                 <?php 
                     while($resHcapacity=$askHcapacity->fetch())
                         {
@@ -153,7 +187,15 @@
                         }
                 ?>
             </br>
-            Nombre de chambre : 
+            <?php if (isset($_SESSION['userLogin']))
+                            {
+                                echo $_SESSION['nombrChambr']; 
+                            }
+                            else 
+                            {
+                                echo 'Nombre de chambre :';
+                            }
+                            ?> 
                 <?php
                     while($resHbrnb=$askHbrnb->fetch())
                         {
@@ -161,7 +203,15 @@
                         }
                 ?>
             </br>
-            Aménagements : 
+            <?php if (isset($_SESSION['userLogin']))
+                            {
+                                echo $_SESSION['amenag']; 
+                            }
+                            else 
+                            {
+                                echo 'Aménagements :';
+                            }
+                            ?> 
             </br>
                 <p class='rating'>
                     <?php
@@ -187,21 +237,45 @@
                                 echo $resHregion['real_name'];
                             }
                     ?><br/>
-                Ville : 
+                <?php if (isset($_SESSION['userLogin']))
+                            {
+                                echo $_SESSION['vill']; 
+                            }
+                            else 
+                            {
+                                echo 'Ville :';
+                            }
+                            ?>  
                     <?php
                         while ($resHtown=$askHtown->fetch())
                             {
                                 echo $resHtown['ville_nom_reel'];
                             }
                     ?><br/>
-                Code postal: 
+                <?php if (isset($_SESSION['userLogin']))
+                            {
+                                echo $_SESSION['codPost']; 
+                            }
+                            else 
+                            {
+                                echo 'Code postal :';
+                            }
+                            ?>  
                     <?php
                         while ($resHzip=$askHzip->fetch())
                             {
                                 echo $resHzip['ville_code_postal'];
                             }
                     ?><br/>
-                Adresse :
+                <?php if (isset($_SESSION['userLogin']))
+                            {
+                                echo $_SESSION['adres']; 
+                            }
+                            else 
+                            {
+                                echo 'Adresse :';
+                            }
+                            ?> 
                     <?php
                         while ($resHaddress=$askHaddress->fetch())
                             {
@@ -213,6 +287,7 @@
 
         <div class="ownerinfo" id="ownerinfo" style="display: none">	
             <p> huge problem when profil reminder is included</p>
+            
             
                 
 	</div>
