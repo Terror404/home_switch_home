@@ -5,14 +5,14 @@
 <nav>
 
 <ul class="linkBlockList">
-	<li class="linkBlockElement"><a class="linkBlock" href="../controler/content.php?page=home" >
+	<li class="linkBlockElement"><a class="linkBlock" href="../controler/content.php?page=news" >
                             <?php if (isset($_SESSION['userLogin']))
                             {
                                 echo $_SESSION['accueil']; 
                             }
                             else 
                             {
-                                echo 'Répéter le mot de Passe*';
+                                echo 'News';
                             }
                             ?>  
             </a></li>
@@ -148,8 +148,8 @@ else
 ?>
 <nav>
 
-<ul class="linkBlockList">
-	<li class="linkBlockElement"><a class="linkBlock" href="../controler/content.php?page=home" >
+<ul class="linkBlockList" >
+	<li class="linkBlockElement" style="width:25%"><a class="linkBlock" href="../controler/content.php?page=home" >
                             <?php if (isset($_SESSION['userLogin']))
                             {
                                 echo $_SESSION['accueil']; 
@@ -160,8 +160,8 @@ else
                             }
                             ?>
         </a></li>
-	<li class="linkBlockElement"><a class="linkBlock" href="../controler/content.php?page=forumIndex" >Forum</a></li>
-	<li class="linkBlockElement"><a class="linkBlock" href="../controler/content.php?page=research" >
+	<li class="linkBlockElement" style="width:25%"><a class="linkBlock" href="../controler/content.php?page=forumIndex" >Forum</a></li>
+	<li class="linkBlockElement" style="width:25%"><a class="linkBlock" href="../controler/content.php?page=research" >
                             <?php if (isset($_SESSION['userLogin']))
                             {
                                 echo $_SESSION['rech']; 
@@ -172,7 +172,7 @@ else
                             }
                             ?>
         </a></li>
-	<li class="linkBlockElement"><a class="linkBlock" href="#help"><?php if (isset($_SESSION['userLogin']))
+	<li class="linkBlockElement" style="width:25%"><a class="linkBlock" href="#help"><?php if (isset($_SESSION['userLogin']))
                             {
                                 echo $_SESSION['aid']; 
                             }
@@ -182,7 +182,7 @@ else
                             }
                             ?>
         </a>
-        <ul class="subMenuBlockList">
+        <ul class="subMenuBlockList" style="width:25%">
 			<li><a class="subMenuLinkBlock" href="../controler/content.php?page=myProfile&userId=<?php echo $userId?>" >FAQ</a></li>
 			<li><a class="subMenuLinkBlock" href="../controler/content.php?page=my_ads&userId=<?php echo $userId?>" >Forum</a></li>
         </ul>
