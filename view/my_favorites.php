@@ -1,7 +1,7 @@
 <br/>
 <br/>
 <br/>
-<h1> <?php echo $_SESSION['$listFav']; ?> </h1>
+<h1> <?php echo $_SESSION['listFav']; ?> </h1>
 <?php
 /*
 Rappel structure de la matrice $arrayInfFavHouse :

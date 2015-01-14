@@ -14,5 +14,7 @@
 
 <a href="../controler/back_office.php?page=rights&state=5">Give rights to someone</a><br/>
 <a href="../controler/back_office.php?page=moderateSite&state=0">Pimp my site</a><br/>
+
+
 </div>
 

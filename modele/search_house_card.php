@@ -20,6 +20,10 @@
     //<!--Get the end date-->
         $askDateE=$DB->prepare('SELECT A.date_end FROM ad A, house H WHERE H.id=A.id_house AND H.id=:idhouse');
             $askDateE->execute(array('idhouse'=>$_GET['id']));
+            
+        //<!--Get the begining and the end dates-->
+        $askDates=$DB->prepare('SELECT A.date_end,A.date_begin FROM ad A, house H WHERE H.id=A.id_house AND H.id=:idhouse');
+            $askDates->execute(array('idhouse'=>$_GET['id']));    
     
     //<!--Get the house rate-->
         $askHrate=$DB->prepare('SELECT H.rating FROM house H WHERE H.id=:idhouse');
