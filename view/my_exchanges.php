@@ -80,7 +80,7 @@ if(isset($idHouse1W2) AND !empty($idHouse1W2))
                 <input type="hidden" name="titleHouse2" value="<?php echo $arrayFinalInfU2W2[$i][1]; ?>"/>
                 <input type="hidden" name="titleHouse1" value="<?php echo $arrayFinalInfU1W2[$i][1];?>"/>
                 <input type="submit" name="submit" value="Accepter la demande"/>
-                <input type="submit" name="submit" value="Annuler la demande"/>                
+                <input type="submit" name="submit" value="Refuser la demande"/>                
             </form>
             </div>
             <br/>
@@ -113,7 +113,7 @@ if(isset($idHouse1W1) AND !empty($idHouse1W1))
             La personne avec qui vous souhaitez effectuer l'échange : <?php echo $arrayFinalInfU2W1[$i][0]; ?><br/>
             La maison dans laquelle vous vous vous rendre : <a href='../controler/content.php?page=houseCard&id="<?php echo $idHouse2W1; ?>"' target='_blank'><?php echo $arrayFinalInfU2W1[$i][1]; ?></a> 
             <br/><br/><div class="">
-            <form method="post" action="../controler/content.php?page=comment">
+            <form method="post" action="../controler/content.php?page=treatExchange">
                 <input type='hidden' name='IdExch' value='<?php echo $idExchW1;?>'/>
                 <input type='hidden' name='idUser1' value='<?php echo $idUser1W1;?>'/>
                 <input type='hidden' name='idUser2' value='<?php echo $idUser2W1;?>'/>
@@ -123,7 +123,7 @@ if(isset($idHouse1W1) AND !empty($idHouse1W1))
                 <input type="hidden" name="idHouse1" value="<?php echo $idHouse1W1; ?>"/>
                 <input type="hidden" name="titleHouse2" value="<?php echo $arrayFinalInfU2W1[$i][1]; ?>"/>
                 <input type="hidden" name="titleHouse1" value="<?php echo $arrayFinalInfU1W1[$i][1];?>"/>
-                <input type="submit" value="Annuler la demande"/>
+                <input type="submit" name="submit" value="Annuler la demande"/>
             </form>
             </div>
             <br/>
