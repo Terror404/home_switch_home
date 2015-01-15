@@ -38,8 +38,17 @@ if(isset($_POST['add']) AND $_POST['add']==1)
                     $upFinished=$DB->prepare('UPDATE exchange SET finished_1=1 WHERE id=:idexchange');
                         $upFinished->execute(array('idexchange'=>$idExchange));
                     
+                    $askExch=$DB->prepare('SELECT finished_1, finished_2 FROM exchange WHERE id=:idexchange');
+                        $askExch->execute(array('idexchange'=>$idExchange));
                     
-
+                    while($resExch=$askExch->fetch())
+                    {
+                        if($resExch['finished_1']==1 AND $resExch['finished_2']==1)
+                        {
+                            $delExchange=$DB->prepare('DELETE FROM exchange WHERE id=:idexchange');
+                                $delExcange->execute(array('idexchange'=>$idExchange));
+                        }
+                    }
                     $end=0;
                 }
                 else
@@ -92,6 +101,18 @@ if(isset($_POST['add']) AND $_POST['add']==1)
 
                     $upFinished=$DB->prepare('UPDATE exchange SET finished_2=1 WHERE id=:idexchange');
                         $upFinished->execute(array('idexchange'=>$idExchange));
+                        
+                    $askExch=$DB->prepare('SELECT finished_1, finished_2 FROM exchange WHERE id=:idexchange');
+                        $askExch->execute(array('idexchange'=>$idExchange));
+                    
+                    while($resExch=$askExch->fetch())
+                    {
+                        if($resExch['finished_1']==1 AND $resExch['finished_2']==1)
+                        {
+                            $delExchange=$DB->prepare('DELETE FROM exchange WHERE id=:idexchange');
+                                $delExchange->execute(array('idexchange'=>$idExchange));
+                        }
+                    }
 
                     $end=0;
                 }
