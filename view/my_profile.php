@@ -1,5 +1,6 @@
 <section class="page">
 
+    <div class="top">
 <h2 class="head"> <?php if (isset($_SESSION['userLogin']))
                             {
                                 echo $_SESSION['monProf']; 
@@ -10,7 +11,15 @@
                             }
                             ?> 
 </h2>
-<div class="login">
+   <div class="modif">
+    <?php $userId=$_SESSION['userId'];?>
+<form method="post" action="../controler/content.php?page=myProfile&id=<?php echo $userId ?>">
+<input type='hidden' name='modifyProf' value='1'/>
+<input type='submit' class="subtomodif" value ='Modifier votre profil'/>
+</form>
+   </div>
+    </div>
+    <div class="login">
     <?php
     while ($resProfLog = $askProfLog->fetch()) {
         ?> <p> Bonjour je suis <?php echo $resProfLog['login']; ?></p><?php
@@ -20,6 +29,7 @@
 </div>
 <div class="Profile">
     <div class="userleft">
+        </br>
         <?php
         while ($resProfPic = $askProfPic->fetch()) {
             ?>
@@ -28,6 +38,7 @@
         }
         ?>
             </br>
+            <div class="test"></div>
         <!-- rating-->
         <p><?php
             while ($resProfRate = $askProfRate->fetch()) {
@@ -177,16 +188,18 @@
 
 
     <div class="myhouses">
-        <h2> Mes Maisons </h2>
+       <div class="test1"></div>
+        <h2> Mes Maisons </h2>  
         <p><img class="image" id="house1" src="..//view/pictures/Penguin.jpg" alt= "image1"/></p>
         <p><img class="image" id="house2" src="..//view/pictures/Penguin.jpg" alt= "image1"/></p>
         <p><img class="image" id="house3" src="..//view/pictures/Penguin.jpg" alt= "image1"/></p>
         <p><img class="image" id="house4" src="..//view/pictures/Penguin.jpg" alt= "image1"/></p>
         <p><img class="image" id="house5" src="..//view/pictures/Penguin.jpg" alt= "image1"/></p>
-    </div>
+  </div>
 
-   
-        <h2> Les commentaires </h2>
+<div class="com">
+    <div class="test2"></div>
+<h2> Les commentaires </h2>
         <div class="commentbox">
             <div class="commentauthor">
 
@@ -221,13 +234,9 @@
             </div>    
         </div>
             
-            
+</div>     
     
 </div>
-<?php $userId=$_SESSION['userId'];?>
-<form method="post" action="../controler/content.php?page=myProfile&id=<?php echo $userId ?>">
-<input type='hidden' name='modifyProf' value='1'/>
-<input type='submit' class="sub" value ='Modifier votre profil'/>
-</form>
+
 </div>
 </section>
