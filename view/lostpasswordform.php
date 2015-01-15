@@ -1,3 +1,6 @@
+<!doctype html>
+<meta charset="UTF-8">
+
 <strong>
     Récupération de mot de passe oublié
 </strong>

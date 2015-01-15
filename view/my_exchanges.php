@@ -8,6 +8,8 @@ if(isset($idHouse1) AND !empty($idHouse1))
     $nb2=count($arrayFinalInfU1);
     for($i=0;$i<$nb2;$i++)
     {
+        if(($arrayInf[$i][5]==0 AND $arrayInf[$i][6]==0) OR ($arrayInf[$i][5]==1 AND $arrayInf[$i][7]==0))
+        {
     ?>
         <div class='blocExchange'>
             <fieldset>
@@ -38,6 +40,11 @@ if(isset($idHouse1) AND !empty($idHouse1))
             <br/>
         </div> 
     <?php
+        }
+        else
+        {
+            echo"Votre commentaire est en cours de traitement En attente de la réponse de l'autre membre. <br/> <br/>";
+        }
     }
 }
 else

@@ -26,7 +26,7 @@ while($resExchConf=$askExchConf->fetch())
         $idU2=$resExchConf['id_user_2'];
         $idH1=$resExchConf['id_house_1'];
         $idH2=$resExchConf['id_house_2'];
-        $arrayInf[$i]=array($idU1,$idU2,$idH1,$idH2,$idExch,""); 
+        $arrayInf[$i]=array($idU1,$idU2,$idH1,$idH2,$idExch,"",$finished1,$finished2); 
         $i++;
     }
     
@@ -43,7 +43,6 @@ for($i=0;$i<$nb;$i++)
         $idHouse1=$arrayInf[$i][2];
         $idUser2=$arrayInf[$i][1];
         $idHouse2=$arrayInf[$i][3];
-
         
         $askExchInfU1=$DB->prepare('SELECT U.login, H.title FROM house H, user U WHERE U.id=:iduser1 AND H.id=:idhouse1');
         $askExchInfU1->execute(array('iduser1'=>$idUser1,'idhouse1'=>$idHouse1));
