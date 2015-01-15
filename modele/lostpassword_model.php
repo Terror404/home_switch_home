@@ -13,10 +13,11 @@ function findUserWithEmail($emailAddress, $database) {
 function resetPasswordForUser($whichUser, $database) {
     $newPassword = base64_encode(pack('N2', mt_rand(), mt_rand()));
     //Génère un code aléatoire de 12 caractères
-    $DB->query("
+    $database->query("
         UPDATE user
-        SET password='".$newPassword."'
+        SET password='".hash('SHA512', $newPassword)."'
         WHERE id =".$whichUser
     );
+    echo $newPassword."<br/>";
     return $newPassword;
 }
