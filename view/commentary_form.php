@@ -41,9 +41,4 @@
             <input type='submit' value='Poster les commentaires et les notes'/>
             <input type='reset' value='Annuler'/>
         </form>
-        
-    <?php   echo"type".$_POST['type'];
-            echo$_POST['idExch']."idexch";
-            echo $_POST['idUser2']."idU2";
-    ?>
             </div>

@@ -9,7 +9,7 @@ function getPage($itemNumber, $itemsPerPage) {
     $page = ($itemNumber / $itemsPerPage);
     $page++;
     $page = floor($page);
-    return (int)$page; //Incredibly enough, floor returns a non-integer
+    return (int)$page; //Incredibly enough, floor does not return an integer
 }
 
 function userHasModeratorRights($userId, $database) {
@@ -56,4 +56,9 @@ function getLastMessageFromTopic($whichTopic, $database) {
         LIMIT 1
     ");
     return $tempQuery->fetch();
+}
+
+function deleteTopic($whichTopic, $database) {
+    $database->query("DELETE FROM post WHERE id_topic=".$whichTopic);
+    $database->query("DELETE FROM topic WHERE id=".$whichTopic);
 }

@@ -19,28 +19,31 @@ $arrayInf=array();
 $i=0;
 while($resExchConf=$askExchConf->fetch())
     {
+        $finished1=$resExchConf['finished_1'];
+        $finished2=$resExchConf['finished_2'];
         $idExch=$resExchConf['id'];
         $idU1=$resExchConf['id_user_1'];
         $idU2=$resExchConf['id_user_2'];
         $idH1=$resExchConf['id_house_1'];
         $idH2=$resExchConf['id_house_2'];
-        $arrayInf[$i]=array($idU1,$idU2,$idH1,$idH2); 
+        $arrayInf[$i]=array($idU1,$idU2,$idH1,$idH2,$idExch,""); 
         $i++;
     }
     
 $nb=count($arrayInf);
 $arrayFinalInfU1=array();
 $arrayFinalInfU2=array();
+
 for($i=0;$i<$nb;$i++)
 {
     if($_SESSION['userId']==$arrayInf[$i][0])
-    {
-        $type=0;    
-        
+    {    
+        $arrayInf[$i][5]=0;
         $idUser1=$_SESSION['userId'];
         $idHouse1=$arrayInf[$i][2];
         $idUser2=$arrayInf[$i][1];
         $idHouse2=$arrayInf[$i][3];
+
         
         $askExchInfU1=$DB->prepare('SELECT U.login, H.title FROM house H, user U WHERE U.id=:iduser1 AND H.id=:idhouse1');
         $askExchInfU1->execute(array('iduser1'=>$idUser1,'idhouse1'=>$idHouse1));
@@ -65,13 +68,14 @@ for($i=0;$i<$nb;$i++)
     }
     elseif($_SESSION['userId']==$arrayInf[$i][1])
     {
-        $type=1;
+        $arrayInf[$i][5]=1;
         $idExch=$resExchConf['id'];
         $idUser1=$_SESSION['userId'];
         $idHouse1=$arrayInf[$i][3];
         $idUser2=$arrayInf[$i][0];
         $idHouse2=$arrayInf[$i][2];
-    
+
+        
         $askExchInfU1=$DB->prepare('SELECT U.login, H.title FROM house H, user U WHERE U.id=:iduser1 AND H.id=:idhouse1');
             $askExchInfU1->execute(array('iduser1'=>$idUser1,'idhouse1'=>$idHouse1));
 
@@ -144,8 +148,8 @@ for($i=0;$i<$nb;$i++)
 }
 
 /*******************************************************************************
- *********************Case for the exchange asked to you*************************
- ******************************************************************************/
+**********************Case for the exchange asked to you************************
+*******************************************************************************/
 
 $arrayInfW2=array();
 $i=0;

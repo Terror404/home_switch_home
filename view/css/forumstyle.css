@@ -10,7 +10,7 @@
     margin-bottom: 3%;
 }
 
-table.messageTable {
+table.forumTable {
     background-color: #FFFFFF;
     padding: 3px;
     width: 95%;
@@ -30,4 +30,22 @@ div.messageInfo {
 td.message {
     width: 80%;
     border: 1px solid black;
+}
+
+input.sub
+{
+    //width:100%;
+    background-color: #00BCE0;
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: 0px;
+    font-family: "GeosansLight";
+    color: white;
+    font-size: 20px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+}   
+input.sub:hover {
+    background: #83EBC6;
+    text-decoration: none;
 }
