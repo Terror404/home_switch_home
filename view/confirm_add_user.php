@@ -1,9 +1,9 @@
 
-        <div class="confirmAddUserButton">
+        <div class="alert">
 <?php
 
-echo 'Votre profil a bien été créé.'
-?>
+echo $_SESSION['profCree']
+?>]
     <br/>
     <input type="button" onclick="self.location.href='../controler/content.php?page=research'" name="continuer" value="Continuer" />
         </div>

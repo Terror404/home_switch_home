@@ -25,7 +25,7 @@
                 
                 
 
-                if(isset($_GET['page']) AND $_GET['page']=='home')
+                if($_GET['page']=='home' AND isset($_GET['page']))
                 
                     {
                         include("../view/home.php");
@@ -134,7 +134,7 @@
                     //Redirect page after inscription
                     elseif( $_GET['page']=='confirmAddUser')
                     {
-                        
+                        require("../modele/verif_form_user.php");
                         require("../modele/add_user.php"); //modele
                         include("../view/confirm_add_user.php");//vue
                     }
@@ -253,35 +253,32 @@
                     
                     elseif ($_GET['page'] == 'forumIndex')
                     {
-                        include("./forum/index.php");
+                            include("./forum/index.php");
                     }
                     
                     elseif ($_GET['page'] == 'editPost')
                     {
-                        include("./forum/editmessage.php");
+                            include("./forum/editmessage.php");
                     }
                     
                     elseif ($_GET['page'] == 'addPost')
                     {
-                        include("./forum/newmessage.php");
+                            include("./forum/newmessage.php");
                     }
                     
                     elseif ($_GET['page'] == 'addTopic')
                     {
-                        include("./forum/newtopic.php");
+                            include("./forum/newtopic.php");
                     }
                     
                     elseif ($_GET['page'] == 'showForum')
                     {
-                        include("./forum/showcategory.php");
+                            include("./forum/showcategory.php");
                     }
                     
                     elseif ($_GET['page'] == 'showTopic')
                     {
-                        include("./forum/showtopic.php");
-                    }
-                    elseif ($_GET['page'] == 'editCategory') {
-                        include("./forum/editcategory.php");
+                            include("./forum/showtopic.php");
                     }
                     
                     // read a message from received messages
@@ -316,6 +313,25 @@
                     {
                         require('../modele/update_delete_house.php');
                         include('../view/delete_house.php');
+                    }
+                    
+                    //My Exchanges
+                    elseif($_GET['page']=='my_exchanges')
+                    {
+                        require('../modele/search_my_exchanges.php');
+                        include('../view/my_exchanges.php');
+                    }
+                    
+                    elseif($_GET['page']=='session_destruct')
+                    {
+
+                        include('../view/session_destruct.php');
+                    }
+                    //Comment form
+                    elseif($_GET['page']=='comment')
+                    {
+                        //require("");
+                        include("../view/commentary_form.php");
                     }
                     
                     

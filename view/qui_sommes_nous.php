@@ -1,11 +1,11 @@
 <html>
     <meta charset="utf-8"/>
         <header>
-            <title>Qui sommes-nous?</title>
+            <title> <?php echo $_SESSION['$quiSomNou']; ?> </title>
         </header>
         
     <body>
-        <h1>Qui sommes-nous?</h1>
+        <h1> <?php echo $_SESSION['$quiSomNou']; ?> </h1>
         
         <h2>Qu'est ce que <b>Home Switch Home</b>?</h2>
         

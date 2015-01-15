@@ -1,18 +1,18 @@
-<footer>
+
 	
         <ul>
             <div class="colonne1" style="float:left";>
             <li>
                 <br/>
-                <a href=# class="titre_colonne_1">A propos de nous</a>
+                <a href=# class="titre_colonne_1"> <?php echo $_SESSION['aPropoNou']; ?> </a>
                 
                 <br/>
                 <br/>
                 
-                    <a href=# class="footerLink">Qui sommes nous?</a><br/>
-                    <a href=# class="footerLink">Contactez nous</a><br>
-                    <a href=# class="footerLink">Infos légales</a><br/>
-                    <a href=# class="footerLink">Nos partenaires</a>
+                    <a href=# class="footerLink"> <?php echo $_SESSION['quiSomNou']; ?> </a><br/>
+                    <a href=# class="footerLink"> <?php echo $_SESSION['contactNou']; ?> </a><br>
+                    <a href=# class="footerLink"> <?php echo $_SESSION['infoLeg']; ?> </a><br/>
+                    <a href=# class="footerLink"> <?php echo $_SESSION['partenair']; ?> </a>
                 
             
             </li>
@@ -21,13 +21,13 @@
             <div class="colonne2" >
                 
                 <br/>
-                <li><a href=# class="titre_colonne_2">Découvrez l'aventure HSH !</a>
+                <li><a href=# class="titre_colonne_2"> <?php echo $_SESSION['decouvrHSH']; ?> </a>
             
                 <br/>
                 <br/>
-                    <a href=# class="footerLink">Nos meilleures annonces</a><br/>
-                    <a href=# class="footerLink">Nos annonces récentes</a><br/>
-                    <a href=# class="footerLink">Notre Forum HSH</a>
+                    <a href=# class="footerLink"> <?php echo $_SESSION['meilleurAnonc']; ?> </a><br/>
+                    <a href=# class="footerLink"> <?php echo $_SESSION['anoncRecent']; ?> </a><br/>
+                    <a href=# class="footerLink"> <?php echo $_SESSION['notrForum']; ?> </a>
                 
             
             </li>
@@ -36,7 +36,7 @@
             <div class="colonne3" style="float:right">
             <li>
                 <br/>
-                <a href=# class="titre_colonne_3" >Suivez nous sur les réseaux sociaux!</a>
+                <a href=# class="titre_colonne_3" ><?php echo $_SESSION['suivezNouResSoc']; ?></a>
                 
                 <br/>
                 <br/>
@@ -51,4 +51,3 @@
             </div>
         
         </ul>
-</footer>

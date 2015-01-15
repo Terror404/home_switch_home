@@ -120,69 +120,19 @@
             <textarea name="adDescription"></textarea><br/><br/>
             
             Critères spécifiques à l'annonce : <br/>
-                Critère n°1 :
-                <select name='idCrit1' size='1' class='input'>
-                    <?php 
-                    while($resCrit1=$askCrit1->fetch())
-                    {
-                    ?>
-                        <option value='<?php echo $resCrit1['id'] ?>'> <?php echo $resCrit1['real_name'] ?>
-                    <?php
-                    }
-                    ?>
-                </select>
-                <input type='text' name='critDesc1' placeholder='description de ce que vous attendez'/><br/>
+                <h3> Aménagements :</h3>
                 
-                Critère n°2 :
-                <select name='idCrit2' size='1' class='input'>
-                    <?php 
-                    while($resCrit2=$askCrit2->fetch())
-                    {
-                    ?>
-                        <option value='<?php echo $resCrit2['id'] ?>'> <?php echo $resCrit2['real_name'] ?>
-                    <?php
-                    }
-                    ?>
-                </select>
-                <input type='text' name='critDesc2' placeholder='description de ce que vous attendez'/><br/>
-                
-                Critère n°3 :
-                <select name='idCrit3' size='1' class='input'>
-                    <?php 
-                    while($resCrit3=$askCrit3->fetch())
-                    {
-                    ?>
-                        <option value='<?php echo $resCrit3['id'] ?>'> <?php echo $resCrit3['real_name'] ?>
-                    <?php
-                    }
-                    ?>
-                </select>
-                <input type='text' name='critDesc3' placeholder='description de ce que vous attendez'/><br/>
-                
-                Critère n°4 :
-                <select name='idCrit4' size='1' class='input'>
-                    <?php 
-                    while($resCrit4=$askCrit4->fetch())
-                    {
-                    ?>
-                        <option value='<?php echo $resCrit4['id'] ?>'> <?php echo $resCrit4['real_name'] ?>
-                    <?php
-                    }
-                    ?>
-                </select> 
-                <input type='text' name='critDesc4' placeholder='description de ce que vous attendez'/><br/>
-                
-                Critère n°5 :
-                <select name='idCrit5' size='1' class='input'>
-                    <?php 
-                    while($resCrit5=$askCrit5->fetch())
-                    {
-                    ?>
-                        <option value='<?php echo $resCrit5['id'] ?>'> <?php echo $resCrit5['real_name'] ?>
-                    <?php
-                    }
-                    ?>
-                </select>
+                         <?php
+                             $askSearchBoxCriteria=$DB->prepare('SELECT * FROM criteria');
+                             $askSearchBoxCriteria->execute();
+                            while($resSearchBoxCriteria=$askSearchBoxCriteria->fetch())
+                            {
+                                echo '<input type="checkbox" name="'.$resSearchBoxCriteria['name'].'"><label >'.$resSearchBoxCriteria['real_name'].'</label><br/>'.
+                                
+                                '<input type="text" name="critDesc'.$resSearchBoxCriteria['name'].'" placeholder="description de ce que vous attendez"/><br/><br/>';
+                                
+                            }
+                            ?>
                 <input type='text' name='critDesc5' placeholder='description de ce que vous attendez'/><br/><br/>
                 <input type="hidden" name="id_house" value="<?php echo$_GET['id']?>"/>
             <input type="submit" value="Créer l'annonce"/>

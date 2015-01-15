@@ -1,21 +1,25 @@
 
-<div class="allMyHouses">
+<div class="newHouseButton" style="z-index:10000;">
+    <input class="sub" type="button" value="Créer une nouvelle maison" onclick="self.location.href='../controler/content.php?page=formHouse'"/>
+</div>
+
+
+<div class="allMyHouses" style="margin-top:100px;z-index:1000;">
 <?php
     while($resHouse=$askHouse->fetch())
     {
 ?>
-        <div class="blockMyHouses">
-            <div class="picMyHouses">
-                <a href="../controler/content.php?page=houseCard&id=<?php echo $resHouse['id'] ?>"><img src="<?php echo $resHouse['pictures'] ?>" alt="Photo maison" /></a>
-            </div>
-            <div class="titleMyHouses">
-                <?php echo$resHouse['title']; ?>
-            </div>
-            <div class="descriptionMyHouses">
-                <?php echo $resHouse['description']; ?>
-            </div>
-            <div class="rateMyHouses">
-                <?php
+        
+    <div class="housebox">
+        
+        
+				<div class="houseleft"> <!-- image of the house and rating-->
+					
+					<p> <a  href="../controler/content.php?page=houseCard&id=<?php echo $resHouse['id'] ?>">
+                                             <img class="houseimg" src="<?php echo $resHouse['pictures'] ?>" alt="Photo maison" /></a>
+                                        </p>
+                                        <p>
+                                            <?php
                     switch ($resHouse['rating']) 
                     {
                         case 0:
@@ -63,16 +67,28 @@
                             echo"10/10";
                             break;
 ?>
-            </div>
-<?php
+ <?php
                     }
-?>
+?>                                       </p>
+				</div>
+				
+				<div class="desc_tilte">
+
+                                        <p class="title"><?php echo$resHouse['title']; ?></p>
+                                        </br>
+					<p><?php echo $resHouse['description']; ?></p>
+                                        
+                                        </br>
+					
+                                </div>
+        
+ 
+               
+        
+
         </div>
 <?php
     }
 ?>
 </div>
-
-<div class="newHouseButton">
     <input class="sub" type="button" value="Créer une nouvelle maison" onclick="self.location.href='../controler/content.php?page=formHouse'"/>
-</div>

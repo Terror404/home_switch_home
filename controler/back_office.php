@@ -50,8 +50,8 @@
                     //Confirm Exchange
                     if($_GET['page']=='home')
                     {
-                        require('../modele/add_exchange_form.php');
-                        include('../view/confirm_exchange.php');
+                        
+                        include('../view/back_office/home.php');
                     }
                      elseif($_GET['page']=='searchCriteria')
                     {

@@ -1,10 +1,10 @@
 <div class="Profile">
-<h2>Fiche profil</h2>
+<h2> <?php echo $_SESSION['fichProf']; ?> </h2>
 <div class="ProfilePic2">
     <?php
     while ($resProfPic = $askProfPic->fetch()) {
         ?>
-        <img src="<?php echo$resProfPic['picture']; ?>" alt="photo de profil"/>
+        <img src="<?php echo$resProfPic['picture']; ?>" alt="photo de profil" width=100 height=100 />
         <?php
     }
     ?>

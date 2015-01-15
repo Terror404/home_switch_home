@@ -54,7 +54,7 @@
                                                 while($resAdesc=$askAdesc->fetch())
                                                     {
                                     ?>
-                                                        <p> Description du bien : <?php echo $resAdesc['description'] ?></p>
+                                                        <p>  <?php echo $_SESSION['$descriptBien']; ?>  <?php echo $resAdesc['description'] ?></p>
                                     <?php
                                                     }
                                     ?>          
@@ -64,41 +64,41 @@
                             <div class='txt'>
                                 
                                 <div class='otherI'>
-                                <h3>Localisation :</h3>
-                                Region : <br/>
-                                Ville : <br/>
-                                Code postal: <br/>
+                                <h3> <?php echo $_SESSION['$local']; ?> </h3>
+                                 <?php echo $_SESSION['$region']; ?>  <br/>
+                                 <?php echo $_SESSION['$vill']; ?>  <br/>
+                                 <?php echo $_SESSION['$codPost']; ?>  <br/>
 
                                 <h3>Informations sur le logement</h3>
-                                Type : <br/>
-                                Capacité : <br/>
-                                Nombre de chambre : <br/>
-                                Aménagements : <br/>
+                                 <?php echo $_SESSION['$typ']; ?>  <br/>
+                                 <?php echo $_SESSION['$capacit']; ?>  <br/>
+                                 <?php echo $_SESSION['$nombrChambr']; ?>  <br/>
+                                 <?php echo $_SESSION['$amenag']; ?>  <br/>
 
-                                <h3>Demandes spécifiques à l'annonce</h3>
+                                <h3> <?php echo $_SESSION['$demandSpecifAnnonc']; ?> </h3>
                                 <label for="criteria1">Critère n.1 :</label> 
                                 <select name="criteria1" id="criteria1">
-                                    <option value="nonSmoker"> non fumeur
-                                    <option value="noPet"> pas d'animaux
-                                    <option value='feedPet'> nourrir des animaux
+                                    <option value="nonSmoker">  <?php echo $_SESSION['$nonFum']; ?> 
+                                    <option value="noPet"> <?php echo $_SESSION['$pasAnimau']; ?>
+                                    <option value='feedPet'> <?php echo $_SESSION['$nourirAnimau']; ?>
                                 </select>
                                 <textarea name="txtCrit1"> Mettre ce que contient la bdd</textarea>
                                 <br/>
                                 
                                 <label for="criteria1">Critère n.2 :</label> 
                                 <select name="criteria2" id="criteria2">
-                                    <option value="nonSmoker"> non fumeur
-                                    <option value="noPet"> pas d'animaux
-                                    <option value='feedPet'> nourrir des animaux
+                                    <option value="nonSmoker"> <?php echo $_SESSION['$nonFum']; ?>
+                                    <option value="noPet"> <?php echo $_SESSION['$pasAnimau']; ?>
+                                    <option value='feedPet'> <?php echo $_SESSION['$nourirAnimau']; ?>
                                 </select>
                                 <textarea name="txtCrit2"> Mettre ce que contient la bdd</textarea>
                                 <br/>
                                 
                                 <label for="criteria1">Critère n.3 :</label> 
                                 <select name="criteria3" id="criteria3">
-                                    <option value="nonSmoker"> non fumeur
-                                    <option value="noPet"> pas d'animaux
-                                    <option value='feedPet'> nourrir des animaux
+                                    <option value="nonSmoker"> <?php echo $_SESSION['$nonFum']; ?>
+                                    <option value="noPet"> <?php echo $_SESSION['$pasAnimau']; ?>
+                                    <option value='feedPet'> <?php echo $_SESSION['$nourirAnimau']; ?>
                                 </select>
                                 <textarea name="txtCrit2"> Mettre ce que contient la bdd</textarea>
 
