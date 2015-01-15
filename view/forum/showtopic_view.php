@@ -109,7 +109,7 @@
         <br/></br>
         
         <!-- Message display -->
-        <table class="messageTable">
+        <table class="forumTable">
         <?php
         
         //Displaying messages; up to MESSAGES_PER_PAGE or until there are no more messages
