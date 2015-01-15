@@ -26,25 +26,16 @@
     margin-left:auto;
     margin-right:auto;
 }
-center
-{
-    height:25px;
-    top: 20%;
-    margin-left: auto;
-    margin-right: auto;
-}
+
+
 .texte {
 	text-align: center;
-	font-family: helvetica;
-	z-index: 10;
-	position: absolute;
-        top:200%;
-        left:37%;
-	color:black;
-	        
+	font-family: "GeosansLight";
+        color:black;
+        margin-top :100%;    
 }
+
 #searchbar{
-	border-radius: 0 6px 6px 0; 
 	text-align: center;
 	position:absolute; 
 	top:250px;
@@ -52,15 +43,21 @@ center
 	height:50px;
         margin-left:auto;
         margin-right:auto;
-        left:35%;
+      
+        
+    position: relative;
+z-index: 10;
+padding:0.5%;
+
+    
 }
 .formulaire{
 	display:inline-block;
 }
 .formHome, .placeholderHome{
 	
-	font-style: italic;
-	font-family: helvetica;
+	
+	font-family: "GeosansLight";
 	width:600px; 
 	height:50px;
 }
@@ -81,3 +78,33 @@ center
     margin-left:auto;
 }
 
+.sub
+{
+ 
+     width:20%;
+background-color: #00BCE0;
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 0px;
+  font-family: "GeosansLight";
+  color: white;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}   
+.sub:hover {
+  background: #83EBC6;
+  text-decoration: none;      
+}
+
+.searchbox{
+      background-color: white;
+  position:absolute; 
+  z-index:-1; 
+  top:0; 
+  left:0; 
+  right:-150px; 
+  bottom:-200px;
+  opacity:0.9; 
+ 
+}
