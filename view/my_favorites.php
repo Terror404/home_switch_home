@@ -4,7 +4,7 @@
 <h1> <?php echo $_SESSION['listFav']; ?> </h1>
 <?php
 /*
-Rappel structure de la matrice $arrayInfFavHouse :
+Rappel structure de la matrice $arrayInfFavs :
 
                             Colonne0 => id
                             Colonne1 => id_house
@@ -15,22 +15,27 @@ Rappel structure de la matrice $arrayInfFavHouse :
 */
 
 
-for($j=0;$j<$nbFavs;$j++)
+echo$nbId;
+print_r($arrayId);
+print_r($arrayInfFavs);
+for($k=0;$k<$nbId;$k++)
 {
 ?>
     <div class="blockMyHouses">
+        <fieldset>
+            <legend>Favoris n°<?php echo $k+1; ?></legend>
             <div class="picMyHouses">
-                <a href="../controler/content.php?page=houseCard&id=<?php echo $arrayInfFavHouse[$j][1] ?>"><img src="<?php echo $arrayInfFavHouse[$j][4] ?>" alt="Photo maison" /></a>
+                <a href="../controler/content.php?page=houseCard&id=<?php echo $arrayInfFavs[$k][1] ?>"><img src="<?php echo $arrayInfFavs[$k][4] ?>" alt="Photo maison" /></a>
             </div>
             <div class="titleMyHouses">
-                <?php echo $arrayInfFavHouse[$j][3]; ?>
+                <?php echo $arrayInfFavs[$k][3]; ?>
             </div>
             <div class="descriptionMyHouses">
-                <?php echo $arrayInfFavHouse[$j][2]; ?>
+                <?php echo $arrayInfFavs[$k][2]; ?>
             </div>
             <div class="rateMyHouses">
                 <?php
-                    switch ($arrayInfFavHouse[$j][5]) 
+                    switch ($arrayInfFavs[$k][5]) 
                     {
                         case 0:
                             ?><img src="../view/Rate_Star/rate_0_10.jpg" alt="non noté"/><br/><?php
@@ -81,6 +86,8 @@ for($j=0;$j<$nbFavs;$j++)
 <?php
                     }
 ?>
+        </fieldset>
+        
         </div>
 <?php
     }
