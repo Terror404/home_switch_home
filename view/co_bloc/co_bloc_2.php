@@ -6,11 +6,11 @@
             <br/>
             <input type="password" name="password" id="passBlocCo" maxlength="30" size="17" placeholder="Mot de passe" onblur="verifPass(this)"/> <!-- Champ mdp de 30 caractères maxi-->
             <br/>
-                    <input type="submit" value="Se connecter" class="Cosub"/>
+                <input type="submit" value="Se connecter" class="Cosub"/>
             </form>
     </div>
     
-    <a href="MDPoublie.html" class="mdpo"> Mot de passe oublié </a>
+    <a href="../controler/lostpasswordform.php" class="mdpo">Mot de passe oublié </a>
 </aside>
 
 

@@ -22,11 +22,7 @@
             <?php 
 
                 include("../view/nav.php");
-                
-                
-
                 if(!isset($_GET['page']))
-                
                     {
                         include("../view/home.php");
                         
@@ -259,34 +255,31 @@
                         include("../view/mailbox_read_message.php"); //view
                     }
                     
-                    elseif ($_GET['page'] == 'forumIndex')
-                    {
-                            include("./forum/index.php");
+                    elseif ($_GET['page'] == 'forumIndex') {
+                        include("./forum/index.php");
                     }
                     
-                    elseif ($_GET['page'] == 'editPost')
-                    {
-                            include("./forum/editmessage.php");
+                    elseif ($_GET['page'] == 'editPost') {
+                        include("./forum/editmessage.php");
                     }
                     
-                    elseif ($_GET['page'] == 'addPost')
-                    {
-                            include("./forum/newmessage.php");
+                    elseif ($_GET['page'] == 'addPost') {
+                        include("./forum/newmessage.php");
                     }
                     
-                    elseif ($_GET['page'] == 'addTopic')
-                    {
-                            include("./forum/newtopic.php");
+                    elseif ($_GET['page'] == 'addTopic') {
+                        include("./forum/newtopic.php");
                     }
                     
-                    elseif ($_GET['page'] == 'showForum')
-                    {
-                            include("./forum/showcategory.php");
+                    elseif ($_GET['page'] == 'showForum') {
+                        include("./forum/showcategory.php");
                     }
                     
-                    elseif ($_GET['page'] == 'showTopic')
-                    {
-                            include("./forum/showtopic.php");
+                    elseif ($_GET['page'] == 'showTopic') {
+                        include("./forum/showtopic.php");
+                    }
+                    elseif ($_GET['page'] == 'editCategory') {
+                        include("./forum/editcategory.php");
                     }
                     
                     // read a message from received messages
@@ -341,11 +334,21 @@
                         //require("");
                         include("../view/commentary_form.php");
                     }
-                    
+                    elseif($_GET['page']=='commentary_treatment')
+                    {
+                        //require("");
+                        require('../modele/add_commentary.php');
+                        include("../view/add_commentary.php");
+                    }
+                    elseif($_GET['page']=='treatExchange')
+                    {
+                        //require("");
+                        require('../modele/add_commentary.php');
+                        include("../view/add_commentary.php");
+                    }
                     
                     
                 }
-                
                    
                 ?>
                 

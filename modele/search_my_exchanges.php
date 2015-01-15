@@ -19,23 +19,26 @@ $arrayInf=array();
 $i=0;
 while($resExchConf=$askExchConf->fetch())
     {
+        $finished1=$resExchConf['finished_1'];
+        $finished2=$resExchConf['finished_2'];
+        $idExch=$resExchConf['id'];
         $idU1=$resExchConf['id_user_1'];
         $idU2=$resExchConf['id_user_2'];
         $idH1=$resExchConf['id_house_1'];
         $idH2=$resExchConf['id_house_2'];
-        $arrayInf[$i]=array($idU1,$idU2,$idH1,$idH2); 
+        $arrayInf[$i]=array($idU1,$idU2,$idH1,$idH2,$idExch,"",$finished1,$finished2); 
         $i++;
     }
     
 $nb=count($arrayInf);
 $arrayFinalInfU1=array();
 $arrayFinalInfU2=array();
+
 for($i=0;$i<$nb;$i++)
 {
     if($_SESSION['userId']==$arrayInf[$i][0])
-    {
-        $type=0;    
-        $idExch=$resExchConf['id'];
+    {    
+        $arrayInf[$i][5]=0;
         $idUser1=$_SESSION['userId'];
         $idHouse1=$arrayInf[$i][2];
         $idUser2=$arrayInf[$i][1];
@@ -64,13 +67,14 @@ for($i=0;$i<$nb;$i++)
     }
     elseif($_SESSION['userId']==$arrayInf[$i][1])
     {
-        $type=1;
+        $arrayInf[$i][5]=1;
         $idExch=$resExchConf['id'];
         $idUser1=$_SESSION['userId'];
         $idHouse1=$arrayInf[$i][3];
         $idUser2=$arrayInf[$i][0];
         $idHouse2=$arrayInf[$i][2];
-    
+
+        
         $askExchInfU1=$DB->prepare('SELECT U.login, H.title FROM house H, user U WHERE U.id=:iduser1 AND H.id=:idhouse1');
             $askExchInfU1->execute(array('iduser1'=>$idUser1,'idhouse1'=>$idHouse1));
 
@@ -106,7 +110,7 @@ while($resExchW1=$askExchW1->fetch())
         $idU2W1=$resExchW1['id_user_2'];
         $idH1W1=$resExchW1['id_house_1'];
         $idH2W1=$resExchW1['id_house_2'];
-        $arrayInfW1[$i]=array($idU1,$idU2,$idH1,$idH2); 
+        $arrayInfW1[$i]=array($idU1W1,$idU2W1,$idH1W1,$idH2W1); 
         $i++;
     }
     
@@ -143,19 +147,19 @@ for($i=0;$i<$nb;$i++)
 }
 
 /*******************************************************************************
- *********************Case for the exchange asked to you*************************
- ******************************************************************************/
+**********************Case for the exchange asked to you************************
+*******************************************************************************/
 
 $arrayInfW2=array();
 $i=0;
 while($resExchW2=$askExchW2->fetch())
     {
-        $idExch=$resExchConfW2['id'];
+        $idExchW2=$resExchConfW2['id'];
         $idU1W2=$resExchW2['id_user_1'];
         $idU2W2=$resExchW2['id_user_2'];
         $idH1W2=$resExchW2['id_house_1'];
         $idH2W2=$resExchW2['id_house_2'];
-        $arrayInfW2[$i]=array($idU1,$idU2,$idH1,$idH2); 
+        $arrayInfW2[$i]=array($idU1W2,$idU2W2,$idH1W2,$idH2W2); 
         $i++;
     }
     

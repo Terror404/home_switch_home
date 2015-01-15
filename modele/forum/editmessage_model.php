@@ -40,7 +40,7 @@ if (POST_IS_SET) {
                 $deleteCheckQuery = $DB->query("
                     SELECT  post.id
                     FROM    post
-                    WHERE   post.id_topic =" . CURRENT_TOPIC . "
+                    WHERE   post.id_topic =". CURRENT_TOPIC ."
                     LIMIT   1
                 ");
                 $firstPost = $deleteCheckQuery->fetch();

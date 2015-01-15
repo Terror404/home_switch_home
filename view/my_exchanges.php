@@ -8,6 +8,8 @@ if(isset($idHouse1) AND !empty($idHouse1))
     $nb2=count($arrayFinalInfU1);
     for($i=0;$i<$nb2;$i++)
     {
+        if(($arrayInf[$i][5]==0 AND $arrayInf[$i][6]==0) OR ($arrayInf[$i][5]==1 AND $arrayInf[$i][7]==0))
+        {
     ?>
         <div class='blocExchange'>
             <fieldset>
@@ -19,8 +21,8 @@ if(isset($idHouse1) AND !empty($idHouse1))
             <br/><br/><div class="">
             
             <form method="post" action="../controler/content.php?page=comment">
-                <input type='hidden' name='type' value='<?phpecho$type?>'/>
-                <input type='hidden' name='idExch' value='<?php echo$idExch?>'/>
+                <input type='hidden' name='type' value='<?php echo $arrayInf[$i][5]?>'/>
+                <input type='hidden' name='idExch' value='<?php echo$arrayInf[$i][4]?>'/>
                 <input type="hidden" name="idUser1" value="<?php echo $idUser1; ?>"/>
                 <input type="hidden" name="idUser2" value="<?php echo $idUser2; ?>"/>
                 <input type="hidden" name="loginUser1" value="<?php echo $arrayFinalInfU1[$i][0];?>"/>
@@ -38,6 +40,11 @@ if(isset($idHouse1) AND !empty($idHouse1))
             <br/>
         </div> 
     <?php
+        }
+        else
+        {
+            echo"Votre commentaire est en cours de traitement En attente de la réponse de l'autre membre. <br/> <br/>";
+        }
     }
 }
 else
@@ -62,7 +69,7 @@ if(isset($idHouse1W2) AND !empty($idHouse1W2))
             Vous : <?php echo $arrayFinalInfU1W2[$i][0]?><br/>
             Votre maison qu'il souhaite vous échanger : <a href='../controler/content.php?page=houseCard&id="<?php echo $idHouse1W2; ?>"' target='_blank'><?php echo $arrayFinalInfU1W2[$i][1];?></a>
             <br/><br/><div class="">
-            <form method="post" action="../controler/content.php?page=comment">
+            <form method="post" action="../controler/content.php?page=treatExchange">
                 <input type='hidden' name='IdExch' value='<?php echo $idExchW2;?>'/>
                 <input type='hidden' name='idUser1' value='<?php echo $idUser2W2;?>'/>
                 <input type='hidden' name='idUser2' value='<?php echo $idUser1W2;?>'/>
@@ -72,7 +79,8 @@ if(isset($idHouse1W2) AND !empty($idHouse1W2))
                 <input type="hidden" name="idHouse1" value="<?php echo $idHouse1W2; ?>"/>
                 <input type="hidden" name="titleHouse2" value="<?php echo $arrayFinalInfU2W2[$i][1]; ?>"/>
                 <input type="hidden" name="titleHouse1" value="<?php echo $arrayFinalInfU1W2[$i][1];?>"/>
-                <input type="submit" value="Annuler la demande"/>
+                <input type="submit" name="submit" value="Accepter la demande"/>
+                <input type="submit" name="submit" value="Annuler la demande"/>                
             </form>
             </div>
             <br/>
