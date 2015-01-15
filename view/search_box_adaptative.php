@@ -1,6 +1,15 @@
 <article class="FormSearch">
 	<p>	
-        <h1 class="Title">  <?php $_SESSION['choisMais']; ?> </h1>
+        <h1 class="Title">  <?php if (isset($_SESSION['userLogin']))
+                            {
+                                echo $_SESSION['choisMaison']; 
+                            }
+                            else 
+                            {
+                                echo 'Choisissez votre maison';
+                            }
+                            ?> 
+        </h1>
         <div class="search">
         <form class="Date" action="content.php?page=search_result" method="post"> <!--Formuaire de choix de la date-->
 			<?php $research= "";?>
@@ -12,7 +21,7 @@
                                                     
 				date de fin :
 				  <!--Menu déroulant jour fin-->
-					<input name="dateEnd" type="text"class="datepicker"> 
+					<input name="dateEnd" type="text" class="datepicker"> 
 				</p>
                                 </br>
                                 <p>

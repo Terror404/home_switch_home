@@ -25,42 +25,43 @@
 </script>
 
             <div class="position">
-                <h1 class="Title"> <?php echo $_SESSION['$creCompt']; ?> </h1> </br>
+                <h1 class="Title"> <?php echo $_SESSION['creCompt']; ?> </h1> </br>
 		<form method="post" action="content.php?page=confirmAddUser" onsubmit="return validation(this)" class="form">
 			<p>
-                            <label for="pseudo" > <?php echo $_SESSION['$pseudo']; ?> </label>
+                            <label for="pseudo" >Pseudo*</label>
 				<input type="text" name="pseudo" id="pseudo" placeholder="Ex:Doge92" maxlenght="12" />
 			</p>
                         
 			<p>
-				<label for="pass"> <?php echo $_SESSION['$pass']; ?> </label>
+				<label for="pass">Mot de Passe*</label>
 				<input type="password" name="pass" id="pass" />
 			</p>
 		
 		
 		
 			<p>
-				<label for="repass"> <?php echo $_SESSION['$repetpass']; ?> </label>
+				<label for="repass">Répéter le mot de passe*</label>
 				<input type="password" name="repass" id="repass" />
 			</p>
 		
 		
 		
 			<p>
-				<label> <?php echo $_SESSION['$datNaiss']; ?> </label>  <input type="date" name="date" id="DatedeNaissance" placeholder="JJ/MM/AAAA" />
+				<label>Date de naissance</label>  
+                                <input type="date" name="date" id="DatedeNaissance" placeholder="JJ/MM/AAAA" />
 			</p>
 		
 
 		
 			<p>
-				<label> <?php echo $_SESSION['$adrMail']; ?> </label>  <input type="email" name="mail" id="Adressemail" placeholder="Ex:wowsuchadress@gmail.com" />
+				<label>Adresse E-mail*</label>  
+                                <input type="email" name="mail" id="Adressemail" placeholder="Ex:wowsuchadress@gmail.com" />
 			</p>
 		
 
 		
 			<p>
-				<label for="telephone"> <?php echo $_SESSION['$tel']; ?> </label>
-				<input type="tel" name="tel" id="tel" placeholder="Ex:0000000000" maxlength="10" />
+				<label for="telephone">Téléphone<input type="tel" name="tel" id="tel" placeholder="Ex:0000000000" maxlength="10" />
 			</p>
                         <p><input type="hidden" mame="idmsg" value="2"></p>
 		
@@ -68,7 +69,17 @@
 			
 		
                         </br>
-		<p> <?php echo $_SESSION['$chamOblig']; ?> </p>
+		<p> 
+                    <?php if (isset($_SESSION['userLogin']))
+                            {
+                                echo $_SESSION['chamOblig']; 
+                            }
+                            else 
+                            {
+                                echo '*Champs obligatoires';
+                            }
+                            ?>  
+                </p>
 
                <div class="twosubs">
                         <input type="hidden" name="addUser" value="1" />
@@ -84,7 +95,7 @@
     {
 ?>
         <div class="MsgErrorInsc">
-        <br/><br/> <?php echo $_SESSION['$pasAccedPag']; ?> <br/>
+        <br/><br/> <?php echo $_SESSION['pasAccedPag']; ?> <br/>
         <input type="button" value="Retour" onclick="self.location.href='content.php?page=home'" class="homeButton"/>
         </div>
     <?php }

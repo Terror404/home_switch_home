@@ -18,6 +18,10 @@ if (isset($page) AND $page!='')
                     {
                         echo'<link rel="stylesheet" type="text/css" href="../view/css/myhouses_style.css">';
                     }
+                    elseif( $_GET['page']=='news')
+                    {
+                        echo'<link rel="stylesheet" type="text/css" href="../view/css/myhouses_style.css">';
+                    }
                     elseif( $_GET['page']=='searchKeyWords')
                     {
                         echo'<link rel="stylesheet" type="text/css" href="../view/css/myhouses_style.css">';
@@ -140,5 +144,3 @@ if (isset($page) AND $page!='')
 
 
     require_once(dirname(dirname(__FILE__))."/modele/pdoDatabaseRef.php");
-    ?>
-        

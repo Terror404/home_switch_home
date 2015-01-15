@@ -1,4 +1,4 @@
-<aside class="champCo"> <!--Champs de connexion-->
+<aside class="champCo" style="height:3.3%;"> <!--Champs de connexion-->
     <div class="SeCo"> Se connecter </div>
     <div class="Cotxtzone">
         <form method="post" action='../controler/content.php?<?php echo $_SERVER['QUERY_STRING'] ?>' class="txtid" onsubmit="return verifForm(f)">

@@ -7,7 +7,7 @@ $askInfUser=$DB->prepare('SELECT password,mail,phone_number FROM user WHERE id=:
 
 while($resInfUser=$askInfUser->fetch())
 {
-    $oldPassword=$resInfUser['password'];
+    $oldPassword=hash('SHA512',$resInfUser['password']);
     $oldMail=$resInfUser['mail'];
 }
 
@@ -36,10 +36,10 @@ if(isset($_POST['whichForm']) AND $_POST['whichForm']==2)
     {
         if($_POST['modPassword']==$_POST['verifModPassword'])
         {
-            if($oldPassword==$_POST['oldPassword'])
+            if($oldPassword==hash('SHA512',$_POST['oldPassword']))
                 {
                     $updateLogin=$DB->prepare('UPDATE user SET password=:modpassword WHERE id=:iduser');
-                        $updateLogin->execute(array('modpassword'=>$_POST['modPassword'], 'iduser'=>$_SESSION['userId']));
+                        $updateLogin->execute(array('modpassword'=>hash('SHA512',$_POST['modPassword']), 'iduser'=>$_SESSION['userId']));
                     $end=0;
                 }
             else
