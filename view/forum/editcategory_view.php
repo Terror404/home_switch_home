@@ -1,6 +1,6 @@
 <link rel="stylesheet" type="text/css" href="./../view/css/forumstyle.css">
 
-<div class="forumFrame">
+<div class="ForumFrame">
     
 <strong>
 <?php

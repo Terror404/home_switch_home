@@ -343,8 +343,8 @@
                     elseif($_GET['page']=='treatExchange')
                     {
                         //require("");
-                        require('../modele/add_commentary.php');
-                        include("../view/add_commentary.php");
+                        require('../modele/treat_exchange.php');
+                        include("../view/treat_exchange.php");
                     }
                     
                     

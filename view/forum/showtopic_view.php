@@ -2,7 +2,7 @@
 <script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
 <script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
 
-<div class="forumFrame">
+<div class="ForumFrame">
     <?php
     
         //confirmation message for adding a new post
@@ -60,9 +60,9 @@
         
         //Title display
         echo(
-            "<span class='pageTitle'>"
+            "<div class='ForumPageHeader'>"
             . $topicInfo['title']
-            . "</span><br/>"
+            . "</div><br/>"
         );
         
         //Locking topic, mod only
@@ -71,8 +71,9 @@
                 <form method="post"
                     action="./../controler/content.php?page=showTopic&amp;t=<?php echo CURRENT_TOPIC ?>">
                     <input type="hidden" name="lockingTopic" value="true">
-                    <input type="submit" value="Verrouiller ce sujet">
+                    <input type="submit" class="SubmitButton" value="Verrouiller ce sujet">
                 </form>
+                <br/>
             <?php
         }
         
@@ -81,7 +82,7 @@
             ?>
                 <form method="post" action="./../controler/content.php?page=showTopic&amp;t=<?php echo CURRENT_TOPIC ?>">
                     <input type="hidden" name="unlockingTopic" value="true">
-                    <input type="submit" value="Déverrouiller ce sujet">
+                    <input type="submit" class="SubmitButton" value="Déverrouiller ce sujet">
                 </form>
             <?php
         }
@@ -106,10 +107,10 @@
         }
         
         ?>
-        <br/></br>
+        <br/>
         
         <!-- Message display -->
-        <table class="forumTable">
+        <table class="ForumTable">
         <?php
         
         //Displaying messages; up to MESSAGES_PER_PAGE or until there are no more messages
@@ -118,15 +119,26 @@
             $currentMsg = $firstMessage + $i;
             ?>
             <tr>
-                <td class="posterFullInfo">
+                <td class="PosterFullInfo">
                     <?php echo $messageTable[$currentMsg]['authorName'] ?></br>
-                    Inscrit le <?php echo $messageTable[$currentMsg]['joinTime'] ?>
+                    <div class="AvatarWrapper">
+                        <img
+                            class="UserAvatar"
+                            src="<?php echo $messageTable[$currentMsg]['authorAvatar'] ?>"
+                            alt="Avatar de <?php echo $messageTable[$currentMsg]['authorName'] ?>"
+                        >
+                    </div>
+                    Inscrit le
+                    <?php
+                        $joinDate=date_create($messageTable[$currentMsg]['joinTime']);
+                        echo date_format($joinDate,"Y/m/d");
+                    ?>
                 </td>
-                <td class="message">
-                    <div class="messageInfo">
+                <td class="Message">
+                    <div class="MessageInfo">
                         posté le <?php echo $messageTable[$currentMsg]['creationTime'] ?></i> - <!-- espace -->
                         #<?php echo($currentMsg) /*Message number*/ ?>
-                    <?php //Displaying the "Edit" option
+                        <?php //Displaying the "Edit" option
                         if (
                             isLoggedIn()
                             and (
@@ -145,8 +157,9 @@
                                 . "'>Modifier</a>"
                             );
                         }
-                    echo "</div>"
-                    ?>
+                        ?>
+                    </div>
+                    <hr>
                     <?php echo $messageTable[$currentMsg]['content'] ?></p>
                 </td>
             </tr>
@@ -155,7 +168,7 @@
         ?>
         </table>
 
-    <br/><br/>
+    <br/>
     
     <!-- (Quick) Answer part -->
     <?php
@@ -171,7 +184,7 @@
         <form method="post"
             action="./../controler/content.php?page=showTopic&amp;t=<?php echo CURRENT_TOPIC ?>">
             <textarea name="newMessage" rows="8" cols="50"></textarea><br/>
-            <input type="submit" value="Envoyer">
+            <input type="submit" class="SubmitButton" value="Envoyer">
         </form>
         <?php
     }

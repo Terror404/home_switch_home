@@ -20,7 +20,8 @@ function getMessageList($database, $fromTopic) {
                 post.id             AS id,
                 user.login          AS authorName,
                 user.id             AS authorId,
-                user.date_creation  AS joinTime
+                user.date_creation  AS joinTime,
+                user.picture        AS authorAvatar
         FROM	post, user
         WHERE	post.id_topic = :fromTopic
                 AND post.id_user = user.id

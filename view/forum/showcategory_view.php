@@ -1,17 +1,6 @@
-<?php /*
-	topicList is a query table with the info pertaining to the topics, including
-            id
-            title
-            authorName
-            creationTime
-
-	categoryInfo is a table with the info pertaining to the category, including
-            title
-*/ ?>
-
 <link rel="stylesheet" type="text/css" href="./../view/css/forumstyle.css">
 
-<div class="forumFrame">
+<div class="ForumFrame">
     <?php
         if (isset($successfullyAddedTopic)) {
             if ($successfullyAddedTopic) {
@@ -28,8 +17,8 @@
         }
     ?>
 
-    <strong><?php echo $categoryInfo['title'] ?></strong>
-    <br/><br/>
+    <div class="ForumPageHeader"><?php echo $categoryInfo['title'] ?></div>
+    <br/>
     
     <!-- Page navigation -->
     Page 
@@ -46,29 +35,39 @@
         }
     }
     ?>
-    <br/></br>
-
+    <br/>
+    
     <?php
         if ($topicList->rowCount() != 0) {
+            echo "<table class='ForumTable'>";
             for ($i = 0; ($i < TOPICS_PER_PAGE) and (array_key_exists($firstTopic + $i, $topicTable)); $i++)
             {
-                    ?>
-                    <p><strong><a href="./../controler/content.php?page=showTopic&amp;t=<?php echo $topicTable[$firstTopic + $i]['id'] ?>">
-                    <!--Topic gets stored in $_GET['t']-->
-                    <?php echo $topicTable[$firstTopic + $i]['title'] ?>
-                    </a></strong><br/>Créé par <?php echo $topicTable[$firstTopic + $i]['authorName'] ?> 
-                    le <?php echo $topicTable[$firstTopic + $i]['creationTime'] ?>
-                    </p><br/>
-                    <?php
+                ?>
+                <tr>
+                    <td class="TitlePanel">
+                        <strong>
+                            <a href="./../controler/content.php?page=showTopic&amp;t=<?php echo $topicTable[$firstTopic + $i]['id'] ?>">
+                            <!--Topic gets stored in $_GET['t']-->
+                            <?php echo $topicTable[$firstTopic + $i]['title'] ?>
+                        </a></strong>
+                        <br/>
+                        <div class="MessageInfo">
+                            Créé par <?php echo $topicTable[$firstTopic + $i]['authorName'] ?> 
+                            le <?php echo $topicTable[$firstTopic + $i]['creationTime'] ?>
+                        </div>
+                    </td>
+                </tr>
+                <?php
             }
+            echo "</table>";
         }
         else {
             ?>
-            Pas de sujets dans la catégorie demandée.
+            <br/>Pas de sujets dans la catégorie demandée.<br/>
             <?php
         }
     ?>
 
-    <br/><br/>
+    <br/>
     <a href="./../controler/content.php?page=addTopic&amp;c=<?php echo CURRENT_CATEGORY ?>">Créer un nouveau sujet.</a>
 </div>
