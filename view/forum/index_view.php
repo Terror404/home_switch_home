@@ -1,6 +1,6 @@
 <link rel="stylesheet" type="text/css" href="./../view/css/forumstyle.css">
 
-<div class="forumFrame">
+<div class="ForumFrame">
 
 <?php
     //confirmation message for modifying categories
@@ -34,13 +34,13 @@
     }
 ?>
 
-<table class="forumTable">
+<table class="ForumTable">
 <?php
     while ($category = $categoryList->fetch())
     {
         ?>
         <tr>
-            <td class='message'>
+            <td class='TitlePanel'>
                 <a href="./../controler/content.php?page=showForum&amp;c=<?php echo $category['id'] ?>">
                 <!-- Storing category in $_GET['c'] -->
                 <strong><?php echo $category['title'] ?></strong></a><br/>
@@ -90,12 +90,16 @@
 </table>
 
 <?php
+    if (CAN_MODIFY_CATEGORIES) {
+        echo "<br/>";
+    }
+
     if (MODIFYING_CATEGORIES) {
         ?>
         <form method='get' action="./../controler/content.php">
             <input type='hidden' name='page' value='editCategory'>
             <input type='hidden' name='instruction' value='add'>
-            <input type='submit' class="sub" value='Ajouter une nouvelle catégorie'>
+            <input type='submit' class="SubmitButton" value='Ajouter une nouvelle catégorie'>
         </form>
         <?php
     }
@@ -112,9 +116,10 @@
                     $tempButtonLabel = "Activer les outils d'administration des catégories.";
                 }
             ?>
-            <input type='submit' class="sub" value="<?php echo $tempButtonLabel ?>">
+            <input type='submit' class="SubmitButton" value="<?php echo $tempButtonLabel ?>">
         </form>
         <?php
     }
 ?>
+
 </div>
