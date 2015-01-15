@@ -347,7 +347,12 @@
                         require('../modele/add_commentary.php');
                         include("../view/add_commentary.php");
                     }
-                    
+                    elseif($_GET['page']=='treatExchange')
+                    {
+                        //require("");
+                        require('../modele/add_commentary.php');
+                        include("../view/add_commentary.php");
+                    }
                     
                     
                 }

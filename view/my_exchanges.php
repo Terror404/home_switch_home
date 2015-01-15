@@ -62,7 +62,7 @@ if(isset($idHouse1W2) AND !empty($idHouse1W2))
             Vous : <?php echo $arrayFinalInfU1W2[$i][0]?><br/>
             Votre maison qu'il souhaite vous échanger : <a href='../controler/content.php?page=houseCard&id="<?php echo $idHouse1W2; ?>"' target='_blank'><?php echo $arrayFinalInfU1W2[$i][1];?></a>
             <br/><br/><div class="">
-            <form method="post" action="../controler/content.php?page=comment">
+            <form method="post" action="../controler/content.php?page=treatExchange">
                 <input type='hidden' name='IdExch' value='<?php echo $idExchW2;?>'/>
                 <input type='hidden' name='idUser1' value='<?php echo $idUser2W2;?>'/>
                 <input type='hidden' name='idUser2' value='<?php echo $idUser1W2;?>'/>
@@ -72,7 +72,8 @@ if(isset($idHouse1W2) AND !empty($idHouse1W2))
                 <input type="hidden" name="idHouse1" value="<?php echo $idHouse1W2; ?>"/>
                 <input type="hidden" name="titleHouse2" value="<?php echo $arrayFinalInfU2W2[$i][1]; ?>"/>
                 <input type="hidden" name="titleHouse1" value="<?php echo $arrayFinalInfU1W2[$i][1];?>"/>
-                <input type="submit" value="Annuler la demande"/>
+                <input type="submit" name="submit" value="Accepter la demande"/>
+                <input type="submit" name="submit" value="Annuler la demande"/>                
             </form>
             </div>
             <br/>
