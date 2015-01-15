@@ -1,40 +1,54 @@
-<br/>
-<br/>
+<section class="page">
+    </br>
+</br>
+
+    <div class="login">
+            <?php
+            while ($resProfLog = $askProfLog->fetch()) {
+                ?> <p> Bonjour je suis <?php echo $resProfLog['login']; ?></p><?php
+            }
+            ?>
+    </div>
 <div class="Profile">
-<h2>Fiche profil</h2>
-<br/>
-<div class="ProfilePic2">
-    <?php
-    while ($resProfPic = $askProfPic->fetch()) {
-        ?>
-            <img src="<?php echo$resProfPic['picture']; ?>" alt="photo de profil"/>
-        <?php
-    }
-    ?>
-</div>
-    Mofifier la photo de profil :
-    <br/>
-    <form method='post' action='' enctype="multipart/form-data">
-        Aperçu de la photo que vous souhaitez ajouter : <br/>
-        <img id="uploadPreview" class="previewImg"/>
-        <input type='file' name='photo7' id="photo7" onChange='previewImg()'/>
-        <input type='hidden' name='modifyProf' value='1'/>
-        <input type="hidden" name="form" value="3"/>
-        <input type='submit' value='modifier la photo de profil' onclick='javascript:window.close()'/>
-        <input type='reset' value='annuler'/>
-    </form>
-    <script type='text/javascript'>
-        function previewImg()
-        {
-            var ofReader=new FileReader();
-            ofReader.readAsDataURL(document.getElementById("photo7").files[0]);
-            
-            ofReader.onload=function (oFREvent)
-            {
-                document.getElementById("uploadPreview").src=oFREvent.target.result;
-            };
-        };
-    </script>
+    <div class="userleft">
+            <?php
+            while ($resProfPic = $askProfPic->fetch()) {
+                ?> <div class="img">
+                    <img class="userimg" src="<?php echo$resProfPic['picture']; ?>" alt="photo de profil"/>
+                    </div>
+                <?php
+            }
+            ?>
+            </br>
+<div class="test"></div>
+            <h2>Modifier la photo de profil :</h2>
+            </br>
+            <form method='post' action='' enctype="multipart/form-data">
+                Aperçu de la photo que vous souhaitez ajouter : 
+                
+                <img id="uploadPreview" class="previewImg"/>
+                <input type='file' name='photo7' id="photo7" onChange='previewImg()'/>
+                <input type='hidden' name='modifyProf' value='1'/>
+                <input type="hidden" name="form" value="3"/>
+                </br>
+                
+                    <input class="subimage" type='submit' value='modifier la photo de profil' onclick='javascript:window.close()'/>
+                    <input class="sub" type='reset' value='annuler'/>
+                
+            </form>
+            <script type='text/javascript'>
+                function previewImg()
+                {
+                    var ofReader=new FileReader();
+                    ofReader.readAsDataURL(document.getElementById("photo7").files[0]);
+
+                    ofReader.onload=function (oFREvent)
+                    {
+                        document.getElementById("uploadPreview").src=oFREvent.target.result;
+                    };
+                };
+            </script>   
+       
     <?php
     if(isset($_POST['form']) AND $_POST['form']==3)
     {
@@ -50,154 +64,9 @@
         }
     }
     ?>
-    
-
-<div class="login">
-    <?php
-    while ($resProfLog = $askProfLog->fetch()) {
-        ?> <p> Bonjour je suis <?php echo $resProfLog['login']; ?></p><?php
-    }
-    ?>
-</div>
-<div class="mbrsince">
-<?php
-while ($resProfDate = $askProfDate->fetch()) {
-    ?> <p> Membre depuis <?php
-        $originalDateC = $resProfDate['date_creation'];
-        $arrC = explode('-', $originalDateC);
-        switch ($arrC['1']) {
-            case 01:
-                echo "janvier";
-                echo"&nbsp";
-                echo $arrC['0'];
-                break;
-            case 0:
-                echo "février";
-                echo"&nbsp";
-                echo $arrC['0'];
-                break;
-            case 03:
-                echo "mars";
-                echo"&nbsp";
-                echo $arrC['0'];
-                break;
-            case 04:
-                echo "avril";
-                echo"&nbsp";
-                echo $arrC['0'];
-                break;
-            case 05:
-                echo "mai";
-                echo"&nbsp";
-                echo $arrC['0'];
-                break;
-            case 06:
-                echo "juin";
-                echo"&nbsp";
-                echo $arrC['0'];
-                break;
-            case 07:
-                echo "juillet";
-                echo"&nbsp";
-                echo $arrC['0'];
-                break;
-            case 08:
-                echo "août";
-                echo"&nbsp";
-                echo $arrC['0'];
-                break;
-            case 09:
-                echo "septembre";
-                echo"&nbsp";
-                echo $arrC['0'];
-                break;
-            case 10:
-                echo "octobre";
-                echo"&nbsp";
-                echo $arrC['0'];
-                break;
-            case 11:
-                echo "novembre";
-                echo"&nbsp";
-                echo $arrC['0'];
-                break;
-            case 12:
-                echo "décembre";
-                echo"&nbsp";
-                echo $arrC['0'];
-                break;
-        }
-    }
-    ?>
-</div>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<div class="desc">
-    <h2>A propos de moi :</h2>
-        <?php
-        while ($resProfDesc = $askProfDesc->fetch()) 
-        {
-        ?>
-            <form method='post' action=''>
-                    <textarea name='modDescription'><?php echo $resProfDesc['description']?></textarea>
-                    <input type='hidden' name='modifyProf' value='1'/>
-                    <input type="hidden" name="form" value="1"/>
-                    <input type='submit' value='Modifier la description'/>
-                    <input type='reset' value='Annuler'/>
-            </form>
-        <?php
-        }
-        if(isset($_POST['form']) AND $_POST['form']==1)
-        {
-            if($end==0)
-            {
-                echo"La modification a été effectuée avec succès.";
-            }
-            elseif($end==1)
-            {
-                echo"Veuillez remplir le champ correctement";
-            }
-        }
-        ?>
-    
-</div>
-<div class="dest">
-    <h2>Les destinations où je souhaiterais me rendre :</h2>
-        <?php
-        while ($resProfWant = $askProfWant->fetch())
-        {
-            $dest=$resProfWant['wanted_dest'];
-        ?>
-            <form method='post' action=''>
-                <input type='text' name='modDestination' value='<?php echo $dest ?>'/>
-                <input type='hidden' name='modifyProf' value='2'/>
-                <input type="hidden" name="form" value="2"/>
-                <input type='submit' value='Modifier les destinations souhaitées'/>
-                <input type='reset' value='Annuler'/>
-            </form>
-        <?php
-        }
-        if(isset($_POST['form']) AND $_POST['form']==2)
-        {
-            if($end==0)
-            {
-                echo"La modification a été effectuée avec succès.";
-            }
-            elseif($end==1)
-            {
-                echo"Veuillez remplir le champ correctement";
-            }
-        }
-        ?>
-</div>
-<div class="Rate">
-    <h2>Note donnée par les autres utilisateurs</h2>
-    <div class="star"><?php
+            </br>
+                   
+                      <p><?php
         while ($resProfRate = $askProfRate->fetch()) {
             switch ($resProfRate['rating']) {
                 case 0:
@@ -246,5 +115,151 @@ while ($resProfDate = $askProfDate->fetch()) {
                     break;
     }
 }
-        ?>
+        ?> 
+                    </br>
+                    </br>
+                    </br>
     </div>
+
+    <div class="desc_title">
+        <h2>A propos de moi :</h2>
+        </br>
+        <?php
+        while ($resProfDesc = $askProfDesc->fetch()) 
+        {
+        ?>
+            <form method='post' action=''>
+                    <textarea class="desc" name='modDescription'><?php echo $resProfDesc['description']?></textarea>
+                    <input type='hidden' name='modifyProf' value='1'/>
+                    <input type="hidden" name="form" value="1"/>
+                    <div class="twosubs">
+                        <input class="sub" type='submit' value='Modifier la description'/>
+                         <input class="sub" type='reset' value='Annuler'/>
+                    </div>
+            </form>
+        <?php
+        }
+        if(isset($_POST['form']) AND $_POST['form']==1)
+        {
+            if($end==0)
+            {
+                echo"La modification a été effectuée avec succès.";
+            }
+            elseif($end==1)
+            {
+                echo"Veuillez remplir le champ correctement";
+            }
+        }
+        ?>
+        </br>
+        <div class="mbrsince">
+        <?php
+        while ($resProfDate = $askProfDate->fetch()) {
+            ?> <p> Membre depuis <?php
+                $originalDateC = $resProfDate['date_creation'];
+                $arrC = explode('-', $originalDateC);
+                switch ($arrC['1']) {
+                    case 01:
+                        echo "janvier";
+                        echo"&nbsp";
+                        echo $arrC['0'];
+                        break;
+                    case 0:
+                        echo "février";
+                        echo"&nbsp";
+                        echo $arrC['0'];
+                        break;
+                    case 03:
+                        echo "mars";
+                        echo"&nbsp";
+                        echo $arrC['0'];
+                        break;
+                    case 04:
+                        echo "avril";
+                        echo"&nbsp";
+                        echo $arrC['0'];
+                        break;
+                    case 05:
+                        echo "mai";
+                        echo"&nbsp";
+                        echo $arrC['0'];
+                        break;
+                    case 06:
+                        echo "juin";
+                        echo"&nbsp";
+                        echo $arrC['0'];
+                        break;
+                    case 07:
+                        echo "juillet";
+                        echo"&nbsp";
+                        echo $arrC['0'];
+                        break;
+                    case 08:
+                        echo "août";
+                        echo"&nbsp";
+                        echo $arrC['0'];
+                        break;
+                    case 09:
+                        echo "septembre";
+                        echo"&nbsp";
+                        echo $arrC['0'];
+                        break;
+                    case 10:
+                        echo "octobre";
+                        echo"&nbsp";
+                        echo $arrC['0'];
+                        break;
+                    case 11:
+                        echo "novembre";
+                        echo"&nbsp";
+                        echo $arrC['0'];
+                        break;
+                    case 12:
+                        echo "décembre";
+                        echo"&nbsp";
+                        echo $arrC['0'];
+                        break;
+                }
+            }
+            ?>
+        </div>
+        
+        
+ 
+    
+        </br>
+    <h2>Les destinations où je souhaiterais me rendre :</h2>
+        <?php
+        while ($resProfWant = $askProfWant->fetch())
+        {
+            $dest=$resProfWant['wanted_dest'];
+        ?>
+            <form method='post' action=''>
+                <input type='text' name='modDestination' value='<?php echo $dest ?>'/>
+                </br>
+                <input type='hidden' name='modifyProf' value='2'/>
+                <input type="hidden" name="form" value="2"/>
+            <div class="twosubs">
+                
+                <input type='submit' class="sub" value='Modifier les destinations souhaitées'/>
+                <input type='reset'  class="sub" value='Annuler'/>
+            </div>
+            </form>
+        <?php
+        }
+        if(isset($_POST['form']) AND $_POST['form']==2)
+        {
+            if($end==0)
+            {
+                echo"La modification a été effectuée avec succès.";
+            }
+            elseif($end==1)
+            {
+                echo"Veuillez remplir le champ correctement";
+            }
+        }
+        ?>
+</div>
+ </div>
+</div>
+</section>
