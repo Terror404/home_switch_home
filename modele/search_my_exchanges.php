@@ -155,7 +155,7 @@ $arrayInfW2=array();
 $i=0;
 while($resExchW2=$askExchW2->fetch())
     {
-        $idExchW2=$resExchConfW2['id'];
+        $idExchW2=$resExchW2['id'];
         $idU1W2=$resExchW2['id_user_1'];
         $idU2W2=$resExchW2['id_user_2'];
         $idH1W2=$resExchW2['id_house_1'];
