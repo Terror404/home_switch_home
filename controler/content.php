@@ -25,7 +25,7 @@
                 
                 
 
-                if($_GET['page']=='home' AND isset($_GET['page']))
+                if(isset($_GET['page']) AND $_GET['page']=='home')
                 
                     {
                         include("../view/home.php");
@@ -251,34 +251,31 @@
                         include("../view/mailbox_read_message.php"); //view
                     }
                     
-                    elseif ($_GET['page'] == 'forumIndex')
-                    {
-                            include("./forum/index.php");
+                    elseif ($_GET['page'] == 'forumIndex') {
+                        include("./forum/index.php");
                     }
                     
-                    elseif ($_GET['page'] == 'editPost')
-                    {
-                            include("./forum/editmessage.php");
+                    elseif ($_GET['page'] == 'editPost') {
+                        include("./forum/editmessage.php");
                     }
                     
-                    elseif ($_GET['page'] == 'addPost')
-                    {
-                            include("./forum/newmessage.php");
+                    elseif ($_GET['page'] == 'addPost') {
+                        include("./forum/newmessage.php");
                     }
                     
-                    elseif ($_GET['page'] == 'addTopic')
-                    {
-                            include("./forum/newtopic.php");
+                    elseif ($_GET['page'] == 'addTopic') {
+                        include("./forum/newtopic.php");
                     }
                     
-                    elseif ($_GET['page'] == 'showForum')
-                    {
-                            include("./forum/showcategory.php");
+                    elseif ($_GET['page'] == 'showForum') {
+                        include("./forum/showcategory.php");
                     }
                     
-                    elseif ($_GET['page'] == 'showTopic')
-                    {
-                            include("./forum/showtopic.php");
+                    elseif ($_GET['page'] == 'showTopic') {
+                        include("./forum/showtopic.php");
+                    }
+                    elseif ($_GET['page'] == 'editCategory') {
+                        include("./forum/editcategory.php");
                     }
                     
                     // read a message from received messages

@@ -38,21 +38,19 @@ while($resLang=$askLang->fetch())
 
 if ($lang ==0)
 {
-while($resTraduct = $traduct ->fetch())
-{
-$variable=$resTraduct['variable'];
-$_SESSION[$variable] = $resTraduct['french'];
-
-}
+    while($resTraduct = $traduct ->fetch())
+    {
+        $variable=$resTraduct['variable'];
+        $_SESSION[$variable] = $resTraduct['french'];
+    }
 }
 elseif ($lang ==1)
 {
-while($resTraduct = $traduct ->fetch())
-{
-$variable=$resTraduct['variable'];
-$_SESSION[$variable] = $resTraduct['english'];
-
-}
+    while($resTraduct = $traduct ->fetch())
+    {
+        $variable=$resTraduct['variable'];
+        $_SESSION[$variable] = $resTraduct['english'];
+    }
 }
 
 }

@@ -12,6 +12,26 @@
             $reasonForCategoryModificationFailure
         );
     }
+    
+    //confirmation message for deleting a category
+    if (isset($successfullyDeletedCategory)) {
+        displayConfirmation(
+            $successfullyDeletedCategory,
+            "La catégorie a été supprimée.",
+            "la suppression de catégorie",
+            $reasonForCategoryDeletionFailure
+        );
+    }
+    
+    //confirmation message for moving a category
+    if (isset($successfullyMovedCategory)) {
+        displayConfirmation(
+            $successfullyMovedCategory,
+            "La catégorie a été déplacée.",
+            "le déplacement de la catégorie",
+            $reasonForCategoryMovementFailure
+        );
+    }
 ?>
 
 <table class="forumTable">
@@ -30,15 +50,33 @@
                 if (MODIFYING_CATEGORIES) {
                     ?>  <!-- Only available in admin mode -->
                     <td>
-                        <form method='post' action="./../controler/content.php?page=forumIndex">
-                            <input type='hidden' name='categoryDeleteInstruction' value=<?php echo $category['id'] ?>>
-                            <input type='submit' class="sub" value='Supprimer'>
-                        </form>
+                        <!-- Edit button -->
                         <form method='get' action="./../controler/content.php">
                             <input type='hidden' name='page' value='editCategory'>
                             <input type='hidden' name='instruction' value='edit'>
                             <input type='hidden' name='c' value=<?php echo $category['id'] ?>>
-                            <input type='submit' class="sub" value='Modifier'>
+                            <input type='submit' value='Modifier'>
+                        </form>
+                    </td>
+                    <td>
+                        <!-- Move up button -->
+                        <form method='post' action="./../controler/content.php?page=forumIndex">
+                            <input type='hidden' name='categoryMoveUp' value=<?php echo $category['id'] ?>>
+                            <input type='submit' value='Monter'>
+                        </form>
+                    </td>
+                    <td>
+                        <!-- Move down button -->
+                        <form method='post' action="./../controler/content.php?page=forumIndex">
+                            <input type='hidden' name='categoryMoveDown' value=<?php echo $category['id'] ?>>
+                            <input type='submit' value='Descendre'>
+                        </form>
+                    </td>
+                    <td>
+                        <!-- Delete button -->
+                        <form method='post' action="./../controler/content.php?page=forumIndex">
+                            <input type='hidden' name='categoryDeleteInstruction' value=<?php echo $category['id'] ?>>
+                            <input type='submit' value='Supprimer'>
                         </form>
                     </td>
                     <?php

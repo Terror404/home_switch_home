@@ -57,3 +57,8 @@ function getLastMessageFromTopic($whichTopic, $database) {
     ");
     return $tempQuery->fetch();
 }
+
+function deleteTopic($whichTopic, $database) {
+    $database->query("DELETE FROM post WHERE id_topic=".$whichTopic);
+    $database->query("DELETE FROM topic WHERE id=".$whichTopic);
+}

@@ -18,16 +18,14 @@ elseif (INSTRUCTION == 'add') {
     <?php
     if (INSTRUCTION == 'edit') {
         ?>
-        <input type='hidden' name='categoryBeingEdited' value=<?php echo CATEGORY_TO_EDIT ?>>
+        <input type='hidden' name='categoryToEdit' value=<?php echo CATEGORY_TO_EDIT ?>>
         <?php
     }
     ?>
     Nom de la catégorie :<br/>
     <input type='text' name='categoryTitle' value='<?php echo $categoryInfo['title'] ?>'></br>
     Description :<br/>
-    <textarea name="categoryDescription" rows="4" cols="50">
-        <?php echo $categoryInfo['description'] ?>
-    </textarea><br/>
+    <textarea name="categoryDescription" rows="4" cols="50"><?php echo $categoryInfo['description'] ?></textarea><br/>
     <input type="submit" value="Envoyer">
 </form>
 
