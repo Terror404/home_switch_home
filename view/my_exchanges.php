@@ -19,7 +19,7 @@ if(isset($idHouse1) AND !empty($idHouse1))
             <br/><br/><div class="">
             
             <form method="post" action="../controler/content.php?page=comment">
-                <input type='hidden' name='type' value='<?phpecho$type?>'/>
+                <input type='hidden' name='type' value='<?php echo $type?>'/>
                 <input type='hidden' name='idExch' value='<?php echo$idExch?>'/>
                 <input type="hidden" name="idUser1" value="<?php echo $idUser1; ?>"/>
                 <input type="hidden" name="idUser2" value="<?php echo $idUser2; ?>"/>
