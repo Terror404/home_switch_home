@@ -1,5 +1,6 @@
 <?php
 
+ini_set('SMTP','smtp.gmail.com');
 $mail=$_POST['mail'];
 $login=$_POST['pseudo'];
         
