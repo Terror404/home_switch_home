@@ -25,7 +25,7 @@
                 
                 
 
-                if($_GET['page']=='home' AND isset($_GET['page']))
+                if(!isset($_GET['page']))
                 
                     {
                         include("../view/home.php");
@@ -49,6 +49,13 @@
                         require("../modele/search_box_adaptative.php");
                         include("../view/search_box_adaptative.php");//vue
                         include("../view/interactive_map.php");
+                    }
+                    
+                    //News
+                    elseif( $_GET['page']== 'news')
+                    {
+                        require("../modele/search_news.php"); //modele
+                        include("../view/news.php");//vue
                     }
                     
                     //Search Result page

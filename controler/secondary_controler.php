@@ -3,8 +3,10 @@
 
 echo'<link rel="stylesheet" type="text/css" href="../view/css/hsh_style.css">';
 echo'<link rel="stylesheet" type="text/css" href="../view/css/bloc_co.css" >';
-
+if(isset($_GET['page']))
+{
 $page=$_GET['page'];
+}
 
 if (isset($page) AND $page!='')
 {
@@ -13,6 +15,10 @@ if (isset($page) AND $page!='')
                         echo'<link rel="stylesheet" type="text/css" href="../view/css/search_box.css">';
                     }
                     elseif( $_GET['page']=='search_result')
+                    {
+                        echo'<link rel="stylesheet" type="text/css" href="../view/css/myhouses_style.css">';
+                    }
+                    elseif( $_GET['page']=='news')
                     {
                         echo'<link rel="stylesheet" type="text/css" href="../view/css/myhouses_style.css">';
                     }
