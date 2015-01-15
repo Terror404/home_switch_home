@@ -37,6 +37,8 @@ if(isset($_POST['add']) AND $_POST['add']==1)
 
                     $upFinished=$DB->prepare('UPDATE exchange SET finished_1=1 WHERE id=:idexchange');
                         $upFinished->execute(array('idexchange'=>$idExchange));
+                    
+                    
 
                     $end=0;
                 }

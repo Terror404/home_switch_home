@@ -19,6 +19,8 @@ $arrayInf=array();
 $i=0;
 while($resExchConf=$askExchConf->fetch())
     {
+        $finished1=$resExchConf['finished_1'];
+        $finished2=$resExchConf['finished_2'];
         $idExch=$resExchConf['id'];
         $idU1=$resExchConf['id_user_1'];
         $idU2=$resExchConf['id_user_2'];
