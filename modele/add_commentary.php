@@ -1,5 +1,7 @@
 <?php
+echo $_POST['add'].'comem';
 if(isset($_POST['add']) AND $_POST['add']==1)
+    
 {
     if(isset($_POST['type']) AND $_POST['type']==0)
     {
@@ -11,7 +13,7 @@ if(isset($_POST['add']) AND $_POST['add']==1)
         $titleCHouse=$_POST['titleH'];
         $titleCUser=$_POST['titleU'];
         $comUser=$_POST['commentaryU'];
-        $comHouse=$_POST['commantaryH'];
+        $comHouse=$_POST['commentaryH'];
         $rateUser=$_POST['rateU'];
         $rateHouse=$_POST['rateH'];
         $finished=1;

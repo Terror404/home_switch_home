@@ -341,6 +341,12 @@
                         //require("");
                         include("../view/commentary_form.php");
                     }
+                    elseif($_GET['page']=='commentary_treatment')
+                    {
+                        //require("");
+                        require('../modele/add_commentary.php');
+                        include("../view/add_commentary.php");
+                    }
                     
                     
                     
