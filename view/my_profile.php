@@ -13,10 +13,17 @@
 </h2>
    <div class="modif">
     <?php $userId=$_SESSION['userId'];?>
+<?php
+if(isset($modify) AND $modify==1)
+{
+?>
 <form method="post" action="../controler/content.php?page=myProfile&id=<?php echo $userId ?>">
 <input type='hidden' name='modifyProf' value='1'/>
 <input type='submit' class="subtomodif" value ='Modifier votre profil'/>
 </form>
+<?php
+}
+?>
    </div>
     </div>
     <div class="login">
@@ -189,50 +196,44 @@
 
     <div class="myhouses">
        <div class="test1"></div>
-        <h2> Mes Maisons </h2>  
-        <p><img class="image" id="house1" src="..//view/pictures/Penguin.jpg" alt= "image1"/></p>
-        <p><img class="image" id="house2" src="..//view/pictures/Penguin.jpg" alt= "image1"/></p>
-        <p><img class="image" id="house3" src="..//view/pictures/Penguin.jpg" alt= "image1"/></p>
-        <p><img class="image" id="house4" src="..//view/pictures/Penguin.jpg" alt= "image1"/></p>
-        <p><img class="image" id="house5" src="..//view/pictures/Penguin.jpg" alt= "image1"/></p>
-  </div>
+        <h2> Mes Maisons </h2>
+        <?php while($resPic=$askProfHouses->fetch())
+        {
+         
+        echo' <p><img class="image" id="house1" src="'.$resPic['pictures'].'" alt= "image1" onclick="self.location.href=\'../controler/content.php?page=houseCard&id='.$resPic['id'].'\'"></p>';
+        
+        }
+    ?>
+    </div>    
+        
 
 <div class="com">
     <div class="test2"></div>
 <h2> Les commentaires </h2>
-        <div class="commentbox">
+        <?php if($askComNb!=0)
+        {
+            while($resCom=$askCom->fetch())
+            {
+            echo '<div class="commentbox">
             <div class="commentauthor">
 
-                    <p> <img class="userimg" src="..//view/pictures/Penguin.jpg" alt= "map"/> </p>
-                    <p>satsuki</p>
+                    <p> <img class="userimg" src="'.$resCom['picture'].'" alt= "map"/> </p>
+                    <p>'.$resCom['login'].'</p>
             </div>
 
             <div class="comment">
-                    <p>magique</p>
-                    <p>"Set in a period that is both modern and nostalgic, the film creates a fantastic, yet strangely 
-                            believable universe of supernatural creatures coexisting with modernity. A great part of this sense comes from Oga's evocative 
-                            backgrounds, which give each tree, 
-                            hedge and twist in the road an indefinable feeling of warmth that seems ready to spring into sentient life."</p>
-                    <p>posté le :28/04/2010</p>
+                    <p>'.$resCom['title'].'</p>
+                    <p>'.$resCom['text'].'</p>
+                    <p>posté le :'.$resCom['date'].'</p>
             </div>    
-        </div>
-        
-        <div class="commentbox">
-            <div class="commentauthor">
-
-                    <p> <img class="userimg" src="..//view/pictures/Penguin.jpg" alt= "map"/> </p>
-                    <p>satsuki</p>
-            </div>
-
-            <div class="comment">
-                    <p>magique</p>
-                    <p>"Set in a period that is both modern and nostalgic, the film creates a fantastic, yet strangely 
-                            believable universe of supernatural creatures coexisting with modernity. A great part of this sense comes from Oga's evocative 
-                            backgrounds, which give each tree, 
-                            hedge and twist in the road an indefinable feeling of warmth that seems ready to spring into sentient life."</p>
-                    <p>posté le :28/04/2010</p>
-            </div>    
-        </div>
+        </div>';
+            }
+        }
+        else
+        {
+            echo 'Aucun commentaire disponible';
+        }
+?>
             
 </div>     
     

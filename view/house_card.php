@@ -284,7 +284,9 @@
         </div>
 
         <div class="ownerinfo" id="ownerinfo" style="display: none">	
-            <p> huge problem when profil reminder is included</p>
+            <p> <?php require("../modele/search_profile_reminder.php");                            
+                            include("../view/profile_reminder.php");?>
+            </p>
             
             
                 
