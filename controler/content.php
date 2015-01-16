@@ -307,7 +307,8 @@
                     //Confirm the favs' add or delete
                     elseif($_GET['page']=='confirm_favs')
                     {
-                        require"../modele/add_favs.php";
+                        require("../modele/add_favs.php");
+                        include("../view/add_favorites.php");
                     }
                     
                     //Confirm the deleting of a house

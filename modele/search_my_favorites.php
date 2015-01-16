@@ -1,21 +1,24 @@
 <?php
 $askFavs=$DB->prepare('SELECT id_house FROM favorites WHERE id_user=:iduser');
     $askFavs->execute(array('iduser'=>$_SESSION['userId']));
-    
+
+$j=0;
+$arrayId=array();
 while($resFavs=$askFavs->fetch())
 {
-    $arrayFavs=explode('/',$resFavs['id_house']);
+    $arrayId[$j]=$resFavs['id_house'];
+    $j++;
 }
 
-$nbFavs=count($arrayFavs);
-$arrayInfFavHouse=array();
-
-for($i=0;$i<$nbFavs;$i++)
+$nbId=count($arrayId);
+$arrayInfFavs=array();
+for($k=0;$k<$nbId;$k++)
 {
-    $askFavHouse=$DB->prepare('SELECT title,description,rating,pictures FROM house WHERE id=:idhouse');
-        $askFavHouse->execute(array('idhouse'=>$arrayFavs[$i]));
+    $askInfFavs=$DB->prepare('SELECT title,description,rating,pictures FROM house WHERE id=:idhouse');
+        $askInfFavs->execute(array('idhouse'=>$arrayId[$k]));
         
-    while($resFavHouse=$askFavHouse->fetch())
+
+    while($resInfFavs=$askInfFavs->fetch())
     {  
         /*
             Colonne0 => id
@@ -25,9 +28,12 @@ for($i=0;$i<$nbFavs;$i++)
             Colonne4 => pictures
             Colonne5 => rating
         */
-        $arrayInfFavHouse[$i]=array($i,$arrayFavs[$i],$resFavHouse['description'],$resFavHouse['title'],$resFavHouse['pictures'],$resFavHouse['rating']);
-        
+        $arrayInfFavs[$k][0]=$k;
+        $arrayInfFavs[$k][1]= $resFavs['id_house'];
+        $arrayInfFavs[$k][2]=$resInfFavs['description'];
+        $arrayInfFavs[$k][3]=$resInfFavs['title'];
+        $arrayInfFavs[$k][4]=$resInfFavs['pictures'];
+        $arrayInfFavs[$k][5]=$resInfFavs['rating'];
     }
 }
-
 
