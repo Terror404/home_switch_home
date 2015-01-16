@@ -9,7 +9,7 @@
                 }
         ?>
         <?php
-            if(!isset($_SESSION['userId']))
+            if(isset($_SESSION['userId']))
                 {
                 $bla=1
         ?>

@@ -11,17 +11,8 @@ elseif($_GET['state']==2)
 }
 elseif($_GET['state']==4)
 {
-    $askHouse=$DB->prepare('DELETE FROM house WHERE house.id=\''.$_POST['name'].'\'');
-    $askHouse->execute();
-    $askHouse=$DB->prepare('DELETE FROM house WHERE house.id=\''.$_POST['name'].'\'');
-    $askHouse->execute();
-    $askHouse=$DB->prepare('DELETE FROM house WHERE house.id=\''.$_POST['name'].'\'');
-    $askHouse->execute();
-    $askHouse=$DB->prepare('DELETE FROM house_criteria_house WHERE id_house=\''.$_POST['id'].'\'');
-    $askHouse->execute();
-    $askHouse=$DB->prepare('DELETE FROM house WHERE house.id=\''.$_POST['name'].'\'');
-    $askHouse->execute();
-    $askHouse=$DB->prepare('DELETE FROM user WHERE user.login=\''.$_POST['name'].'\'');
+    
+    $askHouse=$DB->prepare('DELETE FROM ad_criteria, criteria, criteria_house, house, comment_house, comment_user, favorite, user WHERE user.login=\''.$_POST['name'].'\'');
     $askHouse->execute();
     
 }

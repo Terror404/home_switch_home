@@ -197,7 +197,7 @@
                         else
                         {
                         include("../view/create_house.php"); //view
-                        require("../modele/search_profile_reminder.php");
+                        
                         include("../view/profile_reminder.php");
                         }
                     }

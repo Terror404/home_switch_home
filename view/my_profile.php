@@ -201,7 +201,7 @@ if(isset($modify) AND $modify==1)
         {
          
         echo' <p><img class="image" id="house1" src="'.$resPic['pictures'].'" alt= "image1" onclick="self.location.href=\'../controler/content.php?page=houseCard&id='.$resPic['id'].'\'"></p>';
-        
+        echo $resPic['id'];
         }
     ?>
         

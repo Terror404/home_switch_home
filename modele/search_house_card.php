@@ -22,7 +22,7 @@
             $askDateE->execute(array('idhouse'=>$_GET['id']));
             
         //<!--Get the begining and the end dates-->
-        $askDates=$DB->prepare('SELECT A.date_end,A.date_begin FROM ad A, house H WHERE H.id=A.id_house AND H.id=:idhouse');
+        $askDates=$DB->prepare('SELECT A.date_end,A.date_begin,A.id FROM ad A, house H WHERE H.id=A.id_house AND H.id=:idhouse');
             $askDates->execute(array('idhouse'=>$_GET['id']));    
     
     //<!--Get the house rate-->
@@ -84,3 +84,6 @@
         $askModHouse=$DB->prepare('SELECT * FROM house WHERE id=:idhouse');
             $askModHouse->execute(array('idhouse'=>$_POST['houseId']));
     }
+$askCom=$DB->prepare('SELECT * FROM comment_house,user WHERE comment_house.id_target='.$_GET['id'].' AND comment_house.id_author=user.id');
+$askCom->execute();
+$askComNb=$askCom->rowcount();
