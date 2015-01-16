@@ -210,43 +210,33 @@ if(isset($modify) AND $modify==1)
 <div class="com">
     <div class="test2"></div>
 <h2> Les commentaires </h2>
-        <div class="commentbox">
+        <?php if($askComNb!=0)
+        {
+            while($resCom=$askCom->fetch())
+            {
+            echo '<div class="commentbox">
             <div class="commentauthor">
 
-                    <p> <img class="userimg" src="..//view/pictures/Penguin.jpg" alt= "map"/> </p>
-                    <p>satsuki</p>
+                    <p> <img class="userimg" src="'.$resCom['picture'].'" alt= "map"/> </p>
+                    <p>'.$resCom['login'].'</p>
             </div>
 
             <div class="comment">
-                    <p>magique</p>
-                    <p>"Set in a period that is both modern and nostalgic, the film creates a fantastic, yet strangely 
-                            believable universe of supernatural creatures coexisting with modernity. A great part of this sense comes from Oga's evocative 
-                            backgrounds, which give each tree, 
-                            hedge and twist in the road an indefinable feeling of warmth that seems ready to spring into sentient life."</p>
-                    <p>posté le :28/04/2010</p>
+                    <p>'.$resCom['title'].'</p>
+                    <p>'.$resCom['text'].'</p>
+                    <p>posté le :'.$resCom['date'].'</p>
             </div>    
-        </div>
-        
-        <div class="commentbox">
-            <div class="commentauthor">
-
-                    <p> <img class="userimg" src="..//view/pictures/Penguin.jpg" alt= "map"/> </p>
-                    <p>satsuki</p>
-            </div>
-
-            <div class="comment">
-                    <p>magique</p>
-                    <p>"Set in a period that is both modern and nostalgic, the film creates a fantastic, yet strangely 
-                            believable universe of supernatural creatures coexisting with modernity. A great part of this sense comes from Oga's evocative 
-                            backgrounds, which give each tree, 
-                            hedge and twist in the road an indefinable feeling of warmth that seems ready to spring into sentient life."</p>
-                    <p>posté le :28/04/2010</p>
-            </div>    
-        </div>
+        </div>';
+            }
+        }
+        else
+        {
+            echo 'Aucun commentaire disponible';
+        }
+?>
             
 </div>     
     
 </div>
 
-</div>
 </section>
