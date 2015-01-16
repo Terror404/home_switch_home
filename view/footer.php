@@ -52,16 +52,8 @@
                             }
                             ?> 
                     </a><br/>
-                    <a href="../controler/content.php?page=charte" class="footerLink"> 
-                        <?php if (isset($_SESSION['userLogin']))
-                            {
-                                echo $_SESSION['charte']; 
-                            }
-                            else 
-                            {
-                                echo 'Notre Charte';
-                            }
-                            ?> 
+                    <a href="../controler/content.php?page=charte" class="footerLink">
+                        Notre Charte
                     </a><br/>
                     <a href=# class="footerLink"> 
                         <?php if (isset($_SESSION['userLogin']))

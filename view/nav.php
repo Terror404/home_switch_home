@@ -118,40 +118,17 @@
 		</ul>
 	</li>
 
-	<li class="subMenuDisplayer"><a class="linkBlock" href="#help"><?php if (isset($_SESSION['userLogin']))
-                            {
-                                echo $_SESSION['aid']; 
-                            }
-                            else 
-                            {
-                                echo 'Aide';
-                            }
-                            ?>
-                </a>
-                      <ul class="subMenuBlockList">
-			<li><a class="subMenuLinkBlock" href="../controler/content.php?page=faq" > 
-                            <?php if (isset($_SESSION['userLogin']))
-                            {
-                                echo $_SESSION['faq']; 
-                            }
-                            else 
-                            {
-                                echo 'FAQ';
-                            }
-                            ?> 
-                            </a></li>
-                        <li><a class="subMenuLinkBlock" href="../controler/content.php?page=contact" > 
-                            <?php if (isset($_SESSION['userLogin']))
-                            {
-                                echo $_SESSION['contact']; 
-                            }
-                            else 
-                            {
-                                echo 'Contactez-nous';
-                            }
-                            ?> 
-                        </a></li>
-                        
+	<li class="subMenuDisplayer">
+            <a class="linkBlock" href="#help">
+                Aide
+            </a>
+            <ul class="subMenuBlockList">
+            <li><a class="subMenuLinkBlock" href="../controler/content.php?page=faq" >
+                    FAQ
+                </a></li>
+            <li><a class="subMenuLinkBlock" href="../controler/content.php?page=contact" >
+                    Contactez-nous
+            </a></li>
         </li>
         
  

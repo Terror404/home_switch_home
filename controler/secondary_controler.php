@@ -153,6 +153,10 @@ if (isset($page) AND $page!='')
                     {
                         echo'<link rel="stylesheet" type="text/css" href="../view/css/charte.css">';
                     }
+                    elseif($_GET['page']=='createAd')
+                    {
+                        echo'<link rel="stylesheet" type="text/css" href="../view/css/create_ad.css">';
+                    }
     
     }
 
