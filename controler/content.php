@@ -186,21 +186,6 @@
                         include("../modele/add_message.php"); //modele
                         include("../view/confirm_sent_message.php");//vue
                     }
-               
-                    //Add a new house
-                    elseif($_GET['page']=='createHouse')
-                    {   
-                        if(!isset($_SESSION['userId']))
-                        {
-                        echo"Vous ne pouvez pas accéder à cette page. Veuilez vous connecter.";
-                        }
-                        else
-                        {
-                        include("../view/create_house.php"); //view
-                        
-                        include("../view/profile_reminder.php");
-                        }
-                    }
                     
                     //House Card
                     elseif($_GET['page']=='houseCard')
