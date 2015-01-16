@@ -14,7 +14,35 @@ define('MAX_SIZE',100000);                      //Maximal size of the pic (byte)
 define('WIDTH_MAX',5000);                       //Maximum width of the pic (pixels)
 define('HEIGHT_MAX',5000);
 
-for($i=0;$i<8;$i++)
+
+
+if(isset($_FILES['photo0']) AND !isset($_FILES['photo1']) AND !isset($_FILES['photo2']) AND !isset($_FILES['photo3']) AND !isset($_FILES['photo4']) AND !isset($_FILES['photo5']) AND !isset($_FILES['photo6']))
+{
+    $nbPic=2;
+}
+elseif(isset($_FILES['photo0']) AND isset($_FILES['photo1']) AND !isset($_FILES['photo2']) AND !isset($_FILES['photo3']) AND !isset($_FILES['photo4']) AND !isset($_FILES['photo5']) AND !isset($_FILES['photo6']))
+{
+    $nbPic=3;
+}
+elseif(isset($_FILES['photo0']) AND isset($_FILES['photo1']) AND isset($_FILES['photo2']) AND !isset($_FILES['photo3']) AND !isset($_FILES['photo4']) AND !isset($_FILES['photo5']) AND !isset($_FILES['photo6']))
+{
+    $nbPic=4;
+}
+elseif(isset($_FILES['photo0']) AND isset($_FILES['photo1']) AND isset($_FILES['photo2']) AND isset($_FILES['photo3']) AND !isset($_FILES['photo4']) AND !isset($_FILES['photo5']) AND !isset($_FILES['photo6']))
+{
+    $nbPic=5;
+}
+elseif(isset($_FILES['photo0']) AND isset($_FILES['photo1']) AND isset($_FILES['photo2']) AND isset($_FILES['photo3']) AND isset($_FILES['photo4']) AND !isset($_FILES['photo5']) AND !isset($_FILES['photo6']))
+{
+    $nbPic=6;
+}
+elseif(isset($_FILES['photo0']) AND isset($_FILES['photo1']) AND isset($_FILES['photo2']) AND isset($_FILES['photo3']) AND isset($_FILES['photo4']) AND isset($_FILES['photo5']) AND !isset($_FILES['photo6']))
+{
+    $nbPic=7;
+}
+
+
+for($i=0;$i<$nbPic;$i++)
 {
                 global $i;
                 switch($i)

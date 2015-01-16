@@ -17,16 +17,32 @@
                             <input name="photo1" type='file' id="photo1" /><br/>  
                             <input type="hidden" name="tagPhoto" value="1"/>
                             
-                           
+                            <label for="photo2" class="label">photo n°3:</label>
+                            <input name="photo2" type='file' id="photo2" /><br/>  
+                            <input type="hidden" name="tagPhoto" value="1"/>
                             
-                           
+                            <label for="photo3" class="label">photo n°4:</label>
+                            <input name="photo3" type='file' id="photo3" /><br/>  
+                            <input type="hidden" name="tagPhoto" value="1"/>
                             
+                            <label for="photo4" class="label">photo n°5:</label>
+                            <input name="photo4" type='file' id="photo4" /><br/>  
+                            <input type="hidden" name="tagPhoto" value="1"/>
+                            
+                            <label for="photo5" class="label">photo n°6:</label>
+                            <input name="photo5" type='file' id="photo5" /><br/>  
+                            <input type="hidden" name="tagPhoto" value="1"/>
+                            
+                            <label for="photo6" class="label">photo n°7:</label>
+                            <input name="photo6" type='file' id="photo6" /><br/>  
+                            <input type="hidden" name="tagPhoto" value="1"/>
+                                                 
                            
                         </p>
                 </div>
         </div>
 
-
+        <br/>
         <div class="DescriptionMM" > <!--Mettre ici la description de la maison-->
             <p class="txt">
                 <label for="description" class="label">décrivez votre habitation:</label>

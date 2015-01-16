@@ -296,7 +296,7 @@
                 <?php
                         while ($resDates=$askDates->fetch())
                             {
-                                echo 'De'.$resDates['A.date_begin'].'à'.$resDates['A.date_end'];
+                                echo 'De'.$resDates['date_begin'].'à'.$resDates['date_end'];
                             }
                     ?>
             </div>

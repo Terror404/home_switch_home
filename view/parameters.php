@@ -165,9 +165,16 @@ if(isset($end) AND isset($_POST['whichForm']) AND $_POST['whichForm']==5)
         <p class="twosubs">
         <input class="sub" type="submit" value="Modifier"/>
         <input class="sub" type="reset" value="Annuler"/>
-        </p>
+        </p><br/>
 </form>
    
+<form method="post" action="">
+    Supprimer définitivement votre profil :
+    <p class="twosubs">
+        <input type="hidden" name="definitiveDelete" value="1"/>
+        <input class="sub" type="submit" value="Supprimer"/>
+    </p>
+</form>
 
 </div>
 
