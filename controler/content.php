@@ -348,6 +348,14 @@
                         require('../modele/treat_exchange.php');
                         include("../view/treat_exchange.php");
                     }
+                    elseif($_GET['page']=='faq')
+                    {
+                        include("../view/faq.php");
+                    }
+                    elseif($_GET['page']=='contact')
+                    {
+                        include("../view/contact_form.php");
+                    }
                     
                     
                 }
