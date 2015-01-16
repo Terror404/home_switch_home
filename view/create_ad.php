@@ -31,7 +31,8 @@
 		</script>
                 
 <section class='MiddlePage'>
-    
+    <div class="block">   
+        <div class="housereminder"></div> 
     <article class='title'> <!-- title of the house-->
         <?php
             while($resHtitle=$askHtitle->fetch())
@@ -256,7 +257,7 @@
             </div>
                 
 	</div>
-    
+    </div>
     
     
 </section> <!-- end of info section-->
