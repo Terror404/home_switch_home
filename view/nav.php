@@ -37,7 +37,7 @@
                             ?> 
                 </a>
 		<ul class="subMenuBlockList">
-			<li><a class="subMenuLinkBlock" href="../controler/content.php?page=myProfile&userId=<?php echo $userId?>" > 
+			<li><a class="subMenuLinkBlock" href="../controler/content.php?page=myProfile&userId=<?php echo $_SESSION['userId']?>" > 
                             <?php if (isset($_SESSION['userLogin']))
                             {
                                 echo $_SESSION['monProf']; 
@@ -70,7 +70,7 @@
                             }
                             ?> 
                         </a></li>
-                        <li><a class="subMenuLinkBlock" href="../controler/content.php?page=my_houses&userId=<?php echo $userId?>" > 
+                        <li><a class="subMenuLinkBlock" href="../controler/content.php?page=my_houses&userId=<?php echo $_SESSION['userId']?>" > 
                             <?php if (isset($_SESSION['userLogin']))
                             {
                                 echo $_SESSION['mesMais']; 
