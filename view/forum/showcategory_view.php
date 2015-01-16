@@ -69,5 +69,18 @@
     ?>
 
     <br/>
-    <a href="./../controler/content.php?page=addTopic&amp;c=<?php echo CURRENT_CATEGORY ?>">Créer un nouveau sujet.</a>
+    <?php
+    if (!isLoggedIn() and !$hasModRights) {
+        echo "Vous devez vous identifier pour pouvoir répondre.";
+    }
+    else {
+        ?>
+        <a
+            class="NewTopicButton"
+            href="./../controler/content.php?page=addTopic&amp;c=<?php echo CURRENT_CATEGORY ?>">
+            Créer un nouveau sujet
+        </a>
+        <?php
+    }
+    ?>
 </div>

@@ -1,7 +1,3 @@
-<?php if(isset($_SESSION['userId']))
-{
-    $userId=$_SESSION["userId"];
-?>
 <nav>
 
 <ul class="linkBlockList">
@@ -121,6 +117,7 @@
                         </a></li>
 		</ul>
 	</li>
+
 	<li class="subMenuDisplayer"><a class="linkBlock" href="#help"><?php if (isset($_SESSION['userLogin']))
                             {
                                 echo $_SESSION['aid']; 
@@ -130,66 +127,35 @@
                                 echo 'Aide';
                             }
                             ?>
-        </a></li>
-        <ul class="subMenuBlockList">
-			<li><a class="subMenuLinkBlock" href="../controler/content.php?page=myProfile&userId=<?php echo $userId?>" >FAQ</a></li>
-			<li><a class="subMenuLinkBlock" href="../controler/content.php?page=my_ads&userId=<?php echo $userId?>" >Forum</a></li>
-        </ul>
+                </a>
+                      <ul class="subMenuBlockList">
+			<li><a class="subMenuLinkBlock" href="../controler/content.php?page=faq" > 
+                            <?php if (isset($_SESSION['userLogin']))
+                            {
+                                echo $_SESSION['faq']; 
+                            }
+                            else 
+                            {
+                                echo 'FAQ';
+                            }
+                            ?> 
+                            </a></li>
+                        <li><a class="subMenuLinkBlock" href="../controler/content.php?page=contact" > 
+                            <?php if (isset($_SESSION['userLogin']))
+                            {
+                                echo $_SESSION['contact']; 
+                            }
+                            else 
+                            {
+                                echo 'Contactez-nous';
+                            }
+                            ?> 
+                        </a></li>
+                        
+        </li>
         
-        </li>
+ 
+
 </ul>
     
 </nav>
-<?php
-}
-
-else
-{
-?>
-<nav>
-
-<ul class="linkBlockList" >
-	<li class="linkBlockElement" style="width:25%"><a class="linkBlock" href="../controler/content.php?page=home" >
-                            <?php if (isset($_SESSION['userLogin']))
-                            {
-                                echo $_SESSION['accueil']; 
-                            }
-                            else 
-                            {
-                                echo 'Accueil';
-                            }
-                            ?>
-        </a></li>
-	<li class="linkBlockElement" style="width:25%"><a class="linkBlock" href="../controler/content.php?page=forumIndex" >Forum</a></li>
-	<li class="linkBlockElement" style="width:25%"><a class="linkBlock" href="../controler/content.php?page=research" >
-                            <?php if (isset($_SESSION['userLogin']))
-                            {
-                                echo $_SESSION['rech']; 
-                            }
-                            else 
-                            {
-                                echo 'Recherche';
-                            }
-                            ?>
-        </a></li>
-	<li class="linkBlockElement" style="width:25%"><a class="linkBlock" href="#help"><?php if (isset($_SESSION['userLogin']))
-                            {
-                                echo $_SESSION['aid']; 
-                            }
-                            else 
-                            {
-                                echo 'Aide';
-                            }
-                            ?>
-        </a>
-        <ul class="subMenuBlockList" style="width:25%">
-			<li><a class="subMenuLinkBlock" href="../controler/content.php?page=myProfile&userId=<?php echo $userId?>" >FAQ</a></li>
-			<li><a class="subMenuLinkBlock" href="../controler/content.php?page=my_ads&userId=<?php echo $userId?>" >Forum</a></li>
-        </ul>
-        </li>
-</ul>
-    
-</nav>
-<?php
-}
-?>

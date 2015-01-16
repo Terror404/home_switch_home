@@ -30,7 +30,7 @@
                             }
                             ?> 
                     </a><br/>
-                    <a href=# class="footerLink"> 
+                    <a href="../controler/content.php?page=contact" class="footerLink"> 
                         <?php if (isset($_SESSION['userLogin']))
                             {
                                 echo $_SESSION['contactNou']; 
@@ -49,6 +49,17 @@
                             else 
                             {
                                 echo 'Informations légales';
+                            }
+                            ?> 
+                    </a><br/>
+                    <a href="../controler/content.php?page=charte" class="footerLink"> 
+                        <?php if (isset($_SESSION['userLogin']))
+                            {
+                                echo $_SESSION['charte']; 
+                            }
+                            else 
+                            {
+                                echo 'Notre Charte';
                             }
                             ?> 
                     </a><br/>

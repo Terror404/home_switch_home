@@ -1,38 +1,37 @@
- 
-
-
 <script type = "text/javascript">
-			function hideshowhousetxt()
-			{
-			document.getElementById("housetxt").style.display="block";
-			document.getElementById("ownerinfo").style.display="none";
-			document.getElementById("mapblock").style.display="none";
-                        document.getElementById("ad").style.display="none";
-			}
-			function hideshowownerinfo()
-			{
-			document.getElementById("housetxt").style.display="none";
-			document.getElementById("ownerinfo").style.display="block";
-			document.getElementById("mapblock").style.display="none";
-                        document.getElementById("ad").style.display="none";
-			}
-			function hideshowmapblock()
-			{
-			document.getElementById("housetxt").style.display="none";
-			document.getElementById("ownerinfo").style.display="none";
-			document.getElementById("mapblock").style.display="block";
-                        document.getElementById("ad").style.display="none";
-			}
-                        function hideshowad()
-			{
-			document.getElementById("housetxt").style.display="none";
-			document.getElementById("ownerinfo").style.display="none";
-			document.getElementById("mapblock").style.display="none";
-                        document.getElementById("ad").style.display="block";
-			}
-			
-		</script>
-                
+    function hideshowhousetxt()
+    {
+        document.getElementById("housetxt").style.display="block";
+        document.getElementById("ownerinfo").style.display="none";
+        document.getElementById("mapblock").style.display="none";
+        document.getElementById("ad").style.display="none";
+    }
+    function hideshowownerinfo()
+    {
+        document.getElementById("housetxt").style.display="none";
+        document.getElementById("ownerinfo").style.display="block";
+        document.getElementById("mapblock").style.display="none";
+        document.getElementById("ad").style.display="none";
+    }
+    function hideshowmapblock()
+    {
+        document.getElementById("housetxt").style.display="none";
+        document.getElementById("ownerinfo").style.display="none";
+        document.getElementById("mapblock").style.display="block";
+        document.getElementById("ad").style.display="none";
+    }
+    function hideshowad()
+    {
+        document.getElementById("housetxt").style.display="none";
+        document.getElementById("ownerinfo").style.display="none";
+        document.getElementById("mapblock").style.display="none";
+        document.getElementById("ad").style.display="block";
+    }
+
+</script>
+
+<?php if (RESIDENCE_IS_SET AND RESIDENCE_EXISTS) {?>
+
 <section class='MiddlePage'>
     
     <article class='title'> <!-- title of the house-->
@@ -47,11 +46,10 @@
     <article class="img"> <!-- Mettre ici les photos et les 2 boutons -->
                     <p> <!-- main image-->
                         <?php 
-                            while ($resHpic=$askHpic->fetch())
-                                {
-                        ?>
-                                    <img src="<?php echo $resHpic['pictures'] ?>" alt="photo maison" class="image1">
-                        <?php
+                            while ($resHpic=$askHpic->fetch()) {
+                                ?>
+                                <img src="<?php echo $resHpic['pictures'] ?>" alt="photo maison" class="image1">
+                                <?php
                             }
                         ?>
                     </p>
@@ -371,3 +369,7 @@
 		</section>    
 </section>
 			
+<?php }
+else {
+    echo "Erreur : Pas de maison trouvée.";
+}

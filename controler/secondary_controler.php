@@ -140,6 +140,19 @@ if (isset($page) AND $page!='')
                     {
                         echo'<link rel="stylesheet" type="text/css" href="../view/css/css_rating_system.css">';
                     }
+                    elseif($_GET['page']=='faq')
+                    {
+                        echo'<link rel="stylesheet" type="text/css" href="../view/css/faq.css">';
+                    }
+                    elseif($_GET['page']=='contact')
+                    {
+                        echo'<link rel="stylesheet" type="text/css" href="../view/css/contact.css">';
+                    }
+                    elseif($_GET['page']=='charte')
+                    {
+                        echo'<link rel="stylesheet" type="text/css" href="../view/css/charte.css">';
+                    }
+    
     }
 
 
