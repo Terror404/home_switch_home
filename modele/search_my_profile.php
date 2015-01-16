@@ -22,3 +22,11 @@ $askProfWant->execute(array('id'=>$_SESSION['userId']));
 $askProfRate = $DB->prepare('SELECT rating FROM user WHERE id=:id');
 $askProfRate->execute(array('id'=>$_SESSION['userId']));
 ?>
+<?php
+$askProfHouses = $DB->prepare('SELECT pictures,id FROM house WHERE id_user=:id');
+$askProfHouses->execute(array('id'=>$_SESSION['userId']));
+?>
+<?php
+$askProfComments = $DB->prepare('SELECT * FROM comment_user,user WHERE id_target=:id');
+$askProfComments->execute(array('id'=>$_SESSION['userId']));
+?>
