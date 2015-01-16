@@ -107,8 +107,8 @@ nav
     float: left;
     display : block; /* on change le type d'élément, les liens deviennent des balises de type block */
     padding : 0px; /* aucune marge intérieure */
-    background-color:#0cc785;/* couleur de fond */        
-    color : #000000; /* couleur du texte */
+    background-color:#00BCE0;/* couleur de fond */        
+    color : white; /* couleur du texte */
     text-decoration : none; /* on supprime le style par défaut des liens (la plupart du temps = souligné) */
     width : 30%; /* largeur */
     margin : 0px;

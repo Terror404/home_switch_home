@@ -1,6 +1,6 @@
 <link rel="stylesheet" type="text/css" href="./../view/css/forumstyle.css">
 
-<div class="forumFrame">
+<div class="ForumFrame">
     Une erreur s'est produite :<br/>
     <?php
         //$error should be set before including this page

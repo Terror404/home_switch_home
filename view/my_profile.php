@@ -13,10 +13,17 @@
 </h2>
    <div class="modif">
     <?php $userId=$_SESSION['userId'];?>
+<?php
+if(isset($modify) AND $modify==1)
+{
+?>
 <form method="post" action="../controler/content.php?page=myProfile&id=<?php echo $userId ?>">
 <input type='hidden' name='modifyProf' value='1'/>
 <input type='submit' class="subtomodif" value ='Modifier votre profil'/>
 </form>
+<?php
+}
+?>
    </div>
     </div>
     <div class="login">
