@@ -87,6 +87,7 @@ if (isset($page) AND $page!='')
                     elseif( $_GET['page']=='houseCard')
                     {
                         echo'<link rel="stylesheet" type="text/css" href="../view/css/houseCard_style.css">';
+                       
                       
                         
                     }
@@ -147,6 +148,10 @@ if (isset($page) AND $page!='')
                     elseif($_GET['page']=='contact')
                     {
                         echo'<link rel="stylesheet" type="text/css" href="../view/css/contact.css">';
+                    }
+                      elseif($_GET['page']=='createAd')
+                    {
+                        echo'<link rel="stylesheet" type="text/css" href="../view/css/create_ad.css">';
                     }
     
     }

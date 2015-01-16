@@ -204,7 +204,7 @@ if(isset($modify) AND $modify==1)
         
         }
     ?>
-        
+    </div>    
         
 
 <div class="com">
