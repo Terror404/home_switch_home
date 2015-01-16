@@ -22,9 +22,17 @@ else {
     }
     
     if ($userInfo != null) {
-        /*$newPassword =*/resetPasswordForUser($userInfo['id'], $DB);
-        //sendPasswordRecoveryMessage($userInfo, $newPassword);
-        include(__ROOT__."/view/lostpasswordconfirm.php");
+        if (userHasSuperAdminRights($userInfo['id'], $DB)) {
+            ?>
+            Il est impossible de réinitialiser le mot de passe d'un super-administrateur.<br/>
+            <a href="../controler/content.php">Retour à l'accueil</a>
+            <?php
+        }
+        else {
+            /*$newPassword =*/resetPasswordForUser($userInfo['id'], $DB);
+            //sendPasswordRecoveryMessage($userInfo, $newPassword);
+            include(__ROOT__."/view/lostpasswordconfirm.php");
+        }
     }
     else {
         ?>

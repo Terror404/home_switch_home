@@ -229,8 +229,6 @@
                         {
                             require("../modele/search_house_card.php");
                             include("../view/create_ad.php");
-                            require("../modele/search_profile_reminder.php");                            
-                            include("../view/profile_reminder.php");
                             
                         }
                     
@@ -347,6 +345,18 @@
                         //require("");
                         require('../modele/treat_exchange.php');
                         include("../view/treat_exchange.php");
+                    }
+                    elseif($_GET['page']=='faq')
+                    {
+                        include("../view/faq.php");
+                    }
+                    elseif($_GET['page']=='contact')
+                    {
+                        include("../view/contact_form.php");
+                    }
+                    elseif($_GET['page']=='charte')
+                    {
+                        include("../view/charte.php");
                     }
                     
                     

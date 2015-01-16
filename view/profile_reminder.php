@@ -4,7 +4,7 @@
                         while ($resPic=$askPic->fetch())
                             {
                     ?>                                                                                                 
-                                <img src="<?php echo $resPic['picture']?>" alt="photo de profil php" class='ProfilePic' />                                
+                                <img class="ownerimg"src="<?php echo $resPic['picture']?>" alt="photo de profil php" class='ProfilePic' />                                
                     <?php
                             }
                     ?>
@@ -19,6 +19,7 @@
                         }                        
                     ?>
                 </p>
+                </br>
                 <p class="Desc"> <!--Put the description-->
                     <?php
                         while ($resDesc=$askDesc->fetch())
@@ -27,6 +28,7 @@
                             }
                     ?>
                 </p>
+                </br>
                 <p class="Rate"> <!--Put the rate-->
                     <?php
                         while ($resRate=$askRate->fetch())

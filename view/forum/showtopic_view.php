@@ -175,7 +175,7 @@
     if ($topicInfo['lockStatus'] and !$hasModRights) {
         echo "Vous ne pouvez pas ajouter de message à ce sujet car il est verrouillé.";
     }
-    elseif (!isLoggedIn() and !$hasModRights) {
+    elseif (!isLoggedIn()) {
         echo "Vous devez vous identifier pour pouvoir répondre.";
     }
     else {

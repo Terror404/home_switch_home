@@ -5,12 +5,12 @@ if (!defined("__ROOT__")) {
 }
 require_once(__ROOT__."/modele/forum/core.php"); //J'ai quelques fonctions que j'aime bien à l'intérieur
 
-if (!isLoggedIn()) {
-    include(__ROOT__."/view/lostpasswordform.php");
-}
-else {
+if (isLoggedIn()) {
     ?>
     Vous êtes déjà connecté, vous ne pouvez pas réinitialiser votre mot de passe.<br/>
     <a href="../controler/content.php">Retour à l'accueil</a>
     <?php
+}
+else {
+    include(__ROOT__."/view/lostpasswordform.php");
 }

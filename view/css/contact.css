@@ -1,10 +1,10 @@
 label
 {
-width: 50%;
+width: 44%;
 float: left;
 text-align:left;
 margin-right: 0.5em;
-display: block;
+display: block
 }
 
 
@@ -20,7 +20,8 @@ display: block;
 .sub
 {
  
-   width:30%;
+    
+     width:30%;
 background-color: #00BCE0;
   -webkit-border-radius: 28;
   -moz-border-radius: 28;
@@ -51,13 +52,13 @@ background-color: #00BCE0;
 }
 
 body{
- background-image: url("../pictures/form-user-img.jpg"); 
+ background-image: url("../pictures/contact_form.jpg"); 
  background-repeat : no-repeat;
   background-size: cover;
     background-attachment: fixed;
 }
 
-input{
+.input{
     width : 40%;
 }
 
@@ -69,4 +70,21 @@ input{
     border-radius : 10px;
     opacity : 0.9;
    
+}
+
+textArea{
+    margin-top: 5%;
+    margin-left: 10%;
+}
+
+.txt{
+    border : 2px solid white;
+    width : 60%; 
+    padding : 3%;
+    background-color: white;
+    border-radius : 10px;
+    opacity : 0.9;
+} 
+.liste{
+    list-style-type: none;
 }
