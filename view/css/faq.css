@@ -1,13 +1,3 @@
-a
-{
-width: 50%;
-float: left;
-text-align:left;
-margin-right: 0.5em;
-display: block
-}
-
-
 .position
 {
    margin-top : 5%;
@@ -17,26 +7,15 @@ display: block
     font-size : 120%;
 }
 
-.sub
+.position2
 {
- 
-    
-     width:30%;
-background-color: #00BCE0;
-  -webkit-border-radius: 28;
-  -moz-border-radius: 28;
-  border-radius: 0px;
-  font-family: "GeosansLight";
-  color: white;
-  font-size: 20px;
-  padding: 10px 20px 10px 20px;
-  text-decoration: none;
-}   
-.sub:hover {
-  background: #83EBC6;
-  text-decoration: none;      
+   margin-top : 0%;
+    margin-left : 10%;
+    margin-bottom : 10%;
+    margin-right: 10%;
+    font-family: "GeosansLight";
+    font-size : 120%;
 }
-
 .txt{
     border : 2px solid white;
     width : 60%; 
@@ -46,16 +25,12 @@ background-color: #00BCE0;
     opacity : 0.9;
 }
 
-.twosubs{
-    margin-left : 29%;
-    margin-top : 5%;
-}
-
-body{
- background-image: url("../pictures/faq.jpg"); 
- background-repeat : no-repeat;
-  background-size: cover;
-    background-attachment: fixed;
+.txt2{
+    border : 2px solid white;
+    padding : 3%;
+    background-color: white;
+    border-radius : 10px;
+    opacity : 0.9;
 }
 
 
@@ -68,3 +43,30 @@ body{
     opacity : 0.9;
    
 }
+
+h2
+{
+    margin-top: 2%;
+    margin-bottom: 1%;
+}
+
+.link
+{
+    text-decoration: none;
+    color:#0b2d92;
+    margin-bottom: 10%;
+}
+
+body{
+ background-image: url("../pictures/faq.jpg"); 
+ background-repeat : no-repeat;
+  background-size: cover;
+    background-attachment: fixed;
+}
+
+.liste
+{
+    list-style-type: none;
+}
+
+

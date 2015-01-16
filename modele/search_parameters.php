@@ -133,3 +133,17 @@ if(isset($_POST['whichForm']) AND $_POST['whichForm']==5)
         $end=1;
     }
 }
+
+//Language modification
+if(isset($_POST['language']) AND $_POST['language']==0)
+{
+    $updateLanguage=$DB->prepare('UPDATE user SET language=0 WHERE id=:iduser');
+        $updateLanguage->execute(array('iduser'=>$_SESSION['userId']));
+    $end=0;
+}
+elseif(isset($_POST['language']) AND $_POST['language']==1)
+{
+    $updateLanguage=$DB->prepare('UPDATE user SET language=1 WHERE id=:iduser');
+        $updateLanguage->execute(array('iduser'=>$_SESSION['userId']));
+    $end=1;
+}

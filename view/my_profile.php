@@ -197,14 +197,14 @@ if(isset($modify) AND $modify==1)
     <div class="myhouses">
        <div class="test1"></div>
         <h2> Mes Maisons </h2>
-        <?php while($resPic=$askProfHouses->fetch())
+            <?php while($resPic=$askProfHouses->fetch())
         {
          
         echo' <p><img class="image" id="house1" src="'.$resPic['pictures'].'" alt= "image1" onclick="self.location.href=\'../controler/content.php?page=houseCard&id='.$resPic['id'].'\'"></p>';
         echo $resPic['id'];
         }
     ?>
-        
+    </div>    
         
 
 <div class="com">
@@ -239,4 +239,5 @@ if(isset($modify) AND $modify==1)
     
 </div>
 
+</div>
 </section>

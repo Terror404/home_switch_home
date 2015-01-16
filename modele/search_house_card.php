@@ -1,10 +1,16 @@
     <!--Get the id of the owner-->
     <?php
-    if(isset($_GET['id']))
+    define("RESIDENCE_IS_SET", isset($_GET['id']));
+    
+    if(RESIDENCE_IS_SET)
     {
         $askIdOwner=$DB->prepare('SELECT id_user FROM house WHERE id=:idhouse');
             $askIdOwner->execute(array('idhouse'=>$_GET['id']));
-       
+            
+        define("RESIDENCE_EXISTS", $askIdOwner->rowCount() > 0);
+    }
+    
+    if (RESIDENCE_IS_SET AND RESIDENCE_EXISTS) {
     //<!--Get the house title-->
         $askHtitle=$DB->prepare('SELECT house.title FROM house WHERE house.id=:idhouse');
             $askHtitle->execute(array('idhouse'=>$_GET['id']));

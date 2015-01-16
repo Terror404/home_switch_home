@@ -1,55 +1,46 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title> FAQ </title>
-                <link rel="STYLESHEET" type="text/css" href="../view/css/faq.css" />
 
-	</head>
+		<title> FAQ </title>
 
 		<body>
-			<div id='position'>
-                            <h1 class="Title"> Questions les plus fréquentes </h2>
+			<div class='position'>
+                            <h1 class='Title'> Questions les plus fréquentes </h2>
+                            <br>
                             
-                            <div class="txt">
-				<ul>
+                            <div class='txt'>
+				<ul class='liste'>
 					<li>
-						<a href="#question1">Qu'est-ce qu'HomeSwitchHome?</a>
+						<a class='link' href="#question1">Qu'est-ce qu'HomeSwitchHome?</a>
 					</li>
 					<li>
-						<a href="#question2">Existe-t-il des règles pour échanger sa maison sur HomeSwitchHome?</a>
+						<a class='link' href="#question2">Existe-t-il des règles pour échanger sa maison sur HomeSwitchHome?</a>
 					</li>
 					<li>
-						<a href="#question3">Quels sont les avantages de l'échange de maisons?</a>
+						<a class='link' href="#question3">Quels sont les avantages de l'échange de maisons?</a>
 					</li>
 					<li>
-						<a href="#question4">Je suis locataire. Puis-je également échanger mon logement?</a>
+						<a class='link' href="#question4">Je suis locataire. Puis-je également échanger mon logement?</a>
 					</li>
 					<li>
-						<a href="#question5">Puis-je aussi échanger ma voiture?</a>
+						<a class='link' href="#question5">Puis-je aussi échanger ma voiture?</a>
 					</li>
 					<li>
-						<a href="#question6">Puis-je inscrire ma résidence secondaire?</a>
+						<a class='link' href="#question6">Puis-je inscrire ma résidence secondaire?</a>
 					</li>
 					<li>
-						<a href="#question7">Nous sommes non-fumeurs, nous possédons un animal domestique. Pouvons-nous échanger?</a>
+						<a class='link' href="#question7">Nous sommes non-fumeurs, nous possédons un animal domestique. Pouvons-nous échanger?</a>
 					</li>
 					<li>
-						<a href="#question8">Pourquoi ne puis-je pas envoyer de pièces jointes avec la messagerie?</a>
+						<a class='link' href="#question8">Pourquoi ne puis-je pas envoyer de pièces jointes avec la messagerie?</a>
 					</li>
 
 				</ul>
                                 
                             </div>
 
-
-
-
 			</div>
-			<br>
-			<br>
-
-			<div>
+			
+			<div class='position2'>
+                            <div class='txt2'>
 				<h2 id="question1">Qu'est-ce qu'HomeSwitchHome?</h2>
 				HomeSwitchHome est la plateforme idéale pour l'échange de maisons. Il vous suffit de vous créer un compte pour pouvoir poster sans attendre votre annonce de logement. Ensuite il ne vous reste plus qu'à contacter les membres dont les offres vous intéressent afin de leur faire une proposition d'échange. De même les membres conquis par votre logement pourront alors vous contacter.
 
@@ -77,8 +68,9 @@
 
 				<h2 id="question8">Pourquoi ne puis-je pas envoyer de pièces jointes avec la messagerie?</h2>
 				La messagerie a pour vocation de mettre en relation les utilisateurs. Pour les membres souhaitant s'envoyer des photos nous les invitons à s'échanger leurs adresses email respectives.
+                            </div>
 			</div>
 
 
 		</body>
-</html>
+

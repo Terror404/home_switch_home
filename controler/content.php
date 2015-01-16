@@ -229,8 +229,6 @@
                         {
                             require("../modele/search_house_card.php");
                             include("../view/create_ad.php");
-                            require("../modele/search_profile_reminder.php");                            
-                            include("../view/profile_reminder.php");
                             
                         }
                     
@@ -355,6 +353,10 @@
                     elseif($_GET['page']=='contact')
                     {
                         include("../view/contact_form.php");
+                    }
+                    elseif($_GET['page']=='charte')
+                    {
+                        include("../view/charte.php");
                     }
                     
                     

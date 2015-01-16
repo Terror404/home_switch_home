@@ -75,9 +75,17 @@ padding-bottom : 19.5%;
 
 .ownerimg
 {
-width : 40%;
+    margin-top : 5%;
+width : 60%;
 display: inline-block;
 vertical-align : middle;
+margin-left : 20%;
+}
+.Login{
+    text-align: center;
+}
+.Desc{
+    text-align:justify;
 }
 
 .ownerdata
@@ -109,11 +117,10 @@ background-color: #00BCE0;
   background: #83EBC6;
   text-decoration: none;      
 }
-.desc, .ad
+.desc, .ad, .ownerinfo
 {
 display : inline-block;
 vertical-align : middle;
-text-align : justify;
 width : 90%;
 padding:3%;
 background-color: #00BCE0;
@@ -121,6 +128,10 @@ margin-top : 1%;
 margin-left : 2%;
 height : 600px;
 
+}
+.desc, .ad
+{
+text-align : justify;
 }
 
 .map
