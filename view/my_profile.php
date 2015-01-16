@@ -196,13 +196,16 @@ if(isset($modify) AND $modify==1)
 
     <div class="myhouses">
        <div class="test1"></div>
-        <h2> Mes Maisons </h2>  
-        <p><img class="image" id="house1" src="..//view/pictures/Penguin.jpg" alt= "image1"/></p>
-        <p><img class="image" id="house2" src="..//view/pictures/Penguin.jpg" alt= "image1"/></p>
-        <p><img class="image" id="house3" src="..//view/pictures/Penguin.jpg" alt= "image1"/></p>
-        <p><img class="image" id="house4" src="..//view/pictures/Penguin.jpg" alt= "image1"/></p>
-        <p><img class="image" id="house5" src="..//view/pictures/Penguin.jpg" alt= "image1"/></p>
-  </div>
+        <h2> Mes Maisons </h2>
+        <?php while($resPic=$askProfHouses->fetch())
+        {
+         
+        echo' <p><img class="image" id="house1" src="'.$resPic['pictures'].'" alt= "image1" onclick="self.location.href=\'../controler/content.php?page=houseCard&id='.$resPic['id'].'\'"></p>';
+        
+        }
+    ?>
+        
+        
 
 <div class="com">
     <div class="test2"></div>
