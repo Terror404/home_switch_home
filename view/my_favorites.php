@@ -14,81 +14,84 @@ Rappel structure de la matrice $arrayInfFavs :
                             Colonne5 => rating
 */
 
-
-echo$nbId;
-print_r($arrayId);
-print_r($arrayInfFavs);
-for($k=0;$k<$nbId;$k++)
+if(!empty($arrayInfFavs))
 {
-?>
-    <div class="blockMyHouses">
-        <fieldset>
-            <legend>Favoris n°<?php echo $k+1; ?></legend>
-            <div class="picMyHouses">
-                <a href="../controler/content.php?page=houseCard&id=<?php echo $arrayInfFavs[$k][1] ?>"><img src="<?php echo $arrayInfFavs[$k][4] ?>" alt="Photo maison" /></a>
+    for($k=0;$k<$nbId;$k++)
+    {
+        ?>
+        <div class="blockMyHouses">
+            <fieldset>
+                <legend>Favoris n°<?php echo $k+1; ?></legend>
+                <div class="picMyHouses">
+                    <a href="../controler/content.php?page=houseCard&id=<?php echo $arrayInfFavs[$k][1] ?>"><img src="<?php echo $arrayInfFavs[$k][4] ?>" alt="Photo maison" /></a>
+                </div>
+                <div class="titleMyHouses">
+                    <?php echo $arrayInfFavs[$k][3]; ?>
+                </div>
+                <div class="descriptionMyHouses">
+                    <?php echo $arrayInfFavs[$k][2]; ?>
+                </div>
+                <div class="rateMyHouses">
+                    <?php
+                        switch ($arrayInfFavs[$k][5]) 
+                        {
+                            case 0:
+                                ?><img src="../view/Rate_Star/rate_0_10.jpg" alt="non noté"/><br/><?php
+                                echo"Le bien n'a pas encore été noté.";
+                                break;
+                            case 1:
+                                ?><img src="../view/Rate_Star/rate_1_10.jpg" alt="01/10"/><br/><?php
+                                echo"01/10";
+                                break;
+                            case 2:
+                                ?><img src="../view/Rate_Star/rate_2_10.jpg" alt="02/10"/><br/><?php
+                                echo"02/10";
+                                break;
+                            case 3:
+                                ?><img src="../view/Rate_Star/rate_3_10.jpg" alt="03/10"/><br/><?php
+                                echo"03/10";
+                                break;
+                            case 4:
+                                ?><img src="../view/Rate_Star/rate_4_10.jpg" alt="04/10"/><br/><?php
+                                echo"04/10";
+                                break;
+                            case 5:
+                                ?><img src="../view/Rate_Star/rate_5_10.jpg" alt="05/10"/><br/><?php
+                                echo"05/10";
+                                break;
+                            case 6:
+                                ?><img src="../view/Rate_Star/rate_6_10.jpg" alt="06/10"/><br/><?php
+                                echo"06/10";
+                                break;
+                            case 7:
+                                ?><img src="../view/Rate_Star/rate_7_10.jpg" alt="07/10"/><br/><?php
+                                echo"07/10";
+                                break;
+                            case 8:
+                                ?><img src="../view/Rate_Star/rate_8_10.jpg" alt="08/10"/><br/><?php
+                                echo"08/10";
+                                break;
+                            case 9:
+                                ?><img src="../view/Rate_Star/rate_9_10.jpg" alt="09/10"/><br/><?php
+                                echo"09/10";
+                                break;
+                            case 10:
+                                ?><img src="../view/Rate_Star/rate_10_10.jpg" alt="0/10"/><br/><?php
+                                echo"10/10";
+                                break;
+    ?>
+                </div>
+    <?php
+                        }
+    ?>
+            </fieldset>
+
             </div>
-            <div class="titleMyHouses">
-                <?php echo $arrayInfFavs[$k][3]; ?>
-            </div>
-            <div class="descriptionMyHouses">
-                <?php echo $arrayInfFavs[$k][2]; ?>
-            </div>
-            <div class="rateMyHouses">
-                <?php
-                    switch ($arrayInfFavs[$k][5]) 
-                    {
-                        case 0:
-                            ?><img src="../view/Rate_Star/rate_0_10.jpg" alt="non noté"/><br/><?php
-                            echo"Le bien n'a pas encore été noté.";
-                            break;
-                        case 1:
-                            ?><img src="../view/Rate_Star/rate_1_10.jpg" alt="01/10"/><br/><?php
-                            echo"01/10";
-                            break;
-                        case 2:
-                            ?><img src="../view/Rate_Star/rate_2_10.jpg" alt="02/10"/><br/><?php
-                            echo"02/10";
-                            break;
-                        case 3:
-                            ?><img src="../view/Rate_Star/rate_3_10.jpg" alt="03/10"/><br/><?php
-                            echo"03/10";
-                            break;
-                        case 4:
-                            ?><img src="../view/Rate_Star/rate_4_10.jpg" alt="04/10"/><br/><?php
-                            echo"04/10";
-                            break;
-                        case 5:
-                            ?><img src="../view/Rate_Star/rate_5_10.jpg" alt="05/10"/><br/><?php
-                            echo"05/10";
-                            break;
-                        case 6:
-                            ?><img src="../view/Rate_Star/rate_6_10.jpg" alt="06/10"/><br/><?php
-                            echo"06/10";
-                            break;
-                        case 7:
-                            ?><img src="../view/Rate_Star/rate_7_10.jpg" alt="07/10"/><br/><?php
-                            echo"07/10";
-                            break;
-                        case 8:
-                            ?><img src="../view/Rate_Star/rate_8_10.jpg" alt="08/10"/><br/><?php
-                            echo"08/10";
-                            break;
-                        case 9:
-                            ?><img src="../view/Rate_Star/rate_9_10.jpg" alt="09/10"/><br/><?php
-                            echo"09/10";
-                            break;
-                        case 10:
-                            ?><img src="../view/Rate_Star/rate_10_10.jpg" alt="0/10"/><br/><?php
-                            echo"10/10";
-                            break;
-?>
-            </div>
-<?php
-                    }
-?>
-        </fieldset>
-        
-        </div>
-<?php
+    <?php
     }
+}
+else
+{
+    echo"<br/>Vous n'avez aucun favoris pour l'instant";
+}
 ?>
