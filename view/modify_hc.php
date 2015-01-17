@@ -21,7 +21,7 @@
 			document.getElementById("mapblock").style.display="block";
 			}
 			
-		</script>
+</script>
 <br/>
 <br/>
 <section class='MiddlePage'>
@@ -227,47 +227,3 @@
                     <input type="button" value="Ajouter une annonce" class="addAdButton" 
                            onclick="self.location.href='../controler/content.php?page=createAd&id=<?php echo$_GET['id']?>'"/><br/>
     </article>
-<section class="comments">
-    <?php
-                    include"../view/commentary_bloc.php";
-                ?>
-			commentaires
-			<div class="commentbox">
-				<div class="commentauthor">
-					<p>mei</p>
-					<p> <img class="userimg" src="500full.jpg" alt= "map"/> </p>
-				</div>
-				
-				<div class="comment">
-					<p>incroyable</p>
-					<p>
-						"Set in a period that is both modern and nostalgic, the film creates a fantastic, yet strangely 
-						believable universe of supernatural creatures coexisting with modernity. A great part of this sense comes from Oga's evocative 
-						backgrounds, which give each tree, 
-						hedge and twist in the road an indefinable feeling of warmth that seems ready to spring into sentient life."
-					</p>
-					<p>posté le :10/06/2012</p>
-				</div>
-			</div>
-			
-			<div class="commentbox">
-				<div class="commentauthor">
-					
-					<p> <img class="userimg" src="satsuki.jpg" alt= "map"/> </p>
-					<p>satsuki</p>
-				</div>
-				
-				<div class="comment">
-					<p>magique</p>
-					<p>"Set in a period that is both modern and nostalgic, the film creates a fantastic, yet strangely 
-						believable universe of supernatural creatures coexisting with modernity. A great part of this sense comes from Oga's evocative 
-						backgrounds, which give each tree, 
-						hedge and twist in the road an indefinable feeling of warmth that seems ready to spring into sentient life."</p>
-					<p>posté le :28/04/2010</p>
-				</div>
-			</div>
-		</section>    
-</section>
-			
-
-	
