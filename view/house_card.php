@@ -79,7 +79,7 @@
                             </form>
                             <br />
                             <!--Modify the house card-->
-                            <form method="post" action="../controler/content.php?page=modify_House_Card">
+                            <form method="post" action="../controler/content.php?page=modify_House_Card&id=<?php echo $_GET['id']?>">
                                 <input type="hidden"  name="confirmModif" value="1"/>
                                 <input type="hidden" name="houseId" value="<?php echo $_GET['id'] ?>"/>
                                 <input type="submit" value="Modifier la fiche de cette maison" class="sub"/>

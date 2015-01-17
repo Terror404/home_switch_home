@@ -16,7 +16,7 @@ profile reminder (degeu un peu)
 dans le navigateur : echanger les onglets recherche et forum
 
 Fonctions:
-news a finir (pas long)clément
+<!--news a finir (pas long)clément-->   FINIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
 mail auto
 afficher les maisons sur la gauche et pas la droite( my profile) (anastasia mélanie)
 <!--systeme notation (select AVG et update des profil lors de la notation)--> --Pierre--    /!\ A tester
