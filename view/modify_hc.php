@@ -104,7 +104,7 @@
                                      <?php echo $_SESSION['descriptBien']; ?>  
                                     </br>
                                     </br>
-                                    <form method="post" action="">
+                                    <form method="post" action="../controler/content.php?page=modify">
                                     <?php
                                         while($resModHouse=$askModHouse->fetch())
                                             {
