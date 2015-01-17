@@ -15,7 +15,16 @@ profile reminder (degeu un peu)
 
 
 Fonctions:
-delete en cascade (clément)
-news a finir (pas long)
+delete en cascade clément
+news a finir (pas long)clément
 mail auto
 afficher les maisons sur la gauche et pas la droite( my profile)
+systeme notation (select AVG et update des profil lors de la notation)
+
+
+
+Supprimez quand vous avez fait ou finit et mettez votre nom a coté si c'est en cours
+
+
+URGENT 
+page ad card
