@@ -20,3 +20,9 @@
     height: 16px;
     background: url('../view/pictures/star.png') 0 -16px;
 }
+body{
+ background-image: url("../pictures/fav.jpg"); 
+ background-repeat : no-repeat;
+  background-size: cover;
+    background-attachment: fixed;
+}

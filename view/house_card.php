@@ -1,6 +1,6 @@
  
 <?php require('../modele/fct_verif_date.php');?>
-
+<script type="text/javascript" src="..//view/js/hide_show.js"> </script> 
 <script type = "text/javascript">
     function hideshowhousetxt()
     {
@@ -34,34 +34,7 @@
 </script>
 
 <?php if (RESIDENCE_IS_SET AND RESIDENCE_EXISTS) {?>
-
-<section class='MiddlePage'>
-    
-    <article class='title'> <!-- title of the house-->
-        <?php
-            while($resHtitle=$askHtitle->fetch())
-                {
-                    echo $resHtitle['title'];
-                } 
-        ?>
-    </article>
-    
-    <article class="img"> <!-- Mettre ici les photos et les 2 boutons -->
-                    <p> <!-- main image-->
-                        <?php 
-                            while ($resHpic=$askHpic->fetch()) {
-                                ?>
-                                <img src="<?php echo $resHpic['pictures'] ?>" alt="photo maison" class="image1">
-                                <?php
-                            }
-                        ?>
-                    </p>
-                    
-                    
-                    <div class="caroussel">
-                        
-                    </div>
-            <div class="sub">
+<div class="topsub">
                     <!--Send to the exchange form-->
                     <?php
                         while($resIdOwner=$askIdOwner->fetch())
@@ -73,16 +46,16 @@
                         {
                             $idHouse=$_GET['id'];
                     ?>
-                            <form method="post" action="../controler/content.php?page=confirm_delete_house">
+                            <form method="post" class="topsub1" action="../controler/content.php?page=confirm_delete_house">
                                 <input type="hidden" name="idHouse" value="<?phpecho echo $idHouse?>"/>
-                                <input type=submit value="Supprimer cette maison" class="sub"/>
+                                <input class="sub1" type=submit value="Supprimer cette maison" class="sub"/>
                             </form>
-                            <br />
+                            
                             <!--Modify the house card-->
-                            <form method="post" action="../controler/content.php?page=modify_House_Card">
+                            <form method="post" class="topsub1" action="../controler/content.php?page=modify_House_Card">
                                 <input type="hidden"  name="confirmModif" value="1"/>
                                 <input type="hidden" name="houseId" value="<?php echo $_GET['id'] ?>"/>
-                                <input type="submit" value="Modifier la fiche de cette maison" class="sub"/>
+                                <input type="submit" class="sub2" value="Modifier la fiche de cette maison" class="sub"/>
                             </form>
                     <?php
                         }
@@ -90,23 +63,66 @@
                         {
                             $idHouse=$_GET['id'];
                     ?>
-                            <form method="post" action="../controler/content.php?page=exchange">
+                            <form method="post" class="topsub1" action="../controler/content.php?page=exchange">
                                 <input type="hidden" name="idUser2" value="<?php echo $idOwner ?>"/>
                                 <input type="hidden" name="idHouseU2" value="<?php echo $idHouse ?>"/>
-                                <input type="submit" value="Proposer un échange pour cette maison" class="sub"/>
+                                <input type="submit" class="sub1" value="Proposer un échange pour cette maison" class="sub"/>
                             </form>
-                            <br />
+                            
                             <!--Add as a favorite-->
-                            <form method="post" action="../controler/content.php?page=confirm_favs">
+                            <form method="post"  class="topsub1" action="../controler/content.php?page=confirm_favs">
                                 <input type="hidden"  name="favs" value="1"/>
                                 <input type="hidden" name="houseId" value="<?php echo $_GET['id'] ?>"/>
-                                <input type="submit" value="Ajouter aux favoris" class="sub"/>
+                                <input type="submit" class="sub2" value="Ajouter aux favoris" class="sub"/>
                             </form>
                     <?php
                         }
                     ?>
                             
             </div>
+
+<section class='MiddlePage'>
+    <div class="white"></div>
+    <article class='title'> <!-- title of the house-->
+        <?php
+            while($resHtitle=$askHtitle->fetch())
+                {
+                    echo $resHtitle['title'];
+                } 
+        ?>
+    </article>
+    </br>
+    </br>
+    </br>
+    
+    <article class="img">
+        <!-- Mettre ici les photos et les 2 boutons -->
+                    <p> <!-- main image-->
+                        <?php 
+                            while ($resHpic=$askHpic->fetch()) {
+                                ?>
+                                <img src="<?php echo $resHpic['pictures'] ?>" alt="photo maison" class="image1">
+                                <?php
+                            }
+                        ?>
+                    </p>
+                    <img scr="..//view/pictures/house2.jpg" id="house1" style="display: none"/>
+                    <img scr="..//view/pictures/house2.jpg" id="house2" style="display: none"/>
+                    <img scr="..//view/pictures/house2.jpg" id="house3" style="display: none"/>
+
+                    
+                    
+                    
+                    <div class="caroussel">
+                        <div class="subimg" > <img class="image-shown" src="..//view/pictures/house1.jpg" alt="house1" onclick="hideshowhouse1()"/></div>
+                        <div class="subimg" > <img class="image-shown" scr="..//view/pictures/house2.jpg" id="house1" onclick="hideshowhouse2()"/></div>
+                        <div class="subimg" onclick="hideshowhouse3()"> <img class="image-shown" scr="..//view/pictures/house3.jpg" id="house1" /></div>
+                        <div class="subimg" onclick="hideshowhouse4()"> <img scr="..//view/pictures/house4.jpg" id="house1" /></div>
+                        <div class="subimg" onclick="hideshowhouse5()"> <img scr="..//view/pictures/house1.jpg" id="house1"/></div>
+                        <div class="subimg"> <img scr="..//view/pictures/house1.jpg" id="house1"/></div>
+                        <div class="subimg"> <img scr="..//view/pictures/house1.jpg" id="house1"/></div>
+                        <div class="subimg"> <img scr="..//view/pictures/house1.jpg" id="house1" /></div>
+                    </div>
             
     </article>
 

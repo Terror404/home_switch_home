@@ -1,12 +1,14 @@
 .MiddlePage
 {
     font-family: "GeosansLight";
+    position: relative;
+z-index: 10;
+padding:0.5%;
 }
 
-.sub
+.sub1, .sub2
 {
- 
-     width:60%;
+     width:100%;
 background-color: #00BCE0;
   -webkit-border-radius: 28;
   -moz-border-radius: 28;
@@ -16,29 +18,59 @@ background-color: #00BCE0;
   font-size: 20px;
   padding: 10px 20px 10px 20px;
   text-decoration: none;
+  display : inline-block;
 }   
-.sub:hover {
+.sub1:hover .sub2:hover{
   background: #83EBC6;
   text-decoration: none;      
 }
 
-
+.topsub{
+    margin-top : 5%;
+    width : 95%;
+    margin-left : 2%;
+    
+}
+.topsub1{
+    width : 20%;
+    display : inline-block;
+}
+.sub2{
+    margin-left: 297%;
+}
 
 .title
 {
-    margin-top : 5%;
+    margin-top : 1%;
 text-align : center;
 font-size : 200%;
+background-color: white;
+opacity : 0.9;
+width : 95%;
+margin-left : 2%;
+border-radius : 10px;
+
+}
+.white {
+  background-color: white;
+  position:absolute; 
+  z-index:-1; 
+  top:7%; 
+  left:2.5%; 
+  right:3.5%; 
+  bottom:25%;
+  opacity:0.9; 
+  border-radius: 10px;
 }
 
 .img
 {
-padding : 10 px;
-margin : 10 px;
+margin-left : 4%;
 margin-bottom : 5px;
 display : inline-block;
-width : 50%;
+width : 45%;
 vertical-align : top;
+
 }
 .image1
 {
@@ -52,6 +84,7 @@ width : 98%;
 height :200px;
 vertical-align : middle;
 text-align : center;
+z-index: 10;
 }
 
 .piccar
@@ -62,15 +95,13 @@ width : 20%;
 
 .info
 {
-
 padding : 10 px;
 margin-bottom : 5px;
 padding : 1%;
 display :inline-block;
-width : 45%;
-margin-left:1%;
+width : 43.5%;
 vertical-align : top;
-padding-bottom : 19.5%;
+padding-bottom : 10%;
 }
 
 .ownerimg
@@ -95,15 +126,12 @@ width : 50%;
 display: inline-block;
 vertical-align : middle;
 }
-.onglet
-{
-margin-left : 2%;
-}
+
 .o
 {
 list-style-type : none;
 display : inline;
-width : 10%;
+width : 5%;
 background-color: #00BCE0;
   -webkit-border-radius: 28;
   -moz-border-radius: 28;
@@ -111,7 +139,7 @@ background-color: #00BCE0;
   font-size: 20px;
   padding: 10px 20px 10px 20px;
   text-decoration: none;
-  margin-right : 1.35%;
+  margin-right : 2px;
 }   
 .o:hover {
   background: #83EBC6;
@@ -121,18 +149,19 @@ background-color: #00BCE0;
 {
 display : inline-block;
 vertical-align : middle;
-width : 90%;
+width : 98%;
 padding:3%;
 background-color: #00BCE0;
 margin-top : 1%;
-margin-left : 2%;
-height : 600px;
+height : 500px;
 
 }
 .desc, .ad
 {
 text-align : justify;
+
 }
+
 
 .map
 {
@@ -153,7 +182,7 @@ width : 25%;
 padding : 1%;
 margin : 1%;
 display : inline-block;
-margin-left : 4%;
+margin-left : 5%;
 }
 .commentbox
 {
@@ -184,4 +213,20 @@ display : inline-block;
 .comment, .commentauthor
 {
 vertical-align : middle;
+}
+body{
+ background-image: url("../pictures/photo-photo-paysage-urbain-5.jpg"); 
+ background-repeat : no-repeat;
+  background-size: cover;
+    background-attachment: fixed;
+}
+.subimg{
+   width : 18%;
+    float: left;
+    margin: 1%;
+    border: 1px solid black;
+    height : 50px; 
+}
+.image-shown{
+    width : 90%;
 }
