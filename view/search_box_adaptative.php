@@ -1,5 +1,4 @@
-<article class="FormSearch">
-	<p>	
+<article class="FormSearch">    
         <h1 class="Title">  <?php if (isset($_SESSION['userLogin']))
                             {
                                 echo $_SESSION['choisMaison']; 
