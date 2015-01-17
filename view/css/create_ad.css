@@ -1,6 +1,5 @@
 .sub
 {
- 
      width:40%;
      margin-left: 30%;
 background-color: #00BCE0;
@@ -205,4 +204,18 @@ body{
     border-radius : 10px;
     opacity : 0.9;
    
+}
+.housereminder{
+    border : 2px solid white;
+    width : 90%; 
+    padding : 3%;
+    background-color: white;
+    border-radius : 10px;
+    opacity : 0.9; 
+    height:500px;
+    z-index: -1;
+}
+
+.MiddlePage{
+    z-index: 10;
 }
