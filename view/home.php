@@ -1,41 +1,45 @@
-<meta charset="utf-8">
-<div id="carrousel">
-	<link rel="stylesheet" type="text/css" href="../view/css/style_caroussel.css">
-    <ul>
-    	<ul>
-        <li><img class="img" src="http://eurowin-stats.com/media/maison%20BCBG.jpg" style='width:1800px ;height:1000px' /></li>
-    <li><img class="img" src="http://eurowin-stats.com/media/maison%20geek%201.jpg" style='width:1800px ;height:1000px' /></li>
-    <li><img class="img" src="http://eurowin-stats.com/media/maison%20futuriste.jpg" style='width:1800px ;height:1000px' /></li>
-    <li><img class="img" src="http://eurowin-stats.com/media/maison%20bonheur.jpg" style='width:1800px ;height:1000px' /></li>
-    </ul>
+                
+     <div id="searchbar"> 
+         <div class="searchbox"></div>  
+         <div class="texte"> 
+                <?php if (isset($_SESSION['userLogin']))
+                                {
+                                    echo $_SESSION['slogan']; 
+                                }
+                                else 
+                                {
+                                    echo 'LEURS MAISONS, VOS VACANCES';
+                                }
+                                ?> 
+         </div>
 
-            
-                <div id="searchbar">
-                    <div class="searchbox"></div>
-                	<form class="formHome" action="content.php?page=searchKeyWords" method="post">
-               		<input type="text" name="keyWords" placeholder="PARTIR A LA DECOUVERTE" class="placeholderHome" />
-                        </br>
-                        </br>
-                        </br>
-                     <input class="sub" type="submit" value="GO" /> 
-                    </form>
-                <div class="texte" size=6 color=white> 
-            <?php if (isset($_SESSION['userLogin']))
-                            {
-                                echo $_SESSION['slogan']; 
-                            }
-                            else 
-                            {
-                                echo 'LEURS MAISONS, VOS VACANCES';
-                            }
-                            ?> 
-            </div>
-                </div>
+                        <form class="formHome" action="content.php?page=searchKeyWords" method="post">
+                            <input type="text" name="keyWords" placeholder="PARTIR A LA DECOUVERTE" class="placeholderHome" />
+                            </br>
+                            </br>
+                            </br>
+                         <input class="sub" type="submit" value="GO" /> 
+                        </form>
+
+     </div>
+    <a class="previouslink" href="#">
+        <img class="previouslinki" src="..//view/pictures/previous.png"/>
+    </a>
+
+	<div class="carousel-inner">
+		<img class="image-shown" src="..//view/pictures/house1.jpg" alt="house1"/>
+		<img class="image-hidden" src="..//view/pictures/house2.jpg" alt="house2"/>
+		<img class="image-hidden" src="..//view/pictures/house3.jpg" alt="house3"/>
+		<img class="image-hidden" src="..//view/pictures/house4.jpg" alt="house4"/>
+	</div>
+
+	<a class="nextlink" href="#">
+            <img class="nextlinki" src="..//view/pictures/next.png"/>
+        </a>
+       
         </div>
-</div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
- <script type="text/javascript" src="../view/caroussel.js"></script>
- 
- 
- 
+		<script type="text/javascript" src="..//view/js/jquery.js"></script>
+		<script type="text/javascript" src="..//view/js/javas.js"></script>
+                
+                

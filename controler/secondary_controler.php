@@ -3,6 +3,8 @@
 
 echo'<link rel="stylesheet" type="text/css" href="../view/css/hsh_style.css">';
 echo'<link rel="stylesheet" type="text/css" href="../view/css/bloc_co.css" >';
+echo'<link rel="stylesheet" type="text/css" href="../view/css/accueil_first.css">';
+
 
 if (isset($_GET['page'])) {
     $page=$_GET['page'];
@@ -28,7 +30,7 @@ if (isset($page) AND $page!='')
                     }
                     elseif( $_GET['page']=='home')
                     {
-                        echo'<link rel="stylesheet" type="text/css" href="../view/css/style_caroussel.css">';
+                        echo'<link rel="stylesheet" type="text/css" href="../view/css/accueil_first.css">';
                     }
                     elseif( $_GET['page']=='myProfile')
                     {
