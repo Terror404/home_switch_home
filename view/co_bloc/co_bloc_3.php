@@ -11,7 +11,7 @@
     width:10%;
     height:32%;"/>
 <?php
-if($_SESSION['userAccess']==='3')
+if($_SESSION['userAccess']==='2' OR $_SESSION['userAccess']==='3')
 {
     echo '<a class="CoBlocBO" href=\'../controler/back_office.php?page=index\' style="position:absolute;
     bottom:5%;
