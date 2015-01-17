@@ -1,6 +1,10 @@
 
-// POSITIONNING OF THE BLOCKS 
-
+body{
+ background-image: url("../pictures/leaf.jpg"); 
+ background-repeat : no-repeat;
+  background-size: cover;
+    background-attachment: fixed;
+}
 
 .resultSearch
 {
@@ -10,4 +14,47 @@
    margin-top:200px;
    
    
+}
+.housebox
+{   
+    background-color: #d1fa98;
+ 
+    border:  10px solid white;
+    opacity : 0.9;
+margin-bottom: 5%;
+width : 86%;
+margin-left : 5%;
+padding : 1%;
+}
+.houseleft{
+    display: inline-block;
+    width:20%;
+    margin:1%;
+}
+.houseimg
+{
+width : 95%;
+margin : 1%;
+}
+
+.desc_tilte
+{
+width : 65%;
+margin : 1%;
+padding: 1%;
+display : inline-block;
+text-align: justify;
+
+}
+.desc_tilte, .houseleft
+{
+vertical-align : top;
+}
+
+
+.title{
+   font-weight: bold;
+   font-size : 200%;
+    text-align: center;
+    
 }

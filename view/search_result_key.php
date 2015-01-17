@@ -9,13 +9,14 @@ while($resSearch=$askPrioritySearch->fetch())
         
     
  ?>  
-<div class="blockMyHouses" onclick="self.location.href='../controler/content.php?page=houseCard&amp;id=<?php echo $resSearch['id'];?>'">
-    <div id="adTitle"> 
+<div class="housebox" onclick="self.location.href='../controler/content.php?page=houseCard&amp;id=<?php echo $resSearch['id'];?>'">
+    <div id="adTitle" class="title"> 
         <?php echo $resSearch['title']; ?>
     </div>
-    <div class="picMyHouses"> 
-        <a href="../controler/content.php?page=houseCard&id=<?php echo $resSearch['id'] ?>"><img src="<?php echo $resSearch['pictures'] ?>" alt="Photo maison" /></a>
-    </div>
+    <div id="houseleft" class="houseleft"> 
+        <a href="../controler/content.php?page=houseCard&id=<?php echo $resSearch['id'] ?>">
+            <img class="houseimg" src="<?php echo $resSearch['pictures'] ?>" alt="Photo maison" /></a>
+    
     
     
     
@@ -71,7 +72,8 @@ while($resSearch=$askPrioritySearch->fetch())
                             }
        
     </div>
-    <div id="descriptionMyHouses"> 
+    </div>
+    <div  id="desc_tilte" class="desc_tilte"> 
         <?php echo $resSearch['description']; ?>
     </div>
     

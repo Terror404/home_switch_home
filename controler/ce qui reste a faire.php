@@ -1,11 +1,6 @@
 CSS: anastasia et mélanie à partir de 17H
 
-dans les {} c'est toujours le meme presque
-{
-resultats de recherche
-resultats de recherche mot clé
-mes maisons
-}
+
 mon profil
 ajouter annonce (pk ya un rappel de la maison au dessus? ca fait super moche!)
 news (non prioritaire)
