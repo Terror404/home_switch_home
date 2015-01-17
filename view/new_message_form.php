@@ -25,8 +25,10 @@ include ('mailbox_toolbar.php');
 						<textarea class="textarea" name="text"></textarea>
 					</p>
                                         
-                                            <p class="twosubs"><input class="sub" type ="reset" value="Annuler"/>
-                                            <input class="sub" type ="submit" value="Envoyer"/></p>   
+                                        <p class="twosubs">
+                                                <input class="sub" type ="reset" value="Annuler"/>
+                                                <input class="sub" type ="submit" value="Envoyer"/>
+                                        </p>   
                                         
 				</form>
 			</div>

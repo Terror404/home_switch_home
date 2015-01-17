@@ -312,7 +312,7 @@
 
 
 
-    <article class="annonces">annonces <!-- Mettre ici les dates -->
+    <article class="annonces">Annonces <!-- Mettre ici les dates -->
         <br/>
         <?php
             while($resDateB=$askDateB ->fetch()AND $resDateE=$askDateE ->fetch())
@@ -329,7 +329,7 @@
                 }
                 }
         ?>
-                    <input type="button" value="Ajouter une annonce" class="addAdButton" 
+                    <input type="button" value="Ajouter une annonce" class="sub" 
                            onclick="self.location.href='../controler/content.php?page=createAd&id=<?php echo$_GET['id']?>'"/><br/>
     </article>
 <section class="comments">

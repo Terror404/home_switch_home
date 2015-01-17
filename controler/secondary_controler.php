@@ -158,6 +158,10 @@ if (isset($page) AND $page!='')
                     {
                         echo'<link rel="stylesheet" type="text/css" href="../view/css/create_ad.css">';
                     }
+                      elseif($_GET['page']=='delete_msg')
+                    {
+                        echo'<link rel="stylesheet" type="text/css" href="../view/css/confirm_alert.css">';
+                    }
     
     }
 
