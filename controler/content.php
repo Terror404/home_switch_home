@@ -348,7 +348,11 @@
                         include("../view/confirm_delete_msg.php");
                         require('../modele/delete_msg.php');
                     }
-                    
+                    elseif($_GET['page']=='deleteUser')
+                    {
+                        include("../view/delete_user.php");
+                        require('../modele/delete_user.php');
+                    }
                     
                 }
                    

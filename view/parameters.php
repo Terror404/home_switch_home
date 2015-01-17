@@ -168,10 +168,10 @@ if(isset($end) AND isset($_POST['whichForm']) AND $_POST['whichForm']==5)
         </p><br/>
 </form>
    
-<form method="post" action="">
+<form method="post" action="../controler/content.php?page=deleteUser">
     Supprimer définitivement votre profil :
     <p class="twosubs">
-        <input type="hidden" name="definitiveDelete" value="1"/>
+        <input type="hidden" name="id" value="<?php echo $_SESSION['userId']?>"/>
         <input class="sub" type="submit" value="Supprimer"/>
     </p>
 </form>

@@ -87,11 +87,16 @@
         $askCom=$DB->prepare('SELECT * FROM comment_house C,user U WHERE C.id_target=:idtarget AND C.id_author=U.id');
 $askCom->execute(array('idtarget'=>$_GET['id']));
 $askComNb=$askCom->rowcount();
-    }
-    
-    elseif(isset($_POST['houseId']))
+
+
+
+if(isset($_POST['houseId']))
     {
         $askModHouse=$DB->prepare('SELECT * FROM house WHERE id=:idhouse');
             $askModHouse->execute(array('idhouse'=>$_POST['houseId']));
     }
+    }
+    
+    
+    
 

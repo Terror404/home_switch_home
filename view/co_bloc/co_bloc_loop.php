@@ -22,9 +22,10 @@ if (
         $_SESSION['userId'] = $userInfo['id'];
         $_SESSION['userPic'] = $userInfo['picture'];
         $_SESSION['userAccess'] = $userInfo['access'];
-    }
-    
-$traduct = $DB->prepare('SELECT * FROM traduction');
+        
+        // RECUPERATION DE LA LANGUE UTILISATEUR
+        
+        $traduct = $DB->prepare('SELECT * FROM traduction');
 $traduct->execute();
 
 $askLang = $DB->prepare('SELECT language FROM user WHERE user.id='.$userInfo['id']);
@@ -52,6 +53,9 @@ elseif ($lang ==1)
         $_SESSION[$variable] = $resTraduct['english'];
     }
 }
+    }
+    
+
 
 }
 else {

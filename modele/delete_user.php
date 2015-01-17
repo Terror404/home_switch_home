@@ -20,6 +20,11 @@ $askHouse=$DB->prepare('SELECT * FROM house WHERE id_user='.$_POST['id']);
         $deleteCriteriaHouse->execute();
         $deleteCommentHouse=$DB->prepare('DELETE FROM comment_house WHERE id_target='.$resHouse['id']);
         $deleteCommentHouse->execute();
+        $deleteHouseCriteria=$DB->prepare('DELETE FROM house_criteria_house WHERE id_house='.$resHouse['id']);
+            $deleteHouseCriteria->execute();
+        $deleteHouse=$DB->prepare('DELETE FROM house WHERE id='.$resHouse['id']);
+            $deleteHouse->execute();
+        
     }
    
     //delete favorites
@@ -36,7 +41,7 @@ $askHouse=$DB->prepare('SELECT * FROM house WHERE id_user='.$_POST['id']);
         $deleteCommentUserA->execute();
         
     //delete messages involving the user
-    $deleteMsg=$DB->prepare('DELETE FROM messages WHERE id_target='.$_POST['id']);
+    $deleteMsg=$DB->prepare('DELETE FROM messages WHERE id_receiver='.$_POST['id']);
         $deleteMsg->execute();
     $deleteMsgA=$DB->prepare('DELETE FROM messages WHERE id_author='.$_POST['id']);
         $deleteMsgA->execute();    
