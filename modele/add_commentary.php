@@ -34,6 +34,26 @@ if(isset($_POST['add']) AND $_POST['add']==1)
 
                     $addComU=$DB->prepare('INSERT INTO comment_user (id_author,id_target,title,text,rating,date) VALUES(:idauthor,:idtarget,:title,:text,:rating,:date)');
                         $addComU->execute(array('idauthor'=>$idUser1,'idtarget'=>$idUser2,'title'=>$titleCUser,'text'=>$comUser,'rating'=>$rateUser,'date'=>$date));
+                    
+                    //Average of the house rate + upload in database
+                    $askAvgRatesH=$DB->prepare('SELECT AVG(rating)FROM comment_house WHERE id_target=:idtarget');
+                        $askAvgRatesH->execute(array('idtarget'=>$idHouse2));
+                    
+                    while($resAvgRatesH=$askAvgRatesH->fetch())
+                    {
+                        $updateAvgRateH=$DB->prepare('UPLOAD INTO house SET rating=:avgrating');
+                            $updateAvgRateH->execute(array('avgrating'=>$resAvgRatesH));
+                    }
+                    
+                    //Average of the user rate + upload in database
+                    $askAvgRatesU=$DB->prepare('SELECT AVG(rating)FROM comment_user WHERE id_target=:idtarget');
+                        $askAvgRatesU->execute(array('idtarget'=>$idUser2));
+                    
+                    while($resAvgRatesH=$askAvgRatesH->fetch())
+                    {
+                        $updateAvgRateU=$DB->prepare('UPLOAD INTO house SET rating=:avgrating');
+                            $updateAvgRateU->execute(array('avgrating'=>$resAvgRatesU));
+                    }
 
                     $upFinished=$DB->prepare('UPDATE exchange SET finished_1=1 WHERE id=:idexchange');
                         $upFinished->execute(array('idexchange'=>$idExchange));
