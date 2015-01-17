@@ -23,6 +23,8 @@ afficher les maisons sur la gauche et pas la droite( my profile) (anastasia mél
 finir de proteger le back office clément
 mettre un mdp sur la bdd
 fiche modif maison (completer le modele pour tout inserer dans la bdd) --Pierre--
+protéger ajouter une annonce --Pierre--
+
 
 
 Supprimez quand vous avez fait ou finit et mettez votre nom a coté si c'est en cours
