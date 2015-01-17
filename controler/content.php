@@ -117,12 +117,6 @@
                         require("../modele/search_my_houses.php"); //modele
                         include("../view/my_houses.php");//vue                       
                     }
-                    //Own Ad
-                    elseif( isset($_SESSION['userId']) AND $_GET['page']== 'my_ads')
-                    {
-                        include("../view/my_ads.php");
-                        include("../modele/search_my_ads.php"); //modele
-                    }
                     //My Messages
                     elseif(isset($_SESSION['userId']) AND $_GET['page']=='my_mp')
                     {
@@ -352,6 +346,11 @@
                     {
                         include("../view/delete_user.php");
                         require('../modele/delete_user.php');
+                    }
+                    elseif($_GET['page']=='adCard')
+                    {
+                        require('../modele/search_ad_card.php');
+                        include('../view/ad_card.php');
                     }
                     
                 }

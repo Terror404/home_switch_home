@@ -386,4 +386,3 @@
 else {
     echo "Erreur : Pas de maison trouvée.";
 }
-

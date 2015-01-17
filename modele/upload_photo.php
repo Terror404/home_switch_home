@@ -10,7 +10,7 @@ if(!is_dir("../view/pictures/".$id_user))
     mkdir("../view/pictures/".$id_user,755);
 }
                 
-define('MAX_SIZE',100000);                      //Maximal size of the pic (byte)
+define('MAX_SIZE',100000000);                     //Maximal size of the pic (byte)
 define('WIDTH_MAX',5000);                       //Maximum width of the pic (pixels)
 define('HEIGHT_MAX',5000);
 
