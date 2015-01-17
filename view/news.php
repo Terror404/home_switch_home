@@ -1,6 +1,7 @@
-<div class="lastAds" style="width:40%; left:5%; position:absolute; top: 8%; border:1px solid black; border-radius:25px;padding:10px;">
+<div class="lastAds" >
     
-    <div>Nos dernières annonces</div>
+    <h1>Nos dernières annonces</h1>
+    <br/>
     
     <?php
     $i=0;
@@ -23,8 +24,12 @@
     ?>
 </div>
 
-   
-<div class="lastHouses" style="width:40%; right:5%; position:absolute; top: 8%;border:1px solid black; border-radius:25px;padding:10px;">
+  
+<div class="lastHouses">
+    
+    <h1>Nos dernières maisons</h1>
+    <br/>
+    
     <?php
     $i=0;
     while($resLast=$askLast->fetch() AND $i<5)
@@ -37,6 +42,32 @@
     </div>
     <div class="picMyHouses" style="width:40%;height:50%;margin:auto;"> 
         <a href="../controler/content.php?page=houseCard&id=<?php echo $resLast['id'] ?>" style="overflow:hidden; background-image: url()"><img src="<?php echo $resLast['pictures'] ?>" alt="Photo maison" style="width:100%;height:100%"/></a>
+    </div>
+    </div>
+    <?php
+    $i+=1;
+    }
+    
+    ?>
+</div>
+
+
+<div class="lastHouses" style="width:40%; overflow:hidden; right:5%;top:800px; position:absolute; border-radius:25px;padding:10px;">
+
+    <h1>Meilleure maison</h1>
+    <br/>
+ <?php
+    $i=0;
+    while($resBestHouse=$askBestHouse->fetch() AND $i<1)
+    {
+       ?>
+    <div class="blockMyHouses" onclick="self.location.href='../controler/content.php?page=houseCard&amp;id=<?php echo $resBestHouse['id'];?>'">
+    <div id="adTitle"> 
+        <?php echo $resBestHouse['title']; ?>
+        
+    </div>
+    <div class="picMyHouses" style="width:40%;height:50%;margin:auto;"> 
+        <a href="../controler/content.php?page=houseCard&id=<?php echo $resBestHouse['id'] ?>" style="overflow:hidden; background-image: url()"><img src="<?php echo $resBestHouse['pictures'] ?>" alt="Photo maison" style="width:100%;height:100%"/></a>
     </div>
     </div>
     <?php
