@@ -10,7 +10,7 @@ if (isset($_GET['page'])) {
     $page=$_GET['page'];
 }
 
-if (isset($page) AND $page!='')
+if (isset($page) AND $page!='') 
 {
                     if( $_GET['page']=='research')
                     {
