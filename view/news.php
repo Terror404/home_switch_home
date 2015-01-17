@@ -36,7 +36,7 @@
         
     </div>
     <div class="picMyHouses" style="width:40%;height:50%;margin:auto;"> 
-        <a href="../controler/content.php?page=houseCard&id=<?php echo $resLast['id'] ?>" style="overflow:hidden;"><img src="<?php echo $resLast['pictures'] ?>" alt="Photo maison" style="width:100%;height:100%"/></a>
+        <a href="../controler/content.php?page=houseCard&id=<?php echo $resLast['id'] ?>" style="overflow:hidden; background-image: url()"><img src="<?php echo $resLast['pictures'] ?>" alt="Photo maison" style="width:100%;height:100%"/></a>
     </div>
     </div>
     <?php

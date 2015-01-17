@@ -91,7 +91,7 @@
                     <a href=# class="footerLink"> 
                         <?php if (isset($_SESSION['userLogin']))
                             {
-                                echo $_SESSION['meilleurAnnonc']; 
+                                echo $_SESSION['meilleurAnonc']; 
                             }
                             else 
                             {
