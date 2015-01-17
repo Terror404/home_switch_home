@@ -15,6 +15,7 @@ while($resUser=$askUserBack->fetch())
             . '</form>'
             . '<form method="post" action=\'../controler/back_office.php?page=moderateSite&state=4\'>'
             . '<input type="submit" value="Delete">'
+            . '<input type="hidden" name="id" value="'.$resUser['id'].'">'
             . '<input type="hidden" name="name" value="'.$_POST['name'].'">'
             . '</form>'
             . '</div>'

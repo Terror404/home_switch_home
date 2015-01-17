@@ -83,6 +83,10 @@
 
         $askCrit5=$DB->prepare('SELECT * FROM criteria');
             $askCrit5->execute();
+            
+        $askCom=$DB->prepare('SELECT * FROM comment_house C,user U WHERE C.id_target=:idtarget AND C.id_author=U.id');
+$askCom->execute(array('idtarget'=>$_GET['id']));
+$askComNb=$askCom->rowcount();
     }
     
     elseif(isset($_POST['houseId']))
@@ -90,6 +94,4 @@
         $askModHouse=$DB->prepare('SELECT * FROM house WHERE id=:idhouse');
             $askModHouse->execute(array('idhouse'=>$_POST['houseId']));
     }
-$askCom=$DB->prepare('SELECT * FROM comment_house,user WHERE comment_house.id_target='.$_GET['id'].' AND comment_house.id_author=user.id');
-$askCom->execute();
-$askComNb=$askCom->rowcount();
+

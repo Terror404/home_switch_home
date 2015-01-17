@@ -5,3 +5,13 @@ $askLastAds->execute();
 $askLast=$DB->prepare('SELECT house.id,house.title,house.pictures FROM house ORDER BY id DESC');
 $askLast->execute();
 
+$askRatingHouse=$DB->prepare('SELECT MAX(rating) AS nb FROM house');
+$askRatingHouse->execute();
+
+while($resRatingHouse=$askRatingHouse->fetch())
+{
+    $nbHouse=$resRatingHouse['nb'];
+}
+$askBestHouse=$DB->prepare('SELECT house.id,house.title,house.pictures FROM house WHERE rating='.$nbHouse);
+$askBestHouse->execute();
+

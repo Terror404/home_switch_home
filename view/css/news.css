@@ -1,0 +1,29 @@
+body
+{
+    background-image : url("../pictures/form-user-img.jpg");
+     background-repeat : no-repeat;
+  background-size: cover;
+    background-attachment: fixed;
+}
+
+.lastAds
+{
+    border : 2px solid white;
+ 
+    padding : 1%;
+    background-color: white;
+    border-radius : 10px;
+    opacity : 0.9;
+    width:40%; left:5%; position:absolute; height:500px; overflow:scroll; overflow-style:none; top: 200px; border-radius:25px;
+}
+
+.lastHouses
+{
+    border : 2px solid white;
+ 
+    padding : 1%;
+    background-color: white;
+    border-radius : 10px;
+    opacity : 0.9;
+    width:40%; height:500px; right:5%; overflow:scroll; overflow-style:none; position:absolute; top: 200px; border-radius:25px;
+}
