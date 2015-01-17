@@ -75,18 +75,28 @@ div.ForumPageHeader {
     font-weight: bold;
 }
 
-input.SubmitButton {
+.NewTopicButton {
+    display: block;
+    width: 145px;
+    background-color: #00BCE0;
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    color: white;
+    font-size: 15px;
+    padding: 10px 10px 10px 10px;
+    text-decoration: none;
+}
+
+.SubmitButton {
     background-color: #00BCE0;
     -webkit-border-radius: 28;
     -moz-border-radius: 28;
     border-radius: 0px;
-    font-family: "GeosansLight";
     color: white;
     font-size: 15px;
     padding: 5px 10px 5px 10px;
     text-decoration: none;
 }
-input.SubmitButton:hover {
+.SubmitButton:hover, .NewTopicButton:hover {
     background: #83EBC6;
-    text-decoration: none;
 }

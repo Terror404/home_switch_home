@@ -8,12 +8,12 @@
     {
 ?>
         
-    <div class="housebox">
-        
+    <div class="housebox" onclick="self.location.href='../controler/content.php?page=houseCard&id=<?php echo $resHouse['id'] ?>'">
+      
         
 				<div class="houseleft"> <!-- image of the house and rating-->
 					
-					<p> <a  href="../controler/content.php?page=houseCard&id=<?php echo $resHouse['id'] ?>">
+					<p>
                                              <img class="houseimg" src="<?php echo $resHouse['pictures'] ?>" alt="Photo maison" /></a>
                                         </p>
                                         <p>
@@ -79,6 +79,7 @@
                                         </br>
 					
                                 </div>
+      </a>
         
  
                

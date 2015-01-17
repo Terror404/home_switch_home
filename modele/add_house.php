@@ -1,16 +1,3 @@
-<!--Attention possibilité de faire une requête imbriquée !!!-Pierre-->
-<?php
-session_start();
-    try
-        {
-            $DB=new PDO ("mysql:host=localhost;dbname=home_switch_home","root","",array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
-        } 
-    catch (Exception $ex) 
-        {
-            die('Erreur'.$ex->getMessage());
-        }
-?>
-
 <?php
     if(isset($_POST['title']) AND $_POST['title']!=NULL AND $_POST['title']!=""
         AND isset($_POST['description']) AND $_POST['description']!=NULL AND $_POST['description']!=""

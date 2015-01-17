@@ -1,10 +1,16 @@
     <!--Get the id of the owner-->
     <?php
-    if(isset($_GET['id']))
+    define("RESIDENCE_IS_SET", isset($_GET['id']));
+    
+    if(RESIDENCE_IS_SET)
     {
         $askIdOwner=$DB->prepare('SELECT id_user FROM house WHERE id=:idhouse');
             $askIdOwner->execute(array('idhouse'=>$_GET['id']));
-       
+            
+        define("RESIDENCE_EXISTS", $askIdOwner->rowCount() > 0);
+    }
+    
+    if (RESIDENCE_IS_SET AND RESIDENCE_EXISTS) {
     //<!--Get the house title-->
         $askHtitle=$DB->prepare('SELECT house.title FROM house WHERE house.id=:idhouse');
             $askHtitle->execute(array('idhouse'=>$_GET['id']));
@@ -22,7 +28,7 @@
             $askDateE->execute(array('idhouse'=>$_GET['id']));
             
         //<!--Get the begining and the end dates-->
-        $askDates=$DB->prepare('SELECT A.date_end,A.date_begin FROM ad A, house H WHERE H.id=A.id_house AND H.id=:idhouse');
+        $askDates=$DB->prepare('SELECT A.date_end,A.date_begin,A.id FROM ad A, house H WHERE H.id=A.id_house AND H.id=:idhouse');
             $askDates->execute(array('idhouse'=>$_GET['id']));    
     
     //<!--Get the house rate-->
@@ -84,3 +90,6 @@
         $askModHouse=$DB->prepare('SELECT * FROM house WHERE id=:idhouse');
             $askModHouse->execute(array('idhouse'=>$_POST['houseId']));
     }
+$askCom=$DB->prepare('SELECT * FROM comment_house,user WHERE comment_house.id_target='.$_GET['id'].' AND comment_house.id_author=user.id');
+$askCom->execute();
+$askComNb=$askCom->rowcount();

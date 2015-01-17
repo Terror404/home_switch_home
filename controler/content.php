@@ -186,21 +186,6 @@
                         include("../modele/add_message.php"); //modele
                         include("../view/confirm_sent_message.php");//vue
                     }
-               
-                    //Add a new house
-                    elseif($_GET['page']=='createHouse')
-                    {   
-                        if(!isset($_SESSION['userId']))
-                        {
-                        echo"Vous ne pouvez pas accéder à cette page. Veuilez vous connecter.";
-                        }
-                        else
-                        {
-                        include("../view/create_house.php"); //view
-                        require("../modele/search_profile_reminder.php");
-                        include("../view/profile_reminder.php");
-                        }
-                    }
                     
                     //House Card
                     elseif($_GET['page']=='houseCard')
@@ -354,6 +339,9 @@
                     {
                         include("../view/contact_form.php");
                     }
+                    elseif($_GET['page']=='charte')
+                    {
+                        include("../view/charte.php");
                     elseif($_GET['page']=='delete_msg')
                     {
                         include("../view/confirm_delete_msg.php");

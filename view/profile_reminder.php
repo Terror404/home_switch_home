@@ -1,4 +1,5 @@
-            <div class="ProfileReminder">
+<?php require("../modele/search_profile_reminder.php");?>            
+<div class="ProfileReminder">
                 <div class="PicCase"> <!--Put the profile photo-->
                     <?php
                         while ($resPic=$askPic->fetch())

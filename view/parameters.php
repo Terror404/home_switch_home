@@ -145,6 +145,36 @@ if(isset($end) AND isset($_POST['whichForm']) AND $_POST['whichForm']==5)
    <p class="twosubs"></br> <input class="sub" type="submit" value="Modifier"/>
        <input class="sub" type="reset" value="Annuler"/></p>
 </form>
+<form method="post" action="">
+    <br/>
+    <label>Langue/Language :</label>
+    <select name="language" > 
+        <option value="0"> Fançais
+        <option value="1"> Anglais
+    </select>
+     <?php
+    if(isset($end) AND $end==0)
+    {
+        echo"<br/>Cette langue est déjà celle utilisée par le site.";
+    }
+    elseif(isset($end) AND $end==1)
+    {
+        echo"<br/>Veuillez vous déconnecter pour que la modification soit prise en compte.";
+    }
+    ?>
+        <p class="twosubs">
+        <input class="sub" type="submit" value="Modifier"/>
+        <input class="sub" type="reset" value="Annuler"/>
+        </p><br/>
+</form>
+   
+<form method="post" action="">
+    Supprimer définitivement votre profil :
+    <p class="twosubs">
+        <input type="hidden" name="definitiveDelete" value="1"/>
+        <input class="sub" type="submit" value="Supprimer"/>
+    </p>
+</form>
 
 </div>
 

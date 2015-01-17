@@ -12,12 +12,12 @@
                             ?> 
 </h2>
    <div class="modif">
-    <?php $userId=$_SESSION['userId'];?>
-<?php
-if(isset($modify) AND $modify==1)
+    <?php $userId=$_SESSION['userId'];
+
+if(!isset($modifyProf))
 {
 ?>
-<form method="post" action="../controler/content.php?page=myProfile&id=<?php echo $userId ?>">
+<form method="post" action="../controler/content.php?page=myProfile&userId=<?php echo $userId ?>">
 <input type='hidden' name='modifyProf' value='1'/>
 <input type='submit' class="subtomodif" value ='Modifier votre profil'/>
 </form>
@@ -197,11 +197,11 @@ if(isset($modify) AND $modify==1)
     <div class="myhouses">
        <div class="test1"></div>
         <h2> Mes Maisons </h2>
-        <?php while($resPic=$askProfHouses->fetch())
+            <?php while($resPic=$askProfHouses->fetch())
         {
          
         echo' <p><img class="image" id="house1" src="'.$resPic['pictures'].'" alt= "image1" onclick="self.location.href=\'../controler/content.php?page=houseCard&id='.$resPic['id'].'\'"></p>';
-        
+        echo $resPic['id'];
         }
     ?>
     </div>    
@@ -236,8 +236,4 @@ if(isset($modify) AND $modify==1)
 ?>
             
 </div>     
-    
-</div>
-
-</div>
 </section>

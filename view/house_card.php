@@ -1,38 +1,40 @@
  
-
+<?php require('../modele/fct_verif_date.php');?>
 
 <script type = "text/javascript">
-			function hideshowhousetxt()
-			{
-			document.getElementById("housetxt").style.display="block";
-			document.getElementById("ownerinfo").style.display="none";
-			document.getElementById("mapblock").style.display="none";
-                        document.getElementById("ad").style.display="none";
-			}
-			function hideshowownerinfo()
-			{
-			document.getElementById("housetxt").style.display="none";
-			document.getElementById("ownerinfo").style.display="block";
-			document.getElementById("mapblock").style.display="none";
-                        document.getElementById("ad").style.display="none";
-			}
-			function hideshowmapblock()
-			{
-			document.getElementById("housetxt").style.display="none";
-			document.getElementById("ownerinfo").style.display="none";
-			document.getElementById("mapblock").style.display="block";
-                        document.getElementById("ad").style.display="none";
-			}
-                        function hideshowad()
-			{
-			document.getElementById("housetxt").style.display="none";
-			document.getElementById("ownerinfo").style.display="none";
-			document.getElementById("mapblock").style.display="none";
-                        document.getElementById("ad").style.display="block";
-			}
-			
-		</script>
-                
+    function hideshowhousetxt()
+    {
+        document.getElementById("housetxt").style.display="block";
+        document.getElementById("ownerinfo").style.display="none";
+        document.getElementById("mapblock").style.display="none";
+        document.getElementById("ad").style.display="none";
+    }
+    function hideshowownerinfo()
+    {
+        document.getElementById("housetxt").style.display="none";
+        document.getElementById("ownerinfo").style.display="block";
+        document.getElementById("mapblock").style.display="none";
+        document.getElementById("ad").style.display="none";
+    }
+    function hideshowmapblock()
+    {
+        document.getElementById("housetxt").style.display="none";
+        document.getElementById("ownerinfo").style.display="none";
+        document.getElementById("mapblock").style.display="block";
+        document.getElementById("ad").style.display="none";
+    }
+    function hideshowad()
+    {
+        document.getElementById("housetxt").style.display="none";
+        document.getElementById("ownerinfo").style.display="none";
+        document.getElementById("mapblock").style.display="none";
+        document.getElementById("ad").style.display="block";
+    }
+
+</script>
+
+<?php if (RESIDENCE_IS_SET AND RESIDENCE_EXISTS) {?>
+
 <section class='MiddlePage'>
     
     <article class='title'> <!-- title of the house-->
@@ -47,11 +49,10 @@
     <article class="img"> <!-- Mettre ici les photos et les 2 boutons -->
                     <p> <!-- main image-->
                         <?php 
-                            while ($resHpic=$askHpic->fetch())
-                                {
-                        ?>
-                                    <img src="<?php echo $resHpic['pictures'] ?>" alt="photo maison" class="image1">
-                        <?php
+                            while ($resHpic=$askHpic->fetch()) {
+                                ?>
+                                <img src="<?php echo $resHpic['pictures'] ?>" alt="photo maison" class="image1">
+                                <?php
                             }
                         ?>
                     </p>
@@ -298,7 +299,7 @@
                 <?php
                         while ($resDates=$askDates->fetch())
                             {
-                                echo 'De'.$resDates['A.date_begin'].'à'.$resDates['A.date_end'];
+                                echo '<a href="../controler/content.php?page=adCard&id='.$resDates['id'].'">De '.reorder_date_2($resDates['date_begin']).' au '.reorder_date_2($resDates['date_end']).'</a>';
                             }
                     ?>
             </div>
@@ -332,44 +333,40 @@
                            onclick="self.location.href='../controler/content.php?page=createAd&id=<?php echo$_GET['id']?>'"/><br/>
     </article>
 <section class="comments">
-    <?php
-                    include"../view/commentary_bloc.php";
-                ?>
-			commentaires
-			<div class="commentbox">
-				<div class="commentauthor">
-					<p>mei</p>
-					<p> <img class="userimg" src="500full.jpg" alt= "map"/> </p>
-				</div>
-				
-				<div class="comment">
-					<p>incroyable</p>
-					<p>
-						"Set in a period that is both modern and nostalgic, the film creates a fantastic, yet strangely 
-						believable universe of supernatural creatures coexisting with modernity. A great part of this sense comes from Oga's evocative 
-						backgrounds, which give each tree, 
-						hedge and twist in the road an indefinable feeling of warmth that seems ready to spring into sentient life."
-					</p>
-					<p>posté le :10/06/2012</p>
-				</div>
-			</div>
+    
+    <div class="test2"></div>
+<h2> Les commentaires </h2>
+        <?php if($askComNb!=0)
+        {
+            while($resCom=$askCom->fetch())
+            {
+            echo '<div class="commentbox">
+            <div class="commentauthor">
+
+                    <p> <img class="userimg" src="'.$resCom['picture'].'" alt= "map"/> </p>
+                    <p>'.$resCom['login'].'</p>
+            </div>
+
+            <div class="comment">
+                    <p>'.$resCom['title'].'</p>
+                    <p>'.$resCom['text'].'</p>
+                    <p>posté le :'.$resCom['date'].'</p>
+            </div>    
+        </div>';
+            }
+        }
+        else
+        {
+            echo 'Aucun commentaire disponible';
+        }
+?>
 			
-			<div class="commentbox">
-				<div class="commentauthor">
-					
-					<p> <img class="userimg" src="satsuki.jpg" alt= "map"/> </p>
-					<p>satsuki</p>
-				</div>
-				
-				<div class="comment">
-					<p>magique</p>
-					<p>"Set in a period that is both modern and nostalgic, the film creates a fantastic, yet strangely 
-						believable universe of supernatural creatures coexisting with modernity. A great part of this sense comes from Oga's evocative 
-						backgrounds, which give each tree, 
-						hedge and twist in the road an indefinable feeling of warmth that seems ready to spring into sentient life."</p>
-					<p>posté le :28/04/2010</p>
-				</div>
-			</div>
+			
+			
 		</section>    
 </section>
 			
+<?php }
+else {
+    echo "Erreur : Pas de maison trouvée.";
+}

@@ -32,6 +32,16 @@ function userHasAdminRights($userId, $database) {
     return ($userInfo['access'] >= 2);
 }
 
+function userHasSuperAdminRights($userId, $database) {
+    $userInfoQuery = $database->query("
+            SELECT  access
+            FROM    user
+            WHERE   id =" . $userId
+    );
+    $userInfo = $userInfoQuery->fetch();
+    return ($userInfo['access'] >= 3);
+}
+
 function displayConfirmation($success, $successMessage, $operation, $reasonForFailure) {
     if ($success) {
         echo "<p>";
