@@ -39,10 +39,7 @@ if (isset($page) AND $page!='')
                     {
                        echo'<link rel="stylesheet" type="text/css" href="../view/css/myhouses_style.css">'; 
                     }
-                    elseif( $_GET['page']== 'my_ads')
-                    {
-                        
-                    }
+                    
                     elseif( $_GET['page']=='my_mp')
                     {
                         echo'<link rel="stylesheet" type="text/css" href="../view/css/mailbox_style.css">';
