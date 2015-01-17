@@ -354,6 +354,11 @@
                     {
                         include("../view/contact_form.php");
                     }
+                    elseif($_GET['page']=='delete_msg')
+                    {
+                        include("../view/confirm_delete_msg.php");
+                        require('../modele/delete_msg.php');
+                    }
                     
                     
                 }

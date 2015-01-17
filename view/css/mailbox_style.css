@@ -132,6 +132,7 @@ label
 .twosubs{
   
    margin-left:40%;
+   
 }
 
 .conf_sent{
@@ -168,4 +169,7 @@ body{
     background-size: cover;
     background-attachment: fixed;
 }
-
+.link{
+    text-decoration: none;
+    list-style-type : none;
+}
