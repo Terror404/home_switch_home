@@ -20,6 +20,8 @@ news a finir (pas long)clément
 mail auto
 afficher les maisons sur la gauche et pas la droite( my profile)
 systeme notation (select AVG et update des profil lors de la notation)
+finir de proteger le back office clément
+mettre un mdp sur la bdd
 
 
 
