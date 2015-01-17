@@ -1,43 +1,70 @@
 
+body{
+ background-image: url("../pictures/leaf.jpg"); 
+ background-repeat : no-repeat;
+  background-size: cover;
+    background-attachment: fixed;
+}
+
+.resultSearch
+{
+   text-align: center;
+   border:2px solid black;
+   margin-bottom:20px;
+   margin-top:200px;
+   
+   
+}
 .housebox
 {   
-    background-color: orange;
-    border-radius : 10px;
+    background-color: #d1fa98;
+ 
+    border:  10px solid white;
     opacity : 0.9;
 margin-bottom: 5%;
-width : 90%;
+width : 86%;
 margin-left : 5%;
+padding : 1%;
 }
-.houseleft
-{ 
-margin : 1%;
-width : 27%;
-text-align : center;
-display : inline-block;
+.houseleft{
+    display: inline-block;
+    width:20%;
+    margin:1%;
 }
 .houseimg
 {
-width : 90%;
+   
+width : 95%;
 margin : 1%;
 }
 
 .desc_tilte
 {
-width : 50%;
+width : 65%;
 margin : 1%;
 padding: 1%;
+margin-left: 5%;
 display : inline-block;
 text-align: justify;
 
 }
 .desc_tilte, .houseleft
 {
-vertical-align : middle;
+vertical-align : top;
 }
 
+
+.title{
+   font-weight: bold;
+   font-size : 200%;
+    text-align: center;
+    
+}
+
+
 .sub{   
-    margin-top : 5%;
-    margin-left : 40%;
+    margin-top : 1%;
+    margin-left : 35%;
      width:30%;
 background-color: #00BCE0;
   -webkit-border-radius: 28;
@@ -53,17 +80,4 @@ background-color: #00BCE0;
 .sub:hover {
   background: #83EBC6;
   text-decoration: none;      
-}
-
-.allMyHouses
-{
-    margin-top: 5%;
-    font-family: "GeosansLight";
-}
-
-.title{
-   font-weight: bold;
-   font-size : 200%;
-    text-align: center;
-    
 }
