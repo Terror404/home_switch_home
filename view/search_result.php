@@ -15,20 +15,24 @@ while($resSearch=$askPrioritySearch->fetch())
 </br>
 </br>
 <div class="housebox" onclick="self.location.href='../controler/content.php?page=houseCard&amp;id=<?php echo $resSearch['id'];?>'">
-    <div class="title" id="adTitle"> 
+     <div class="title" id="adTitle"> 
         <?php echo $resSearch['title']; ?>
     </div>
-    <div id="datesAd" class="desc_tilte">
+    <div id="houseleft" class="houseleft"> 
+        <img class="houseimg" src="<?php echo $resSearch['pictures'] ?>" alt="Photo maison" />
+        
+         <div id="datesAd" >
+             <p>dates de disponibilité:</p>
         <?php echo $resSearch['date_begin']."/".$resSearch['date_end'] ; ?>
        
-        <?php echo '<br/>'.$resSearch['rating'] ?>
+             <p>note:<?php echo '<br/>'.$resSearch['rating'] ?></p>
     </div>
-    <div id="desc_tilte"> 
+    </div>
+   
+    <div id="desc_tilte" class="desc_tilte"> 
         <?php echo $resSearch['description']; ?>
     </div>
-    <div id="houseleft"> 
-        <img class="houseimg" src="<?php echo $resSearch['pictures'] ?>" alt="Photo maison" />
-    </div>
+    
 </div>
     
         
