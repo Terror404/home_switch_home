@@ -53,7 +53,7 @@ elseif($_GET['state']==4 AND $_SESSION['userAccess']==3)
     $deleteUser=$DB->prepare('DELETE FROM user WHERE user.id='.$_POST['id']);
     $deleteUser->execute();
 }
-elseif($_GET['state']==6)
+elseif($_GET['state']==6 AND $_SESSION['userAccess']==3)
 {
     $askHouse=$DB->prepare('SELECT * FROM house WHERE id='.$_POST['name']);
     $askHouse->execute();
