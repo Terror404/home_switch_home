@@ -19,10 +19,10 @@ delete en cascade clément
 news a finir (pas long)clément
 mail auto
 afficher les maisons sur la gauche et pas la droite( my profile)
-systeme notation (select AVG et update des profil lors de la notation)
+systeme notation (select AVG et update des profil lors de la notation) --Pierre--
 finir de proteger le back office clément
 mettre un mdp sur la bdd
-
+fiche modif maison (completer le modele pour tout inserer dans la bdd) --Pierre--
 
 
 Supprimez quand vous avez fait ou finit et mettez votre nom a coté si c'est en cours
