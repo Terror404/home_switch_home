@@ -1,5 +1,11 @@
- 
-<?php require('../modele/fct_verif_date.php');?>
+
+<?php require('../modele/fct_verif_date.php');
+while($resDateAds=$askDateAds->fetch())
+{
+    $dateB=$resDateAds['date_begin'];
+    $dateE=$resDateAds['date_end'];
+}
+?>
 <script type="text/javascript" src="..//view/js/hide_show.js"> </script> 
 <script type = "text/javascript">
     function hideshowhousetxt()
@@ -141,7 +147,7 @@
                             ?>
                 </li>
                 <li class="o" onclick="hideshowownerinfo()">Propriétaire</li>
-                <li class="o" onclick="hideshowad()">Annonces</li>
+                <li class="o" onclick="hideshowad()">Annonce</li>
         </ul>
     
     
@@ -312,6 +318,7 @@
 	</div>
         <div class="ad" id="ad" style="display: none">	
             <div class="dates">
+                <h3>Du <?php echo (reorder_date_1($dateB)); ?> au <?php echo (reorder_date_1($dateE));?></h3>
                 Critères spécifique à cette annonce :
                 <?php $i=0;
                         while ($resInfAds=$askInfAds->fetch())
