@@ -325,6 +325,10 @@
                         require('../modele/treat_exchange.php');
                         include("../view/treat_exchange.php");
                     }
+                    elseif($_GET['page']=='guide')
+                    {
+                        include('../view/user_guide.php');
+                    }
                     elseif($_GET['page']=='faq')
                     {
                         include("../view/faq.php");

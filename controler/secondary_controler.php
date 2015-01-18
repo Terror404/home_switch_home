@@ -145,6 +145,10 @@ if (isset($page) AND $page!='')
                     {
                         echo'<link rel="stylesheet" type="text/css" href="../view/css/faq.css">';
                     }
+                    elseif($_GET['page']=='guide')
+                    {
+                        echo'<link rel="stylesheet" type="text/css" href="../view/css/faq.css">';
+                    }
                     elseif($_GET['page']=='contact')
                     {
                         echo'<link rel="stylesheet" type="text/css" href="../view/css/contact.css">';
