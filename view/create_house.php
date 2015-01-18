@@ -54,7 +54,7 @@
             <h3>Localisation :</h3>
                 <!--Region-->
                 <label for="region" class="label">Région :</label>
-                <select name="region" id="region"> <!--champ de régions du bon coin muhahaha -->
+                <select name="region" id="region"> 
                         <option value="alsace">Alsace
                         <option value="aquitaine">Aquitaine
                         <option value="auvergne">Auvergne
@@ -96,7 +96,7 @@
             <h3>Informations sur le logement</h3>
                 <!--Type-->
                 <label class="label" > Type de logement :</label>
-                <select id="type" name="house_type"> <!-- champs des types de logements simplifiées: partenaires-europréens.fr-->
+                <select id="type" name="house_type"> 
                         <option value="Non précisé">Choisissez votre type de logement</option>
                         <option value="Maison / Villa" title="Maison">Maison / Villa</option>
                         <option value="Appartement" title="Appartement">Appartement</option>                                                            
