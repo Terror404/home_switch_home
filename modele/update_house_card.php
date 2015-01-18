@@ -1,55 +1,135 @@
 <?php 
-    if(isset($_POST['title']) AND $_POST['title']!="")
+    if(isset($_POST['title']))
+    {
+        if(!empty($_POST['title']))
         {
             $mod_title=$DB->prepare('UPDATE house SET title=:title WHERE id=:idhouse');
                 $mod_title->execute(array('title'=>$_POST['title'], 'idhouse'=>$_GET['id']));
+            $end=2;
         }
-    else
+        else
         {
-            echo"Le champ n'est pas rempli correctement";
+            $end=0;
         }
-?>
+    }
 
-<?php
-    if(isset($_POST['description']) AND $_POST['description']!="")
+    if(isset($_POST['description']))
+    {
+        if(!empty($_POST['description']))
         {
             $mod_desc=$DB->prepare('UPDATE house SET description=:description WHERE id=:idhouse');
                 $mod_desc->execute(array('description'=>$_POST['description'],'idhouse'=>$_GET['id']));
+            $end=2;
         }
-    else
+        else
         {
-            echo"Lechamp n'est pas rempli correctemet";
+            $end=0;
+        }
     }
-?>
 
-<?php 
-    if(isset($_POST['modif_region']) AND !empty($_POST['modif_region']))
+    if(isset($_POST['region']))
     {
-        if(isset($_POST['modif_town']) AND !empty($_POST['modif_town']))
+        if(!empty($_POST['region']))
         {
-            if(isset($_POST['modif_zip']) AND !empty($_POST['modif_zip']))
+            $mod_area=$DB->prepare('UPDATE house SET id_area=(SELECT id FROM area WHERE name=:name');
+                $mod_area->execute(array('name'=>$_POST['region']));
+        }
+        else
+        {
+            $end=0;
+        }
+    }
+    
+    if(isset($_POST['capacity']))
+    {
+        if(!empty($_POST['capacity']))
+        {
+            $mod_cap=$DB->prepare('UPDATE house SET nbr_people=:capacity');
+                $mod_cap->execute(array('capacity'=>$_POST['capacity']));
+            $end=2;
+        }
+        else
+        {
+            $end=0;
+        }
+    }
+    
+    if(isset($_POST['nbbr']))
+    {
+        if(!empty($_POST['nbbr']))
+        {
+            $mod_nbbr=$DB->prepare('UPDATE house SET nbr_room=:nbbr');
+                $mod_nbbr->execute(array('nbbr'=>$_POST['nbbr']));
+            $end=2;
+        }
+        else
+        {
+            $end=0;
+        }
+    }
+    
+    if(isset($_POST['house_type']))
+    {
+        if(!empty($_POST['house_type']))
+        {
+            $mod_cap=$DB->prepare('UPDATE house SET house_type=:type');
+                $mod_cap->execute(array('type'=>$_POST['house_type']));
+            $end=2;
+        }
+        else
+        {
+            $end=0;
+        }
+    }
+    
+    if(isset($_POST['address']))
+    {
+        if(!empty($_POST['address']))
+        {
+            $mod_cap=$DB->prepare('UPDATE house SET address=:address');
+                $mod_cap->execute(array('address'=>$_POST['address']));
+        }
+        else
+        {
+            $end=0;
+        }
+    }
+    
+    if(isset($_POST['town'])AND isset($_POST['zipcode']))
+    {
+        if(!empty($_POST['zipcode']) AND !empty($_POST['town']))
+        {
+            $town1=str_replace('-', '&nbsp', $_POST['town']);
+            $town2=strtolower($town1);
+
+
+            $askzip=$DB->prepare('SELECT ville_code_postal, ville_code_commune FROM villes_france_free WHERE ville_nom_simple =:nomVille');
+                $askzip->execute(array(':nomVille'=>$town2));
+
+            while($reszip=$askzip->fetch())
             {
-    $mod_location=$DB->prepare('UPDATE house SET region=:modif_region, town=:modif_town, zipcode=:modif_zip WHERE id=:idhouse');
-        $mod_location->execute(array('modif_region'=>$_POST['modif_region'],'modif_town'=>$_POST['modif_town'],'modif_zip'=>$_POST['modif_zip'],'idhouse'=>$_GET['id']));
+                $zip=$reszip['ville_code_postal'];
+                $zip2=$reszip['ville_code_commune'];
+            }
+
+            if($zip==$_POST['zipcode'] OR $zip2==$_POST['zipcode'])
+            {
+                $askIdTown=$DB->prepare("SELECT ville_id FROM villes_france_free WHERE ville_nom_simple=:nomVille");
+                    $askIdTown->execute(array('nomVille'=>$town2));
+                while($resIdTown=$askIdTown->fetch())
+                {
+                    $idTown=$resIdTown['ville_id'];
+                }
+                $addH=$DB->prepare('UPDATE house SET ville_id=:villeid WHERE id=:houseid');
+                    $addH->execute(array('villeid'=>$idTown, 'houseid'=>$_GET['id']));
             }
             else
             {
-                echo"Veuillez rentrer un code postal";
+                $end=1;
             }
         }
         else
         {
-            echo"Veuillez rentrer le nom d'une ville";
+            $end=0;
         }
     }
-    else
-    {
-        echo"Veuillez choisir une région";
-    }
-?>
-
-<?php
-    if(isset($_POST['']))
-    $mod_info=$DB->prepare('UPDATE house SET type=:modif_type, capacity=:modif_cap, bedrooms=:modif_bed, facilities=:modif_fac');
-        $mod_info->execute(array('modif_type'=>$_POST['modif_type'], 'modif_cap'=>$_POST['modif_cap'], 'modif_bed'=>$_POST['modif_bed'],'modif_fac'=>$_POST['modif_fac'],'idhouse'=>$_GET['id']));
-?>        

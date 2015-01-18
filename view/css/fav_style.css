@@ -1,6 +1,5 @@
-
 body{
- background-image: url("../pictures/leaf.jpg"); 
+ background-image: url("../pictures/fav.jpg"); 
  background-repeat : no-repeat;
   background-size: cover;
     background-attachment: fixed;
@@ -41,6 +40,8 @@ margin : 1%;
 padding: 1%;
 display : inline-block;
 text-align: justify;
+float: right;
+
 
 }
 .desc_tilte, .houseleft
@@ -54,3 +55,16 @@ vertical-align : top;
     text-align: center;
     
 }
+.top{
+    opacity : 0.9;
+margin-bottom: 3%;
+width : 87%;
+margin-left : 5%;
+padding : 1%;
+    background-color : white;
+    text-align : center;
+    margin-top : 1%;
+    
+}
+
+

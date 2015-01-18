@@ -26,12 +26,54 @@
 <br/>
 <section class='MiddlePage'>
     
-    <article class='title'> <!-- title of the house-->
-        <form method="post" action="">
-            <input type="text" name="title" value="<?php echo $modTitle?>"/>
-            <input type="submit" value="Modifier"/>
-            <input type="reset" value="Annuler"/>
-        </form>
+    <article class='title'> 
+        <?php
+        /************************Modification title******************************/
+        if(isset($_POST['title']))
+        {
+            if(isset($end) AND $end==0)
+            {
+                ?>
+                <form method="post" action="../controler/content.php?page=modify_House_Card&id=<?php echo $_GET['id'];?>">
+                    <input type="text" name="title" value="<?php echo $modTitle?>"/>
+                    <input type="hidden"  name="confirmModif" value="1"/>
+                    <input type="submit" value="Modifier"/>
+                    <input type="reset" value="Annuler"/>
+                </form>
+            <?php
+                echo"Vous n'avez pas rempli le champ correctement";
+            }
+            elseif(isset($end) AND $end==2)
+            {
+            ?>
+                <form method="post" action="">
+                    <input type="text" name="title" value="<?php echo $modTitle?>"/>
+                    <input type="hidden"  name="confirmModif" value="1"/>
+                    <input type="submit" value="Modifier"/>
+                    <input type="reset" value="Annuler"/>
+                </form>
+            <?php
+            }
+        }
+        else
+        {
+        ?>
+            <form method="post" action="">
+                <input type="text" name="title" value="<?php echo $modTitle?>"/>
+                <input type="hidden"  name="confirmModif" value="1"/>
+                <input type="submit" value="Modifier"/>
+                <input type="reset" value="Annuler"/>
+            </form>
+        <?php  
+        }
+        ?>
+        <?php
+        if(isset($end) AND $end==2)
+        {
+            echo"La modification a été prise en compte";
+        }
+        ?>
+        
     </article>
     <article class="img"> <!-- Mettre ici les photos et les 2 boutons -->
                     <p> <!-- main image-->
@@ -90,11 +132,48 @@
                                      <?php echo $_SESSION['descriptBien']; ?>  
                                     </br>
                                     </br>
-                                    <form method="post" action="../controler/content.php?page=modify">
-                                        <textarea name="description"><?php echo $modDesc ?></textarea>
-                                        <input type="submit" value="Modifier"/>
-                                        <input type="reset" value="Annuler"/>
-                                    </form>
+                                    <?php
+        /*********************************Modification description**************************/
+                                    
+        if(isset($_POST['description']))
+        {
+            if(isset($end) AND $end==0)
+            {
+                ?>
+                <form method="post" action="../controler/content.php?page=modify_House_Card&id=<?php echo $_GET['id'];?>">
+                    <textarea name="description"><?php echo $modDesc ?></textarea>
+                    <input type="hidden"  name="confirmModif" value="1"/>
+                    <input type="submit" value="Modifier"/>
+                    <input type="reset" value="Annuler"/>
+                </form>
+            <?php
+                echo"Vous n'avez pas rempli le champ correctement";
+            }
+            elseif(isset($_POST['description']) AND $end==2)
+            {
+            ?>
+                <form method="post" action="../controler/content.php?page=modify_House_Card&id=<?php echo $_GET['id'];?>">
+                    <textarea name="description"><?php echo $modDesc ?></textarea>
+                    <input type="hidden"  name="confirmModif" value="1"/>
+                    <input type="submit" value="Modifier"/>
+                    <input type="reset" value="Annuler"/>
+                </form>
+            <?php
+            }
+        }
+        else
+        {
+        ?>
+            <form method="post" action="../controler/content.php?page=modify_House_Card&id=<?php echo $_GET['id'];?>">
+                <textarea name="description"><?php echo $modDesc ?></textarea>
+                <input type="hidden"  name="confirmModif" value="1"/>
+                <input type="submit" value="Modifier"/>
+                <input type="reset" value="Annuler"/>
+            </form>
+        <?php  
+        }
+        ?>
+                                    
             </br>
             </br>
 
@@ -108,8 +187,16 @@
                             echo "<br/>Actuellement => ".$resHtype['house_type'];
                         }
                 ?>
-            <br/>Modifier :
-                <form method='post' action='../controler/content.php?page=modify'>
+            
+            <?php
+        /************************Modification House Type******************************/
+        if(isset($_POST['house_type']))
+        {
+            if(isset($end) AND $end==0)
+            {
+                ?>
+                <br/>Modifier :
+                <form method='post' action='../controler/content.php?page=modify_House_Card&id=<?php echo $_GET['id'];?>'>
                     <select id="type" name="house_type"> 
                         <option value="Non précisé">Choisissez votre type de logement</option>
                         <option value="Maison / Villa" title="Maison">Maison / Villa</option>
@@ -122,9 +209,62 @@
                         <option value="Château" title="Château">Château</option>
                         <option value="Gîtes / Chambre d'Hôtes" title="Chambres d’Hôtes">Gîtes/Chambres d’Hôtes</option>
                     </select>
+                    <input type="hidden"  name="confirmModif" value="1"/>
                     <input type="submit" value="Modifier"/>
                     <input type="reset" value="Annuler"/>
                 </form>
+            <?php
+                echo"Vous n'avez pas rempli le champ correctement";
+            }
+            elseif(isset($end) AND $end==2)
+            {
+            ?>
+                <br/>Modifier :
+                <form method='post' action='../controler/content.php?page=modify_House_Card&id=<?php echo $_GET['id'];?>'>
+                    <select id="type" name="house_type"> 
+                        <option value="Non précisé">Choisissez votre type de logement</option>
+                        <option value="Maison / Villa" title="Maison">Maison / Villa</option>
+                        <option value="Appartement" title="Appartement">Appartement</option>                                                            
+                        <option value="Chalet" title="Chalet">Chalet</option>
+                        <option value="Corps de ferme" title="Fermette">Corps de ferme</option>
+                        <option value="Moulin   " title="Moulin">Moulin</option>
+                        <option value="Loft" title="Loft">Loft</option>
+                        <option value="Mobil-Home" title="Mobil-Home">Mobil-Home</option>
+                        <option value="Château" title="Château">Château</option>
+                        <option value="Gîtes / Chambre d'Hôtes" title="Chambres d’Hôtes">Gîtes/Chambres d’Hôtes</option>
+                    </select>
+                    <input type="hidden"  name="confirmModif" value="1"/>
+                    <input type="submit" value="Modifier"/>
+                    <input type="reset" value="Annuler"/>
+                </form>
+            <?php
+            }
+        }
+        else
+        {
+        ?>
+            <br/>Modifier :
+                <form method='post' action='../controler/content.php?page=modify_House_Card&id=<?php echo $_GET['id'];?>'>
+                    <select id="type" name="house_type"> 
+                        <option value="Non précisé">Choisissez votre type de logement</option>
+                        <option value="Maison / Villa" title="Maison">Maison / Villa</option>
+                        <option value="Appartement" title="Appartement">Appartement</option>                                                            
+                        <option value="Chalet" title="Chalet">Chalet</option>
+                        <option value="Corps de ferme" title="Fermette">Corps de ferme</option>
+                        <option value="Moulin   " title="Moulin">Moulin</option>
+                        <option value="Loft" title="Loft">Loft</option>
+                        <option value="Mobil-Home" title="Mobil-Home">Mobil-Home</option>
+                        <option value="Château" title="Château">Château</option>
+                        <option value="Gîtes / Chambre d'Hôtes" title="Chambres d’Hôtes">Gîtes/Chambres d’Hôtes</option>
+                    </select>
+                    <input type="hidden"  name="confirmModif" value="1"/>
+                    <input type="submit" value="Modifier"/>
+                    <input type="reset" value="Annuler"/>
+                </form>
+        <?php  
+        }
+        ?>
+            
             </br>
             <?php echo $_SESSION['capacit']; ?> 
                 <?php 
@@ -133,12 +273,50 @@
                             echo "<br/>Actuellement => ".$resHcapacity['nbr_people'];?> personne(s)<?php
                         }
                 ?>
-                    <br/>Modifier
-                    <form method='post' action='../controler/content.php?page=modify'>
-                        <input type='number' name='capacity'/> personne(s)
-                        <input type="submit" value="Modifier"/>
-                        <input type="reset" value="Annuler"/>
-                    </form>
+                        <?php
+                    /************************Modification Capacity******************************/
+                    if(isset($_POST['capacity']))
+                    {
+                        if(isset($end) AND $end==0)
+                        {
+                            ?>
+                            <br/>Modifier
+                            <form method='post' action='../controler/content.php?page=modify_House_Card&id=<?php echo $_GET['id'];?>'>
+                                <input type='number' name='capacity'/> personne(s)
+                                <input type="hidden"  name="confirmModif" value="1"/>
+                                <input type="submit" value="Modifier"/>
+                                <input type="reset" value="Annuler"/>
+                            </form>
+                        <?php
+                            echo"Vous n'avez pas rempli le champ correctement";
+                        }
+                        elseif(isset($end) AND $end==2)
+                        {
+                        ?>
+                            <br/>Modifier
+                            <form method='post' action='../controler/content.php?page=modify_House_Card&id=<?php echo $_GET['id'];?>'>
+                                <input type='number' name='capacity'/> personne(s)
+                                <input type="hidden"  name="confirmModif" value="1"/>
+                                <input type="submit" value="Modifier"/>
+                                <input type="reset" value="Annuler"/>
+                            </form>
+                        <?php
+                        }
+                    }
+                    else
+                    {
+                    ?>
+                        <br/>Modifier
+                        <form method='post' action='../controler/content.php?page=modify_House_Card&id=<?php echo $_GET['id'];?>'>
+                            <input type='number' name='capacity'/> personne(s)
+                            <input type="hidden"  name="confirmModif" value="1"/>
+                            <input type="submit" value="Modifier"/>
+                            <input type="reset" value="Annuler"/>
+                        </form>
+                    <?php  
+                    }
+                    ?>
+                    
             </br>
             <?php echo $_SESSION['nombrChambr']; ?>  
                 <?php
@@ -147,12 +325,50 @@
                             echo "<br/>Actuellement => ".$resHbrnb['nbr_room'];?> chambre(s)<?php
                         }
                 ?>
-                            <br/>Modifier
-                    <form method='post' action='../controler/content.php?page=modify'>
+                            <?php
+        /************************Modification Nb Room******************************/
+        if(isset($_POST['nbbr']))
+        {
+            if(isset($end) AND $end==0)
+            {
+                ?>
+                <br/>Modifier
+                    <form method='post' action='../controler/content.php?page=modify_House_Card&id=<?php echo $_GET['id'];?>'>
                         <input type='number' name='nbbr'/> chambre(s)
+                        <input type="hidden"  name="confirmModif" value="1"/>
                         <input type="submit" value="Modifier"/>
                         <input type="reset" value="Annuler"/>
                     </form>
+            <?php
+                echo"Vous n'avez pas rempli le champ correctement";
+            }
+            elseif(isset($end) AND $end==2)
+            {
+            ?>
+                <br/>Modifier
+                    <form method='post' action='../controler/content.php?page=modify_House_Card&id=<?php echo $_GET['id'];?>'>
+                        <input type='number' name='nbbr'/> chambre(s)
+                        <input type="hidden"  name="confirmModif" value="1"/>
+                        <input type="submit" value="Modifier"/>
+                        <input type="reset" value="Annuler"/>
+                    </form>
+            <?php
+            }
+        }
+        else
+        {
+        ?>
+            <br/>Modifier
+                    <form method='post' action='../controler/content.php?page=modify_House_Card&id=<?php echo $_GET['id'];?>'>
+                        <input type='number' name='nbbr'/> chambre(s)
+                        <input type="hidden"  name="confirmModif" value="1"/>
+                        <input type="submit" value="Modifier"/>
+                        <input type="reset" value="Annuler"/>
+                    </form>
+        <?php  
+        }
+        ?>
+                    
             </br>
             <?php echo $_SESSION['amenag']; ?>  
             </br>
@@ -175,7 +391,7 @@
                 Region : 
                 <br/>Actuellement =><?php echo $modArea;?>
                 <br/>Modifier :
-            <br><form method='post' action='../controler/content.php?page=modify'>
+            <br><form method='post' action='../controler/content.php?page=modify_House_Card&id=<?php echo $_GET['id'];?>'>
                 <select name="region" id="region"> 
                         <option value="alsace">Alsace
                         <option value="aquitaine">Aquitaine
@@ -202,6 +418,7 @@
                         <option value="PACA">Provence Alpes Côte d'Azur
                         <option value="rhone_alpes">Rhône-Alpes
                 </select>
+                <input type="hidden"  name="confirmModif" value="1"/>
                 <input type="submit" value="Modifier"/>
                 <input type="reset" value="Annuler"/>
             </form>
@@ -224,25 +441,25 @@
                             }
                     ?>
                 <br/><br/>Modifier la ville: <br/>
-                <form method='post' action='../controler/content.php?page=modify'>
+                <form method='post' action='../controler/content.php?page=modify_House_Card&id=<?php echo $_GET['id'];?>'>
                     <input type='text' name='town'/>
                
                     <br/>Modifier le code postal: <br/>
                     <input type='number' name='zipcode'/>
+                    <input type="hidden"  name="confirmModif" value="1"/>
                     <input type="submit" value="Modifier"/>
                     <input type="reset" value="Annuler"/>
                  </form><br/>
                     
                 <?php echo $_SESSION['adres']; ?> 
+                <form method='post' action='../controler/content.php?page=modify_House_Card&id=<?php echo $_GET['id'];?>'>
                     <?php
                         while ($resHaddress=$askHaddress->fetch())
                             {
-                                echo"<br/>Actuellement => ".$resHaddress['address'];
+                               ?><input type='text' name='address' value='<?php echo $resHaddress['address'];?>'/><?php
                             }
                     ?>
-                 <br/>Modifier : <br/>
-                <form method='post' action='../controler/content.php?page=modify'>
-                    <input type='text' name='address'/>
+                    <input type="hidden"  name="confirmModif" value="1"/>
                     <input type="submit" value="Modifier"/>
                     <input type="reset" value="Annuler"/>
                 </form>
