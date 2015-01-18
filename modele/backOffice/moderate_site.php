@@ -53,7 +53,13 @@ elseif($_GET['state']==4 AND $_SESSION['userAccess']==3)
     $deleteMsg=$DB->prepare('DELETE FROM messages WHERE id_receiver='.$_POST['id']);
         $deleteMsg->execute();
     $deleteMsgA=$DB->prepare('DELETE FROM messages WHERE id_author='.$_POST['id']);
-        $deleteMsgA->execute();    
+        $deleteMsgA->execute();
+        
+    //delete user post and topic
+    $deleteUserPost=$DB->prepare('DELETE FROM post WHERE id_user='.$_POST['id']);
+    $deleteUserPost->execute();
+    $deleteUserTopic=$DB->prepare('DELETE FROM topic WHERE id_user='.$_POST['id']);
+    $deleteUserTopic->execute();
     //final delete, bye bye!
     $deleteUser=$DB->prepare('DELETE FROM user WHERE user.id='.$_POST['id']);
     $deleteUser->execute();

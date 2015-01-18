@@ -115,25 +115,25 @@
                     
                     <div class="caroussel">
                         <div class="subimg" onclick="hideshowhouse1()"> 
-                            <img class="image-shown" src="<?php echo $resHpic['pictures'] ?>" alt="house1"  style="width:100%; height:80px;"/>
+                            <img class="image-shown" src="<?php echo $resHpic['pictures'] ?>" alt="house1"  style="width:100%; height:100%;"/>
                         </div>
                         <div class="subimg" onclick="hideshowhouse2()"> 
-                            <img class="image-shown" src="..//view/pictures/house2.jpg" id="house1"  style="width:100%; height:80px;"/>
+                            <img class="image-shown" src="..//view/pictures/house2.jpg" id="house1"  style="width:100%; height:100%;"/>
                         </div>
                         <div class="subimg" onclick="hideshowhouse3()"> 
-                            <img class="image-shown" src="..//view/pictures/house3.jpg" id="house1" style="width:100%; height:80px;"/>
+                            <img class="image-shown" src="..//view/pictures/house3.jpg" id="house1" style="width:100%; height:100%;"/>
                         </div>
                         <div class="subimg" onclick="hideshowhouse4()"> 
-                            <img src="..//view/pictures/house4.jpg" id="house1" style="width:100%; height:80px;"/>
+                            <img src="..//view/pictures/house4.jpg" id="house1" style="width:100%; height:100%;"/>
                         </div>
                         <div class="subimg" onclick="hideshowhouse5()"> 
-                            <img src="..//view/pictures/house5.jpg" id="house1" style="width:100%; height:80px;"/>
+                            <img src="..//view/pictures/house5.jpg" id="house1" style="width:100%; height:100%;"/>
                         </div>
                         <div class="subimg" onclick="hideshowhouse6()"> 
-                            <img src="..//view/pictures/house6.jpg" id="house1" style="width:100%; height:80px;"/>
+                            <img src="..//view/pictures/house6.jpg" id="house1" style="width:100%; height:100%;"/>
                         </div>
                         <div class="subimg" onclick="hideshowhouse7()"> 
-                            <img src="..//view/pictures/house7.jpg" id="house1" style="width:100%; height:80px;"/>
+                            <img src="..//view/pictures/house7.jpg" id="house1" style="width:100%; height:100%;"/>
                         </div>
                             
                             <?php
