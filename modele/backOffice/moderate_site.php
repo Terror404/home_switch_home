@@ -60,6 +60,12 @@ elseif($_GET['state']==4 AND $_SESSION['userAccess']==3)
     $deleteUserPost->execute();
     $deleteUserTopic=$DB->prepare('DELETE FROM topic WHERE id_user='.$_POST['id']);
     $deleteUserTopic->execute();
+    
+    //delete exchanges involving user
+   $deleteUserEx=$DB->prepare('DELETE FROM exchanges WHERE id_user_1='.$_POST['id']);
+    $deleteUserEx->execute();
+    $deleteUserEx=$DB->prepare('DELETE FROM exchanges WHERE id_user_2='.$_POST['id']);
+    $deleteUserEx->execute();
     //final delete, bye bye!
     $deleteUser=$DB->prepare('DELETE FROM user WHERE user.id='.$_POST['id']);
     $deleteUser->execute();

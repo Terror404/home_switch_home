@@ -25,7 +25,7 @@
 </script>
 
             <div class="position">
-                <h1 class="Title"> <?php echo $_SESSION['creCompt']; ?> </h1> </br>
+                <h1 class="Title"> Créez votre profil </h1> </br>
 		<form method="post" action="content.php?page=confirmAddUser" onsubmit="return validation(this)" class="form">
 			<p>
                             <label for="pseudo" >Pseudo*</label>
