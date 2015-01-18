@@ -3,12 +3,9 @@ CSS: anastasia et mélanie à partir de 17H
 
 mon profil
 ajouter annonce (pk ya un rappel de la maison au dessus? ca fait super moche!)
-news (non prioritaire)
+
 mes echanges (un peu de css pour faire plus beau vite fait)
 
-profile reminder (degeu un peu)
-
-dans le navigateur : echanger les onglets recherche et forum
 
 Fonctions:
 <!--news a finir (pas long)clément-->   FINIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
