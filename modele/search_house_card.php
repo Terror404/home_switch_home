@@ -95,7 +95,7 @@ if(isset($_POST['houseId']))
         $askModHouse=$DB->prepare('SELECT * FROM house WHERE id=:idhouse');
             $askModHouse->execute(array('idhouse'=>$_POST['houseId']));
     }
-    }
+}
     
     
     
