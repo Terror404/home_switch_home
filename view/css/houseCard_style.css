@@ -252,9 +252,12 @@ body{
    width : 22%;
     float: left;
     margin: 1%;
-    border: 1px solid black;
+     border: 2px solid  white;
     height : 80px;
    
+}
+.subimg:hover{
+    border: 2px solid  #00BCE0 ;
 }
 
 .image-shown{
