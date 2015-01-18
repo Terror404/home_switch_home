@@ -125,7 +125,10 @@
             <ul class="subMenuBlockList">
             <li><a class="subMenuLinkBlock" href="../controler/content.php?page=faq" >
                     FAQ
-                </a></li>
+            </a></li>
+            <li><a class="subMenuLinkBlock" href="../controler/content.php?page=guide" >
+                    Guide d'utilisation du site
+            </a></li>
             <li><a class="subMenuLinkBlock" href="../controler/content.php?page=contact" >
                     Contactez-nous
             </a></li>
