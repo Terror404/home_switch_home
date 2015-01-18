@@ -92,10 +92,10 @@ $askComNb=$askCom->rowcount();
  *************************** For the modification ******************************
  ******************************************************************************/
 
-if(isset($_POST['houseId']))
+    if(isset($_POST['confirmModif']))
     {
         $askModHouse=$DB->prepare('SELECT * FROM house WHERE id=:idhouse');
-            $askModHouse->execute(array('idhouse'=>$_POST['houseId']));
+            $askModHouse->execute(array('idhouse'=>$_GET['id']));
             
         while($resModHouse=$askModHouse->fetch())
             {
@@ -112,9 +112,8 @@ if(isset($_POST['houseId']))
         {
             $modArea=$resModArea['real_name'];
         }
-        
     }
-}
+    }
     
     
     
