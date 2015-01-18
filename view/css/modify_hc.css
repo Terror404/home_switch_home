@@ -1,0 +1,141 @@
+.title{
+    border : 2px solid white;
+    width : 92%; 
+    padding : 1%;
+    background-color: white;
+    border-radius : 10px;
+    opacity : 0.9;
+    margin-left : 3%;
+    text-align : center;
+    margin-top : 1%;
+   
+    
+}
+.info{
+       margin-top : 1%;
+       margin-left : 1%;
+    border : 2px solid white;
+    width : 45%; 
+    padding : 1%;
+    background-color: white;
+    border-radius : 10px;
+    opacity : 0.9;
+display : inline-block;
+}
+.head{
+     margin-top: 5%;
+     margin-left : 2.5%;
+     font-size : 200%;
+     display: inline-block;
+}
+
+.img
+{   
+    margin-top : 3%;
+    
+    margin-left: 5%;
+    display : inline-block;
+    
+}
+.info, .img{
+    vertical-align  : top;
+}
+
+
+.sub, .subimage
+{   
+    font-family: "GeosansLight";
+    margin-top : 1%;
+    background-color: #00BCE0;
+      -webkit-border-radius: 28;
+      -moz-border-radius: 28;
+      border-radius: 0px;
+      color: white;
+      font-size: 20px;
+      padding: 10px 20px 10px 20px;
+      text-decoration: none;
+}   
+
+.sub:hover, .subimage:hover {
+  background: #83EBC6;
+  text-decoration: none;      
+}
+
+.sub{
+    width:20%;
+}
+.subimage{
+
+    width:10%;
+}
+textarea{
+    width : 95%;
+    height :200px;
+    padding: 1%;
+    font-family: "GeosansLight";
+}
+.white{
+     background-color: white;
+  position:absolute; 
+  z-index:-1; 
+  top:15%; 
+  left:3%; 
+  right:50%; 
+  bottom:60%;
+  opacity:0.9; 
+  border-radius:  10px;
+}
+.twosubs{
+  
+   margin-left:25%;
+}
+.subtomodif{   
+        font-family: "GeosansLight";
+        margin-top : 5%;
+        margin-left : 40%;
+         width:80%;
+    background-color: #00BCE0;
+      -webkit-border-radius: 28;
+      -moz-border-radius: 28;
+      border-radius: 0px;
+      color: white;
+      font-size: 20px;
+      padding: 10px 20px 10px 20px;
+      text-decoration: none;
+}   
+
+.subtomodif:hover {
+  background: #83EBC6;
+  text-decoration: none;      
+}
+
+
+.image{
+    width : 18%;
+    float: left;
+    margin: 1%;
+}
+.page{
+    margin : 1%;
+}
+
+.userimg
+{
+width : 90%;
+margin : 1%;
+ 
+
+}
+
+
+
+body{
+ background-image: url("../pictures/photo-photo-paysage-urbain-5.jpg"); 
+ background-repeat : no-repeat;
+  background-size: cover;
+    background-attachment: fixed;
+}
+
+.top{
+    margin-bottom: 1%;
+}
