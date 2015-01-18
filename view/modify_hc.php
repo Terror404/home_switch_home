@@ -38,8 +38,8 @@
                 <form method="post" action="../controler/content.php?page=modify_House_Card&id=<?php echo $_GET['id'];?>">
                     <input type="text" name="title" value="<?php echo $modTitle?>"/>
                     <input type="hidden"  name="confirmModif" value="1"/>
-                    <input type="submit" class="sub" value="Modifier"/>
-                    <input type="reset" class="sub" value="Annuler"/>
+                    <input type="submit" class="subimage" value="Modifier"/>
+                    <input type="reset" class="subimage" value="Annuler"/>
                 </form>
             <?php
                 echo"Vous n'avez pas rempli le champ correctement";
@@ -50,8 +50,8 @@
                 <form method="post" action="">
                     <input type="text" name="title" value="<?php echo $modTitle?>"/>
                     <input type="hidden"  name="confirmModif" value="1"/>
-                    <input type="submit" class="sub" value="Modifier"/>
-                    <input type="reset" class="sub" value="Annuler"/>
+                    <input type="submit" class="subimage" value="Modifier"/>
+                    <input type="reset" class="subimage" value="Annuler"/>
                 </form>
             <?php
             }
@@ -62,8 +62,8 @@
             <form method="post" action="">
                 <input type="text" name="title" value="<?php echo $modTitle?>"/>
                 <input type="hidden"  name="confirmModif" value="1"/>
-                <input type="submit" class="sub" value="Modifier"/>
-                <input type="reset" class="sub" value="Annuler"/>
+                <input type="submit" class="subimage" value="Modifier"/>
+                <input type="reset" class="subimage" value="Annuler"/>
             </form>
         <?php  
         }
@@ -77,7 +77,7 @@
         
     </article>
     <article class="img"> <!-- Mettre ici les photos et les 2 boutons -->
-                    <p> <!-- main image-->
+                    <div class="white"></div><p> <!-- main image-->
                         <img src="<?php echo $modPic ?>" alt="photo maison" class="image1">
                     </p>
                     
@@ -121,21 +121,13 @@
             
     </article>
 
-<section class="info">			
-        <ul class="onglet"> 
-                <li class="o" onclick="hideshowhousetxt()">description de la maison</li>
-                <li class="o" onclick="hideshowmapblock()">localisation</li>
-                <li class="o" onclick="hideshowownerinfo()">propriétaire</li>
-        </ul>
-    
-    
-        <div class="desc" id="housetxt" style="display: block">
-                                     <?php echo $_SESSION['descriptBien']; ?>  
+<section class="info">			 
+        <div class="desc" id="housetxt" >
+            <h2> <?php echo $_SESSION['descriptBien']; ?>  </h2>
                                     </br>
-                                    </br>
+  
                                     <?php
-        /*********************************Modification description**************************/
-                                    
+        /*********************************Modification description**************************/                                  
         if(isset($_POST['description']))
         {
             if(isset($end) AND $end==0)
@@ -144,8 +136,9 @@
                 <form method="post" action="../controler/content.php?page=modify_House_Card&id=<?php echo $_GET['id'];?>">
                     <textarea name="description"><?php echo $modDesc ?></textarea>
                     <input type="hidden"  name="confirmModif" value="1"/>
-                    <input type="submit" value="Modifier"/>
-                    <input type="reset" value="Annuler"/>
+                    </br>
+                    <input type="submit" class="sub" value="Modifier"/>
+                    <input type="reset"  class="sub" value="Annuler"/>
                 </form>
             <?php
                 echo"Vous n'avez pas rempli le champ correctement";
@@ -156,8 +149,9 @@
                 <form method="post" action="../controler/content.php?page=modify_House_Card&id=<?php echo $_GET['id'];?>">
                     <textarea name="description"><?php echo $modDesc ?></textarea>
                     <input type="hidden"  name="confirmModif" value="1"/>
-                    <input type="submit" value="Modifier"/>
-                    <input type="reset" value="Annuler"/>
+                                        </br>
+                    <input type="submit" class="sub" value="Modifier"/>
+                    <input type="reset" class="sub" value="Annuler"/>
                 </form>
             <?php
             }
@@ -168,8 +162,9 @@
             <form method="post" action="../controler/content.php?page=modify_House_Card&id=<?php echo $_GET['id'];?>">
                 <textarea name="description"><?php echo $modDesc ?></textarea>
                 <input type="hidden"  name="confirmModif" value="1"/>
-                <input type="submit" value="Modifier"/>
-                <input type="reset" value="Annuler"/>
+                                    </br>
+                <input type="submit" class="sub" value="Modifier"/>
+                <input type="reset" class="sub" value="Annuler"/>
             </form>
         <?php  
         }
@@ -178,7 +173,7 @@
             </br>
             </br>
 
-            Informations sur le logement:
+            <h2> Informations sur le logement:</h2>
             </br>
             </br>
             <?php echo $_SESSION['typ']; ?>  
@@ -211,8 +206,8 @@
                         <option value="Gîtes / Chambre d'Hôtes" title="Chambres d’Hôtes">Gîtes/Chambres d’Hôtes</option>
                     </select>
                     <input type="hidden"  name="confirmModif" value="1"/>
-                    <input type="submit" value="Modifier"/>
-                    <input type="reset" value="Annuler"/>
+                    <input type="submit" class="sub" value="Modifier"/>
+                    <input type="reset" class="sub" value="Annuler"/>
                 </form>
             <?php
                 echo"Vous n'avez pas rempli le champ correctement";
@@ -235,8 +230,8 @@
                         <option value="Gîtes / Chambre d'Hôtes" title="Chambres d’Hôtes">Gîtes/Chambres d’Hôtes</option>
                     </select>
                     <input type="hidden"  name="confirmModif" value="1"/>
-                    <input type="submit" value="Modifier"/>
-                    <input type="reset" value="Annuler"/>
+                    <input type="submit" class="sub" value="Modifier"/>
+                    <input type="reset" class="sub" value="Annuler"/>
                 </form>
             <?php
             }
@@ -259,8 +254,8 @@
                         <option value="Gîtes / Chambre d'Hôtes" title="Chambres d’Hôtes">Gîtes/Chambres d’Hôtes</option>
                     </select>
                     <input type="hidden"  name="confirmModif" value="1"/>
-                    <input type="submit" value="Modifier"/>
-                    <input type="reset" value="Annuler"/>
+                    <input type="submit" class="sub" value="Modifier"/>
+                    <input type="reset" class="sub" value="Annuler"/>
                 </form>
         <?php  
         }
@@ -285,8 +280,8 @@
                             <form method='post' action='../controler/content.php?page=modify_House_Card&id=<?php echo $_GET['id'];?>'>
                                 <input type='number' name='capacity'/> personne(s)
                                 <input type="hidden"  name="confirmModif" value="1"/>
-                                <input type="submit" value="Modifier"/>
-                                <input type="reset" value="Annuler"/>
+                                <input type="submit" class="sub" value="Modifier"/>
+                                <input type="reset" class="sub" value="Annuler"/>
                             </form>
                         <?php
                             echo"Vous n'avez pas rempli le champ correctement";
@@ -298,8 +293,8 @@
                             <form method='post' action='../controler/content.php?page=modify_House_Card&id=<?php echo $_GET['id'];?>'>
                                 <input type='number' name='capacity'/> personne(s)
                                 <input type="hidden"  name="confirmModif" value="1"/>
-                                <input type="submit" value="Modifier"/>
-                                <input type="reset" value="Annuler"/>
+                                <input type="submit" class="sub" value="Modifier"/>
+                                <input type="reset" class="sub" value="Annuler"/>
                             </form>
                         <?php
                         }
@@ -311,8 +306,8 @@
                         <form method='post' action='../controler/content.php?page=modify_House_Card&id=<?php echo $_GET['id'];?>'>
                             <input type='number' name='capacity'/> personne(s)
                             <input type="hidden"  name="confirmModif" value="1"/>
-                            <input type="submit" value="Modifier"/>
-                            <input type="reset" value="Annuler"/>
+                            <input type="submit" class="sub"value="Modifier"/>
+                            <input type="reset" class="sub"value="Annuler"/>
                         </form>
                     <?php  
                     }
@@ -337,8 +332,8 @@
                     <form method='post' action='../controler/content.php?page=modify_House_Card&id=<?php echo $_GET['id'];?>'>
                         <input type='number' name='nbbr'/> chambre(s)
                         <input type="hidden"  name="confirmModif" value="1"/>
-                        <input type="submit" value="Modifier"/>
-                        <input type="reset" value="Annuler"/>
+                        <input type="submit" class="sub" value="Modifier"/>
+                        <input type="reset" class="sub" value="Annuler"/>
                     </form>
             <?php
                 echo"Vous n'avez pas rempli le champ correctement";
@@ -350,8 +345,8 @@
                     <form method='post' action='../controler/content.php?page=modify_House_Card&id=<?php echo $_GET['id'];?>'>
                         <input type='number' name='nbbr'/> chambre(s)
                         <input type="hidden"  name="confirmModif" value="1"/>
-                        <input type="submit" value="Modifier"/>
-                        <input type="reset" value="Annuler"/>
+                        <input type="submit" class="sub" value="Modifier"/>
+                        <input type="reset" class="sub" value="Annuler"/>
                     </form>
             <?php
             }
@@ -363,8 +358,8 @@
                     <form method='post' action='../controler/content.php?page=modify_House_Card&id=<?php echo $_GET['id'];?>'>
                         <input type='number' name='nbbr'/> chambre(s)
                         <input type="hidden"  name="confirmModif" value="1"/>
-                        <input type="submit" value="Modifier"/>
-                        <input type="reset" value="Annuler"/>
+                        <input type="submit" class="sub" value="Modifier"/>
+                        <input type="reset" class="sub" value="Annuler"/>
                     </form>
         <?php  
         }
@@ -386,9 +381,9 @@
         </div>
         
         
-        <div class="mapblock" id="mapblock" style="display: none"> 
-            <p><img class="map" src="..//view/pictures/search-background.jpg" alt= "map"/> </p>
-            <p class="desc">
+        <div class="mapblock" id="mapblock"> 
+            </br>
+            <p><h2> Localisation</h2>
                 Region : 
                 <br/>Actuellement =><?php echo $modArea;?>
                 <br/>Modifier :
@@ -420,8 +415,8 @@
                         <option value="rhone_alpes">Rhône-Alpes
                 </select>
                 <input type="hidden"  name="confirmModif" value="1"/>
-                <input type="submit" value="Modifier"/>
-                <input type="reset" value="Annuler"/>
+                <input type="submit" class="sub" value="Modifier"/>
+                <input type="reset" class="sub" value="Annuler"/>
             </form>
                 <br/>
                 
@@ -448,8 +443,8 @@
                     <br/>Modifier le code postal: <br/>
                     <input type='number' name='zipcode'/>
                     <input type="hidden"  name="confirmModif" value="1"/>
-                    <input type="submit" value="Modifier"/>
-                    <input type="reset" value="Annuler"/>
+                    <input type="submit" class="sub" value="Modifier"/>
+                    <input type="reset" class="sub" value="Annuler"/>
                  </form><br/>
                     
                 <?php echo $_SESSION['adres']; ?> 
@@ -461,16 +456,12 @@
                             }
                     ?>
                     <input type="hidden"  name="confirmModif" value="1"/>
-                    <input type="submit" value="Modifier"/>
-                    <input type="reset" value="Annuler"/>
+                    <input type="submit" class="sub" value="Modifier"/>
+                    <input type="reset" class="sub" value="Annuler"/>
                 </form>
         </div>
 
-        <div class="ownerinfo" id="ownerinfo" style="display: none">	
-            <p> huge problem when profil reminder is included</p>
-                
-	</div>
-    
+
     
     
 </section> <!-- end of info section-->
