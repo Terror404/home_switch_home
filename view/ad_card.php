@@ -1,10 +1,6 @@
 
 <?php require('../modele/fct_verif_date.php');
-while($resDateAds=$askDateAds->fetch())
-{
-    $dateB=$resDateAds['date_begin'];
-    $dateE=$resDateAds['date_end'];
-}
+
 ?>
 <script type="text/javascript" src="..//view/js/hide_show.js"> </script> 
 <script type = "text/javascript">
@@ -58,7 +54,7 @@ while($resDateAds=$askDateAds->fetch())
                             </form>
                             
                             <!--Modify the house card-->
-                            <form method="post" class="topsub1" action="../controler/content.php?page=modify_House_Card">
+                            <form method="post" class="topsub1" action="../controler/content.php?page=modify_House_Card&id=<?php echo $_GET['id']?>">
                                 <input type="hidden"  name="confirmModif" value="1"/>
                                 <input type="hidden" name="houseId" value="<?php echo $_GET['id'] ?>"/>
                                 <input type="submit" class="sub2" value="Modifier la fiche de cette maison" class="sub"/>
@@ -334,8 +330,13 @@ while($resDateAds=$askDateAds->fetch())
                 
 	</div>
         <div class="ad" id="ad" style="display: none">	
-            <div class="dates">
-                <h3>Du <?php echo (reorder_date_1($dateB)); ?> au <?php echo (reorder_date_1($dateE));?></h3>
+            <div class="dates"><?php
+                while($resDateAds=$askDateAds->fetch())
+                {
+                    $dateB=$resDateAds['date_begin'];
+                    $dateE=$resDateAds['date_end'];
+                }?>
+                <h3>Du <?php echo reorder_date_2($dateB); ?> au <?php echo reorder_date_2($dateE);?></h3>
                 Critères spécifique à cette annonce :
                 <?php $i=0;
                         while ($resInfAds=$askInfAds->fetch())
@@ -343,11 +344,11 @@ while($resDateAds=$askDateAds->fetch())
                                 ?>
                 <p>Critère n°<?php echo$i?>:</p> 
                 <p><?php echo $resInfAds['real_name']?></p>
-                <p>Dexcription:</p>
+                <p>Description:</p>
                 <p><?php echo $resInfAds['description']?></p>
                                    
                                 <?php
-                                $i+=1;  
+                                $i++;  
                             }
                     ?>
             </div>

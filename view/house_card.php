@@ -265,7 +265,7 @@
         <div class="mapblock" id="mapblock" style="display: none"> 
             
             <p class="desc">
-                <img class="map" src="..//view/pictures/search-background.jpg" alt= "map"/> </br>  </br> 
+
                 Region : 
                     <?php 
                         while ($resHregion=$askHregion->fetch())
