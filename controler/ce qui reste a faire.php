@@ -1,12 +1,8 @@
 CSS: anastasia et mélanie 
 ajouter annonce (pk ya un rappel de la maison au dessus? ca fait super moche!)
-news (non prioritaire)
+
 mes echanges (un peu de css pour faire plus beau vite fait)
 
-
-dans le navigateur : 
-echanger les onglets recherche et forum
-il y a toujours l'onglet mon compte quand on n'est pas connecté
 
 Fonctions:
 dans house card:

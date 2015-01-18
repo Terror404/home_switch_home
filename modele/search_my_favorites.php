@@ -14,7 +14,7 @@ $nbId=count($arrayId);
 $arrayInfFavs=array();
 for($k=0;$k<$nbId;$k++)
 {
-    $askInfFavs=$DB->prepare('SELECT title,description,rating,pictures FROM house WHERE id=:idhouse');
+    $askInfFavs=$DB->prepare('SELECT title,description,rating,pictures,id FROM house WHERE id=:idhouse');
         $askInfFavs->execute(array('idhouse'=>$arrayId[$k]));
         
 
@@ -29,11 +29,12 @@ for($k=0;$k<$nbId;$k++)
             Colonne5 => rating
         */
         $arrayInfFavs[$k][0]=$k;
-        $arrayInfFavs[$k][1]= $resFavs['id_house'];
+        $arrayInfFavs[$k][1]= $resInfFavs['id'];
         $arrayInfFavs[$k][2]=$resInfFavs['description'];
         $arrayInfFavs[$k][3]=$resInfFavs['title'];
         $arrayInfFavs[$k][4]=$resInfFavs['pictures'];
         $arrayInfFavs[$k][5]=$resInfFavs['rating'];
+        
     }
 }
 
