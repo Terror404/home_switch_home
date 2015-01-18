@@ -171,7 +171,7 @@ if (isset($page) AND $page!='')
                     }
                     elseif($_GET['page']=='modify_House_Card')
                     {
-                        echo'<link rel="stylesheet" type="text/css" href="../view/css/houseCard_style.css">';
+                        echo'<link rel="stylesheet" type="text/css" href="../view/css/modify_hc.css">';
                     }
                     elseif($_GET['page']=='favorites')
                     {

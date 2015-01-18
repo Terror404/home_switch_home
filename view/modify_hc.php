@@ -27,6 +27,7 @@
 <section class='MiddlePage'>
     
     <article class='title'> 
+        <h2>Titre de la maison : <h2>
         <?php
         /************************Modification title******************************/
         if(isset($_POST['title']))
@@ -37,8 +38,8 @@
                 <form method="post" action="../controler/content.php?page=modify_House_Card&id=<?php echo $_GET['id'];?>">
                     <input type="text" name="title" value="<?php echo $modTitle?>"/>
                     <input type="hidden"  name="confirmModif" value="1"/>
-                    <input type="submit" value="Modifier"/>
-                    <input type="reset" value="Annuler"/>
+                    <input type="submit" class="sub" value="Modifier"/>
+                    <input type="reset" class="sub" value="Annuler"/>
                 </form>
             <?php
                 echo"Vous n'avez pas rempli le champ correctement";
@@ -49,8 +50,8 @@
                 <form method="post" action="">
                     <input type="text" name="title" value="<?php echo $modTitle?>"/>
                     <input type="hidden"  name="confirmModif" value="1"/>
-                    <input type="submit" value="Modifier"/>
-                    <input type="reset" value="Annuler"/>
+                    <input type="submit" class="sub" value="Modifier"/>
+                    <input type="reset" class="sub" value="Annuler"/>
                 </form>
             <?php
             }
@@ -61,8 +62,8 @@
             <form method="post" action="">
                 <input type="text" name="title" value="<?php echo $modTitle?>"/>
                 <input type="hidden"  name="confirmModif" value="1"/>
-                <input type="submit" value="Modifier"/>
-                <input type="reset" value="Annuler"/>
+                <input type="submit" class="sub" value="Modifier"/>
+                <input type="reset" class="sub" value="Annuler"/>
             </form>
         <?php  
         }
