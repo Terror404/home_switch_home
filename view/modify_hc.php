@@ -28,28 +28,43 @@
     
     <article class='title'> <!-- title of the house-->
         <?php
-        if(isset($_POST['title'])AND $end==0)
+        if(isset($_POST['title']))
         {
+            if(isset($end) AND $end==0)
+            {
+                ?>
+                <form method="post" action="../controler/content.php?page=modify_House_Card&id=<?php echo $_GET['id'];?>">
+                    <input type="text" name="title" value=<?php echo $modTitle?>/>
+                    <input type="hidden"  name="confirmModif" value="1"/>
+                    <input type="submit" value="Modifier"/>
+                    <input type="reset" value="Annuler"/>
+                </form>
+            <?php
+                echo"Vous n'avez pas rempli le champ correctement";
+            }
+            elseif(isset($end) AND $end==2)
+            {
             ?>
-            <form method="post" action="../controler/content.php?page=modify_House_Card&id=<?php echo $_GET['id'];?>">
+                <form method="post" action="">
+                    <input type="text" name="title" value=<?php echo $modTitle?>/>
+                    <input type="hidden"  name="confirmModif" value="1"/>
+                    <input type="submit" value="Modifier"/>
+                    <input type="reset" value="Annuler"/>
+                </form>
+            <?php
+                echo"La modification a été prise en compte";
+            }
+        }
+        else
+        {
+        ?>
+            <form method="post" action="">
                 <input type="text" name="title" value=<?php echo $modTitle?>/>
                 <input type="hidden"  name="confirmModif" value="1"/>
                 <input type="submit" value="Modifier"/>
                 <input type="reset" value="Annuler"/>
             </form>
-        <?php
-            echo"Vous n'avez pas rempli le champ correctement";
-        }
-        else
-        {
-        ?>
-        <form method="post" action="">
-            <input type="text" name="title" value=<?php echo $modTitle?>/>
-            <input type="hidden"  name="confirmModif" value="1"/>
-            <input type="submit" value="Modifier"/>
-            <input type="reset" value="Annuler"/>
-        </form>
-        <?php
+        <?php  
         }
         ?>
         
