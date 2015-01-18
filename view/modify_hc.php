@@ -28,28 +28,14 @@
     
     <article class='title'> <!-- title of the house-->
         <form method="post" action="">
-        <?php
-            while($resModHouse=$askModHouse->fetch())
-                {
-            ?>
-                    <input type="text" name="title" value="<?php echo $resModHouse['title']?>"/>
-            <?php
-                } 
-        ?>
-            <input type="submit" name="Modifier"/>
-            <input type="reset" name="Annuler"/>
+            <input type="text" name="title" value="<?php echo $modTitle?>"/>
+            <input type="submit" value="Modifier"/>
+            <input type="reset" value="Annuler"/>
         </form>
     </article>
-     <article class="img"> <!-- Mettre ici les photos et les 2 boutons -->
+    <article class="img"> <!-- Mettre ici les photos et les 2 boutons -->
                     <p> <!-- main image-->
-                        <?php 
-                            while ($resModHouse=$askModHouse->fetch())
-                                {
-                        ?>
-                                    <img src="<?php echo $resModHouse['pictures'] ?>" alt="photo maison" class="image1">
-                        <?php
-                            }
-                        ?>
+                        <img src="<?php echo $modPic ?>" alt="photo maison" class="image1">
                     </p>
                     
                     
@@ -105,16 +91,9 @@
                                     </br>
                                     </br>
                                     <form method="post" action="../controler/content.php?page=modify">
-                                    <?php
-                                        while($resModHouse=$askModHouse->fetch())
-                                            {
-                                        ?>
-                                        <textarea name="description"><?php echo $resModHouse['title']?></textarea>
-                                        <?php
-                                            } 
-                                    ?>
-                                        <input type="submit" name="Modifier"/>
-                                        <input type="reset" name="Annuler"/>
+                                        <textarea name="description"><?php echo $modDesc ?></textarea>
+                                        <input type="submit" value="Modifier"/>
+                                        <input type="reset" value="Annuler"/>
                                     </form>
             </br>
             </br>
@@ -126,26 +105,54 @@
                 <?php 
                     while ($resHtype=$askHtype->fetch())
                         {
-                            echo $resHtype['house_type'];
+                            echo "<br/>Actuellement => ".$resHtype['house_type'];
                         }
                 ?>
+            <br/>Modifier :
+                <form method='post' action='../controler/content.php?page=modify'>
+                    <select id="type" name="house_type"> 
+                        <option value="Non précisé">Choisissez votre type de logement</option>
+                        <option value="Maison / Villa" title="Maison">Maison / Villa</option>
+                        <option value="Appartement" title="Appartement">Appartement</option>                                                            
+                        <option value="Chalet" title="Chalet">Chalet</option>
+                        <option value="Corps de ferme" title="Fermette">Corps de ferme</option>
+                        <option value="Moulin   " title="Moulin">Moulin</option>
+                        <option value="Loft" title="Loft">Loft</option>
+                        <option value="Mobil-Home" title="Mobil-Home">Mobil-Home</option>
+                        <option value="Château" title="Château">Château</option>
+                        <option value="Gîtes / Chambre d'Hôtes" title="Chambres d’Hôtes">Gîtes/Chambres d’Hôtes</option>
+                    </select>
+                    <input type="submit" value="Modifier"/>
+                    <input type="reset" value="Annuler"/>
+                </form>
             </br>
             <?php echo $_SESSION['capacit']; ?> 
                 <?php 
                     while($resHcapacity=$askHcapacity->fetch())
                         {
-
-                            echo $resHcapacity['nbr_people'];?> personne(s)<?php
+                            echo "<br/>Actuellement => ".$resHcapacity['nbr_people'];?> personne(s)<?php
                         }
                 ?>
+                    <br/>Modifier
+                    <form method='post' action='../controler/content.php?page=modify'>
+                        <input type='number' name='capacity'/> personne(s)
+                        <input type="submit" value="Modifier"/>
+                        <input type="reset" value="Annuler"/>
+                    </form>
             </br>
             <?php echo $_SESSION['nombrChambr']; ?>  
                 <?php
                     while($resHbrnb=$askHbrnb->fetch())
                         {
-                            echo $resHbrnb['nbr_room'];?> chambre(s)<?php
+                            echo "<br/>Actuellement => ".$resHbrnb['nbr_room'];?> chambre(s)<?php
                         }
                 ?>
+                            <br/>Modifier
+                    <form method='post' action='../controler/content.php?page=modify'>
+                        <input type='number' name='nbbr'/> chambre(s)
+                        <input type="submit" value="Modifier"/>
+                        <input type="reset" value="Annuler"/>
+                    </form>
             </br>
             <?php echo $_SESSION['amenag']; ?>  
             </br>
@@ -166,34 +173,79 @@
             <p><img class="map" src="..//view/pictures/search-background.jpg" alt= "map"/> </p>
             <p class="desc">
                 Region : 
-                    <?php 
-                        while ($resHregion=$askHregion->fetch())
-                            {
-                                echo $resHregion['real_name'];
-                            }
-                    ?><br/>
+                <br/>Actuellement =><?php echo $modArea;?>
+                <br/>Modifier :
+            <br><form method='post' action='../controler/content.php?page=modify'>
+                <select name="region" id="region"> 
+                        <option value="alsace">Alsace
+                        <option value="aquitaine">Aquitaine
+                        <option value="auvergne">Auvergne
+                        <option value="basse_normandie">Basse-Normandie
+                        <option value="bretagne">Bretagne
+                        <option value="champagne_ardenne">Champagne-Ardenne
+                        <option value="corse">Corse
+                        <option value="franche_comté">Franche-Comté
+                        <option value="guadeloupe">Guadeloupe
+                        <option value="guyane">Guyane
+                        <option value="haute_normandie">Haute-Normandie
+                        <option value="idf">Île-de-France
+                        <option value="la_reunion">La Réunion
+                        <option value="languedoc_roussillon">Languedoc-Roussillon
+                        <option value="lorraine">Lorraine
+                        <option value="martinique">Martinique
+                        <option value="mayotte">Mayotte
+                        <option value="midi_pyrenees">Midi-Pyrénées
+                        <option value="NPdC">Nord-Pas-de-Calais
+                        <option value="PdlL">Pays de la Loire
+                        <option value="picardie">Picardie
+                        <option value="poitou_charentes">Poitou Charentes
+                        <option value="PACA">Provence Alpes Côte d'Azur
+                        <option value="rhone_alpes">Rhône-Alpes
+                </select>
+                <input type="submit" value="Modifier"/>
+                <input type="reset" value="Annuler"/>
+            </form>
+                <br/>
+                
                 <?php echo $_SESSION['vill']; ?>  
                     <?php
                         while ($resHtown=$askHtown->fetch())
                             {
-                                echo $resHtown['ville_nom_reel'];
+                                echo"<br/>Actuellement => ".$resHtown['ville_nom_reel'];
                             }
-                    ?><br/>
+                    ?>
+                <br/>
+                
                 <?php echo $_SESSION['codPost']; ?>  
                     <?php
                         while ($resHzip=$askHzip->fetch())
                             {
-                                echo $resHzip['ville_code_postal'];
+                                echo"<br/>Actuellement => ".$resHzip['ville_code_postal'];
                             }
-                    ?><br/>
+                    ?>
+                <br/><br/>Modifier la ville: <br/>
+                <form method='post' action='../controler/content.php?page=modify'>
+                    <input type='text' name='town'/>
+               
+                    <br/>Modifier le code postal: <br/>
+                    <input type='number' name='zipcode'/>
+                    <input type="submit" value="Modifier"/>
+                    <input type="reset" value="Annuler"/>
+                 </form><br/>
+                    
                 <?php echo $_SESSION['adres']; ?> 
                     <?php
                         while ($resHaddress=$askHaddress->fetch())
                             {
-                                echo $resHaddress['address'];
+                                echo"<br/>Actuellement => ".$resHaddress['address'];
                             }
                     ?>
-            </p>  
+                 <br/>Modifier : <br/>
+                <form method='post' action='../controler/content.php?page=modify'>
+                    <input type='text' name='address'/>
+                    <input type="submit" value="Modifier"/>
+                    <input type="reset" value="Annuler"/>
+                </form>
         </div>
 
         <div class="ownerinfo" id="ownerinfo" style="display: none">	
@@ -207,23 +259,4 @@
 
 
 
-    <article class="annonces">annonces <!-- Mettre ici les dates -->
-        <br/>
-        <?php
-            while($resDateB=$askDateB ->fetch()AND $resDateE=$askDateE ->fetch())
-                {
-                if ($resDateB!=NULL AND $resDateB!="" AND $resDateE!=NULL AND $resDateE!="")
-                {
-        ?>
-                    du <?php echo $resDateB['date_begin'] ?> au <?php echo $resDateE['date_end']?> <br/>
-        <?php
-                }
-                else
-                {
-                    echo"Aucune annonce de disponible";
-                }
-                }
-        ?>
-                    <input type="button" value="Ajouter une annonce" class="addAdButton" 
-                           onclick="self.location.href='../controler/content.php?page=createAd&id=<?php echo$_GET['id']?>'"/><br/>
-    </article>
+    

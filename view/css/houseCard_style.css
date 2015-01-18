@@ -55,10 +55,10 @@ border-radius : 10px;
   background-color: white;
   position:absolute; 
   z-index:-1; 
-  top:7%; 
+  top:10%; 
   left:2.5%; 
   right:3.5%; 
-  bottom:25%;
+  bottom:20%;
   opacity:0.9; 
   border-radius: 10px;
 }
@@ -85,6 +85,7 @@ height :200px;
 vertical-align : middle;
 text-align : center;
 z-index: 10;
+
 }
 
 .piccar
@@ -131,7 +132,6 @@ vertical-align : middle;
 {
 list-style-type : none;
 display : inline;
-width : 5%;
 background-color: #00BCE0;
   -webkit-border-radius: 28;
   -moz-border-radius: 28;
@@ -149,10 +149,10 @@ background-color: #00BCE0;
 {
 display : inline-block;
 vertical-align : middle;
-width : 98%;
+width : 92.7%;
 padding:3%;
 background-color: #00BCE0;
-margin-top : 1%;
+margin-top : 1.5%;
 height : 500px;
 
 }
@@ -184,6 +184,22 @@ margin : 1%;
 display : inline-block;
 margin-left : 5%;
 }
+.whitecom {
+  background-color: white;
+  position:absolute; 
+  z-index:-1; 
+  top:85%; 
+  left:2.5%; 
+  right:3.5%; 
+  bottom:-20%;
+  opacity:0.9; 
+  border-radius: 10px;
+}
+.comments{
+    margin-left : 4%;
+    width: 90%;
+}
+
 .commentbox
 {
 background-color :#ffc7ab;
@@ -210,6 +226,7 @@ padding: 1%;
 display : inline-block;
 
 }
+
 .comment, .commentauthor
 {
 vertical-align : middle;
@@ -221,16 +238,16 @@ body{
     background-attachment: fixed;
 }
 .subimg{
-   width : 18%;
+   width : 22%;
     float: left;
     margin: 1%;
     border: 1px solid black;
-    height : 50px;
+    height : 80px;
    
 }
 
 .image-shown{
-    width : 90%;
-   
+    width : 100%;
+    height : 80px;  
 }
 
