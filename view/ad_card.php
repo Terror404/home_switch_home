@@ -312,10 +312,14 @@
 	</div>
         <div class="ad" id="ad" style="display: none">	
             <div class="dates">
+                Critères spécifique à cette annonce :
                 <?php
-                        while ($resDates=$askDates->fetch())
+                        while ($resInfAds=$askInfAds->fetch())
                             {
-                                echo '<a href="../controler/content.php?page=adCard&id='.$resDates['id'].'">De '.reorder_date_2($resDates['date_begin']).' au '.reorder_date_2($resDates['date_end']).'</a>';
+                                ?>
+                                    
+                                   
+                                <?php
                             }
                     ?>
             </div>
@@ -326,28 +330,6 @@
     
 </section> <!-- end of info section-->
 
-
-
-    <article class="annonces">Annonces <!-- Mettre ici les dates -->
-        <br/>
-        <?php
-            while($resDateB=$askDateB ->fetch()AND $resDateE=$askDateE ->fetch())
-                {
-                if ($resDateB!=NULL AND $resDateB!="" AND $resDateE!=NULL AND $resDateE!="")
-                {
-        ?>
-                    du <?php echo $resDateB['date_begin'] ?> au <?php echo $resDateE['date_end']?> <br/>
-        <?php
-                }
-                else
-                {
-                    echo"Aucune annonce de disponible";
-                }
-                }
-        ?>
-                    <input type="button" value="Ajouter une annonce" class="sub" 
-                           onclick="self.location.href='../controler/content.php?page=createAd&id=<?php echo$_GET['id']?>'"/><br/>
-    </article>
 <section class="comments">
     
     <div class="test2"></div>
