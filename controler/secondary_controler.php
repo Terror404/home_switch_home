@@ -169,6 +169,10 @@ if (isset($page) AND $page!='')
                     {
                         echo'<link rel="stylesheet" type="text/css" href="../view/css/houseCard_style.css">';
                     }
+                    elseif($_GET['page']=='modify_House_Card')
+                    {
+                        echo'<link rel="stylesheet" type="text/css" href="../view/css/houseCard_style.css">';
+                    }
     
     }
 

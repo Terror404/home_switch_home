@@ -25,8 +25,26 @@
 <?php 
     if(isset($_POST['modif_region']) AND !empty($_POST['modif_region']))
     {
+        if(isset($_POST['modif_town']) AND !empty($_POST['modif_town']))
+        {
+            if(isset($_POST['modif_zip']) AND !empty($_POST['modif_zip']))
+            {
     $mod_location=$DB->prepare('UPDATE house SET region=:modif_region, town=:modif_town, zipcode=:modif_zip WHERE id=:idhouse');
         $mod_location->execute(array('modif_region'=>$_POST['modif_region'],'modif_town'=>$_POST['modif_town'],'modif_zip'=>$_POST['modif_zip'],'idhouse'=>$_GET['id']));
+            }
+            else
+            {
+                echo"Veuillez rentrer un code postal";
+            }
+        }
+        else
+        {
+            echo"Veuillez rentrer le nom d'une ville";
+        }
+    }
+    else
+    {
+        echo"Veuillez choisir une région";
     }
 ?>
 

@@ -88,12 +88,31 @@
 $askCom->execute(array('idtarget'=>$_GET['id']));
 $askComNb=$askCom->rowcount();
 
-
+/*******************************************************************************
+ *************************** For the modification ******************************
+ ******************************************************************************/
 
 if(isset($_POST['houseId']))
     {
         $askModHouse=$DB->prepare('SELECT * FROM house WHERE id=:idhouse');
             $askModHouse->execute(array('idhouse'=>$_POST['houseId']));
+            
+        while($resModHouse=$askModHouse->fetch())
+            {
+                $modTitle=$resModHouse['title'];
+                $modIdArea=$resModHouse['id_area'];
+                $modPic=$resModHouse['pictures'];
+                $modDesc=$resModHouse['description'];
+            }
+                
+        $askModArea=$DB->prepare('SELECT real_name FROM area WHERE id=:idarea');
+            $askModArea->execute(array('idarea'=>$modIdArea));
+        
+        while($resModArea=$askModArea->fetch())
+        {
+            $modArea=$resModArea['real_name'];
+        }
+        
     }
 }
     

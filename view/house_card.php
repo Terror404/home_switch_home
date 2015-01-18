@@ -69,7 +69,7 @@
                                 <input type="submit" class="sub1" value="Proposer un échange pour cette maison" class="sub"/>
                             </form>
                             
-                            <!--Add as a favorite-->
+                            <!--Add as a favorite--> 
                             <form method="post"  class="topsub1" action="../controler/content.php?page=confirm_favs">
                                 <input type="hidden"  name="favs" value="1"/>
                                 <input type="hidden" name="houseId" value="<?php echo $_GET['id'] ?>"/>
@@ -327,48 +327,39 @@
             
                 
 	</div>
-        <div class="ad" id="ad" style="display: none">
-             <article class="annonces">Annonces <!-- Mettre ici les dates -->
-        <br/>
-        <?php
-            while($resDateB=$askDateB ->fetch()AND $resDateE=$askDateE ->fetch())
-                {
-                if ($resDateB!=NULL AND $resDateB!="" AND $resDateE!=NULL AND $resDateE!="")
-                {
-        ?>
-                    du <?php echo $resDateB['date_begin'] ?> au <?php echo $resDateE['date_end']?> <br/>
-        <?php
-                }
-                else
-                {
-                    echo"Aucune annonce de disponible";
-                }
-                }
-        ?>
-                    <input type="button" value="Ajouter une annonce" class="sub" 
-                           onclick="self.location.href='../controler/content.php?page=createAd&id=<?php echo$_GET['id']?>'"/><br/>
-    </article>
+        <div class="ad" id="ad" style="display: none">	
             <div class="dates">
-                
                 <?php
                         while ($resDates=$askDates->fetch())
                             {
-                            ?>
-                <ul>
-                    <li><a href="../controler/content.php?page=adCard&adId=<?php echo $resDates['id'] ?>&id=<?php echo $_GET['id'] ?>">Du <?php echo reorder_date_2($resDates['date_begin'])?> au <?php echo reorder_date_2($resDates['date_end'])?></a>
-                </ul>
-                    <?php
-                                                            }
+                                if(!empty($resDates['date_begin']))
+                                {
+                                    ?>
+                                    <ul>
+                                        <li><a href="../controler/content.php?page=adCard&adId=<?php echo $resDates['id'] ?>&id=<?php echo $_GET['id'] ?>">Du <?php echo reorder_date_2($resDates['date_begin'])?> au <?php echo reorder_date_2($resDates['date_end'])?></a>
+                                    </ul>
+                                    <?php
+                                }
+                                elseif(empty($resDates['date_begin']))
+                                {                                   
+                                    echo"Aucune annonce de disponible";
+                                }
+                            }
+                if($_SESSION['userId']==$idOwner)
+                {
                     ?>
+                    <input type="button" value="  +  " class="sub" 
+                           onclick="self.location.href='../controler/content.php?page=createAd&id=<?php echo$_GET['id']?>'"/><br/>
+                    <?php
+                }
+                ?>
             </div>
                 
 	</div>
     
-
-</section> <!-- end of info section-->
-
     
-
+    
+</section> <!-- end of info section-->
 
 <section class="comments">
     
