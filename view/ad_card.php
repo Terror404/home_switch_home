@@ -340,16 +340,23 @@
                 Critères spécifique à cette annonce :
                 <?php $i=0;
                         while ($resInfAds=$askInfAds->fetch())
+                        {
+                            if(!empty($resInfAds['real_name']))
                             {
-                                ?>
-                <p>Critère n°<?php echo$i?>:</p> 
-                <p><?php echo $resInfAds['real_name']?></p>
-                <p>Description:</p>
-                <p><?php echo $resInfAds['description']?></p>
+                            ?>
+                                <p>Critère n°<?php echo$i?>:</p> 
+                                <p><?php echo $resInfAds['real_name']?></p>
+                                <p>Description:</p>
+                                <p><?php echo $resInfAds['description']?></p>
                                    
-                                <?php
-                                $i++;  
+                            <?php
                             }
+                            elseif(empty($resInfAds['real_name']))
+                            {
+                                echo"Aucun critère spécifique à cette annonce n'est disponible";
+                            }
+                            $i++;  
+                        }
                     ?>
             </div>
                 
