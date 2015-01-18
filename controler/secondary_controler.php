@@ -181,4 +181,4 @@ if (isset($page) AND $page!='')
     }
 
 
-    require_once(dirname(dirname(__FILE__))."/modele/pdoDatabaseRef.php");
+    
