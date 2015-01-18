@@ -19,7 +19,7 @@ background-color: #00BCE0;
 
 .title
 {
-margin-top : 5%;
+
 text-align : center;
 font-size : 200%;
 }
@@ -203,6 +203,7 @@ body{
     background-color: white;
     border-radius : 10px;
     opacity : 0.9;
+    margin-top : 10%;
    
 }
 .housereminder{

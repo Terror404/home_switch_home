@@ -101,34 +101,51 @@
                         <?php 
                             while ($resHpic=$askHpic->fetch()) {
                                 ?>
-                                <img src="<?php echo $resHpic['pictures'] ?>" alt="photo maison" class="image1">
-                                <?php
-                            }
-                        ?>
-                    </p>
-                    <img src="..//view/pictures/house2.jpg" id="house1" style="display: none"/>
-                    <img src="..//view/pictures/house2.jpg" id="house2" style="display: none"/>
-                    <img src="..//view/pictures/house2.jpg" id="house3" style="display: none"/>
 
-                    
+                    <img class="image1" src="<?php echo $resHpic['pictures'] ?>" id="house1" style="display: block"/>
+                    <img class="image1" src="..//view/pictures/house2.jpg" id="house2" style="display: none"/>
+                    <img class="image1" src="..//view/pictures/house3.jpg" id="house3" style="display: none"/>
+                    <img class="image1" src="..//view/pictures/house4.jpg" id="house4" style="display: none"/>
+                    <img class="image1" src="..//view/pictures/house5.jpg" id="house5" style="display: none"/>
+                    <img class="image1" src="..//view/pictures/house6.jpg" id="house6" style="display: none"/>
+                    <img class="image1" src="..//view/pictures/house6.jpg" id="house7" style="display: none"/>
+
+                    </p>
                     
                     
                     <div class="caroussel">
-                        <div class="subimg" > <img class="image-shown" src="..//view/pictures/house1.jpg" alt="house1" onclick="hideshowhouse1()" style="width:100%; height:50px;"/></div>
-                        <div class="subimg" > <img class="image-shown" src="..//view/pictures/house2.jpg" id="house1" onclick="hideshowhouse2()" style="width:100%; height:50px;"/></div>
-                        <div class="subimg" onclick="hideshowhouse3()"> <img class="image-shown" src="..//view/pictures/house3.jpg" id="house1" style="width:100%; height:50px;"/></div>
-                        <div class="subimg" onclick="hideshowhouse4()"> <img src="..//view/pictures/house4.jpg" id="house1" style="width:100%; height:50px;"/></div>
-                        <div class="subimg" onclick="hideshowhouse5()"> <img src="..//view/pictures/house1.jpg" id="house1" style="width:100%; height:50px;"/></div>
-                        <div class="subimg"> <img src="..//view/pictures/house1.jpg" id="house1" style="width:100%; height:50px;"/></div>
-                        <div class="subimg"> <img src="..//view/pictures/house1.jpg" id="house1" style="width:100%; height:50px;"/></div>
-                        <div class="subimg"> <img src="..//view/pictures/house1.jpg" id="house1" style="width:100%; height:50px;"/></div>
-                    </div>
+                        <div class="subimg" onclick="hideshowhouse1()"> 
+                            <img class="image-shown" src="<?php echo $resHpic['pictures'] ?>" alt="house1"  style="width:100%; height:80px;"/>
+                        </div>
+                        <div class="subimg" onclick="hideshowhouse2()"> 
+                            <img class="image-shown" src="..//view/pictures/house2.jpg" id="house1"  style="width:100%; height:80px;"/>
+                        </div>
+                        <div class="subimg" onclick="hideshowhouse3()"> 
+                            <img class="image-shown" src="..//view/pictures/house3.jpg" id="house1" style="width:100%; height:80px;"/>
+                        </div>
+                        <div class="subimg" onclick="hideshowhouse4()"> 
+                            <img src="..//view/pictures/house4.jpg" id="house1" style="width:100%; height:80px;"/>
+                        </div>
+                        <div class="subimg" onclick="hideshowhouse5()"> 
+                            <img src="..//view/pictures/house5.jpg" id="house1" style="width:100%; height:80px;"/>
+                        </div>
+                        <div class="subimg" onclick="hideshowhouse6()"> 
+                            <img src="..//view/pictures/house6.jpg" id="house1" style="width:100%; height:80px;"/>
+                        </div>
+                        <div class="subimg" onclick="hideshowhouse7()"> 
+                            <img src="..//view/pictures/house7.jpg" id="house1" style="width:100%; height:80px;"/>
+                        </div>
+                            
+                            <?php
+                            }
+                        ?>
+                
             
     </article>
 
 <section class="info">			
         <ul class="onglet"> 
-                <li class="o" onclick="hideshowhousetxt()">Desrciption de la maison</li>
+                <li class="o" onclick="hideshowhousetxt()">Description de la maison</li>
                 <li class="o" onclick="hideshowmapblock()">
                     <?php if (isset($_SESSION['userLogin']))
                             {
@@ -346,7 +363,7 @@
 
 <section class="comments">
     
-    <div class="test2"></div>
+    <div class="whitecom"></div>
 <h2> Les commentaires </h2>
         <?php if($askComNb!=0)
         {
