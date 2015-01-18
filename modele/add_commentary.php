@@ -41,8 +41,8 @@ if(isset($_POST['add']) AND $_POST['add']==1)
                     
                     while($resAvgRatesH=$askAvgRatesH->fetch())
                     {
-                        $updateAvgRateH=$DB->prepare('UPLOAD INTO house SET rating=:avgrating');
-                            $updateAvgRateH->execute(array('avgrating'=>$resAvgRatesH));
+                        $updateAvgRateH=$DB->prepare('UPDATE house SET rating=:avgrating');
+                            $updateAvgRateH->execute(array('avgrating'=>$resAvgRatesH['AVG(rating)']));
                     }
                     
                     //Average of the user rate + upload in database
@@ -51,8 +51,8 @@ if(isset($_POST['add']) AND $_POST['add']==1)
                     
                     while($resAvgRatesH=$askAvgRatesH->fetch())
                     {
-                        $updateAvgRateU=$DB->prepare('UPLOAD INTO house SET rating=:avgrating');
-                            $updateAvgRateU->execute(array('avgrating'=>$resAvgRatesU));
+                        $updateAvgRateU=$DB->prepare('UPDATE house SET rating=:avgrating');
+                            $updateAvgRateU->execute(array('avgrating'=>$resAvgRatesU['AVG(rating)']));
                     }
 
                     $upFinished=$DB->prepare('UPDATE exchange SET finished_1=1 WHERE id=:idexchange');
@@ -66,7 +66,7 @@ if(isset($_POST['add']) AND $_POST['add']==1)
                         if($resExch['finished_1']==1 AND $resExch['finished_2']==1)
                         {
                             $delExchange=$DB->prepare('DELETE FROM exchange WHERE id=:idexchange');
-                                $delExcange->execute(array('idexchange'=>$idExchange));
+                                $delExchange->execute(array('idexchange'=>$idExchange));
                         }
                     }
                     $end=0;

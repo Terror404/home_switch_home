@@ -1,7 +1,7 @@
 <section class="RightCol">
     <h1 class="Title"> <?php echo $_SESSION['ajoutResid']; ?> </h1> </br>
     <div class="form"> 
-        <form action="../modele/add_house.php"  method="post" id="create_house" enctype="multipart/form-data" class="formHouseBox">
+        <form action="../controler/content.php?page=confirmAddHouse"  method="post" id="create_house" enctype="multipart/form-data" class="formHouseBox">
         <div class='title'> <!--Insert the title-->
             <p class="label">Titre pour votre maison </p>
             <input type="text" name="title" placeholder="titre de la maison" onblur="verifform(this)"/>

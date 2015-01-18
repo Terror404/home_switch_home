@@ -45,6 +45,7 @@ $reqBase='SELECT DISTINCT ad.title, ad.date_begin, ad.date_end, house.descriptio
         elseif (isset($_GET['area'])AND $_GET['area']!='')
         {
             $req=$req.' AND area.name= \''.$_GET['area'].'\'';
+            
         }
      
     
@@ -202,6 +203,7 @@ $askPrioritySearch=$DB->prepare('SELECT DISTINCT ad.title, ad.date_begin, house.
                                      AND house.id=house_criteria_house.id_house'.$req.$ask.
         ' ORDER BY ad.priority DESC');
 $askPrioritySearch->execute();
+
 
 
 

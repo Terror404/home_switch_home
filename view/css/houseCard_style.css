@@ -61,12 +61,13 @@ border-radius : 10px;
   background-color: white;
   position:absolute; 
   z-index:-1; 
-  top:10%; 
+  top:100px; 
   left:2.5%; 
   right:3.5%; 
   bottom:20%;
   opacity:0.9; 
   border-radius: 10px;
+  height:750px;
 }
 
 .img, .imgbis
@@ -199,12 +200,13 @@ margin-left : 5%;
   background-color: white;
   position:absolute; 
   z-index:-1; 
-  top:85%; 
+  top:950px; 
   left:2.5%; 
   right:3.5%; 
   bottom:-20%;
   opacity:0.9; 
   border-radius: 10px;
+  
 }
 .comments{
     margin-left : 4%;

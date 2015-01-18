@@ -1,4 +1,4 @@
-    <?php
+<?php
 /*******************************************************************************
  * For uploading pic
  ******************************************************************************/
@@ -16,7 +16,7 @@ define('HEIGHT_MAX',5000);
 
 
 
-if(isset($_FILES['photo0']) AND !isset($_FILES['photo1']) AND !isset($_FILES['photo2']) AND !isset($_FILES['photo3']) AND !isset($_FILES['photo4']) AND !isset($_FILES['photo5']) AND !isset($_FILES['photo6']))
+/*if(isset($_FILES['photo0']) AND !isset($_FILES['photo1']) AND !isset($_FILES['photo2']) AND !isset($_FILES['photo3']) AND !isset($_FILES['photo4']) AND !isset($_FILES['photo5']) AND !isset($_FILES['photo6']))
 {
     $nbPic=2;
 }
@@ -39,10 +39,10 @@ elseif(isset($_FILES['photo0']) AND isset($_FILES['photo1']) AND isset($_FILES['
 elseif(isset($_FILES['photo0']) AND isset($_FILES['photo1']) AND isset($_FILES['photo2']) AND isset($_FILES['photo3']) AND isset($_FILES['photo4']) AND isset($_FILES['photo5']) AND !isset($_FILES['photo6']))
 {
     $nbPic=7;
-}
+}*/
 
 
-for($i=0;$i<$nbPic;$i++)
+for($i=0;$i<7;$i++)
 {
                 global $i;
                 switch($i)

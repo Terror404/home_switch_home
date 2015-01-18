@@ -33,9 +33,11 @@
                 
                 
                 
+                
                
 
-            <?php        
+            <?php     
+            require("../modele/pdoDatabaseRef.php");
                 // choice of the page depending on the value in the url
                 if(isset($_GET['page']) and ($_GET['page']!=''))
                 {
@@ -52,6 +54,12 @@
                     {
                         require("../modele/search_news.php"); //modele
                         include("../view/news.php");//vue
+                    }
+                    
+                    //Home
+                    elseif( $_GET['page']== 'home')
+                    {
+                        include("../view/home.php");
                     }
                     
                     //Search Result page
