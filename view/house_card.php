@@ -317,7 +317,7 @@
                             {
                             ?>
                 <ul>
-                    <li><a href="../controler/content.php?page=adCard&adId= <?php echo $resDates['id'] ?> &id=<?php echo $_GET['id'] ?>">Du <?php echo reorder_date_2($resDates['date_begin'])?> au <?php echo reorder_date_2($resDates['date_end'])?></a>
+                    <li><a href="../controler/content.php?page=adCard&adId=<?php echo $resDates['id'] ?>&id=<?php echo $_GET['id'] ?>">Du <?php echo reorder_date_2($resDates['date_begin'])?> au <?php echo reorder_date_2($resDates['date_end'])?></a>
                 </ul>
                     <?php
                                                             }
