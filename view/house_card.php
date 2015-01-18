@@ -102,13 +102,13 @@
                             while ($resHpic=$askHpic->fetch()) {
                                 ?>
 
-                    <img class="image1" src="<?php echo $resHpic['pictures'] ?>" id="house1" style="display: block"/>
-                    <img class="image1" src="..//view/pictures/house2.jpg" id="house2" style="display: none"/>
-                    <img class="image1" src="..//view/pictures/house3.jpg" id="house3" style="display: none"/>
-                    <img class="image1" src="..//view/pictures/house4.jpg" id="house4" style="display: none"/>
-                    <img class="image1" src="..//view/pictures/house5.jpg" id="house5" style="display: none"/>
-                    <img class="image1" src="..//view/pictures/house6.jpg" id="house6" style="display: none"/>
-                    <img class="image1" src="..//view/pictures/house6.jpg" id="house7" style="display: none"/>
+                    <img class="image1" src="<?php echo $resHpic['pictures'] ?>" id="house1" style="display: block; width:100%; height:450px;"/>
+                    <img class="image1" src="..//view/pictures/house2.jpg" id="house2" style="display: none; width:100%; height:450px;"/>
+                    <img class="image1" src="..//view/pictures/house3.jpg" id="house3" style="display: none; width:100%; height:450px;"/>
+                    <img class="image1" src="..//view/pictures/house4.jpg" id="house4" style="display: none; width:100%; height:450px;"/>
+                    <img class="image1" src="..//view/pictures/house5.jpg" id="house5" style="display: none; width:100%; height:450px;"/>
+                    <img class="image1" src="..//view/pictures/house6.jpg" id="house6" style="display: none; width:100%; height:450px;"/>
+                    <img class="image1" src="..//view/pictures/house6.jpg" id="house7" style="display: none; width:100%; height:450px;"/>
 
                     </p>
                     
