@@ -20,7 +20,8 @@ mettre un mdp sur la bdd
 fiche modif maison (completer le modele pour tout inserer dans la bdd) --Pierre--
 protéger ajouter une annonce --Pierre--
 dans faq passer les textes et question deecrit en dur a venant de la bdd utiliser la table links --Pierre--
-
+Faire en sorte que ce soit l'onglet annonce qui s'affiche en premier lorsque l'on arrive sur la fiche annonce.
+Transformer la date de l'annonce sur la fiche annonce
 
 Supprimez quand vous avez fait ou finit et mettez votre nom a coté si c'est en cours
 

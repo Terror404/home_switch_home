@@ -112,3 +112,6 @@ if(isset($_POST['houseId']))
     
 $askInfAds=$DB->prepare('SELECT * FROM ad WHERE id=:idad');
     $askInfAds->execute(array('idad'=>$_GET['adId']));
+
+$askDateAds=$DB->prepare('SELECT date_begin,date_end FROM ad WHERE id=:idad');
+    $askDateAds->execute(array('idad'=>$_GET['adId']));
