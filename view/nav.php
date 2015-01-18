@@ -1,7 +1,8 @@
 <nav>
+    
 
-<ul class="linkBlockList">
-	<li class="linkBlockElement"><a class="linkBlock" href="../controler/content.php?page=news" >
+<ul class="linkBlockList" >
+	<li class="linkBlockElement" <?php if(!isset($_SESSION['userId'])){ echo 'style="width:25%"'; }?>><a class="linkBlock" href="../controler/content.php?page=news" >
                             <?php if (isset($_SESSION['userLogin']))
                             {
                                 echo $_SESSION['accueil']; 
@@ -12,8 +13,8 @@
                             }
                             ?>  
             </a></li>
-	<li class="linkBlockElement"><a class="linkBlock" href="../controler/content.php?page=forumIndex" >Forum</a></li>
-	<li class="linkBlockElement"><a class="linkBlock" href="../controler/content.php?page=research" > 
+	<li class="linkBlockElement" <?php if(!isset($_SESSION['userId'])){ echo 'style="width:25%"'; }?>><a class="linkBlock" href="../controler/content.php?page=forumIndex" >Forum</a></li>
+	<li class="linkBlockElement" <?php if(!isset($_SESSION['userId'])){ echo 'style="width:25%"'; }?>><a class="linkBlock" href="../controler/content.php?page=research" > 
                             <?php if (isset($_SESSION['userLogin']))
                             {
                                 echo $_SESSION['rech']; 
@@ -24,7 +25,11 @@
                             }
                             ?> 
             </a></li>
-	<li class="subMenuDisplayer">
+	
+            <?php if(isset($_SESSION['userId']))
+            {
+            echo '';?>
+            <li class="subMenuDisplayer">
 		<a class="linkBlock" href=""> 
                             <?php if (isset($_SESSION['userLogin']))
                             {
@@ -116,9 +121,10 @@
                             ?> 
                         </a></li>
 		</ul>
+            <?php } ?>
 	</li>
 
-	<li class="subMenuDisplayer">
+	<li class="subMenuDisplayer" <?php if(!isset($_SESSION['userId'])){ echo 'style="width:25%"'; }?>>
             <a class="linkBlock" href="#help">
                 Aide
             </a>
@@ -137,5 +143,5 @@
  
 
 </ul>
-    
+
 </nav>
