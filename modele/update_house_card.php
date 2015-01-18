@@ -31,8 +31,9 @@
     {
         if(!empty($_POST['region']))
         {
-            $mod_area=$DB->prepare('UPDATE house SET id_area=(SELECT id FROM area WHERE name=:name');
-                $mod_area->execute(array('name'=>$_POST['region']));
+            $mod_area=$DB->prepare('UPDATE house SET id_area=(SELECT id FROM area WHERE name=:name) WHERE id=:idhouse');
+                $mod_area->execute(array('name'=>$_POST['region'], 'idhouse'=>$_GET['id']));
+            $end=2;
         }
         else
         {
@@ -44,8 +45,8 @@
     {
         if(!empty($_POST['capacity']))
         {
-            $mod_cap=$DB->prepare('UPDATE house SET nbr_people=:capacity');
-                $mod_cap->execute(array('capacity'=>$_POST['capacity']));
+            $mod_cap=$DB->prepare('UPDATE house SET nbr_people=:capacity WHERE id=:idhouse');
+                $mod_cap->execute(array('capacity'=>$_POST['capacity'], 'idhouse'=>$_GET['id']));
             $end=2;
         }
         else
@@ -58,8 +59,8 @@
     {
         if(!empty($_POST['nbbr']))
         {
-            $mod_nbbr=$DB->prepare('UPDATE house SET nbr_room=:nbbr');
-                $mod_nbbr->execute(array('nbbr'=>$_POST['nbbr']));
+            $mod_nbbr=$DB->prepare('UPDATE house SET nbr_room=:nbbr WHERE id=:idhouse');
+                $mod_nbbr->execute(array('nbbr'=>$_POST['nbbr'], 'idhouse'=>$_GET['id']));
             $end=2;
         }
         else
@@ -72,8 +73,8 @@
     {
         if(!empty($_POST['house_type']))
         {
-            $mod_cap=$DB->prepare('UPDATE house SET house_type=:type');
-                $mod_cap->execute(array('type'=>$_POST['house_type']));
+            $mod_cap=$DB->prepare('UPDATE house SET house_type=:type WHERE id=:idhouse');
+                $mod_cap->execute(array('type'=>$_POST['house_type'], 'idhouse'=>$_GET['id']));
             $end=2;
         }
         else
@@ -86,8 +87,10 @@
     {
         if(!empty($_POST['address']))
         {
-            $mod_cap=$DB->prepare('UPDATE house SET address=:address');
-                $mod_cap->execute(array('address'=>$_POST['address']));
+            $address=str_replace('\'', '', $_POST['address']);
+            $mod_cap=$DB->prepare('UPDATE house SET address=:address WHERE id=:idhouse');
+                $mod_cap->execute(array('address'=>$address, 'idhouse'=>$_GET['id']));
+            $end=2;
         }
         else
         {
@@ -122,6 +125,7 @@
                 }
                 $addH=$DB->prepare('UPDATE house SET ville_id=:villeid WHERE id=:houseid');
                     $addH->execute(array('villeid'=>$idTown, 'houseid'=>$_GET['id']));
+                $end=2;
             }
             else
             {
