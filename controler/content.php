@@ -193,6 +193,7 @@
                     //Modify House Card
                     elseif($_GET['page']=='modify_House_Card')
                     {
+                        require("../modele/update_house_card.php");
                         require("../modele/search_house_card.php");
                         include("../view/modify_hc.php");
                     }

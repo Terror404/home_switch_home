@@ -16,18 +16,18 @@
         }
         $town1=str_replace('-', '&nbsp', $_POST['town']);
         $town2=strtolower($town1);
-        
-        
+
+
         $askzip=$DB->prepare('SELECT ville_code_postal, ville_code_commune FROM villes_france_free WHERE ville_nom_simple =:nomVille');
             $askzip->execute(array(':nomVille'=>$town2));
-            
+
         while($reszip=$askzip->fetch())
         {
             $zip=$reszip['ville_code_postal'];
             $zip2=$reszip['ville_code_commune'];
             echo $zip;
         }
-        
+
         if($zip==$_POST['zipcode'] OR $zip2==$_POST['zipcode'])
         {
             $askIdTown=$DB->prepare("SELECT ville_id FROM villes_france_free WHERE ville_nom_simple=:nomVille");
