@@ -82,7 +82,7 @@
             </div>
 
 <section class='MiddlePage'>
-    <div class="white"></div>
+    <div class="white" style="min-height:800px;"></div>
     <article class='title'> <!-- title of the house-->
         <?php
             while($resHtitle=$askHtitle->fetch())
@@ -114,14 +114,14 @@
                     
                     
                     <div class="caroussel">
-                        <div class="subimg" > <img class="image-shown" src="..//view/pictures/house1.jpg" alt="house1" onclick="hideshowhouse1()"/></div>
-                        <div class="subimg" > <img class="image-shown" src="..//view/pictures/house2.jpg" id="house1" onclick="hideshowhouse2()"/></div>
-                        <div class="subimg" onclick="hideshowhouse3()"> <img class="image-shown" src="..//view/pictures/house3.jpg" id="house1" /></div>
-                        <div class="subimg" onclick="hideshowhouse4()"> <img src="..//view/pictures/house4.jpg" id="house1" /></div>
-                        <div class="subimg" onclick="hideshowhouse5()"> <img src="..//view/pictures/house1.jpg" id="house1"/></div>
-                        <div class="subimg"> <img src="..//view/pictures/house1.jpg" id="house1"/></div>
-                        <div class="subimg"> <img src="..//view/pictures/house1.jpg" id="house1"/></div>
-                        <div class="subimg"> <img src="..//view/pictures/house1.jpg" id="house1" /></div>
+                        <div class="subimg" > <img class="image-shown" src="..//view/pictures/house1.jpg" alt="house1" onclick="hideshowhouse1()" style="width:100%; height:50px;"/></div>
+                        <div class="subimg" > <img class="image-shown" src="..//view/pictures/house2.jpg" id="house1" onclick="hideshowhouse2()" style="width:100%; height:50px;"/></div>
+                        <div class="subimg" onclick="hideshowhouse3()"> <img class="image-shown" src="..//view/pictures/house3.jpg" id="house1" style="width:100%; height:50px;"/></div>
+                        <div class="subimg" onclick="hideshowhouse4()"> <img src="..//view/pictures/house4.jpg" id="house1" style="width:100%; height:50px;"/></div>
+                        <div class="subimg" onclick="hideshowhouse5()"> <img src="..//view/pictures/house1.jpg" id="house1" style="width:100%; height:50px;"/></div>
+                        <div class="subimg"> <img src="..//view/pictures/house1.jpg" id="house1" style="width:100%; height:50px;"/></div>
+                        <div class="subimg"> <img src="..//view/pictures/house1.jpg" id="house1" style="width:100%; height:50px;"/></div>
+                        <div class="subimg"> <img src="..//view/pictures/house1.jpg" id="house1" style="width:100%; height:50px;"/></div>
                     </div>
             
     </article>
@@ -313,13 +313,17 @@
         <div class="ad" id="ad" style="display: none">	
             <div class="dates">
                 Critères spécifique à cette annonce :
-                <?php
+                <?php $i=0;
                         while ($resInfAds=$askInfAds->fetch())
                             {
                                 ?>
-                                    
+                <p>Critère n°<?php echo$i?>:</p> 
+                <p><?php echo $resInfAds['real_name']?></p>
+                <p>Dexcription:</p>
+                <p><?php echo $resInfAds['description']?></p>
                                    
                                 <?php
+                                $i+=1;  
                             }
                     ?>
             </div>
@@ -363,8 +367,4 @@
 			
 		</section>    
 </section>
-			
 <?php }
-else {
-    echo "Erreur : Pas de maison trouvée.";
-}

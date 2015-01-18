@@ -92,7 +92,7 @@ $askComNb=$askCom->rowcount();
 
 if(isset($_POST['houseId']))
     {
-        $askModHouse=$DB->prepare('SELECT * FROM house WHERE id=:idhouse');
+        $askModHouse=$DB->prepare('SELECT * FROM ad_criteria WHERE id=:idhouse');
             $askModHouse->execute(array('idhouse'=>$_POST['houseId']));
     }
     }
@@ -110,5 +110,5 @@ if(isset($_POST['houseId']))
 ************************* SQL request for the ads ******************************
 *******************************************************************************/
     
-$askInfAds=$DB->prepare('SELECT * FROM ad WHERE id=:idad');
+$askInfAds=$DB->prepare('SELECT * FROM criteria,ad_criteria WHERE criteria.id=ad_criteria.id_criteria AND id_ad=:idad');
     $askInfAds->execute(array('idad'=>$_GET['adId']));
