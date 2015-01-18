@@ -1,5 +1,6 @@
 <br/>
 <br/>
+<div class="box1">
 <h2>Vos échanges en attente de commentaires</h2>
 <br/><br/>
 <?php
@@ -52,7 +53,8 @@ else
     echo" <br/>Il n'y a pas d'échange à commenter pour l'instant <br/><br/>";
 }
 ?>
-
+</div>
+<div class="box">
 <h2>Vos demandes d'échanges reçues</h2>
 <?php
 if(isset($idHouse1W2) AND !empty($idHouse1W2))
@@ -96,7 +98,8 @@ else
 }
 ?>
 
-
+</div>
+<div class="box">
 <h2>Vos demandes d'échanges envoyées</h2>
 <?php
 if(isset($idHouse1W1) AND !empty($idHouse1W1))
@@ -138,3 +141,4 @@ else
     echo"<br/> Vous navez pas de demande d'échange envoyée pour l'instant <br/><br/> ";
 }
 ?>
+</div>

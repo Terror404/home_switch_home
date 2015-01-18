@@ -26,3 +26,16 @@ body{
   background-size: cover;
     background-attachment: fixed;
 }
+
+.box, .box1{
+    width : 85%; 
+    margin-left : 5%;
+    padding : 3%;
+    background-color: white;
+    border-radius : 10px;
+    opacity : 0.9;
+    margin-bottom : 3%;
+}
+.box1{
+    margin-top : 5%;
+}
