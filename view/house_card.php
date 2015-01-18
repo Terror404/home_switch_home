@@ -114,14 +114,14 @@
                     
                     
                     <div class="caroussel">
-                        <div class="subimg" > <img class="image-shown" src="..//view/pictures/house1.jpg" alt="house1" onclick="hideshowhouse1()"/></div>
-                        <div class="subimg" > <img class="image-shown" src="..//view/pictures/house2.jpg" id="house1" onclick="hideshowhouse2()"/></div>
-                        <div class="subimg" onclick="hideshowhouse3()"> <img class="image-shown" src="..//view/pictures/house3.jpg" id="house1" /></div>
-                        <div class="subimg" onclick="hideshowhouse4()"> <img src="..//view/pictures/house4.jpg" id="house1" /></div>
-                        <div class="subimg" onclick="hideshowhouse5()"> <img src="..//view/pictures/house1.jpg" id="house1"/></div>
-                        <div class="subimg"> <img src="..//view/pictures/house1.jpg" id="house1"/></div>
-                        <div class="subimg"> <img src="..//view/pictures/house1.jpg" id="house1"/></div>
-                        <div class="subimg"> <img src="..//view/pictures/house1.jpg" id="house1" /></div>
+                        <div class="subimg" > <img class="image-shown" src="..//view/pictures/house1.jpg" alt="house1" onclick="hideshowhouse1()" style="width:100%; height:50px;"/></div>
+                        <div class="subimg" > <img class="image-shown" src="..//view/pictures/house2.jpg" id="house1" onclick="hideshowhouse2()" style="width:100%; height:50px;"/></div>
+                        <div class="subimg" onclick="hideshowhouse3()"> <img class="image-shown" src="..//view/pictures/house3.jpg" id="house1" style="width:100%; height:50px;"/></div>
+                        <div class="subimg" onclick="hideshowhouse4()"> <img src="..//view/pictures/house4.jpg" id="house1" style="width:100%; height:50px;"/></div>
+                        <div class="subimg" onclick="hideshowhouse5()"> <img src="..//view/pictures/house1.jpg" id="house1" style="width:100%; height:50px;"/></div>
+                        <div class="subimg"> <img src="..//view/pictures/house1.jpg" id="house1" style="width:100%; height:50px;"/></div>
+                        <div class="subimg"> <img src="..//view/pictures/house1.jpg" id="house1" style="width:100%; height:50px;"/></div>
+                        <div class="subimg"> <img src="..//view/pictures/house1.jpg" id="house1" style="width:100%; height:50px;"/></div>
                     </div>
             
     </article>
