@@ -25,7 +25,7 @@ mail auto
 finir de proteger le back office clément
 mettre un mdp sur la bdd
 fiche modif maison (completer le modele pour tout inserer dans la bdd) --Pierre--
-protéger ajouter une annonce --Pierre--
+<!--protéger ajouter une annonce--> --Pierre--
 <!--manuel utilisateur directement sur le site--> --Pierre--
 (dans faq passer les textes et question deecrit en dur a venant de la bdd utiliser la table links --Pierre--)
 Faire en sorte que ce soit l'onglet annonce qui s'affiche en premier lorsque l'on arrive sur la fiche annonce.
@@ -36,4 +36,4 @@ Supprimez quand vous avez fait ou finit et mettez votre nom a coté si c'est en 
 
 
 URGENT 
-page ad card
+page ad card --Pierre--(En cours)
