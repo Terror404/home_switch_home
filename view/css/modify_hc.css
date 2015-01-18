@@ -78,10 +78,10 @@ textarea{
      background-color: white;
   position:absolute; 
   z-index:-1; 
-  top:15%; 
+  top:10.8%; 
   left:3%; 
   right:50%; 
-  bottom:60%;
+  bottom:70%;
   opacity:0.9; 
   border-radius:  10px;
 }
