@@ -19,6 +19,7 @@
         {
             $mod_desc=$DB->prepare('UPDATE house SET description=:description WHERE id=:idhouse');
                 $mod_desc->execute(array('description'=>$_POST['description'],'idhouse'=>$_GET['id']));
+            $end=2;
         }
         else
         {
@@ -43,8 +44,23 @@
     {
         if(!empty($_POST['capacity']))
         {
-            $mod_cap=$DB->prepare('UPDATE house SET capacity=:capacity');
+            $mod_cap=$DB->prepare('UPDATE house SET nbr_people=:capacity');
                 $mod_cap->execute(array('capacity'=>$_POST['capacity']));
+            $end=2;
+        }
+        else
+        {
+            $end=0;
+        }
+    }
+    
+    if(isset($_POST['nbbr']))
+    {
+        if(!empty($_POST['nbbr']))
+        {
+            $mod_nbbr=$DB->prepare('UPDATE house SET nbr_room=:nbbr');
+                $mod_nbbr->execute(array('nbbr'=>$_POST['nbbr']));
+            $end=2;
         }
         else
         {
@@ -56,8 +72,9 @@
     {
         if(!empty($_POST['house_type']))
         {
-            $mod_cap=$DB->prepare('UPDATE house SET type=:type');
+            $mod_cap=$DB->prepare('UPDATE house SET house_type=:type');
                 $mod_cap->execute(array('type'=>$_POST['house_type']));
+            $end=2;
         }
         else
         {
