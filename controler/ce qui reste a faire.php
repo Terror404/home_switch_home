@@ -1,19 +1,23 @@
-CSS: anastasia et mélanie à partir de 17H
-
-
-mon profil
+CSS: anastasia et mélanie 
 ajouter annonce (pk ya un rappel de la maison au dessus? ca fait super moche!)
 news (non prioritaire)
 mes echanges (un peu de css pour faire plus beau vite fait)
 
-profile reminder (degeu un peu)
 
-dans le navigateur : echanger les onglets recherche et forum
+dans le navigateur : 
+echanger les onglets recherche et forum
+il y a toujours l'onglet mon compte quand on n'est pas connecté
 
 Fonctions:
-<!--news a finir (pas long)clément-->   FINIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+dans house card:
+    module google map pour la description de la maison?
+    la date de fin d'une annonce ne s'affiche pas dans "house card" (block bleu à droite, annonces)
+    pour les annonces il y a deux php différents , lequel garder? (il faut que ce soit un liens vers les fiches annonces)
+    pour le carrousel : il faut charger les autrs photos d'une maisons (deux fois) EXACTEMENT COMME LA SYNTAXE DE DE HOUSE 1 (sinon adieu css)
+<!--news a finir (pas long)clément-->  
+
 mail auto
-afficher les maisons sur la gauche et pas la droite( my profile) (anastasia mélanie)
+
 <!--systeme notation (select AVG et update des profil lors de la notation)--> --Pierre--    /!\ A tester
 finir de proteger le back office clément
 mettre un mdp sur la bdd
