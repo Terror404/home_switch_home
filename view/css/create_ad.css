@@ -28,9 +28,9 @@ font-size : 200%;
 {
 padding : 10 px;
 margin : 10 px;
-margin-bottom : 5px;
 display : inline-block;
 width : 50%;
+margin-left: 10%;
 vertical-align : top;
 }
 .image1
