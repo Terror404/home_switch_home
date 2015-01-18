@@ -31,8 +31,9 @@
     {
         if(!empty($_POST['region']))
         {
-            $mod_area=$DB->prepare('UPDATE house SET id_area=(SELECT id FROM area WHERE name=:name');
+            $mod_area=$DB->prepare('UPDATE house SET id_area=(SELECT id FROM area WHERE name=:name)');
                 $mod_area->execute(array('name'=>$_POST['region']));
+            $end=2;
         }
         else
         {
@@ -86,8 +87,10 @@
     {
         if(!empty($_POST['address']))
         {
+            $address=str_replace('\'', '', $_POST['address']);
             $mod_cap=$DB->prepare('UPDATE house SET address=:address');
-                $mod_cap->execute(array('address'=>$_POST['address']));
+                $mod_cap->execute(array('address'=>$address));
+            $end=2;
         }
         else
         {
@@ -122,6 +125,7 @@
                 }
                 $addH=$DB->prepare('UPDATE house SET ville_id=:villeid WHERE id=:houseid');
                     $addH->execute(array('villeid'=>$idTown, 'houseid'=>$_GET['id']));
+                $end=2;
             }
             else
             {

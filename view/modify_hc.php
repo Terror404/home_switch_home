@@ -390,6 +390,13 @@
             <p class="desc">
                 Region : 
                 <br/>Actuellement =><?php echo $modArea;?>
+                <?php
+        /************************Modification Area******************************/
+        if(isset($_POST['title']))
+        {
+            if(isset($end) AND $end==0)
+            {
+                ?>
                 <br/>Modifier :
             <br><form method='post' action='../controler/content.php?page=modify_House_Card&id=<?php echo $_GET['id'];?>'>
                 <select name="region" id="region"> 
@@ -422,6 +429,85 @@
                 <input type="submit" value="Modifier"/>
                 <input type="reset" value="Annuler"/>
             </form>
+            <?php
+                echo"Vous n'avez pas rempli le champ correctement";
+            }
+            elseif(isset($end) AND $end==2)
+            {
+            ?>
+                <br/>Modifier :
+            <br><form method='post' action='../controler/content.php?page=modify_House_Card&id=<?php echo $_GET['id'];?>'>
+                <select name="region" id="region"> 
+                        <option value="alsace">Alsace
+                        <option value="aquitaine">Aquitaine
+                        <option value="auvergne">Auvergne
+                        <option value="basse_normandie">Basse-Normandie
+                        <option value="bretagne">Bretagne
+                        <option value="champagne_ardenne">Champagne-Ardenne
+                        <option value="corse">Corse
+                        <option value="franche_comté">Franche-Comté
+                        <option value="guadeloupe">Guadeloupe
+                        <option value="guyane">Guyane
+                        <option value="haute_normandie">Haute-Normandie
+                        <option value="idf">Île-de-France
+                        <option value="la_reunion">La Réunion
+                        <option value="languedoc_roussillon">Languedoc-Roussillon
+                        <option value="lorraine">Lorraine
+                        <option value="martinique">Martinique
+                        <option value="mayotte">Mayotte
+                        <option value="midi_pyrenees">Midi-Pyrénées
+                        <option value="NPdC">Nord-Pas-de-Calais
+                        <option value="PdlL">Pays de la Loire
+                        <option value="picardie">Picardie
+                        <option value="poitou_charentes">Poitou Charentes
+                        <option value="PACA">Provence Alpes Côte d'Azur
+                        <option value="rhone_alpes">Rhône-Alpes
+                </select>
+                <input type="hidden"  name="confirmModif" value="1"/>
+                <input type="submit" value="Modifier"/>
+                <input type="reset" value="Annuler"/>
+            </form>
+            <?php
+            }
+        }
+        else
+        {
+        ?>
+            <br/>Modifier :
+            <br><form method='post' action='../controler/content.php?page=modify_House_Card&id=<?php echo $_GET['id'];?>'>
+                <select name="region" id="region"> 
+                        <option value="alsace">Alsace
+                        <option value="aquitaine">Aquitaine
+                        <option value="auvergne">Auvergne
+                        <option value="basse_normandie">Basse-Normandie
+                        <option value="bretagne">Bretagne
+                        <option value="champagne_ardenne">Champagne-Ardenne
+                        <option value="corse">Corse
+                        <option value="franche_comté">Franche-Comté
+                        <option value="guadeloupe">Guadeloupe
+                        <option value="guyane">Guyane
+                        <option value="haute_normandie">Haute-Normandie
+                        <option value="idf">Île-de-France
+                        <option value="la_reunion">La Réunion
+                        <option value="languedoc_roussillon">Languedoc-Roussillon
+                        <option value="lorraine">Lorraine
+                        <option value="martinique">Martinique
+                        <option value="mayotte">Mayotte
+                        <option value="midi_pyrenees">Midi-Pyrénées
+                        <option value="NPdC">Nord-Pas-de-Calais
+                        <option value="PdlL">Pays de la Loire
+                        <option value="picardie">Picardie
+                        <option value="poitou_charentes">Poitou Charentes
+                        <option value="PACA">Provence Alpes Côte d'Azur
+                        <option value="rhone_alpes">Rhône-Alpes
+                </select>
+                <input type="hidden"  name="confirmModif" value="1"/>
+                <input type="submit" value="Modifier"/>
+                <input type="reset" value="Annuler"/>
+            </form>
+        <?php  
+        }
+        ?>
                 <br/>
                 
                 <?php echo $_SESSION['vill']; ?>  
@@ -440,6 +526,13 @@
                                 echo"<br/>Actuellement => ".$resHzip['ville_code_postal'];
                             }
                     ?>
+                <?php
+        /************************Modification Zip And Name Town******************************/
+        if(isset($_POST['title']))
+        {
+            if(isset($end) AND $end==0)
+            {
+                ?>
                 <br/><br/>Modifier la ville: <br/>
                 <form method='post' action='../controler/content.php?page=modify_House_Card&id=<?php echo $_GET['id'];?>'>
                     <input type='text' name='town'/>
@@ -449,9 +542,51 @@
                     <input type="hidden"  name="confirmModif" value="1"/>
                     <input type="submit" value="Modifier"/>
                     <input type="reset" value="Annuler"/>
-                 </form><br/>
+                 </form>
+            <?php
+                echo"Vous n'avez pas rempli le champ correctement";
+            }
+            elseif(isset($end) AND $end==2)
+            {
+            ?>
+                <br/><br/>Modifier la ville: <br/>
+                <form method='post' action='../controler/content.php?page=modify_House_Card&id=<?php echo $_GET['id'];?>'>
+                    <input type='text' name='town'/>
+               
+                    <br/>Modifier le code postal: <br/>
+                    <input type='number' name='zipcode'/>
+                    <input type="hidden"  name="confirmModif" value="1"/>
+                    <input type="submit" value="Modifier"/>
+                    <input type="reset" value="Annuler"/>
+                 </form>
+            <?php
+            }
+        }
+        else
+        {
+        ?>
+            <br/><br/>Modifier la ville: <br/>
+                <form method='post' action='../controler/content.php?page=modify_House_Card&id=<?php echo $_GET['id'];?>'>
+                    <input type='text' name='town'/>
+               
+                    <br/>Modifier le code postal: <br/>
+                    <input type='number' name='zipcode'/>
+                    <input type="hidden"  name="confirmModif" value="1"/>
+                    <input type="submit" value="Modifier"/>
+                    <input type="reset" value="Annuler"/>
+                 </form>
+        <?php  
+        }
+        ?>
                     
                 <?php echo $_SESSION['adres']; ?> 
+            <?php
+        /************************Modification Address******************************/
+        if(isset($_POST['title']))
+        {
+            if(isset($end) AND $end==0)
+            {
+                ?>
                 <form method='post' action='../controler/content.php?page=modify_House_Card&id=<?php echo $_GET['id'];?>'>
                     <?php
                         while ($resHaddress=$askHaddress->fetch())
@@ -463,6 +598,44 @@
                     <input type="submit" value="Modifier"/>
                     <input type="reset" value="Annuler"/>
                 </form>
+            <?php
+                echo"Vous n'avez pas rempli le champ correctement";
+            }
+            elseif(isset($end) AND $end==2)
+            {
+            ?>
+                <form method='post' action='../controler/content.php?page=modify_House_Card&id=<?php echo $_GET['id'];?>'>
+                    <?php
+                        while ($resHaddress=$askHaddress->fetch())
+                            {
+                               ?><input type='text' name='address' value='<?php echo $resHaddress['address'];?>'/><?php
+                            }
+                    ?>
+                    <input type="hidden"  name="confirmModif" value="1"/>
+                    <input type="submit" value="Modifier"/>
+                    <input type="reset" value="Annuler"/>
+                </form>
+            <?php
+            }
+        }
+        else
+        {
+        ?>
+            <form method='post' action='../controler/content.php?page=modify_House_Card&id=<?php echo $_GET['id'];?>'>
+                    <?php
+                        while ($resHaddress=$askHaddress->fetch())
+                            {
+                               ?><input type='text' name='address' value='<?php echo $resHaddress['address'];?>'/><?php
+                            }
+                    ?>
+                    <input type="hidden"  name="confirmModif" value="1"/>
+                    <input type="submit" value="Modifier"/>
+                    <input type="reset" value="Annuler"/>
+                </form>
+        <?php  
+        }
+        ?>
+                
         </div>
 
         <div class="ownerinfo" id="ownerinfo" style="display: none">	
