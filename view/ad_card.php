@@ -152,7 +152,7 @@
                 ?>
                                    <?php if (isset($_SESSION['userLogin']))
                             {
-                                echo $_SESSION['desrciptBien']; 
+                                echo $_SESSION['descriptBien']; 
                             }
                             else 
                             {
@@ -161,7 +161,7 @@
                             ?> 
                                     </br>
                                     </br>
-                                     <?php echo $resHdesc['desrciption'] ?>
+                                     <?php echo $resHdesc['description'] ?>
                 <?php
                                 }
                 ?>          
