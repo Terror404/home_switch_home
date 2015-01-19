@@ -105,8 +105,8 @@
                                 ?>
 
                     <img class="image1" src="<?php echo $resHpic['pictures'] ?>" id="house1" style="display: block; width:100%; height:450px;"/>
-                    <img class="image1" src="..//view/pictures/house2.jpg" id="house2" style="display: none; width:100%; height:450px;"/>
-                    <img class="image1" src="..//view/pictures/house3.jpg" id="house3" style="display: none; width:100%; height:450px;"/>
+                    <img class="image1" src="<?php echo $resHpic['picture_1'] ?>" id="house2" style="display: none; width:100%; height:450px;"/>
+                    <img class="image1" src="<?php echo $resHpic['picture_2'] ?>" id="house3" style="display: none; width:100%; height:450px;"/>
                     <img class="image1" src="..//view/pictures/house4.jpg" id="house4" style="display: none; width:100%; height:450px;"/>
                     <img class="image1" src="..//view/pictures/house5.jpg" id="house5" style="display: none; width:100%; height:450px;"/>
                     <img class="image1" src="..//view/pictures/house6.jpg" id="house6" style="display: none; width:100%; height:450px;"/>
@@ -120,10 +120,10 @@
                             <img class="image-shown" src="<?php echo $resHpic['pictures'] ?>" alt="house1"  style="width:100%; height:80px;"/>
                         </div>
                         <div class="subimg" onclick="hideshowhouse2()"> 
-                            <img class="image-shown" src="..//view/pictures/house2.jpg" id="house1"  style="width:100%; height:80px;"/>
+                            <img class="image-shown" src="<?php echo $resHpic['picture_1'] ?>" id="house1"  style="width:100%; height:80px;"/>
                         </div>
                         <div class="subimg" onclick="hideshowhouse3()"> 
-                            <img class="image-shown" src="..//view/pictures/house3.jpg" id="house1" style="width:100%; height:80px;"/>
+                            <img class="image-shown" src="<?php echo $resHpic['picture_2'] ?>" id="house1" style="width:100%; height:80px;"/>
                         </div>
                         <div class="subimg" onclick="hideshowhouse4()"> 
                             <img src="..//view/pictures/house4.jpg" id="house1" style="width:100%; height:80px;"/>
