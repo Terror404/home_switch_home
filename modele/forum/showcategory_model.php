@@ -44,6 +44,4 @@ define("ADDING_NEW_TOPIC",
     AND (isset($_POST['topicTitle']))
     AND ($_POST['topicTitle'] != "")
     AND ($_POST['topicTitle'] != null)
-)
-
-?>
+);

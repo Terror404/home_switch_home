@@ -70,7 +70,7 @@
 
     <br/>
     <?php
-    if (!isLoggedIn() and !$hasModRights) {
+    if (!isLoggedIn()) {
         echo "Vous devez vous identifier pour pouvoir répondre.";
     }
     else {
