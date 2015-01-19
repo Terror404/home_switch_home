@@ -15,16 +15,16 @@ include('mailbox_toolbar.php');
             <p>Titre: <?php echo $resSentMsg['title'] ?></p>
             <p>Message :</br><?php echo $resSentMsg['text'] ?></p>
             
-            <p class="twosubs">
+            <div class="twosubs">
                 <a  href="../controler/content.php?page=newMsg" class="link">
                     <input type ="button" class="sub" value="répondre"/>
                 </a>
                 
-                <form method="post" action="../controler/content.php?page=delete_msg">
+                <form class="delete" method="post" action="../controler/content.php?page=delete_msg">
                                 <input type="hidden" name="idmsg_sent" value="<?php echo $resSentMsg ['id'] ?>"/>
                                 <input type=submit value="Supprimer" class="sub"/>
                 </form> 
-  
-            </p> 
+            </div>
+           
     <?php } ?>
 </div> 

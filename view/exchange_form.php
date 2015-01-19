@@ -1,16 +1,18 @@
 <br/><br/><br/>
-<h1> <?php echo $_SESSION['formEchang']; ?> </h1>
-<?php
-//Choice of the User to exchange with
-if(!isset($_POST['idUser2']) AND !isset($_POST['logUser2']))
-{
-    ?>
-     Avec qui souhaitez-vous effectuer un échange? <br/>
-    <form method="post" action="../controler/content.php?page=exchange">
-        <input type="text" name="logUser2" placeholder="Login de l'utilisateur"/>
-        <input type='submit' name='Suivant'/>
-    </form>
-    <?php
+<h1 class="top"> <?php echo $_SESSION['formEchang']; ?> </h1>
+<div class="box"> <?php
+            //Choice of the User to exchange with
+            if(!isset($_POST['idUser2']) AND !isset($_POST['logUser2']))
+            {
+                ?>
+                 Avec qui souhaitez-vous effectuer un échange? <br/>
+                <form   method="post" action="../controler/content.php?page=exchange">
+                    <input type="text" name="logUser2" placeholder="Login de l'utilisateur"/>
+                    <input type='submit' class="sub" name='Suivant'/>
+                </form>
+</div>
+    
+         <?php
 }
 else
 {
@@ -22,6 +24,7 @@ else
             $loginU2=$resUser2['login'];
             $idU2=$resUser2['id']
         ?>
+<div class="box">
             Vous souhaitez effectuer un échange avec : <?php echo $loginU2 ;?> <br/>
         <?php
         }
@@ -39,8 +42,9 @@ else
             ?>
         </select>
         <input type="hidden" name="idUser2" value="<?php echo $idU2?>"/>
-        <input type='submit' value='Choisir cette maison'/>
+        <input type='submit' class="sub" value='Choisir cette maison'/>
         </form>
+</div>
         <?php
     }
     else
@@ -50,6 +54,7 @@ else
             while($resUser2=$askUser2->fetch())
             {
             ?>
+<div class="box">
                 Vous souhaitez effectuer un échange avec : <?php echo $resUser2['login'] ;?> <br/>
             <?php
             }
@@ -60,6 +65,7 @@ else
             <?php
             }
             ?>
+                </br>
             Choisissez l'annonce correspondant aux dates auxquelles vous voulez échanger la maison :
             <form method='post' action='../controler/content.php?page=exchange'>
                 <select name='idAdU2' size='1' class='input'>
@@ -74,8 +80,9 @@ else
                 </select>
                 <input type="hidden" name="idUser2" value="<?php echo $_POST['idUser2']?>"/>
                 <input type='hidden' name='idHouseU2' value='<?php echo $_POST['idHouseU2'] ?>'/>
-                <input type='submit' value='Choisir cette annonce'/>
+                <input type='submit' class="sub" value='Choisir cette annonce'/>
             </form>
+</div>
             <?php
         }
         else
@@ -85,6 +92,7 @@ else
                 while($resUser2=$askUser2->fetch())
                 {
                 ?>
+<div class="box">
                     Vous souhaitez effectuer un échange avec : <?php echo $resUser2['login'] ;?> <br/>
                 <?php
                 }
@@ -101,6 +109,7 @@ else
                 <?php
                 }
                 ?>
+                                    </br>
                 Laquelle de vos maison souhaitez vous proposer à l'échange : 
                 <form method='post' action='../controler/content.php?page=exchange'>
                 <select name='idHouseU1' size='1' class='input'>
@@ -116,8 +125,9 @@ else
                 <input type="hidden" name="idUser2" value="<?php echo $_POST['idUser2']?>"/>
                 <input type='hidden' name='idHouseU2' value='<?php echo $_POST['idHouseU2'] ?>'/>
                 <input type='hidden' name='idAdU2' value='<?php echo $_POST['idAdU2'] ?>'/>
-                <input type='submit' value='Choisir cette maison'/>
+                <input type='submit' class="sub" value='Choisir cette maison'/>
                 </form>
+</div>
                 <?php
             }
             else
@@ -127,6 +137,7 @@ else
                     while($resUser2=$askUser2->fetch())
                     {
                     ?>
+<div class="box">
                         Vous souhaitez effectuer un échange avec : <?php echo $resUser2['login'] ;?> <br/>
                     <?php
                     }
@@ -149,6 +160,7 @@ else
                     <?php
                     }
                     ?>
+                                        </br>
                     Choisissez l'annonce correspondant aux dates auxquelles vous voulez échanger votre maison :
                     <form method='post' action='../controler/content.php?page=exchange'>
                         <select name='idAdU1' size='1' class='input'>
@@ -165,13 +177,15 @@ else
                         <input type='hidden' name='idHouseU2' value='<?php echo $_POST['idHouseU2'] ?>'/>
                         <input type='hidden' name='idAdU2' value='<?php echo $_POST['idAdU2'] ?>'/>
                         <input type='hidden' name='idHouseU1' value='<?php echo $_POST['idHouseU1']?>'/>
-                        <input type='submit' value='Choisir cette annonce'/>
+                        <input type='submit' class="sub" value='Choisir cette annonce'/>
+</div>
                     </form>
                     <?php
                 }
                 else
                 {
                     ?>
+<div class="box">
                     <h2>Récapitulatif de votre demande d'échange</h2>
                     <?php
                     while($resUser2=$askUser2->fetch())
@@ -217,8 +231,9 @@ else
                         <input type="hidden" name="User2" value="<?php echo$user2?>"/>
                         <input type='hidden' name='houseChoiceU2' value='<?php echo$houseU2 ?>'/>
                         <input type='hidden' name='adChoiceU2' value='<?php echo$adU2 ?>'/>
-                        <input type='submit' value="Envoyer la demande d'échange"/>
+                        <input type='submit' class="sub" value="Envoyer la demande d'échange"/>
                     </form>
+<div class="box">
             <?php
                 }
             }

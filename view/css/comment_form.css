@@ -1,0 +1,82 @@
+label
+{
+width: 40%;
+float: left;
+text-align:left;
+margin-right: 0.5em;
+display: block;
+}
+
+.sub1, .sub2
+{
+background-color: #00BCE0;
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 0px;
+  font-family: "GeosansLight";
+  color: white;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}   
+.sub:hover {
+  background: #83EBC6;
+  text-decoration: none;      
+}
+.sub1{
+    width :55%;
+}
+.sub2{
+    width :25%;
+}
+
+.twosubs{
+    margin-left : 15%;
+    margin-top : 5%;
+}
+
+body{
+ background-image: url("../pictures/Vue_Paris.jpg"); 
+ background-repeat : no-repeat;
+  background-size: cover;
+    background-attachment: fixed;
+}
+
+.titlec{
+    width : 54%;
+    margin-bottom : 1%;
+}
+.rate
+{
+    width : 10%;
+}
+.top{
+    opacity : 0.9;
+margin-bottom: 3%;
+width : 42%;
+padding : 1%;
+    background-color : white;
+    text-align : center;
+    margin-top : 1%;
+    border-radius : 10px;
+    margin-left : 30%;
+}
+
+.exchangeForm{
+    font-size : 120%;
+    border : 2px solid white;
+    width : 40%; 
+    padding : 2%;
+    background-color: white;
+    border-radius : 10px;
+    opacity : 0.9;
+    margin-left : 30%;
+    
+}
+
+.desc{
+    width: 50%;
+        height : 200px;
+        padding : 2%;
+         font-family: "GeosansLight";
+}

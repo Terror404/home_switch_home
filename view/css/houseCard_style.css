@@ -215,7 +215,7 @@ margin-left : 5%;
 
 .commentbox
 {
-background-color :#ffc7ab;
+border-bottom:solid #00BCE0 1px;
 margin : 1%;
 }
 .commentauthor

@@ -54,9 +54,13 @@ if(isset($_POST['date_begin']) AND $_POST['date_begin']!=="" AND $_POST['date_be
         $addCriteria=$DB->prepare('INSERT INTO ad_criteria (id_ad,id_criteria) VALUES (:idad,:idcriteria)');
             $addCriteria->execute(array('idad'=>$idAd,'idcriteria'=>$_POST['idCrit'.$i]));
         }*/
-        echo"<br/>";
-        echo"L'annonce a bien été enregistrée";
-        ?> <input type="button" value="Retour" onclick="self.location.href='../controler/content.php?page=houseCard&id=<?phpecho$_POST['id_house']?>'"/><?php
+        echo"<br/><br/><br/>";
+        ?>
+        <p class="alert">
+       <?php echo"L'annonce a bien été enregistrée";?>
+        </p>
+        <br> <input type="button" class="sub" value="Retour" onclick="self.location.href='..controler/content.php?page=houseCard&id=<?phpecho$_POST['id_house']?>'"/>
+            <?php
     }
     else
     {
