@@ -18,7 +18,7 @@ while($resSearch=$askPrioritySearch->fetch())
      <div class="title" id="adTitle"> 
         <?php echo $resSearch['title']; ?>
     </div>
-    <div id="houseleft" class="houseleft"> 
+    <div class="houseleft"> 
         <img class="houseimg" src="<?php echo $resSearch['pictures'] ?>" alt="Photo maison" />
         
          <div id="datesAd" >
@@ -41,5 +41,6 @@ while($resSearch=$askPrioritySearch->fetch())
 
 
 }
-$askPrioritySearch->closeCursor();
+
 }
+echo $askFinal;
