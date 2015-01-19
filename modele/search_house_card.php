@@ -114,7 +114,8 @@ $askComNb=$askCom->rowcount();
         }
     }
     }
-    
+    $askProfile=$DB->prepare('SELECT user.id FROM user,house WHERE house.id_user=user.id AND house.id='.$_GET['id']);
+$askProfile->execute();
     
     
 

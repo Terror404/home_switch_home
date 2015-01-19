@@ -44,7 +44,7 @@
                             $idOwner=$resIdOwner['id_user'];
                         }
                         
-                        if($_SESSION['userId']==$idOwner)
+                        if(isset($_SESSION['userId']) AND $_SESSION['userId']==$idOwner)
                         {
                             $idHouse=$_GET['id'];
                     ?>
@@ -61,7 +61,7 @@
                             </form>
                     <?php
                         }
-                        else
+                        elseif(isset($_SESSION['userId']))
                         {
                             $idHouse=$_GET['id'];
                     ?>

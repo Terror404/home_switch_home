@@ -64,7 +64,7 @@ if (isset($page) AND $page!='')
                     }
                     elseif( $_GET['page']=='confirmAddMsg')
                     {
-                       echo'<link rel="stylesheet" type="text/css" href="../view/css/mailbox_style.css">';
+                       echo'<link rel="stylesheet" type="text/css" href="../view/css/confirm_alert.css">';
                     }
                     elseif( $_GET['page']=='readSentMsg')
                     {
@@ -177,7 +177,34 @@ if (isset($page) AND $page!='')
                     {
                         echo'<link rel="stylesheet" type="text/css" href="../view/css/fav_style.css">';
                     }
-                    
+                     elseif($_GET['page']=='exchange')
+                    {
+                        echo'<link rel="stylesheet" type="text/css" href="../view/css/exchange_css.css">';
+                    }
+                     elseif($_GET['page']=='confAd')
+                    {
+                         echo'<link rel="stylesheet" type="text/css" href="../view/css/confirm_alert.css">';
+                    }
+                     elseif($_GET['page']=='confirm_exchange')
+                    {
+                         echo'<link rel="stylesheet" type="text/css" href="../view/css/confirm_alert.css">';
+                    } 
+                     elseif($_GET['page']=='treatExchange')
+                    {
+                         echo'<link rel="stylesheet" type="text/css" href="../view/css/confirm_alert.css">';
+                    } 
+                    elseif($_GET['page']=='comment')
+                    {
+                         echo'<link rel="stylesheet" type="text/css" href="../view/css/comment_form.css">';
+                    } 
+                    elseif($_GET['page']=='commentary_treatment')
+                    {
+                         echo'<link rel="stylesheet" type="text/css" href="../view/css/confirm_alert.css">';
+                    } 
+                    elseif($_GET['page']=='redirect_chgt_log')
+                    {
+                         echo'<link rel="stylesheet" type="text/css" href="../view/css/confirm_alert.css">';
+                    } 
     }
 
 

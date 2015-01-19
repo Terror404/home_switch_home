@@ -21,7 +21,7 @@ require("../modele/read_my_msg.php");
             <p>Titre: <?php echo $resReceivedmsg ['title'] ?></p>
             <p>Message :</br><?php echo $resReceivedmsg ['text'] ?></p>
             
-            <p class="twosubs">
+            <div class="twosubs">
                 <a  href="../controler/content.php?page=newMsg" class="link">
                     <input type ="button" class="sub" value="répondre"/>
                 </a>
@@ -31,6 +31,6 @@ require("../modele/read_my_msg.php");
                                 <input type=submit value="Supprimer" class="sub"/>
                 </form> 
   
-            </p>    
+            </div>    
    <?php } ?>
 </div>
