@@ -36,7 +36,7 @@
             $askHrate->execute(array('idhouse'=>$_GET['id']));
     
     //<!--Get the house pic-->
-        $askHpic=$DB->prepare('SELECT H.pictures FROM house H WHERE H.id=:idhouse');
+        $askHpic=$DB->prepare('SELECT H.pictures,picture_1,picture_2 FROM house H WHERE H.id=:idhouse');
             $askHpic->execute(array('idhouse'=>$_GET['id']));
 
     
