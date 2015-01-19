@@ -79,17 +79,19 @@ $reqBase='SELECT DISTINCT ad.title, ad.date_begin, ad.date_end, house.descriptio
     
     //layouts
    
-    $ask=' AND (criteria_house.name=\'garden\'';
-    
-    
+   $a=0;
     
         function fctLayout($name)
     {
         global $ask;
-        
+        global $a;
         global $reqBase;
-                        
-        if (isset($_POST[$name]) AND $_POST[$name] === 'on') 
+        if($a===0 AND isset($_POST[$name]) AND $_POST[$name] === 'on')
+        {
+           $ask=' AND (criteria_house.name=\''.$name.'\'';
+           $a=1;
+        }
+        elseif(isset($_POST[$name]) AND $_POST[$name] === 'on') 
         {
             $ask=$ask.' OR criteria_house.name=\''.$name.'\'';
             
@@ -116,7 +118,10 @@ $reqBase='SELECT DISTINCT ad.title, ad.date_begin, ad.date_end, house.descriptio
     
     fctLayout('disabledAccess');
     
+    if($a!=0)
+    {
     $ask=$ask.')';
+    }
     
     
     
@@ -151,6 +156,7 @@ $reqBase='SELECT DISTINCT ad.title, ad.date_begin, ad.date_end, house.descriptio
     }
     
     $askFinal=$reqBase.$req.$ask;
+    echo $askFinal;
     
  
     
