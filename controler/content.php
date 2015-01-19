@@ -141,7 +141,7 @@
                     {
                         require("../modele/verif_form_user.php");
                         require("../modele/add_user.php"); //modele
-                        require("../view/auto_message.php");
+                       
                         include("../view/confirm_add_user.php");//vue
                     }
                     //Ad Creation page
@@ -171,7 +171,7 @@
                     {
                         
                         require("../modele/add_house.php"); //modele
-                        include("../view/confirm_add_house.php");//vue
+                        
                     }
                     
                     // Write a new msg
