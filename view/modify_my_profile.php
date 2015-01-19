@@ -14,7 +14,7 @@
             <?php
             while ($resProfPic = $askProfPic->fetch()) {
                 ?> <div class="img">
-                    <img class="userimg" src="<?php echo$resProfPic['picture']; ?>" alt="photo de profil"/>
+                    <img class="userimg" src="<?php echo$resProfPic['picture']; ?>" alt="photo de profil" width=100 height=100 />
                     </div>
                 <?php
             }
@@ -26,7 +26,7 @@
             <form method='post' action='' enctype="multipart/form-data">
                 Aperçu de la photo que vous souhaitez ajouter : 
                 
-                <img id="uploadPreview" class="previewImg"/>
+                <img id="uploadPreview" class="previewImg" width=100 height=100 />
                 <input type='file' name='photo7' id="photo7" onChange='previewImg()'/>
                 <input type='hidden' name='modifyProf' value='1'/>
                 <input type="hidden" name="form" value="3"/>
