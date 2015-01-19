@@ -14,6 +14,7 @@
             
         
             <header>
+                <div class="white"></div>
             <?php
             
             
