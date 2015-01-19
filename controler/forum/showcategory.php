@@ -71,5 +71,3 @@ else {
     $error = "Pas de catégorie précisée.";
     include(__ROOT__."/view/forum/error.php");
 }
-
-?>
