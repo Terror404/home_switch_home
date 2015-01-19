@@ -85,16 +85,17 @@ if(!empty($arrayInfFavs))
                                 echo"10/10";
                                 break;
     ?>
+        <?php
+                        }
+    ?>
                 </p>
                     
                 </div>
                 
-                
-    <?php
-                        }
-    ?>
+
 
             </div>
+
     <?php
     }
 }
