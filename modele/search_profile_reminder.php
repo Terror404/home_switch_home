@@ -38,31 +38,34 @@
                         /*$askrate->closeCursor()*/
                     ?>
         <?php   }
-            else
+            elseif(isset($askProfile))
+                {
+                while($resProf=$askProfile->fetch())
                 {
         ?>
                     <?php /*Récupération du login*/
                         $askNP=$DB->prepare('SELECT login FROM user WHERE id=:id');
-                            $askNP->execute(array('id'=>$_SESSION['userId']));
+                            $askNP->execute(array('id'=>$resProf['id']));
                     ?>
 
                     <?php   /*Récupération de la description*/
                         $askDesc=$DB->prepare('SELECT description FROM user WHERE id = :id');
-                             $askDesc->execute(array('id'=>$_SESSION['userId']));
+                             $askDesc->execute(array('id'=>$resProf['id']));
                        /*$askdesc->closeCursor()*/
                     ?>
 
                     <?php   /*Récupération photo de profil*/
                         $askPic=$DB->prepare('SELECT picture FROM user WHERE id = :id');
-                                $askPic->execute(array('id'=>$_SESSION['userId']));
+                                $askPic->execute(array('id'=>$resProf['id']));
                         /*$askpic->closeCursor()*/
                     ?>
 
                     <?php
                         $askRate=$DB->prepare('SELECT rating FROM user WHERE id = :id');
-                                $askRate->execute(array('id'=>$_SESSION['userId']));
+                                $askRate->execute(array('id'=>$resProf['id']));
                         /*$askrate->closeCursor()*/
                     ?>
         <?php
+                }
                 }
         ?>

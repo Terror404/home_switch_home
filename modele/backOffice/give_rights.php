@@ -1,6 +1,6 @@
 <?php
 
-if($_GET['state']==='1')
+if($_GET['state']==='1' AND $_SESSION['userAccess']==3)
 {
     
     $req='UPDATE user SET access='.$_POST['state'].' WHERE login=\''.$_POST['name'].'\'';

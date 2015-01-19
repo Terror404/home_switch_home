@@ -8,13 +8,13 @@
     while($resLastAds=$askLastAds->fetch() AND $i<5)
     {
        ?>
-    <div class="blockMyHouses" onclick="self.location.href='../controler/content.php?page=houseCard&amp;id=<?php echo $resLastAds['id'];?>'">
+    <div class="blockMyHouses" onclick="self.location.href='../controler/content.php?page=houseCard&adid=<?php echo $resLastAds['id'];?>&id=<?php echo $resLastAds['id_house'];?>'">
     <div id="adTitle"> 
         Titre:<?php echo $resLastAds['title']; ?>
         Dates:  <?php echo 'du'.$resLastAds['date_begin'].' au '.$resLastAds['date_end'];?>
     </div>
     <div class="picMyHouses" style="width:40%;height:50%;margin:auto;"> 
-        <a href="../controler/content.php?page=adCard&id=<?php echo $resLastAds['id'] ?>" style="overflow:hidden;"><img src="<?php echo $resLastAds['pictures'] ?>" alt="Photo maison" style="width:100%;height:100%"/></a>
+        <a href="../controler/content.php?page=houseCard&adid=<?php echo $resLastAds['id'];?>&id=<?php echo $resLastAds['id_house'];?>" style="overflow:hidden;"><img src="<?php echo $resLastAds['pictures'] ?>" alt="Photo maison" style="width:100%;height:100%"/></a>
     </div>
         </div>
     <?php

@@ -8,9 +8,10 @@
             <?php echo '<script>';
             include("../modele/backOffice/give_rights.js");
             echo'</script>';?>
+            
        
     </head>
-	<body>
+	<body >
             
         
             <header>

@@ -17,29 +17,33 @@ switch($end)
         break;
     
     case 1 :
-        header ("Refresh: 2;URL=../controler/content.php?page=houseCard&id=$idHouse");
+        
         echo"<br/>";
         echo"<br/>";
         echo"<br/>";
         echo"<br/>";
-        echo"La maison a bien été ajouté à vos favoris. Veuillez patienter";
+        echo"La maison a bien été ajouté à vos favoris.";
+        echo'<br/><input type=button onclick="self.location.href=\'../controler/content.php?page=houseCard&id='.$idHouse.'\'" value="Retour" >';
         //Ajouter redirection automatique.
         break;
     
     case 2 :
-        header ("Refresh: 2;URL=../controler/content.php?page=houseCard&id=$idHouse");
+        ;
         echo"<br/>";
         echo"<br/>";
         echo"<br/>";
-        echo"La maison a bien été retiré de vos favoris. Veuillez patienter";
+        echo"La maison a bien été retiré de vos favoris.";
+        echo"<br/>";
+        echo'<input type=button onclick="self.location.href=\'../controler/content.php?page=houseCard&id='.$idHouse.'\'" value="Retour">';
         break;
     
     case 3 :
-        header ("Refresh: 2;URL=../controler/content.php?page=houseCard&id=$idHouse");
+       
         echo"<br/>";
         echo"<br/>";
         echo"<br/>";
-        echo"Cette maison ne fait pas partie de vos favoris. Veuillez patienter";
+        echo"Cette maison ne fait pas partie de vos favoris.";
+        echo'<br/><input type=button onclick="self.location.href=\'../controler/content.php?page=houseCard&id='.$idHouse.'\'" value="Retour">';
         break;        
 }
     
