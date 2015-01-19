@@ -1,4 +1,6 @@
+<link rel="stylesheet" type="text/css" href="./../view/css/backoffice.css">
 
+<div class="CommandFrame">
 
 <p> List of the search criteria</p>
 <br/>
@@ -33,3 +35,5 @@ if($_GET['confirm']==='1')
 <input type="text" style='width:20%; min-width:300px;' name="name" placeholder="value in DB (ex :allowed_animals)" >
 <input type="submit" value="+">
 </form>
+
+</div>
