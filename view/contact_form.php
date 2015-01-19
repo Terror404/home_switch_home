@@ -68,7 +68,7 @@
         </div>
         <br>
 
-         <form id='contact' method="post" action="send_contact.php" class='form'>
+        <form id='contact' method="post" action="../view/send_contact.php" class='form'>
 			
 
                   <p>
