@@ -37,8 +37,8 @@
                 $idTown=$resIdTown['ville_id'];
             }
             include"../modele/upload_photo.php";
-            $addH=$DB->prepare("INSERT INTO house(id_user,title,description,id_town,id_area,address,house_type,nbr_people,nbr_room,pictures,picture_1) VALUES(:idUser,:title,:desc,:idTown,:idArea,:address,:houseType,:cap,:brnb,:pictures,:photo1,:photo2,:photo3,:photo4,:photo5,:photo6)");
-                $addH->execute(array('idUser'=>$_SESSION['userId'],'title'=>$_POST['title'],'desc'=>$_POST['description'],'idTown'=>$idTown,'idArea'=>$idArea,'address'=>$_POST['address'],'houseType'=>$_POST['house_type'],'cap'=>$_POST['capacity'],'brnb'=>$_POST['brnb'],'pictures'=>$p['0'],'photo1'=>$p['1'],'photo2'=>$p['2'],'photo3'=>$p['3'],'photo4'=>$p['4'],'photo5'=>$p['5'],'photo6'=>$p['6 ']));
+            $addH=$DB->prepare("INSERT INTO house(id_user,title,description,id_town,id_area,address,house_type,nbr_people,nbr_room,pictures,picture_1) VALUES(:idUser,:title,:desc,:idTown,:idArea,:address,:houseType,:cap,:brnb,:pictures,:photo1)");
+                $addH->execute(array('idUser'=>$_SESSION['userId'],'title'=>$_POST['title'],'desc'=>$_POST['description'],'idTown'=>$idTown,'idArea'=>$idArea,'address'=>$_POST['address'],'houseType'=>$_POST['house_type'],'cap'=>$_POST['capacity'],'brnb'=>$_POST['brnb'],'pictures'=>$p['0'],'photo1'=>$p['1']));
             
             $askAdd=$DB->prepare('SELECT house.id FROM house,user WHERE user.id=house.id_user AND user.id=\''.$_SESSION['userId'].'\' AND house.title=\''.$_POST['title'].'\'');
             $askAdd->execute();
