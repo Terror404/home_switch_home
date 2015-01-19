@@ -1,7 +1,12 @@
 *
 {
         padding: 0;
-        margin: 0;      
+        margin: 0;
+}
+
+@font-face {
+    font-family: "GeosansLight";
+    src: url('../../font/GeosansLight.ttf');
 }
 
 body
