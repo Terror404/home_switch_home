@@ -53,7 +53,7 @@
                     if($_GET['page']=='home')
                     {
                         
-                        include('../view/back_office/home.php');
+                        include('../view/backOffice/home.php');
                     }
                      elseif($_GET['page']=='searchCriteria')
                     {

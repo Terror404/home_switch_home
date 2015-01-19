@@ -24,6 +24,8 @@ $askHouse=$DB->prepare('SELECT * FROM house WHERE id_user='.$_POST['id']);
             $deleteHouseCriteria->execute();
         $deleteHouse=$DB->prepare('DELETE FROM house WHERE id='.$resHouse['id']);
             $deleteHouse->execute();
+        $deleteFavH=$DB->prepare('DELETE FROM favorites WHERE id_house='.$_resHouse['id']);
+    $deleteFavH->execute();
         
     }
    
