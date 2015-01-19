@@ -1,4 +1,4 @@
-<br/><br/><br/><br/>
+<p class="alert">
 <?php
 switch($end)
 {
@@ -16,4 +16,5 @@ switch($end)
         break;
 }
 
+</p>
 

@@ -1,0 +1,40 @@
+body{
+ background-image: url("../pictures/lago-blu-montagne-america.jpg"); 
+ background-repeat : no-repeat;
+  background-size: cover;
+    background-attachment: fixed;
+}
+
+.top{
+    opacity : 0.9;
+margin-bottom: 3%;
+width : 60%;
+padding : 1%;
+    background-color : white;
+    text-align : center;
+    margin-top : 1%;
+    border-radius : 10px;
+}
+
+.box{
+    opacity : 0.9;
+margin-bottom: 3%;
+width : 60%;
+
+padding : 1%;
+    background-color : white;
+
+    margin-top : 1%;
+    border-radius : 10px;
+}
+
+.top, .box{
+    margin-left : 20%;
+}
+.sub {
+    width : 50%;
+    margin-left : 5%;
+}
+.input{
+    width : 10%;
+}
