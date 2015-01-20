@@ -35,3 +35,14 @@ body {
 .LinkButton:hover {
     background: #83EBC6;
 }
+.white{
+     background-color: white;
+  position:absolute; 
+  z-index:-1; 
+  top:0.5%; 
+  left:69%; 
+  right:1%; 
+  bottom:96.7%;
+  opacity:0.9; 
+  border-radius:  6px;
+}

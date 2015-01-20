@@ -21,7 +21,7 @@
                             <input name="photo2" type='file' id="photo2" /><br/>  
                             <input type="hidden" name="tagPhoto" value="1"/>
                             
-                            <label for="photo3" class="label">photo n°4:</label>
+                            <!--<label for="photo3" class="label">photo n°4:</label>
                             <input name="photo3" type='file' id="photo3" /><br/>  
                             <input type="hidden" name="tagPhoto" value="1"/>
                             
@@ -35,7 +35,7 @@
                             
                             <label for="photo6" class="label">photo n°7:</label>
                             <input name="photo6" type='file' id="photo6" /><br/>  
-                            <input type="hidden" name="tagPhoto" value="1"/>
+                            <input type="hidden" name="tagPhoto" value="1"/>-->
                                                  
                            
                         </p>

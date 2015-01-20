@@ -49,7 +49,7 @@ if(isset($_POST['add']) AND $_POST['add']==1)
                     $askAvgRatesU=$DB->prepare('SELECT AVG(rating)FROM comment_user WHERE id_target=:idtarget');
                         $askAvgRatesU->execute(array('idtarget'=>$idUser2));
                     
-                    while($resAvgRatesH=$askAvgRatesH->fetch())
+                    while($resAvgRatesU=$askAvgRatesU->fetch())
                     {
                         $updateAvgRateU=$DB->prepare('UPDATE house SET rating=:avgrating');
                             $updateAvgRateU->execute(array('avgrating'=>$resAvgRatesU['AVG(rating)']));
@@ -122,7 +122,7 @@ if(isset($_POST['add']) AND $_POST['add']==1)
                     $upFinished=$DB->prepare('UPDATE exchange SET finished_2=1 WHERE id=:idexchange');
                         $upFinished->execute(array('idexchange'=>$idExchange));
                         
-                    $askExch=$DB->prepare('SELECT finished_1, finished_2 FROM exchange WHERE id=:idexchange');
+                    $askExch=$DB->prepare('SELECT * FROM exchange WHERE id=:idexchange');
                         $askExch->execute(array('idexchange'=>$idExchange));
                     
                     while($resExch=$askExch->fetch())

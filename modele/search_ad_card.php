@@ -36,7 +36,7 @@
             $askHrate->execute(array('idhouse'=>$_GET['id']));
     
     //<!--Get the house pic-->
-        $askHpic=$DB->prepare('SELECT H.pictures FROM house H WHERE H.id=:idhouse');
+        $askHpic=$DB->prepare('SELECT H.pictures,picture_1,picture_2 FROM house H WHERE H.id=:idhouse');
             $askHpic->execute(array('idhouse'=>$_GET['id']));
 
     
@@ -115,3 +115,6 @@ $askInfAds=$DB->prepare('SELECT * FROM criteria,ad_criteria WHERE criteria.id=ad
 
 $askDateAds=$DB->prepare('SELECT date_begin,date_end FROM ad WHERE id=:idad');
     $askDateAds->execute(array('idad'=>$_GET['adId']));
+    
+$askProfile=$DB->prepare('SELECT user.id FROM user,house WHERE house.id_user=user.id AND house.id='.$_GET['id']);
+$askProfile->execute();

@@ -43,4 +43,3 @@ while($resSearch=$askPrioritySearch->fetch())
 }
 
 }
-echo $askFinal;

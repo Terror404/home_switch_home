@@ -124,7 +124,7 @@
             <?php } ?>
 	</li>
 
-	<li class="subMenuDisplayer" <?php if(!isset($_SESSION['userId'])){ echo 'style="width:25%"'; }?>>
+	<li class="subMenuDisplayer" <?php if(!isset($_SESSION['userId'])){ echo 'style="width:25%"'; }?> >
             <a class="linkBlock" href="#help">
                 Aide
             </a>
@@ -138,6 +138,7 @@
             <li><a class="subMenuLinkBlock" href="../controler/content.php?page=contact" >
                     Contactez-nous
             </a></li>
+            </ul>
         </li>
         
  

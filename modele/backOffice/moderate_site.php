@@ -9,7 +9,7 @@ elseif($_GET['state']==2)
     $askHouse=$DB->prepare('SELECT * FROM house WHERE house.id='.$_POST['name']);
     $askHouse->execute();
 }
-elseif($_GET['state']==4 AND $_SESSION['userAccess']==3)
+elseif($_GET['state']==4 AND $_SESSION['userAccess']==3 AND $_SESSION['userId']!=$_POST['id'])
 {
     $askHouse=$DB->prepare('SELECT * FROM house WHERE id_user='.$_POST['id']);
     $askHouse->execute();
@@ -70,7 +70,7 @@ elseif($_GET['state']==4 AND $_SESSION['userAccess']==3)
     $deleteUser=$DB->prepare('DELETE FROM user WHERE user.id='.$_POST['id']);
     $deleteUser->execute();
 }
-elseif($_GET['state']==6 AND $_SESSION['userAccess']==3)
+elseif($_GET['state']==6 AND $_SESSION['userAccess']>1)
 {
     $askHouse=$DB->prepare('SELECT * FROM house WHERE id='.$_POST['name']);
     $askHouse->execute();

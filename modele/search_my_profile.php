@@ -48,4 +48,6 @@ else
 $askCom=$DB->prepare('SELECT * FROM comment_user,user WHERE comment_user.id_target='.$_GET['userId'].' AND comment_user.id_author=user.id');
 $askCom->execute();
 $askComNb=$askCom->rowcount();
+$askProfRate = $DB->prepare('SELECT rating FROM user WHERE id=:id');
+        $askProfRate->execute(array('id'=>$_GET['userId']));
 ?>

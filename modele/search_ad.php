@@ -156,7 +156,7 @@ $reqBase='SELECT DISTINCT ad.title, ad.date_begin, ad.date_end, house.descriptio
     }
     
     $askFinal=$reqBase.$req.$ask;
-    echo $askFinal;
+    
     
  
     
