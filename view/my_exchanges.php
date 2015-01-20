@@ -23,6 +23,11 @@ if(isset($idHouse1) AND !empty($idHouse1))
             
             <form method="post" action="../controler/content.php?page=comment">
                 <input type='hidden' name='type' value='<?php echo $arrayInf[$i][5]?>'/>
+                <input type='button' value='<?php echo $arrayInf[$i][5]?>'/>
+                <input type="button" value="<?php echo $arrayFinalInfU1[$i][0];?>"/>
+                <input type="button" value="<?php echo $arrayFinalInfU2[$i][0]?>"/>
+                <input type="button"  value="<?php echo $arrayFinalInfU2[$i][1]; ?>"/>
+                <input type="button"  value="<?php echo $arrayFinalInfU1[$i][1];?>"/>
                 <input type='hidden' name='idExch' value='<?php echo$arrayInf[$i][4]?>'/>
                 <input type="hidden" name="idUser1" value="<?php echo $idUser1; ?>"/>
                 <input type="hidden" name="idUser2" value="<?php echo $idUser2; ?>"/>

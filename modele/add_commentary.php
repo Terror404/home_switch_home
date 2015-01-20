@@ -22,12 +22,12 @@ if(isset($_POST['add']) AND $_POST['add']==1)
                     $idHouse2=$_POST['idHouse2'];
                     $titleCHouse=$_POST['titleH'];
                     $titleCUser=$_POST['titleU'];
-                    $comUser=$_POST['commentaryU'];
+                    $comUser=$_POST['commentaryU']; 
                     $comHouse=$_POST['commentaryH'];
                     $rateUser=$_POST['rateU'];
                     $rateHouse=$_POST['rateH'];
                     $finished=1;
-                    $date=date('y-m-d');
+                    $date=date('y-m-d');    
 
                     $addComH=$DB->prepare('INSERT INTO comment_house (id_author,id_target,title,text,rating,date) VALUES(:idauthor,:idtarget,:title,:text,:rating,:date)');
                         $addComH->execute(array('idauthor'=>$idUser1,'idtarget'=>$idHouse2,'title'=>$titleCHouse,'text'=>$comHouse,'rating'=>$rateHouse,'date'=>$date));
@@ -100,7 +100,7 @@ if(isset($_POST['add']) AND $_POST['add']==1)
                 if($_POST['rateU']>=0 AND $_POST['rateU']<11 AND $_POST['rateH']>=0 AND $_POST['rateH']<11)
                 {
                     $idExchange=$_POST['idExch'];
-                    $idUser2=$_SESSION['userId'];
+                    $idUser2=$_POST['idUser1'];
                     $idUser1=$_POST['idUser2'];
                     $idHouse2=$_POST['idHouse1'];
                     $idHouse1=$_POST['idHouse2'];
@@ -114,7 +114,7 @@ if(isset($_POST['add']) AND $_POST['add']==1)
                     $date=date('y-m-d');
 
                     $addComH=$DB->prepare('INSERT INTO comment_house (id_author,id_target,title,text,rating,date) VALUES(:idauthor,:idtarget,:title,:text,:rating,:date)');
-                        $addComH->execute(array('idauthor'=>$idUser1,'idtarget'=>$idHouse2,'title'=>$titleCHouse,'text'=>$comHouse,'rating'=>$rateHouse,'date'=>$date));
+                        $addComH->execute(array('idauthor'=>$idUser2,'idtarget'=>$idHouse1,'title'=>$titleCHouse,'text'=>$comHouse,'rating'=>$rateHouse,'date'=>$date));
 
                     $addComU=$DB->prepare('INSERT INTO comment_user (id_author,id_target,title,text,rating,date) VALUES(:idauthor,:idtarget,:title,:text,:rating,:date)');
                         $addComU->execute(array('idauthor'=>$idUser2,'idtarget'=>$idUser1,'title'=>$titleCUser,'text'=>$comUser,'rating'=>$rateUser,'date'=>$date));
